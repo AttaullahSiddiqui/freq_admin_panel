@@ -1,0 +1,56 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.0)" size="medium" color="#5cb85c" type="timer"></ngx-spinner>
+
+<div class="row">
+  <button type="button" style="float: right;" (click)="closeEditor()" class="btn btn-default btn-icon">
+    <i class="ti-close"></i>
+  </button>
+</div>
+
+<div class="row">
+  <h2 *ngIf="!isEditMode" style="margin-top: -20px;">Create New Artist</h2>
+  <h2 *ngIf="isEditMode" style="margin-top: -20px;">Edit Existing Artist</h2>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-10">
+    <div class="form-group">
+      <label for="artistName">Artist Name</label>
+      <input type="text" class="form-control" id="artistName" [(ngModel)]="artistName" placeholder="Artist name">
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <button *ngIf="isEditMode" style="margin-top: 25px;" (click)="updateArtistName()" class="btn btn-primary">Update</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-10">
+    <div class="form-group">
+      <label for="artistPicture">Artist Picture</label>
+      <input type="file" class="form-control" id="artistPicture">
+    </div>
+  </div>
+
+  <div class="col-sm-2">
+    <button *ngIf="isEditMode" style="margin-top: 25px;" (click)="updateArtistPicture()" class="btn btn-primary">Update</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-10">
+    <div *ngIf="showProgress" aria-valuemin="0" role="progressbar" class="progress-bar progress-bar-animated progress-bar-striped"
+      attr.aria-valuenow="{{progress}}" aria-valuemax="100" [ngStyle]="{width:progress/100 | percent:'1.0-1'}" 
+      style=" background-color: #5cb85c">
+      <strong>{{progress}}%</strong>
+    </div>
+  </div>
+</div>
+
+<br>
+
+<div class="row">
+  <button type="submit" style="float: right;" *ngIf="!isEditMode" (click)="addNewArtist()" class="btn btn-primary">Add Artist</button>
+</div>

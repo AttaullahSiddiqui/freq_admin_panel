@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');
+
+.card{
+    background: #F7F9FA;
+    border-radius: 16px;
+}
+.played{
+    color:#EA3D2F;font-weight: 500;
+font-size: 36px;
+line-height: 42px;
+}
+
+.mins{
+    color:#367BF5;
+    font-weight: 500;
+font-size: 36px;
+line-height: 42px;
+}
+.likes{
+    color:#2FA84F;
+    font-weight: 500;
+font-size: 36px;
+line-height: 42px;
+}
+.comments{
+    color:#F3AA18;
+    font-weight: 500;
+font-size: 36px;
+line-height: 42px;
+}
+canvas{
+    height: 456px !important;
+    /* width: 786px !important; */
+}
+.medi{
+color: #9FA2B4;
+
+}
+.hapydays{
+    color:  #252733;
+    font-family: Mulish;
+font-style: normal;
+font-weight: bold;
+}
+.padd{
+    padding: 17px;
+}
+.numbers{
+    text-align: center;
+}
+.btn, .navbar .navbar-nav > li > a.btn{
+    border-radius: 8px !important;
+    margin: 10px;
+    border: 1px solid #DFE0EB;
+}
+.sidebar-play{
+    position: relative;
+    top: -10px;
+}
+.flx{
+    padding: 20px;
+}
+.play{
+    text-align: center;
+    font-family: Mulish;
+    font-style: normal;
+    padding: 10px;
+    border-bottom: 1px solid #DFE0EB;
+}
+.play-head{
+    color: #9B51E0;
+}
+.h3-play-time{
+    font-weight: bold;
+    font-size: 36px;
+}
+.total-time{
+    color: #9FA2B4;
+}
+.total-time-min{
+    font-weight: bold;
+font-size: 36px;
+}
+.date{
+    font-weight: 600;
+font-size: 18px;
+}
+
+#start{
+    border: 1px solid rgba(159, 162, 180, 0.39);
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    color: rgba(0, 0, 0, 0);
+    opacity: 1;
+    display: block;
+    background: url('../../../assets/img/cheven-down.png') no-repeat;
+    margin-top: 15px;
+    /* width: 20px;
+    height: 20px; */
+    border-width: thin;
+}
+.btn:hover, .btn:focus, .btn:active, .btn.active, .btn:active:focus, .btn:active:hover, .open > .btn.dropdown-toggle, .open > .btn.dropdown-toggle:focus, .open > .btn.dropdown-toggle:hover, .navbar .navbar-nav > li > a.btn:hover, .navbar .navbar-nav > li > a.btn:focus, .navbar .navbar-nav > li > a.btn:active, .navbar .navbar-nav > li > a.btn.active, .navbar .navbar-nav > li > a.btn:active:focus, .navbar .navbar-nav > li > a.btn:active:hover, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle:focus, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle:hover {
+    background-color: #9B51E0;
+}
+.pdd{
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+}
+
+.dropdown-menu{
+    overflow: auto;
+    height: 123px;
+}

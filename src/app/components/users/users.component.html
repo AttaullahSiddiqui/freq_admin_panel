@@ -1,0 +1,23 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.0)" size="medium" color="#5cb85c" type="timer"></ngx-spinner>
+
+
+<div class="container">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index;">
+        <td>{{i+1}}</td>
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,17 @@
+.sidebar .logo, .off-canvas-sidebar .logo{
+    height: auto;
+}
+
+.dashboard:hover{
+ color:#62208C;
+}
+
+ .btn.btn-fill:hover{
+    border-color:#62208C;
+    background-color: #62208C;
+}
+
+.menu-item{
+    border-color:#62208C !important;
+    background-color: #62208C !important;
+}

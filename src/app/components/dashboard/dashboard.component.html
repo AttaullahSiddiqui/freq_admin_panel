@@ -1,0 +1,74 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.0)" size="medium" color="#5cb85c" type="timer"></ngx-spinner>
+
+
+
+<div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-8">
+    <div class="padd">
+      <h2 class="hapydays">{{filterSongs?.name}}</h2>
+      <p class="medi">{{filterSongs?.moodName}}</p>
+      <h2 *ngIf="noDataFound">No Data Found</h2>
+      <h3 *ngIf="lineChartData[0].data.length == 0">Select the Song then Choose Date from you want filter</h3>
+      <canvas *ngIf="lineChartData[0].data.length != 0" baseChart width="100" height="100" [datasets]="lineChartData"
+        [labels]="lineChartLabels" [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+        [chartType]="lineChartType">
+      </canvas>
+    </div>
+  </div>
+  <div class="col-md-4 sidebar-play">
+    <div class="flx">
+      <div class="play">
+        <h4 class="play-head">Plays</h4>
+        <h3 class="h3-play-time">{{totalPlay}} Times</h3>
+      </div>
+      <div class="play">
+        <h4 class="total-time">Total Time</h4>
+        <h3 class="total-time-min">{{totalTime}} Mins</h3>
+      </div>
+      <div class="play">
+        <h6 class="date">Start Date</h6>
+        <div>
+          <input type="date" [(ngModel)]="selectedStartDate" (change)="changeStartDate()" id="start" />
+        </div>
+        <h6 class="date">End Date</h6>
+        <div>
+          <input type="date" [(ngModel)]="selectedEndDate" id="start" (change)="changeEndDate()" />
+        </div>
+
+      </div>
+
+    </div>
+    <div class="row play">
+      <div class="btn-group" role="group" aria-label="Basic example">
+        <button type="button" class="btn btn-pri">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-printer"
+            viewBox="0 0 16 16">
+            <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z" />
+            <path
+              d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zM4 3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2H4V3zm1 5a2 2 0 0 0-2 2v1H2a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-1v-1a2 2 0 0 0-2-2H5zm7 2v3a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1z" />
+          </svg>
+        </button>
+        <button type="button" (click)="downloadToCsv()" class="btn btn-pri"><svg xmlns="http://www.w3.org/2000/svg"
+            width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+            <path
+              d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z" />
+            <path
+              d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z" />
+          </svg></button>
+        <!-- <div class="dropdown"> -->
+        <button class="btn btn-pri pdd dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="true">
+
+          <span class="glyphicon glyphicon-option-horizontal"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li *ngFor="let song of songs"><a (click)="getSelectedSongDetails(song)">{{song.name}}</a></li>
+
+        </ul>
+
+      </div>
+
+
+    </div>
+  </div>
+</div>
