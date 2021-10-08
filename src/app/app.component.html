@@ -11,11 +11,11 @@
             <div class="sidebar-wrapper">
                 <div class="logo">
                     <a class="simple-text logo-mini">
-                        NAP
+                        FREQ
                     </a>
 
                     <a class="simple-text logo-normal">
-                        <img src="assets/img/logo_img.png" style="width: 106px;" />
+                        <img src="assets/img/Freq-Logo-White.png" style="width: 106px;" />
                     </a>
                 </div>
 
@@ -51,7 +51,14 @@
                     <li id="genresMenuItem">
                         <a routerLink="/genres">
                             <i class="ti-shine"></i>
-                            <p>Moods</p>
+                            <p>Categories</p>
+                        </a>
+                    </li>
+
+                    <li id="notesMenuItem">
+                        <a routerLink="/notes">
+                            <i class="ti-shine"></i>
+                            <p>Notes</p>
                         </a>
                     </li>
 
@@ -86,7 +93,7 @@
                             <p>Change Terms</p>
                         </a>
                     </li>
-                    <li class="active-pro">
+                    <li class="">
                         <a (click)="signOut()" routerLink="/login">
                             <i class="ti-direction"></i>
                             <p>LOG OUT</p>
@@ -112,10 +119,10 @@
                             <span class="icon-bar bar2"></span>
                             <span class="icon-bar bar3"></span>
                         </button>
-                        <a class="navbar-brand dashboard" href="#">{{ title }}</a>
+                        <a class="navbar-brand dashboard" href="">{{ title }}</a>
                     </div>
 
-                    <div class="collapse navbar-collapse">
+                    <!-- <div class="collapse navbar-collapse">
                         <ul class="nav navbar-nav navbar-right">
                             <li class="dropdown">
                                 <a *ngIf="storageService.getNotifications().length > 0"
@@ -151,7 +158,7 @@
                                 </ul>
                             </li>
                         </ul>
-                    </div>
+                    </div> -->
                 </div>
             </nav>
 
@@ -167,7 +174,7 @@
 
                     <div class="copyright pull-right">
                         &copy; 2021 by
-                        <strong>Avian Industries</strong>
+                        <strong>FREQ Devs</strong>
                     </div>
                 </div>
             </footer>

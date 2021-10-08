@@ -38,11 +38,12 @@ export class LoginModalComponent implements OnInit {
         });
         // window.location.reload();
         demo.showSuccessNotification("Log in successful");
-        this.router.navigate(["/dashboard"]);
+        this.router.navigate(["/genres"]);
       })
       .catch((err: Response) => {
         this.isLoading = false;
-        demo.showErrorNotification(err);
+        console.log(err);
+        demo.showErrorNotification(err["error"].message);
       });
 
     // this.authService

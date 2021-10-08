@@ -1,8 +1,8 @@
 export class Mood {
-    constructor() {
-    }
+  constructor() {}
 
-    moodId: string;
-    name: string;
-    picture: string;
+  moodId: string;
+  name: string;
+  iconName: string;
+  picture: any;
 }

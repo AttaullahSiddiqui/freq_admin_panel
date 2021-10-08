@@ -6,6 +6,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { NgxSpinnerModule } from "ngx-spinner";
 import { MatDialogModule } from "@angular/material/dialog";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { LocationStrategy, PathLocationStrategy } from "@angular/common";
 
 import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app.routes";
@@ -24,6 +25,7 @@ import { AlbumSongsComponent } from "./components/album-songs/album-songs.compon
 import { ArtistAlbumsComponent } from "./components/artist-albums/artist-albums.component";
 import { PlaylistGroupsComponent } from "./components/playlist-group/playlist-group.component";
 import { GenresComponent } from "./components/genres/genres.component";
+import { NotesComponent } from "./components/notes/notes.component";
 import { GenreSongsEditorComponent } from "./components/genre-songs-editor/genre-songs-editor.component";
 import { PlaylistGroupEditorComponent } from "./components/playlist-group-editor/playlist-group-editor.component";
 // tslint:disable-next-line:max-line-length
@@ -32,6 +34,7 @@ import { LoginModalComponent } from "./components/login-modal/login-modal.compon
 
 import { UsersComponent } from "./components/users/users.component";
 import { MoodEditorComponent } from "./components/mood-editor/mood-editor.component";
+import { NoteEditorComponent } from "./components/note-editor/note-editor.component";
 import { AngularEditorModule } from "@kolkov/angular-editor";
 
 import { ChartsModule } from "ng2-charts/ng2-charts";
@@ -76,8 +79,10 @@ const firebaseConfig = {
     ArtistAlbumsComponent,
     PlaylistGroupsComponent,
     GenresComponent,
+    NotesComponent,
     GenreSongsEditorComponent,
     MoodEditorComponent,
+    NoteEditorComponent,
     PlaylistGroupEditorComponent,
     PlaylistGroupPlaylistsEditorComponent,
     LoginModalComponent,
@@ -98,6 +103,7 @@ const firebaseConfig = {
     PlaylistGroupEditorComponent,
     PlaylistGroupPlaylistsEditorComponent,
     MoodEditorComponent,
+    NoteEditorComponent,
     // CsvBuilder,
 
     LoginModalComponent,
@@ -117,6 +123,10 @@ const firebaseConfig = {
   providers: [
     MatSnackBar,
     // CsvBuilder,
+    // {
+    //   provide: LocationStrategy,
+    //   useClass: PathLocationStrategy,
+    // },
   ],
   bootstrap: [AppComponent],
 })

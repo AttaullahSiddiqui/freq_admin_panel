@@ -24,6 +24,7 @@ export class AppComponent implements OnInit {
     this.initialiseGenres();
 
     router.events.subscribe((val: NavigationEnd) => {
+      console.log("Wokringgg");
       const elements = document.getElementsByClassName("active");
 
       Array.prototype.forEach.call(elements, function (element) {
@@ -59,7 +60,13 @@ export class AppComponent implements OnInit {
         case "/genres":
           const genresMenuItem = document.getElementById("genresMenuItem");
           genresMenuItem.classList.add("active");
-          this.title = "Genres & Moods";
+          this.title = "Categories";
+          break;
+
+        case "/notes":
+          const notesMenuItem = document.getElementById("notesMenuItem");
+          notesMenuItem.classList.add("active");
+          this.title = "Notes";
           break;
 
         case "/playlists":
@@ -109,7 +116,7 @@ export class AppComponent implements OnInit {
         this.router.navigateByUrl("tabs");
         if (user.userType == "admin") {
           this.login = true;
-          this.router.navigateByUrl("/");
+          this.router.navigateByUrl("/genres");
         } else {
           this.router.navigateByUrl("/login");
           this.login = false;

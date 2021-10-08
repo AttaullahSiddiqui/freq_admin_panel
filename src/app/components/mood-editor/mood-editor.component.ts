@@ -9,6 +9,8 @@ import {
 } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { HttpService, Response } from "../../services/http.service";
+import { UtilityService } from "../../services/utility.service";
 
 import "../../../assets/js/demo.js";
 declare var demo: any;
@@ -22,23 +24,26 @@ import { Mood } from "../../models/Mood";
 })
 export class MoodEditorComponent implements OnInit, AfterViewInit {
   moodName = "";
+  iconName = "";
   moodId = "";
-  isEditMode = false;
+  currentPicKey = "";
 
-  showProgress = false;
-  progress = 0;
+  isEditMode = false;
 
   constructor(
     private spinner: NgxSpinnerService,
     public dialogRef: MatDialogRef<MoodEditorComponent>,
+    private http: HttpService,
+    private util: UtilityService,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.isEditMode = data.isEditMode;
 
     if (this.isEditMode) {
-      console.log("data", data);
       this.moodName = data.genre.name;
-      this.moodId = data.genre.genreId;
+      this.iconName = data.genre.iconName;
+      this.currentPicKey = data.genre.bgImage;
+      this.moodId = data.genre._id;
     }
   }
 
@@ -61,115 +66,62 @@ export class MoodEditorComponent implements OnInit, AfterViewInit {
     }
 
     this.spinner.show();
-    this.showProgress = true;
 
-    const uploadPath = `/${this.moodName}/MoodPicture`;
+    let formData = new FormData();
+    formData.append("categoryPicture", MoodPicture);
+    formData.append("name", this.moodName);
+    formData.append("iconName", this.iconName);
 
-    // Upload Mood picture
-    // this.firebaseStorage
-    //   .uploadPicture(uploadPath, MoodPicture)
-    //   .then(
-    //     (uploadResult: any) => {
-    //       const newMood = new Mood();
-    //       newMood.name = this.moodName;
-    //       newMood.picture = uploadResult.downloadURL;
-
-    //       this.firestoreService.addNewMood(newMood).then(
-    //         (result: any) => {
-    //           this.spinner.hide();
-    //           this.showProgress = false;
-
-    //           newMood.moodId = result.newMoodId;
-
-    //           this.dialogRef.close({
-    //             isSuccess: true,
-    //             newMood: newMood
-    //           });
-    //         },
-    //         (error: any) => {
-    //           this.spinner.hide();
-    //           this.showProgress = false;
-
-    //           demo.showErrorNotification("An error occured: " + error);
-    //         }
-    //       );
-    //     },
-    //     (error: any) => {
-    //       this.spinner.hide();
-    //       this.showProgress = false;
-
-    //       demo.showErrorNotification("An error occured: " + error);
-    //     }
-    //   );
+    this.http
+      .post("category/add", formData, { isMultiPartFormData: true })
+      .then((success) => {
+        this.spinner.hide();
+        this.dialogRef.close({
+          isSuccess: true,
+          newMood: success.body.data,
+        });
+      })
+      .catch((err: Response) => {
+        this.spinner.hide();
+        demo.showErrorNotification(err["error"].message);
+      });
   }
-
-  updateMoodName() {
-    if (!this.moodName) {
-      demo.showWarningNotification("Please provide a name for the Mood.");
-      return;
-    }
-
-    // this.firestoreService.editMoodName(this.moodId, this.moodName).then(
-    //   (result: any) => {
-    //     this.dialogRef.close({
-    //       isSuccess: true,
-    //       MoodNameUpdated: true,
-    //       newMoodName: this.moodName,
-    //     });
-    //   },
-    //   (error: any) => {
-    //     demo.showErrorNotification("An error occured: " + error);
-    //   }
-    // );
-  }
-
-  updateMoodPicture() {
+  updateMood() {
     const MoodPicture = (<HTMLInputElement>(
       document.getElementById("MoodPicture")
     )).files[0];
-    if (!MoodPicture) {
-      demo.showWarningNotification("Please select an image file to upload.");
+    if (
+      this.moodName == this.data.genre.name &&
+      this.iconName == this.data.genre.iconName &&
+      !MoodPicture
+    ) {
+      demo.showWarningNotification("No changes made");
       return;
     }
-
     this.spinner.show();
-    this.showProgress = true;
 
-    const uploadPath = `/${this.moodName}/MoodPicture`;
+    let formData = new FormData();
+    if (MoodPicture) formData.append("categoryPicture", MoodPicture);
+    formData.append("name", this.moodName);
+    formData.append("iconName", this.iconName);
+    formData.append("categoryId", this.moodId);
 
-    // Update Mood picture
-    // this.firebaseStorage.uploadPicture(uploadPath, MoodPicture).then(
-    //   (uploadResult: any) => {
-    //     this.firestoreService
-    //       .editMoodPicture(this.moodId, uploadResult.downloadURL)
-    //       .then(
-    //         (result: any) => {
-    //           this.spinner.hide();
-    //           this.showProgress = false;
+    if (MoodPicture) formData.append("oldPicKey", this.currentPicKey);
 
-    //           this.dialogRef.close({
-    //             isSuccess: true,
-    //             MoodPictureUpdated: true,
-    //             newMoodPicture: uploadResult.downloadURL,
-    //           });
-    //         },
-    //         (error: any) => {
-    //           this.spinner.hide();
-    //           this.showProgress = false;
-
-    //           demo.showErrorNotification("An error occured: " + error);
-    //         }
-    //       );
-    //   },
-    //   (error: any) => {
-    //     this.spinner.hide();
-    //     this.showProgress = false;
-
-    //     demo.showErrorNotification("An error occured: " + error);
-    //   }
-    // );
+    this.http
+      .post("category/edit", formData, { isMultiPartFormData: true })
+      .then((success) => {
+        this.spinner.hide();
+        this.dialogRef.close({
+          isSuccess: true,
+          updateMood: success.body.data,
+        });
+      })
+      .catch((err: Response) => {
+        this.spinner.hide();
+        demo.showErrorNotification(err["error"].message);
+      });
   }
-
   closeEditor() {
     this.dialogRef.close({
       isSuccess: false,

@@ -12,6 +12,9 @@
         position: absolute;
     }
 }
+.curson-pointer:hover{
+    cursor:pointer
+}
 
 .icon-section {
 	margin: 0 0 3em;

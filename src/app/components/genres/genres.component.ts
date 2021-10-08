@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialog } from "@angular/material";
+import { environment } from "../../../environments/environment";
 
 import { GenreSongsEditorComponent } from "../genre-songs-editor/genre-songs-editor.component";
 
@@ -10,6 +11,10 @@ import { Genre } from "../../models/Genre";
 import { SongEditorComponent } from "../song-editor/song-editor.component";
 import { Song } from "src/app/models/Song";
 import { MoodEditorComponent } from "../mood-editor/mood-editor.component";
+import { HttpService, Response } from "../../services/http.service";
+import { UtilityService } from "../../services/utility.service";
+
+declare var demo: any;
 
 @Component({
   selector: "app-genres",
@@ -18,11 +23,15 @@ import { MoodEditorComponent } from "../mood-editor/mood-editor.component";
 })
 export class GenresComponent implements OnInit {
   genres: Genre[] = [];
+  genreEditKey = null;
+  getFilrUrl = environment.getFilrUrl;
 
   constructor(
     private spinner: NgxSpinnerService,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private http: HttpService,
+    private util: UtilityService
   ) {}
 
   ngOnInit() {
@@ -31,7 +40,17 @@ export class GenresComponent implements OnInit {
 
   getGenres() {
     this.spinner.show();
-
+    this.http
+      .get("category/fetchAll")
+      .then((success) => {
+        console.log(success);
+        this.spinner.hide();
+        this.genres = success.body.data;
+      })
+      .catch((err: Response) => {
+        this.spinner.hide();
+        demo.showErrorNotification(err["error"].message);
+      });
     // this.firestoreService.getGenres().then((result: any) => {
     //   this.genres = result.genres;
     //   this.spinner.hide();
@@ -44,15 +63,13 @@ export class GenresComponent implements OnInit {
       minHeight: "500px",
       data: { genre: genre },
     });
-
     dialogRef.afterClosed().subscribe((result) => {
       console.log({ result });
-
       this.getGenres();
     });
   }
 
-  addNewMood(): void {
+  addNewCatyegory(): void {
     const dialogRef = this.dialog.open(MoodEditorComponent, {
       width: "500px",
       data: {
@@ -61,14 +78,14 @@ export class GenresComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result.isSuccess) {
-        // Add new artist
         this.genres.unshift(result.newMood);
-        // demo.showSuccessNotification("Artist successfully added!");
+        demo.showSuccessNotification("Category successfully added!");
       }
     });
   }
 
-  edit(genre: Genre) {
+  edit(genreKey, genre: Genre) {
+    this.genreEditKey = genreKey;
     const dialogRef = this.dialog.open(MoodEditorComponent, {
       width: "650px",
       data: {
@@ -79,17 +96,8 @@ export class GenresComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       console.log({ result });
       if (result.isSuccess) {
-        // Edit name
-        if (result.MoodNameUpdated) {
-          genre.name = result.newMoodName;
-          // genre.showSuccessNotification("Artist name successfully updated!");
-        }
-
-        // Edit picture
-        else if (result.MoodPictureUpdated) {
-          genre.picture = result.newMoodPicture;
-          // demo.showSuccessNotification("Artist picture successfully updated!");
-        }
+        this.genres[this.genreEditKey] = result.updateMood;
+        demo.showSuccessNotification("Category successfully updated!");
       }
     });
   }

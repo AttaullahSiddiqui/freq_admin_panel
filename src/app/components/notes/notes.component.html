@@ -1,0 +1,28 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.0)" size="medium" color="#5cb85c" type="timer"></ngx-spinner>
+<div class="container">
+  <button type="button" (click)="addNewNote()" style="margin-left: 30px" class="btn btn-default">
+    Add New Note
+  </button>
+</div>
+<div class="row">
+  <div class="col-md-6 mt-5" *ngFor="let note of notes | keyvalue">
+    <div class="card card-profile" style="margin-top: 50px;">
+      <div class="card-body">
+        <h4 class="card-title">{{note.value.title}}</h4>
+        <br>
+        <p>{{note.value.description | slice:0:200}}</p>
+
+        <div class="card-footer text-center">
+          <a (click)="edit(note.key,note.value)" class="btn btn-with-icon btn-outline-info btn-info"
+            style="margin: 20px 5px 10px 5px" data-toggle="tooltip" data-placement="bottom" title="Edit">
+            <i class="ti-pencil" aria-hidden="true"></i>
+          </a>
+          <a (click)="delete(note.key,note.value._id)" class="btn btn-with-icon btn-outline-danger btn-danger"
+            style="margin: 20px 5px 10px 5px" data-toggle="tooltip" data-placement="bottom" title="Delete">
+            <i class="ti-trash" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

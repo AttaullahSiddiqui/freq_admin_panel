@@ -1,0 +1,41 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.0)" size="medium" color="#5cb85c" type="timer"></ngx-spinner>
+
+<div class="row">
+  <button type="button" style="float: right;" (click)="closeEditor()" class="btn btn-default btn-icon">
+    <i class="ti-close"></i>
+  </button>
+</div>
+
+<div class="row">
+  <h2 *ngIf="!isEditNote" style="margin-top: -20px;margin-left: 10px;">Create New Note</h2>
+  <h2 *ngIf="isEditNote" style="margin-top: -20px;margin-left: 10px">Edit Existing Note</h2>
+</div>
+
+<br>
+
+<div class="row">
+  <div class="col-sm-10">
+    <div class="form-group">
+      <label for="noteTitle">Note Title</label>
+      <input type="text" class="form-control" id="noteTitle" [(ngModel)]="noteTitle" placeholder="Mood name">
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-10">
+    <div class="form-group">
+      <label for="noteDescription">Note Description</label>
+      <input type="text" class="form-control" id="noteDescription" [(ngModel)]="noteDescription"
+        placeholder="Icon name">
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <button type="submit" style="float: right;" *ngIf="!isEditNote" (click)="addNewNote()" class="btn btn-primary">Add
+    Note</button>
+  <button type="submit" style="float: right;" *ngIf="isEditNote" (click)="updateNote()"
+    class="btn btn-primary">Update</button>
+</div>

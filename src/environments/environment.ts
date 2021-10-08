@@ -4,8 +4,11 @@
 
 export const environment = {
   production: false,
-  baseUrl: "http://3.129.44.19/api/",
-  rootUrl: "http://3.129.44.19/",
+  baseUrl: "http://localhost:5000/api/",
+  rootUrl: "http://localhost:5000/",
+  getFilrUrl: "http://localhost:5000/getFile/",
+  // baseUrl: "http://3.129.44.19/api/",
+  // rootUrl: "http://3.129.44.19/",
 };
 
 /*
