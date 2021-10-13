@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialog } from "@angular/material/dialog";
+import { HttpService, Response } from "../../services/http.service";
+import { UtilityService } from "../../services/utility.service";
 import "../../../assets/js/demo.js";
 import swal from "sweetalert";
 declare var demo: any;
@@ -9,7 +11,7 @@ declare var demo: any;
 import { SongEditorComponent } from "../song-editor/song-editor.component";
 import { SongPlayerComponent } from "../song-player/song-player.component";
 
-import { Song } from "../../models/Song";
+import { Program } from "../../models/Program";
 import { Album } from "../../models/Albums";
 import { Playlist } from "../../models/Playlist";
 import { Genre } from "../../models/Genre";
@@ -22,29 +24,30 @@ import { Genre } from "../../models/Genre";
 export class SongsComponent implements OnInit {
   @Input() isPlaylistEditing = false;
   @Input() playlist: Playlist;
-  @Input() playlistSongs: Song[];
+  @Input() playlistSongs: Program[];
 
   @Input() isGenreEditing = false;
   @Input() genre: Genre;
-  @Input() genreSongs: Song[];
+  @Input() genreSongs: Program[];
 
   @Input() album: Album;
 
-  songs: Song[] = [];
-  originalSongs: Song[];
+  songs: Program[] = [];
+  originalSongs: Program[];
 
   public isSearching = false;
 
   constructor(
     private spinner: NgxSpinnerService,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    private http: HttpService,
+    private util: UtilityService
   ) {}
 
   ngOnInit() {
-    this.getSongs();
-    this.listenForSearchInput(500);
-
+    // this.getSongs();
+    // this.listenForSearchInput(500);
     // this.firebaseStorage.songUploaded.subscribe(result => {
     //   if (result.isSuccess) {
     //     this.firebaseStorage.removeNotification(result.newSong.name);
@@ -52,7 +55,6 @@ export class SongsComponent implements OnInit {
     //     demo.showSuccessNotification("Song successfully added!");
     //   }
     // });
-
     // this.firebaseStorage.songUpdated.subscribe(result => {
     //   if (result.isSuccess) {
     //     if (result.songUpdated) {
@@ -97,50 +99,48 @@ export class SongsComponent implements OnInit {
     // });
   }
 
-  checkIfPlaylistSong(song: Song) {
+  checkIfPlaylistSong(song: Program) {
     if (this.playlistSongs) {
       const playlistSong = this.playlistSongs.find(
-        (x) => x.songId === song.songId
+        (x) => x.programId === song.programId
       );
-
-      if (playlistSong) {
-        song.isPartOfPlaylist = true;
-        song.playlistSongId = playlistSong.playlistSongId;
-      }
     }
   }
 
-  checkIfGenreSong(song: Song) {
+  checkIfGenreSong(song: Program) {
     if (this.genreSongs) {
-      const genreSong = this.genreSongs.find((x) => x.songId === song.songId);
-
-      if (genreSong) {
-        song.isPartOfGenre = true;
-        song.genreSongId = genreSong.genreSongId;
-      }
+      const genreSong = this.genreSongs.find(
+        (x) => x.programId === song.programId
+      );
     }
   }
 
-  addNewSong(): void {
+  addNewProgram(): void {
     const dialogRef = this.dialog.open(SongEditorComponent, {
       width: "500px",
       data: {
         isEditMode: false,
       },
     });
-  }
-
-  edit(song: Song) {
-    const dialogRef = this.dialog.open(SongEditorComponent, {
-      width: "650px",
-      data: {
-        isEditMode: true,
-        song: song,
-      },
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result.isSuccess) {
+        this.songs.unshift(result.newSong);
+        demo.showSuccessNotification("Song successfully added!");
+      }
     });
   }
 
-  delete(song: Song) {
+  edit(program: Program) {
+    // const dialogRef = this.dialog.open(SongEditorComponent, {
+    //   width: "650px",
+    //   data: {
+    //     isEditMode: true,
+    //     program: program,
+    //   },
+    // });
+  }
+
+  delete(song: Program) {
     const options = {
       title: "Delete Song?",
       text: "Are you sure you want to delete this song?",
@@ -169,7 +169,7 @@ export class SongsComponent implements OnInit {
     });
   }
 
-  removeSongFromList(song: Song) {
+  removeSongFromList(song: Program) {
     const index = this.songs.indexOf(song);
 
     if (index > -1) {
@@ -229,10 +229,10 @@ export class SongsComponent implements OnInit {
     searchInput.value = "";
   }
 
-  addSongToPlaylist(song: Song) {
+  addSongToPlaylist(song: Program) {
     // this.firestoreService.addSongToPlaylist(song, this.playlist).then(
     //   (result: any) => {
-    //     song.playlistSongId = result.newPlaylistSongId;
+    //     song.playlistprogramId = result.newPlaylistprogramId;
     //     song.isPartOfPlaylist = true;
     //   },
     //   (error: any) => {
@@ -241,7 +241,7 @@ export class SongsComponent implements OnInit {
     // );
   }
 
-  removeSongFromPlaylist(song: Song) {
+  removeSongFromPlaylist(song: Program) {
     // this.firestoreService.removeSongFromPlaylist(song, this.playlist).then(
     //   (result: any) => {
     //     song.isPartOfPlaylist = false;
@@ -252,10 +252,10 @@ export class SongsComponent implements OnInit {
     // );
   }
 
-  addSongToGenre(song: Song) {
+  addSongToGenre(song: Program) {
     // this.firestoreService.addSongToGenre(song, this.genre).then(
     //   (result: any) => {
-    //     song.genreSongId = result.newGenreSongId;
+    //     song.genreprogramId = result.newGenreprogramId;
     //     song.isPartOfGenre = true;
     //   },
     //   (error: any) => {
@@ -264,7 +264,7 @@ export class SongsComponent implements OnInit {
     // );
   }
 
-  removeSongFromGenre(song: Song) {
+  removeSongFromGenre(song: Program) {
     // this.firestoreService.removeSongFromGenre(song, this.genre).then(
     //   (result: any) => {
     //     song.isPartOfGenre = false;
@@ -275,10 +275,10 @@ export class SongsComponent implements OnInit {
     // );
   }
 
-  play(song: Song) {
+  play(song: Program) {
     const dialogRef = this.dialog.open(SongPlayerComponent, {
       data: {
-        song: song,
+        song: Program,
       },
     });
 

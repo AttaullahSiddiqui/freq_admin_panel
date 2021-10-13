@@ -3,7 +3,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { Router } from "@angular/router";
 import { ChartDataSets, ChartOptions } from "chart.js";
 import { Color, BaseChartDirective } from "ng2-charts";
-import { Song } from "src/app/models/Song";
+import { Program } from "src/app/models/Program";
 import { CsvBuilder } from "filefy";
 
 @Component({
@@ -117,14 +117,13 @@ export class DashboardComponent implements OnInit {
     }, 1000);
   }
 
-  getSelectedSongDetails(song: Song) {
-    this.selectedSongId = song.songId;
-    console.log("selected song id", this.selectedSongId);
-    this.lineChartData[0].data = [];
-
-    setTimeout(() => {
-      this.getDetail(this.selectedStartDate, this.selectedEndDate);
-    }, 1000);
+  getSelectedSongDetails(song: Program) {
+    // this.selectedSongId = song.songId;
+    // console.log("selected song id", this.selectedSongId);
+    // this.lineChartData[0].data = [];
+    // setTimeout(() => {
+    //   this.getDetail(this.selectedStartDate, this.selectedEndDate);
+    // }, 1000);
   }
 
   changeEndDate() {

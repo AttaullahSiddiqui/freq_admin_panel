@@ -7,8 +7,8 @@
 </div>
 
 <div class="row">
-  <h2 *ngIf="!isEditMode" style="margin-top: -20px;">Create New Song</h2>
-  <h2 *ngIf="isEditMode" style="margin-top: -20px;">Edit Existing Song</h2>
+  <h2 *ngIf="!isEditMode" style="margin-top: -20px;">Create New Program</h2>
+  <h2 *ngIf="isEditMode" style="margin-top: -20px;">Edit Existing Program</h2>
 </div>
 
 <br>
@@ -16,22 +16,20 @@
 <div class="row">
   <div class="col-sm-10">
     <div class="form-group">
-      <label for="songName">Song Name</label>
-      <input type="text" class="form-control" id="songName" [(ngModel)]="songName" placeholder="Song name">
+      <label for="name">Program Name</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="name" placeholder="Program name">
     </div>
-  </div>
-
-  <div class="col-sm-2">
-    <button *ngIf="isEditMode" style="margin-top: 25px;" (click)="updateSongName()" class="btn btn-primary">Update</button>
   </div>
 </div>
 
 <div class="row">
   <div class="col-sm-10">
     <div class="form-group">
-      <label for="artistName">Artist Name</label>
-      <select class="form-control" [(ngModel)]="selectedArtist" (ngModelChange)="artistSelected($event)">
-        <option *ngFor="let artist of artists" id="artistName" [ngValue]="artist">{{artist.name}}</option>
+      <label for="categoryName">Category Name</label>
+      <select class="form-control" [(ngModel)]="selectedCategory">
+        <option *ngFor="let category of categoriesArray | keyvalue" class="categoryName" [ngValue]="category._id">
+          {{category.value.name}}
+        </option>
       </select>
     </div>
   </div>
@@ -40,10 +38,8 @@
 <div class="row">
   <div class="col-sm-10">
     <div class="form-group">
-      <label for="albumName">Album Name</label>
-      <select class="form-control" [(ngModel)]="selectedAlbum">
-        <option *ngFor="let album of albums" id="albumName" [ngValue]="album">{{album.name}}</option>
-      </select>
+      <label for="song">Music to upload:</label>
+      <input type="file" class="form-control" name="programSong" id="programSong" accept="audio/*">
     </div>
   </div>
 </div>
@@ -51,18 +47,17 @@
 <div class="row">
   <div class="col-sm-10">
     <div class="form-group">
-      <label for="song">Song to upload:</label>
-      <input type="file" class="form-control" id="song">
+      <label for="programPicture">Program Picture</label>
+      <input type="file" class="form-control" name="programPicture" id="programPicture" accept="image/*">
     </div>
-  </div>
-
-  <div class="col-sm-2">
-    <button *ngIf="isEditMode" style="margin-top: 25px;" (click)="updateSongFile()" class="btn btn-primary">Update</button>
   </div>
 </div>
 
 <br>
 
 <div class="row">
-  <button type="submit" style="float: right;" *ngIf="!isEditMode" (click)="addNewSong()" class="btn btn-primary">Add Song</button>
+  <button type="submit" style="float: right;" *ngIf="!isEditMode" (click)="addNewProgram()" class="btn btn-primary">Add
+  </button>
+  <button type="submit" style="float: right;" *ngIf="isEditMode" (click)="updateProgram()"
+    class="btn btn-primary">Update</button>
 </div>

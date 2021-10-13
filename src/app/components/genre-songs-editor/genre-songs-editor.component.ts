@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from "@angular/core";
 
 import { Genre } from "../../models/Genre";
-import { Song } from "../../models/Song";
+import { Program } from "../../models/Program";
 import { MAT_DIALOG_DATA } from "@angular/material";
 import { NgxSpinnerService } from "ngx-spinner";
 
@@ -13,7 +13,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class GenreSongsEditorComponent implements OnInit {
   isGenreEditing = false;
   genre: Genre;
-  genreSongs: Song[];
+  genreSongs: Program[];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,

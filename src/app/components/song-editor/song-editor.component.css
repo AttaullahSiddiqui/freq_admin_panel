@@ -1,0 +1,6 @@
+.categoryName{
+    font-size: 1.2em;
+}
+.categoryName:hover{
+    cursor: pointer;
+}

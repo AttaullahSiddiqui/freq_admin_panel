@@ -9,12 +9,14 @@ import {
 } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { HttpService, Response } from "../../services/http.service";
+import { UtilityService } from "../../services/utility.service";
 
 import "../../../assets/js/demo.js";
 declare var demo: any;
 
 import { Album } from "../../models/Albums";
-import { Song } from "../../models/Song";
+import { Program } from "../../models/Program";
 import { Artist } from "../../models/Artist";
 import { Genre } from "../../models/Genre";
 
@@ -24,40 +26,51 @@ import { Genre } from "../../models/Genre";
   styleUrls: ["./song-editor.component.css"],
 })
 export class SongEditorComponent implements AfterViewInit {
-  artists: Artist[] = [];
-  selectedArtist: Artist = null;
+  categoriesArray = [];
 
-  albums: Album[] = [];
-  selectedAlbum: Album = null;
-
-  songName = "";
-  songId = "";
-  artistId = "";
-  albumId = "";
+  name = "";
+  programId = "";
+  currentSong = "";
+  currentPicture = "";
+  categories = [];
 
   isEditMode = false;
 
   constructor(
     private spinner: NgxSpinnerService,
+    private http: HttpService,
+    private util: UtilityService,
     public dialogRef: MatDialogRef<SongEditorComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
+    this.spinner.show();
     this.isEditMode = data.isEditMode;
 
     if (this.isEditMode) {
-      this.songName = data.song.name;
-      this.songId = data.song.songId;
-      this.artistId = data.song.artistId;
-      this.albumId = data.song.albumId;
+      this.name = data.program.name;
+      this.programId = data.program.songId;
+      this.categories = data.program.artistId;
+      this.currentSong = data.program.url;
+      this.currentPicture = data.program.picture;
     }
   }
 
   ngAfterViewInit() {
-    this.getArtists();
+    this.getCategories();
   }
 
-  getArtists(): void {
-    this.spinner.show();
+  getCategories(): void {
+    this.http
+      .get("category/forSelect")
+      .then((success) => {
+        console.log(success);
+        this.spinner.hide();
+        this.categoriesArray = success.body.data;
+      })
+      .catch((err: Response) => {
+        this.spinner.hide();
+        demo.showErrorNotification(err["error"].message);
+      });
 
     // this.firestoreService.getArtists().then((result: any) => {
     //   this.artists = result.artists;
@@ -72,173 +85,94 @@ export class SongEditorComponent implements AfterViewInit {
     // });
   }
 
-  getArtistAlbums() {
-    if (!this.selectedArtist) {
-      return;
-    }
-
-    this.albums = [];
-
-    this.spinner.show();
-
-    // this.firestoreService
-    //   .getArtistAlbums(this.selectedArtist.artistId)
-    //   .then((result: any) => {
-    //     this.albums = result.albums;
-
-    //     if (this.albums.length > 0) {
-    //       this.selectedAlbum = this.albums.find(
-    //         x => x.albumId === this.albumId
-    //       );
-    //     }
-
-    //     this.spinner.hide();
-    //   });
-  }
-
-  artistSelected(event) {
-    this.getArtistAlbums();
-  }
-
-  addNewSong() {
-    if (!this.songName) {
-      demo.showWarningNotification("Please provide a name for the song.");
-      return;
-    }
-
-    if (!this.selectedArtist) {
-      demo.showWarningNotification("Please select an artist.");
-      return;
-    }
-
-    if (!this.selectedAlbum) {
-      demo.showWarningNotification("Please select an album.");
-      return;
-    }
-
-    const song = (<HTMLInputElement>document.getElementById("song")).files[0];
-    if (!song) {
-      demo.showWarningNotification("Please select an audio file to upload.");
+  addNewProgram() {
+    const programSong = (<HTMLInputElement>(
+      document.getElementById("programSong")
+    )).files[0];
+    const programPicture = (<HTMLInputElement>(
+      document.getElementById("programPicture")
+    )).files[0];
+    console.log(programSong);
+    console.log(programPicture);
+    if (
+      !this.name ||
+      !this.categories.length
+      // !programSong ||
+      // !programPicture
+    ) {
+      demo.showWarningNotification("All fields required");
       return;
     }
 
     this.spinner.show();
+    let formData = new FormData();
+    // formData.append("program", programPicture);
+    // formData.append("program", programSong);
+    formData.append("name", this.name);
+    for (var i = 0; i < this.categories.length; i++) {
+      formData.append("categories[]", this.categories[i]);
+    }
 
-    const uploadPath = `/${this.selectedArtist.name}/${this.selectedAlbum.name}/${this.songName}`;
-
-    // Upload song track
-    // this.firebaseStorage
-    //   .uploadSong(uploadPath, this.songName, this.selectedAlbum.picture, song)
-    //   .then((uploadResult: any) => {
-    //     uploadResult.uploadTask.then((snapshot) => {
-    //       if (snapshot.state !== "success") {
-    //         demo.showErrorNotification("An error occured.");
-    //         return;
-    //       }
-
-    //       snapshot.ref.getDownloadURL().then((downloadURL) => {
-    //         const newSong = new Song();
-
-    //         newSong.name = this.songName;
-    //         newSong.artistId = this.selectedArtist.artistId;
-    //         newSong.artistName = this.selectedArtist.name;
-    //         newSong.albumId = this.selectedAlbum.albumId;
-    //         newSong.albumName = this.selectedAlbum.name;
-    //         newSong.albumPicture = this.selectedAlbum.picture;
-    //         newSong.songUrl = downloadURL;
-
-    //         this.firestoreService.addNewSong(newSong).then(
-    //           (result: any) => {
-    //             newSong.songId = result.newSongId;
-
-    //             this.firebaseStorage.songUploaded.emit({
-    //               isSuccess: true,
-    //               newSong: newSong,
-    //             });
-    //           },
-    //           (error: any) => {
-    //             demo.showErrorNotification("An error occured: " + error);
-    //           }
-    //         );
-    //       });
-    //     });
-    //   });
+    this.http
+      .post("programs/add", formData, { isMultiPartFormData: true })
+      .then((success) => {
+        this.spinner.hide();
+        this.dialogRef.close({
+          isSuccess: true,
+          newProgram: success.body.data,
+        });
+      })
+      .catch((err: Response) => {
+        this.spinner.hide();
+        demo.showErrorNotification(err["error"].message);
+      });
 
     this.spinner.hide();
     this.dialogRef.close();
   }
 
-  updateSongName() {
-    if (!this.songName) {
-      demo.showWarningNotification("Please provide a name for the song.");
+  updateProgram() {
+    const newSong = (<HTMLInputElement>document.getElementById("programSong"))
+      .files[0];
+    const newProgramPicture = (<HTMLInputElement>(
+      document.getElementById("programPicture")
+    )).files[0];
+    if (
+      this.name == this.data.program.name &&
+      this.categories == this.data.program.categories &&
+      !newSong
+    ) {
+      demo.showWarningNotification("No changes made");
       return;
     }
-
-    // this.firestoreService.editSongName(this.songId, this.songName).then(
-    //   (result: any) => {
-    //     this.dialogRef.close({
-    //       isSuccess: true,
-    //       songNameUpdated: true,
-    //       newSongName: this.songName,
-    //     });
-    //   },
-    //   (error: any) => {
-    //     demo.showErrorNotification("An error occured: " + error);
-    //   }
-    // );
-  }
-
-  updateSongFile() {
-    const song = (<HTMLInputElement>document.getElementById("song")).files[0];
-    if (!song) {
-      demo.showWarningNotification("Please select an audio file to upload.");
-      return;
-    }
-
     this.spinner.show();
 
-    const uploadPath = `/${this.selectedArtist.name}/${this.selectedAlbum.name}/${this.songName}`;
+    let formData = new FormData();
+    if (newSong) formData.append("categoryPicture", newSong);
+    formData.append("name", this.name);
+    for (var i = 0; i < this.categories.length; i++) {
+      formData.append("categories[]", this.categories[i]);
+    }
+    formData.append("programId", this.programId);
 
-    // Update song
-    // this.firebaseStorage
-    //   .uploadSong(uploadPath, this.songName, this.selectedAlbum.picture, song)
-    //   .then((uploadResult: any) => {
-    //     uploadResult.uploadTask.then((snapshot) => {
-    //       if (snapshot.state !== "success") {
-    //         demo.showErrorNotification("An error occured.");
-    //         return;
-    //       }
+    if (newSong) formData.append("currentSong", this.currentSong);
+    if (newProgramPicture)
+      formData.append("currentPicture", this.currentPicture);
 
-    //       snapshot.ref.getDownloadURL().then((downloadURL) => {
-    //         const newSong = new Song();
-
-    //         newSong.name = this.songName;
-    //         newSong.artistId = this.selectedArtist.artistId;
-    //         newSong.artistName = this.selectedArtist.name;
-    //         newSong.albumId = this.selectedAlbum.albumId;
-    //         newSong.albumName = this.selectedAlbum.name;
-    //         newSong.albumPicture = this.selectedAlbum.picture;
-    //         newSong.songUrl = downloadURL;
-
-    //         this.firestoreService.addNewSong(newSong).then(
-    //           (result: any) => {
-    //             newSong.songId = result.newSongId;
-
-    //             this.firebaseStorage.songUpdated.emit({
-    //               isSuccess: true,
-    //               songUpdated: true,
-    //               newSong: uploadResult.downloadURL,
-    //             });
-    //           },
-    //           (error: any) => {
-    //             demo.showErrorNotification("An error occured: " + error);
-    //           }
-    //         );
-    //       });
-    //     });
-    //   });
+    this.http
+      .post("programs/edit", formData, { isMultiPartFormData: true })
+      .then((success) => {
+        this.spinner.hide();
+        this.dialogRef.close({
+          isSuccess: true,
+          updateProgram: success.body.data,
+        });
+      })
+      .catch((err: Response) => {
+        this.spinner.hide();
+        demo.showErrorNotification(err["error"].message);
+      });
   }
-
   closeEditor() {
     this.dialogRef.close({
       isSuccess: false,

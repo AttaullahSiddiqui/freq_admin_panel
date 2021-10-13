@@ -2,8 +2,9 @@
 
 <div class="row">
   <div class="col-md-8">
-    <button type="button" *ngIf="!isPlaylistEditing" (click)="addNewSong()" style="margin-left: 30px;" class="btn btn-default">
-      Add New Song
+    <button type="button" *ngIf="!isPlaylistEditing" (click)="addNewProgram()" style="margin-left: 30px;"
+      class="btn btn-default">
+      Add New Program
     </button>
   </div>
 
@@ -13,12 +14,14 @@
         <i class="fa fa-search"></i>
       </span>
 
-      <input id="searchInput" type="text" value="" class="form-control" placeholder="Search songs by name, by album or by artist...">
+      <input id="searchInput" type="text" value="" class="form-control"
+        placeholder="Search songs by name or by category">
     </div>
   </div>
 
   <div class="col-md-1">
-    <button type="button" (click)="clearSearchInput()" class="btn btn-xs" style="margin-top: 5px;" [disabled]="!isSearching">
+    <button type="button" (click)="clearSearchInput()" class="btn btn-xs" style="margin-top: 5px;"
+      [disabled]="!isSearching">
       Clear
     </button>
   </div>
@@ -28,7 +31,7 @@
 <br>
 <br>
 
-<div class="col-md-3" *ngFor="let song of songs">
+<!-- <div class="col-md-3" *ngFor="let song of songs">
   <div class="card card-profile" style="margin-top: 50px;">
     <div class="card-avatar border-white">
       <a href="#avatar">
@@ -78,4 +81,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

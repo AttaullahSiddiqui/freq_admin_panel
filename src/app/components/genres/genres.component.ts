@@ -9,7 +9,7 @@ import { GenreSongsEditorComponent } from "../genre-songs-editor/genre-songs-edi
 import { GenreHelper } from "../../models/GenreHelper";
 import { Genre } from "../../models/Genre";
 import { SongEditorComponent } from "../song-editor/song-editor.component";
-import { Song } from "src/app/models/Song";
+import { Program } from "src/app/models/Program";
 import { MoodEditorComponent } from "../mood-editor/mood-editor.component";
 import { HttpService, Response } from "../../services/http.service";
 import { UtilityService } from "../../services/utility.service";
