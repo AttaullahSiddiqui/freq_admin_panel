@@ -3,7 +3,7 @@ import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialog } from "@angular/material";
 import { environment } from "../../../environments/environment";
-
+import swal from "sweetalert";
 import { GenreSongsEditorComponent } from "../genre-songs-editor/genre-songs-editor.component";
 
 import { GenreHelper } from "../../models/GenreHelper";
@@ -24,7 +24,7 @@ declare var demo: any;
 export class GenresComponent implements OnInit {
   genres: Genre[] = [];
   genreEditKey = null;
-  getFilrUrl = environment.getFilrUrl;
+  getFileUrl = environment.getFileUrl;
 
   constructor(
     private spinner: NgxSpinnerService,
@@ -78,7 +78,7 @@ export class GenresComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result.isSuccess) {
-        this.genres.unshift(result.newMood);
+        this.genres.push(result.newMood);
         demo.showSuccessNotification("Category successfully added!");
       }
     });
@@ -102,32 +102,33 @@ export class GenresComponent implements OnInit {
     });
   }
 
-  // delete(song: Song) {
-  //   const options = {
-  //     title: "Delete Song?",
-  //     text: "Are you sure you want to delete this song?",
-  //     icon: "error",
-  //     buttons: ["Cancel", "Ok"],
-  //     dangerMode: true
-  //   };
+  delete(deleteKey, toDeleteCatId, currPicUrl) {
+    const options = {
+      title: "Delete Category",
+      text: "Are you sure you want to delete this category?",
+      icon: "error",
+      buttons: ["Cancel", "Ok"],
+      dangerMode: true,
+    };
 
-  //   swal(options).then(willDelete => {
-  //     if (willDelete) {
-  //       this.spinner.show();
-
-  //       this.firestoreService.deleteSong(song).then(
-  //         (result: any) => {
-  //           this.removeSongFromList(song);
-  //           demo.showSuccessNotification("Song successfully deleted!");
-
-  //           this.spinner.hide();
-  //         },
-  //         (error: any) => {
-  //           this.spinner.hide();
-  //           demo.showErrorNotification("An error occured: " + error);
-  //         }
-  //       );
-  //     }
-  //   });
-  // }
+    swal(options).then((willDelete) => {
+      if (willDelete) {
+        this.spinner.show();
+        this.http
+          .post("category/delete", {
+            categoryId: toDeleteCatId,
+            bgImage: currPicUrl,
+          })
+          .then((success) => {
+            demo.showSuccessNotification("Category successfully deleted!");
+            this.spinner.hide();
+            this.genres.splice(deleteKey, 1);
+          })
+          .catch((err: Response) => {
+            this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
+          });
+      }
+    });
+  }
 }

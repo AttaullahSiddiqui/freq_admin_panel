@@ -20,7 +20,7 @@ export class NotesComponent implements OnInit {
   notes = [];
   noteEditKey = null;
   noteDltKey = null;
-  getFilrUrl = environment.getFilrUrl;
+  getFileUrl = environment.getFileUrl;
 
   constructor(
     private spinner: NgxSpinnerService,

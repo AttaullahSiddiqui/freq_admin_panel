@@ -4,6 +4,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 import { MatDialog } from "@angular/material/dialog";
 import { HttpService, Response } from "../../services/http.service";
 import { UtilityService } from "../../services/utility.service";
+import { environment } from "../../../environments/environment";
 import "../../../assets/js/demo.js";
 import swal from "sweetalert";
 declare var demo: any;
@@ -12,8 +13,6 @@ import { SongEditorComponent } from "../song-editor/song-editor.component";
 import { SongPlayerComponent } from "../song-player/song-player.component";
 
 import { Program } from "../../models/Program";
-import { Album } from "../../models/Albums";
-import { Playlist } from "../../models/Playlist";
 import { Genre } from "../../models/Genre";
 
 @Component({
@@ -22,18 +21,10 @@ import { Genre } from "../../models/Genre";
   styleUrls: ["./songs.component.css"],
 })
 export class SongsComponent implements OnInit {
-  @Input() isPlaylistEditing = false;
-  @Input() playlist: Playlist;
-  @Input() playlistSongs: Program[];
-
-  @Input() isGenreEditing = false;
-  @Input() genre: Genre;
-  @Input() genreSongs: Program[];
-
-  @Input() album: Album;
-
+  getFileUrl = environment.getFileUrl;
   songs: Program[] = [];
   originalSongs: Program[];
+  programEditKey = null;
 
   public isSearching = false;
 
@@ -46,7 +37,8 @@ export class SongsComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    // this.getSongs();
+    this.spinner.show();
+    this.getPrograms();
     // this.listenForSearchInput(500);
     // this.firebaseStorage.songUploaded.subscribe(result => {
     //   if (result.isSuccess) {
@@ -64,57 +56,19 @@ export class SongsComponent implements OnInit {
     // });
   }
 
-  getSongs(): void {
-    this.spinner.show();
-
-    if (this.album) {
-      this.getAlbumSongs();
-    } else {
-      this.getAllSongs();
-    }
+  getPrograms(): void {
+    this.http
+      .get("programs/fetchAll")
+      .then((success) => {
+        console.log(success);
+        this.spinner.hide();
+        this.songs = success.body.data;
+      })
+      .catch((err: Response) => {
+        this.spinner.hide();
+        demo.showErrorNotification(err["error"].message);
+      });
   }
-
-  getAlbumSongs() {
-    // this.firestoreService
-    //   .getAlbumSongs(this.album.albumId)
-    //   .then((result: any) => {
-    //     this.songs = result.songs;
-    //     this.originalSongs = this.songs;
-    //     this.spinner.hide();
-    //   });
-  }
-
-  getAllSongs() {
-    // this.firestoreService.getSongs().then((result: any) => {
-    //   this.songs = result.songs;
-    //   this.originalSongs = this.songs;
-    //   this.songs.forEach((song) => {
-    //     if (this.isPlaylistEditing) {
-    //       this.checkIfPlaylistSong(song);
-    //     } else if (this.isGenreEditing) {
-    //       this.checkIfGenreSong(song);
-    //     }
-    //   });
-    //   this.spinner.hide();
-    // });
-  }
-
-  checkIfPlaylistSong(song: Program) {
-    if (this.playlistSongs) {
-      const playlistSong = this.playlistSongs.find(
-        (x) => x.programId === song.programId
-      );
-    }
-  }
-
-  checkIfGenreSong(song: Program) {
-    if (this.genreSongs) {
-      const genreSong = this.genreSongs.find(
-        (x) => x.programId === song.programId
-      );
-    }
-  }
-
   addNewProgram(): void {
     const dialogRef = this.dialog.open(SongEditorComponent, {
       width: "500px",
@@ -124,23 +78,30 @@ export class SongsComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe((result) => {
       if (result.isSuccess) {
-        this.songs.unshift(result.newSong);
+        this.songs.unshift(result.newProgram);
         demo.showSuccessNotification("Song successfully added!");
       }
     });
   }
 
-  edit(program: Program) {
-    // const dialogRef = this.dialog.open(SongEditorComponent, {
-    //   width: "650px",
-    //   data: {
-    //     isEditMode: true,
-    //     program: program,
-    //   },
-    // });
+  edit(programKey, program: Program) {
+    this.programEditKey = programKey;
+    const dialogRef = this.dialog.open(SongEditorComponent, {
+      width: "500px",
+      data: {
+        isEditMode: true,
+        program: program,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result.isSuccess) {
+        this.songs[this.programEditKey] = result.updateProgram;
+        demo.showSuccessNotification("Song updated successfully!");
+      }
+    });
   }
 
-  delete(song: Program) {
+  delete(deleteKey, toDeleteSongId, picKey, songKey) {
     const options = {
       title: "Delete Song?",
       text: "Are you sure you want to delete this song?",
@@ -152,44 +113,36 @@ export class SongsComponent implements OnInit {
     swal(options).then((willDelete) => {
       if (willDelete) {
         this.spinner.show();
-
-        // this.firestoreService.deleteSong(song).then(
-        //   (result: any) => {
-        //     this.removeSongFromList(song);
-        //     demo.showSuccessNotification("Song successfully deleted!");
-
-        //     this.spinner.hide();
-        //   },
-        //   (error: any) => {
-        //     this.spinner.hide();
-        //     demo.showErrorNotification("An error occured: " + error);
-        //   }
-        // );
+        this.http
+          .post("programs/delete", {
+            programId: toDeleteSongId,
+            picture: picKey,
+            song: songKey,
+          })
+          .then((success) => {
+            demo.showSuccessNotification("Song successfully deleted!");
+            this.spinner.hide();
+            this.songs.splice(deleteKey, 1);
+          })
+          .catch((err: Response) => {
+            this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
+          });
       }
     });
   }
 
-  removeSongFromList(song: Program) {
-    const index = this.songs.indexOf(song);
-
-    if (index > -1) {
-      this.songs.splice(index, 1);
-    }
-  }
-
   listenForSearchInput(timeoutTime: number): any {
-    const searchInput = <HTMLInputElement>(
-      document.getElementById("searchInput")
-    );
-    let timeout = null;
-
-    searchInput.onkeyup = (e) => {
-      clearTimeout(timeout);
-
-      timeout = setTimeout(() => {
-        this.searchSongs(searchInput.value);
-      }, timeoutTime);
-    };
+    // const searchInput = <HTMLInputElement>(
+    //   document.getElementById("searchInput")
+    // );
+    // let timeout = null;
+    // searchInput.onkeyup = (e) => {
+    //   clearTimeout(timeout);
+    //   timeout = setTimeout(() => {
+    //     this.searchSongs(searchInput.value);
+    //   }, timeoutTime);
+    // };
   }
 
   searchSongs(searchValue: string) {
@@ -220,65 +173,18 @@ export class SongsComponent implements OnInit {
   }
 
   clearSearchInput() {
-    this.songs = this.originalSongs;
-    this.isSearching = false;
-
-    const searchInput = <HTMLInputElement>(
-      document.getElementById("searchInput")
-    );
-    searchInput.value = "";
-  }
-
-  addSongToPlaylist(song: Program) {
-    // this.firestoreService.addSongToPlaylist(song, this.playlist).then(
-    //   (result: any) => {
-    //     song.playlistprogramId = result.newPlaylistprogramId;
-    //     song.isPartOfPlaylist = true;
-    //   },
-    //   (error: any) => {
-    //     demo.showErrorNotification("An error occured: " + error);
-    //   }
+    // this.songs = this.originalSongs;
+    // this.isSearching = false;
+    // const searchInput = <HTMLInputElement>(
+    //   document.getElementById("searchInput")
     // );
+    // searchInput.value = "";
   }
 
-  removeSongFromPlaylist(song: Program) {
-    // this.firestoreService.removeSongFromPlaylist(song, this.playlist).then(
-    //   (result: any) => {
-    //     song.isPartOfPlaylist = false;
-    //   },
-    //   (error: any) => {
-    //     demo.showErrorNotification("An error occured: " + error);
-    //   }
-    // );
-  }
-
-  addSongToGenre(song: Program) {
-    // this.firestoreService.addSongToGenre(song, this.genre).then(
-    //   (result: any) => {
-    //     song.genreprogramId = result.newGenreprogramId;
-    //     song.isPartOfGenre = true;
-    //   },
-    //   (error: any) => {
-    //     demo.showErrorNotification("An error occured: " + error);
-    //   }
-    // );
-  }
-
-  removeSongFromGenre(song: Program) {
-    // this.firestoreService.removeSongFromGenre(song, this.genre).then(
-    //   (result: any) => {
-    //     song.isPartOfGenre = false;
-    //   },
-    //   (error: any) => {
-    //     demo.showErrorNotification("An error occured: " + error);
-    //   }
-    // );
-  }
-
-  play(song: Program) {
+  play(programNode: Program) {
     const dialogRef = this.dialog.open(SongPlayerComponent, {
       data: {
-        song: Program,
+        program: programNode,
       },
     });
 

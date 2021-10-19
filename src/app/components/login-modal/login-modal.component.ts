@@ -21,7 +21,17 @@ export class LoginModalComponent implements OnInit {
     this.loginData = { email: "", password: "" };
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.http
+      .get("notes/fetchAll")
+      .then((success) => {
+        console.log("bcc");
+        console.log(success);
+      })
+      .catch((err: Response) => {
+        console.log(err["error"]);
+      });
+  }
 
   signIn(): void {
     this.isLoading = true;
@@ -38,7 +48,8 @@ export class LoginModalComponent implements OnInit {
         });
         // window.location.reload();
         demo.showSuccessNotification("Log in successful");
-        this.router.navigate(["/genres"]);
+        location.reload();
+        // this.router.navigate(["/genres"]);
       })
       .catch((err: Response) => {
         this.isLoading = false;

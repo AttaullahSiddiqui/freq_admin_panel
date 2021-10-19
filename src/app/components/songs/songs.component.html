@@ -2,8 +2,7 @@
 
 <div class="row">
   <div class="col-md-8">
-    <button type="button" *ngIf="!isPlaylistEditing" (click)="addNewProgram()" style="margin-left: 30px;"
-      class="btn btn-default">
+    <button type="button" (click)="addNewProgram()" style="margin-left: 30px;" class="btn btn-default">
       Add New Program
     </button>
   </div>
@@ -31,54 +30,36 @@
 <br>
 <br>
 
-<!-- <div class="col-md-3" *ngFor="let song of songs">
-  <div class="card card-profile" style="margin-top: 50px;">
-    <div class="card-avatar border-white">
-      <a href="#avatar">
-        <img src="{{song.albumPicture}}" alt="...">
-      </a>
-    </div>
-    <div class="card-body">
-      <h4 class="card-title">{{song.name}}</h4>
-      <h6 class="card-category">{{song.albumName}}</h6>
-      <p class="card-description">{{song.artistName}}</p>
-
-      <div *ngIf="!isPlaylistEditing && !isGenreEditing" class="card-footer text-center">
-        <a (click)="edit(song)" class="btn btn-with-icon btn-outline-info btn-info" style="margin: 20px 5px 10px 5px" data-toggle="tooltip"
-          data-placement="bottom" title="Edit">
-          <i class="ti-pencil" aria-hidden="true"></i>
+<div class="row">
+  <div class="col-md-3" *ngFor="let program of songs | keyvalue">
+    <div class="card card-profile" style="margin-top: 50px;">
+      <div class="card-avatar border-white">
+        <a href="">
+          <img style="width: 120px !important;height:120px !important;border-radius: 50%;"
+            src="{{getFileUrl}}{{program.value.picture}}" alt="...">
         </a>
-
-        <a (click)="delete(song)" class="btn btn-with-icon btn-outline-danger btn-danger" style="margin: 20px 5px 10px 5px" data-toggle="tooltip"
-          data-placement="bottom" title="Delete">
-          <i class="ti-trash" aria-hidden="true"></i>
-        </a>
-
-        <a (click)="play(song)" class="btn btn-with-icon btn-outline-success btn-success" style="margin: 20px 5px 10px 5px" data-toggle="tooltip"
-        data-placement="bottom" title="Play">
-        <i class="ti-control-play" aria-hidden="true"></i>
-      </a>
       </div>
+      <div class="card-body">
+        <h4 class="card-title">{{program.value.name}}</h4>
 
-      <div *ngIf="isPlaylistEditing" class="card-footer text-center">
-        <button (click)="addSongToPlaylist(song)" *ngIf="!song.isPartOfPlaylist" type="button" class="btn btn-default">
-          Add
-        </button>
+        <div class="card-footer text-center">
+          <a (click)="edit(program.key,program.value)" class="btn btn-with-icon btn-outline-info btn-info"
+            style="margin: 20px 5px 10px 5px" data-toggle="tooltip" data-placement="bottom" title="Edit">
+            <i class="ti-pencil" aria-hidden="true"></i>
+          </a>
 
-        <button (click)="removeSongFromPlaylist(song)" *ngIf="song.isPartOfPlaylist" type="button" class="btn btn-fill btn-success">
-          Added
-        </button>
-      </div>
+          <a (click)="delete(program.key,program.value._id,program.value.picture,program.value.song)"
+            class="btn btn-with-icon btn-outline-danger btn-danger" style="margin: 20px 5px 10px 5px"
+            data-toggle="tooltip" data-placement="bottom" title="Delete">
+            <i class="ti-trash" aria-hidden="true"></i>
+          </a>
 
-      <div *ngIf="isGenreEditing" class="card-footer text-center">
-        <button (click)="addSongToGenre(song)" *ngIf="!song.isPartOfGenre" type="button" class="btn btn-default">
-          Add
-        </button>
-
-        <button (click)="removeSongFromGenre(song)" *ngIf="song.isPartOfGenre" type="button" class="btn btn-fill btn-success">
-          Added
-        </button>
+          <a (click)="play(program.value)" class="btn btn-with-icon btn-outline-success btn-success"
+            style="margin: 20px 5px 10px 5px" data-toggle="tooltip" data-placement="bottom" title="Play">
+            <i class="ti-control-play" aria-hidden="true"></i>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>

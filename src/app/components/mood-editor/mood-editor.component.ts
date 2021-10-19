@@ -75,6 +75,7 @@ export class MoodEditorComponent implements OnInit, AfterViewInit {
     this.http
       .post("category/add", formData, { isMultiPartFormData: true })
       .then((success) => {
+        console.log(success.body.data);
         this.spinner.hide();
         this.dialogRef.close({
           isSuccess: true,

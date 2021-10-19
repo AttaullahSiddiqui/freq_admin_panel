@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { Router, NavigationEnd } from "@angular/router";
+import { Router, NavigationEnd, Event } from "@angular/router";
 import { MatDialog } from "@angular/material";
 import { LoginModalComponent } from "./components/login-modal/login-modal.component";
 import { HttpService, Response } from "./services/http.service";
@@ -23,85 +23,167 @@ export class AppComponent implements OnInit {
     this.checkAuth();
     this.initialiseGenres();
 
-    router.events.subscribe((val: NavigationEnd) => {
-      console.log("Wokringgg");
-      const elements = document.getElementsByClassName("active");
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        console.log(event.url);
+        const elements = document.getElementsByClassName("active");
 
-      Array.prototype.forEach.call(elements, function (element) {
-        element.classList.remove("active");
-      });
+        Array.prototype.forEach.call(elements, function (element) {
+          element.classList.remove("active");
+        });
+        switch (event.url) {
+          case "/dashboard":
+            const dashboardMenuItem =
+              document.getElementById("dashboardMenuItem");
+            dashboardMenuItem.classList.add("active");
+            this.title = "Dashboard";
+            break;
 
-      switch (val.urlAfterRedirects) {
-        case "/dashboard":
-          const dashboardMenuItem =
-            document.getElementById("dashboardMenuItem");
-          dashboardMenuItem.classList.add("active");
-          this.title = "Dashboard";
-          break;
+          case "/artists":
+            const artistsMenuItem = document.getElementById("artistsMenuItem");
+            artistsMenuItem.classList.add("active");
+            this.title = "Artists";
+            break;
 
-        case "/artists":
-          const artistsMenuItem = document.getElementById("artistsMenuItem");
-          artistsMenuItem.classList.add("active");
-          this.title = "Artists";
-          break;
+          case "/albums":
+            const albumsMenuItem = document.getElementById("albumsMenuItem");
+            albumsMenuItem.classList.add("active");
+            this.title = "Albums";
+            break;
 
-        case "/albums":
-          const albumsMenuItem = document.getElementById("albumsMenuItem");
-          albumsMenuItem.classList.add("active");
-          this.title = "Albums";
-          break;
+          case "/songs":
+            const songsMenuItem = document.getElementById("songsMenuItem");
+            songsMenuItem.classList.add("active");
+            this.title = "Songs";
+            break;
 
-        case "/songs":
-          const songsMenuItem = document.getElementById("songsMenuItem");
-          songsMenuItem.classList.add("active");
-          this.title = "Songs";
-          break;
+          case "/genres":
+            const genresMenuItem = document.getElementById("genresMenuItem");
+            genresMenuItem.classList.add("active");
+            this.title = "Categories";
+            break;
 
-        case "/genres":
-          const genresMenuItem = document.getElementById("genresMenuItem");
-          genresMenuItem.classList.add("active");
-          this.title = "Categories";
-          break;
+          case "/notes":
+            const notesMenuItem = document.getElementById("notesMenuItem");
+            notesMenuItem.classList.add("active");
+            this.title = "Notes";
+            break;
 
-        case "/notes":
-          const notesMenuItem = document.getElementById("notesMenuItem");
-          notesMenuItem.classList.add("active");
-          this.title = "Notes";
-          break;
+          case "/playlists":
+            const playlistsMenuItem =
+              document.getElementById("playlistsMenuItem");
+            playlistsMenuItem.classList.add("active");
+            this.title = "Playlists";
+            break;
 
-        case "/playlists":
-          const playlistsMenuItem =
-            document.getElementById("playlistsMenuItem");
-          playlistsMenuItem.classList.add("active");
-          this.title = "Playlists";
-          break;
+          case "/users":
+            const userssMenuItem = document.getElementById("userssMenuItem");
+            userssMenuItem.classList.add("active");
+            this.title = "Users";
+            break;
 
-        case "/users":
-          const userssMenuItem = document.getElementById("userssMenuItem");
-          userssMenuItem.classList.add("active");
-          this.title = "Users";
-          break;
+          case "/playlistGroups":
+            const playlistGroupsMenuItem = document.getElementById(
+              "playlistGroupsMenuItem"
+            );
+            playlistGroupsMenuItem.classList.add("active");
+            this.title = "Playlist Groups";
+            break;
 
-        case "/playlistGroups":
-          const playlistGroupsMenuItem = document.getElementById(
-            "playlistGroupsMenuItem"
-          );
-          playlistGroupsMenuItem.classList.add("active");
-          this.title = "Playlist Groups";
-          break;
-
-        case "/privacy":
-          const privacy = document.getElementById("privacy");
-          privacy.classList.add("active");
-          this.title = "Privacy Policy";
-          break;
-        case "/terms":
-          const terms = document.getElementById("terms");
-          terms.classList.add("active");
-          this.title = "Change Terms and Conditions";
-          break;
+          case "/privacy":
+            const privacy = document.getElementById("privacy");
+            privacy.classList.add("active");
+            this.title = "Privacy Policy";
+            break;
+          case "/terms":
+            const terms = document.getElementById("terms");
+            terms.classList.add("active");
+            this.title = "Change Terms and Conditions";
+            break;
+        }
       }
     });
+
+    // this.router.events.subscribe((val: NavigationEnd) => {
+    //   console.log(val.urlAfterRedirects);
+    //   console.log("Wokringgg");
+    //   const elements = document.getElementsByClassName("active");
+
+    //   Array.prototype.forEach.call(elements, function (element) {
+    //     element.classList.remove("active");
+    //   });
+
+    //   switch (val.urlAfterRedirects) {
+    //     case "/dashboard":
+    //       const dashboardMenuItem =
+    //         document.getElementById("dashboardMenuItem");
+    //       dashboardMenuItem.classList.add("active");
+    //       this.title = "Dashboard";
+    //       break;
+
+    //     case "/artists":
+    //       const artistsMenuItem = document.getElementById("artistsMenuItem");
+    //       artistsMenuItem.classList.add("active");
+    //       this.title = "Artists";
+    //       break;
+
+    //     case "/albums":
+    //       const albumsMenuItem = document.getElementById("albumsMenuItem");
+    //       albumsMenuItem.classList.add("active");
+    //       this.title = "Albums";
+    //       break;
+
+    //     case "/songs":
+    //       const songsMenuItem = document.getElementById("songsMenuItem");
+    //       songsMenuItem.classList.add("active");
+    //       this.title = "Songs";
+    //       break;
+
+    //     case "/genres":
+    //       const genresMenuItem = document.getElementById("genresMenuItem");
+    //       genresMenuItem.classList.add("active");
+    //       this.title = "Categories";
+    //       break;
+
+    //     case "/notes":
+    //       const notesMenuItem = document.getElementById("notesMenuItem");
+    //       notesMenuItem.classList.add("active");
+    //       this.title = "Notes";
+    //       break;
+
+    //     case "/playlists":
+    //       const playlistsMenuItem =
+    //         document.getElementById("playlistsMenuItem");
+    //       playlistsMenuItem.classList.add("active");
+    //       this.title = "Playlists";
+    //       break;
+
+    //     case "/users":
+    //       const userssMenuItem = document.getElementById("userssMenuItem");
+    //       userssMenuItem.classList.add("active");
+    //       this.title = "Users";
+    //       break;
+
+    //     case "/playlistGroups":
+    //       const playlistGroupsMenuItem = document.getElementById(
+    //         "playlistGroupsMenuItem"
+    //       );
+    //       playlistGroupsMenuItem.classList.add("active");
+    //       this.title = "Playlist Groups";
+    //       break;
+
+    //     case "/privacy":
+    //       const privacy = document.getElementById("privacy");
+    //       privacy.classList.add("active");
+    //       this.title = "Privacy Policy";
+    //       break;
+    //     case "/terms":
+    //       const terms = document.getElementById("terms");
+    //       terms.classList.add("active");
+    //       this.title = "Change Terms and Conditions";
+    //       break;
+    //   }
+    // });
   }
 
   ngOnInit() {

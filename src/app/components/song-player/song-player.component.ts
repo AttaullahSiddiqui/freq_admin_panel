@@ -1,7 +1,6 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { MAT_DIALOG_DATA } from "@angular/material";
-
-import { Program } from "../../models/Program";
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: "app-song-player",
@@ -9,10 +8,11 @@ import { Program } from "../../models/Program";
   styleUrls: ["./song-player.component.css"],
 })
 export class SongPlayerComponent implements OnInit {
-  song: Program;
+  getFileUrl = environment.getFileUrl;
+  program: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any) {
-    this.song = data.song;
+    this.program = data.program;
   }
 
   ngOnInit() {}

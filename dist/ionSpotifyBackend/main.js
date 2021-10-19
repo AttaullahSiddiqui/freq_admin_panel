@@ -334,7 +334,7 @@ webpackEmptyAsyncContext.id = "./src/$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".sidebar .logo, .off-canvas-sidebar .logo{\n    height: auto;\n}\n\n.dashboard:hover{\n color:#62208C;\n}\n\n.btn.btn-fill:hover{\n    border-color:#62208C;\n    background-color: #62208C;\n}\n\n.menu-item{\n    border-color:#62208C !important;\n    background-color: #62208C !important;\n}"
+module.exports = ".sidebar .logo, .off-canvas-sidebar .logo{\r\n    height: auto;\r\n}\r\n\r\n.dashboard:hover{\r\n color:#62208C;\r\n}\r\n\r\n.btn.btn-fill:hover{\r\n    border-color:#62208C;\r\n    background-color: #62208C;\r\n}\r\n\r\n.menu-item{\r\n    border-color:#62208C !important;\r\n    background-color: #62208C !important;\r\n}"
 
 /***/ }),
 
@@ -345,7 +345,7 @@ module.exports = ".sidebar .logo, .off-canvas-sidebar .logo{\n    height: auto;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <router-outlet ></router-outlet> -->\r\n<app-login-modal *ngIf=\"!login\"></app-login-modal>\r\n<div *ngIf=\"login\">\r\n    <div class=\"wrapper\">\r\n        <div class=\"sidebar\" data-background-color=\"brown\" data-active-color=\"success\">\r\n            <!--\r\n          Tip 1: you can change the color of the sidebar's background using: data-background-color=\"white | black\"\r\n          Tip 2: you can change the color of the active button using the data-active-color=\"primary | info | success | warning | danger\"\r\n      -->\r\n\r\n            <div class=\"sidebar-wrapper\">\r\n                <div class=\"logo\">\r\n                    <a class=\"simple-text logo-mini\">\r\n                        NAP\r\n                    </a>\r\n\r\n                    <a class=\"simple-text logo-normal\">\r\n                        <img src=\"assets/img/logo_img.png\" style=\"width: 106px;\" />\r\n                    </a>\r\n                </div>\r\n\r\n                <ul class=\"nav\">\r\n                    <li id=\"dashboardMenuItem\" class=\"active\">\r\n                        <a routerLink=\"/\">\r\n                            <i class=\"ti-panel\"></i>\r\n                            <p>Dashboard</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"artistsMenuItem\">\r\n                        <a routerLink=\"/artists\">\r\n                            <i class=\"ti-user\"></i>\r\n                            <p>Artists</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"albumsMenuItem\">\r\n                        <a routerLink=\"/albums\">\r\n                            <i class=\"ti-music-alt\"></i>\r\n                            <p>Albums</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"songsMenuItem\">\r\n                        <a routerLink=\"/songs\">\r\n                            <i class=\"ti-music\"></i>\r\n                            <p>Songs</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"genresMenuItem\">\r\n                        <a routerLink=\"/genres\">\r\n                            <i class=\"ti-shine\"></i>\r\n                            <p>Moods</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"playlistsMenuItem\">\r\n                        <a routerLink=\"/playlists\">\r\n                            <i class=\"ti-view-list-alt\"></i>\r\n                            <p>Playlists</p>\r\n                        </a>\r\n                    </li>\r\n                    <li id=\"userssMenuItem\">\r\n                        <a routerLink=\"/users\">\r\n                            <i class=\"ti-user\"></i>\r\n                            <p>Users</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"playlistGroupsMenuItem\">\r\n                        <a routerLink=\"/playlistGroups\">\r\n                            <i class=\"ti-layers-alt\"></i>\r\n                            <p>Playlist Groups</p>\r\n                        </a>\r\n                    </li>\r\n                    <li id=\"privacy\">\r\n                        <a routerLink=\"/privacy\">\r\n                            <i class=\"ti-file\"></i>\r\n                            <p>Add Privacy Policy</p>\r\n                        </a>\r\n                    </li>\r\n                    <li id=\"terms\">\r\n                        <a routerLink=\"/terms\">\r\n                            <i class=\"ti-file\"></i>\r\n                            <p>Change Terms</p>\r\n                        </a>\r\n                    </li>\r\n                    <li class=\"active-pro\">\r\n                        <a (click)=\"signOut()\" routerLink=\"/login\">\r\n                            <i class=\"ti-direction\"></i>\r\n                            <p>LOG OUT</p>\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"main-panel\">\r\n            <nav class=\"navbar navbar-default\">\r\n                <div class=\"container-fluid\">\r\n                    <div class=\"navbar-minimize\">\r\n                        <button id=\"minimizeSidebar\" class=\"btn btn-fill btn-icon menu-item\">\r\n                            <i class=\"ti-more-alt\"></i>\r\n                        </button>\r\n                    </div>\r\n\r\n                    <div class=\"navbar-header\">\r\n                        <button type=\"button\" class=\"navbar-toggle\">\r\n                            <span class=\"sr-only\">Toggle navigation</span>\r\n                            <span class=\"icon-bar bar1\"></span>\r\n                            <span class=\"icon-bar bar2\"></span>\r\n                            <span class=\"icon-bar bar3\"></span>\r\n                        </button>\r\n                        <a class=\"navbar-brand dashboard\" href=\"#\">{{ title }}</a>\r\n                    </div>\r\n\r\n                    <div class=\"collapse navbar-collapse\">\r\n                        <ul class=\"nav navbar-nav navbar-right\">\r\n                            <li class=\"dropdown\">\r\n                                <a *ngIf=\"storageService.getNotifications().length > 0\"\r\n                                    style=\"font-size: 40px; color: #5cb85c; font-weight: bolder;\"\r\n                                    class=\"dropdown-toggle btn-rotate\" data-toggle=\"dropdown\" aria-expanded=\"false\">\r\n                                    <i class=\"ti-bell\"></i>\r\n                                    <span class=\"notification\">{{storageService.getNotifications().length}}</span>\r\n                                </a>\r\n\r\n                                <ul class=\"dropdown-menu\">\r\n                                    <li *ngFor=\"let notification of storageService.getNotifications()\"\r\n                                        style=\"width: 450px; padding: 20px;\">\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-sm-3\">\r\n                                                <img style=\"height: 80px; width: 80px;\"\r\n                                                    src=\"{{notification.albumPicture}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"col-sm-9\" style=\"margin-top: 15px;\">\r\n                                                <p style=\"color: #5cb85c; font-weight: bold;\">Uploading song\r\n                                                    '{{notification.songName}}'...</p>\r\n\r\n                                                <div aria-valuemin=\"0\" role=\"progressbar\"\r\n                                                    class=\"progress-bar progress-bar-animated progress-bar-striped\"\r\n                                                    attr.aria-valuenow=\"{{notification.progress}}\" aria-valuemax=\"100\"\r\n                                                    [ngStyle]=\"{width:notification.progress/100 | percent:'1.0-1'}\"\r\n                                                    style=\"background-color: #5cb85c\">\r\n                                                    <strong style=\"color: white\">{{notification.progress}} %</strong>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </li>\r\n                                </ul>\r\n                            </li>\r\n                        </ul>\r\n                    </div>\r\n                </div>\r\n            </nav>\r\n\r\n            <div class=\"content\">\r\n                <div class=\"container-fluid\">\r\n                    <router-outlet></router-outlet>\r\n                </div>\r\n            </div>\r\n\r\n            <footer class=\"footer\">\r\n                <div class=\"container-fluid\">\r\n                    <nav class=\"pull-left\"></nav>\r\n\r\n                    <div class=\"copyright pull-right\">\r\n                        &copy; 2021 by\r\n                        <strong>Avian Industries</strong>\r\n                    </div>\r\n                </div>\r\n            </footer>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<!-- <router-outlet ></router-outlet> -->\r\n<app-login-modal *ngIf=\"!login\"></app-login-modal>\r\n<div *ngIf=\"login\">\r\n    <div class=\"wrapper\">\r\n        <div class=\"sidebar\" data-background-color=\"brown\" data-active-color=\"success\">\r\n            <!--\r\n          Tip 1: you can change the color of the sidebar's background using: data-background-color=\"white | black\"\r\n          Tip 2: you can change the color of the active button using the data-active-color=\"primary | info | success | warning | danger\"\r\n      -->\r\n\r\n            <div class=\"sidebar-wrapper\">\r\n                <div class=\"logo\">\r\n                    <a class=\"simple-text logo-mini\">\r\n                        FREQ\r\n                    </a>\r\n\r\n                    <a class=\"simple-text logo-normal\">\r\n                        <img src=\"assets/img/Freq-Logo-White.png\" style=\"width: 106px;\" />\r\n                    </a>\r\n                </div>\r\n\r\n                <ul class=\"nav\">\r\n                    <li id=\"dashboardMenuItem\">\r\n                        <a routerLink=\"/\">\r\n                            <i class=\"ti-panel\"></i>\r\n                            <p>Dashboard</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"artistsMenuItem\">\r\n                        <a routerLink=\"/artists\">\r\n                            <i class=\"ti-user\"></i>\r\n                            <p>Artists</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"albumsMenuItem\">\r\n                        <a routerLink=\"/albums\">\r\n                            <i class=\"ti-music-alt\"></i>\r\n                            <p>Albums</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"songsMenuItem\">\r\n                        <a routerLink=\"/songs\">\r\n                            <i class=\"ti-music\"></i>\r\n                            <p>Songs</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"genresMenuItem\" class=\"active\">\r\n                        <a routerLink=\"/genres\">\r\n                            <i class=\"ti-shine\"></i>\r\n                            <p>Categories</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"notesMenuItem\">\r\n                        <a routerLink=\"/notes\">\r\n                            <i class=\"ti-shine\"></i>\r\n                            <p>Notes</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"playlistsMenuItem\">\r\n                        <a routerLink=\"/playlists\">\r\n                            <i class=\"ti-view-list-alt\"></i>\r\n                            <p>Playlists</p>\r\n                        </a>\r\n                    </li>\r\n                    <li id=\"userssMenuItem\">\r\n                        <a routerLink=\"/users\">\r\n                            <i class=\"ti-user\"></i>\r\n                            <p>Users</p>\r\n                        </a>\r\n                    </li>\r\n\r\n                    <li id=\"playlistGroupsMenuItem\">\r\n                        <a routerLink=\"/playlistGroups\">\r\n                            <i class=\"ti-layers-alt\"></i>\r\n                            <p>Playlist Groups</p>\r\n                        </a>\r\n                    </li>\r\n                    <li id=\"privacy\">\r\n                        <a routerLink=\"/privacy\">\r\n                            <i class=\"ti-file\"></i>\r\n                            <p>Add Privacy Policy</p>\r\n                        </a>\r\n                    </li>\r\n                    <li id=\"terms\">\r\n                        <a routerLink=\"/terms\">\r\n                            <i class=\"ti-file\"></i>\r\n                            <p>Change Terms</p>\r\n                        </a>\r\n                    </li>\r\n                    <li class=\"\">\r\n                        <a (click)=\"signOut()\" routerLink=\"/login\">\r\n                            <i class=\"ti-direction\"></i>\r\n                            <p>LOG OUT</p>\r\n                        </a>\r\n                    </li>\r\n                </ul>\r\n            </div>\r\n        </div>\r\n\r\n        <div class=\"main-panel\">\r\n            <nav class=\"navbar navbar-default\">\r\n                <div class=\"container-fluid\">\r\n                    <div class=\"navbar-minimize\">\r\n                        <button id=\"minimizeSidebar\" class=\"btn btn-fill btn-icon menu-item\">\r\n                            <i class=\"ti-more-alt\"></i>\r\n                        </button>\r\n                    </div>\r\n\r\n                    <div class=\"navbar-header\">\r\n                        <button type=\"button\" class=\"navbar-toggle\">\r\n                            <span class=\"sr-only\">Toggle navigation</span>\r\n                            <span class=\"icon-bar bar1\"></span>\r\n                            <span class=\"icon-bar bar2\"></span>\r\n                            <span class=\"icon-bar bar3\"></span>\r\n                        </button>\r\n                        <a class=\"navbar-brand dashboard\" href=\"\">{{ title }}</a>\r\n                    </div>\r\n\r\n                    <!-- <div class=\"collapse navbar-collapse\">\r\n                        <ul class=\"nav navbar-nav navbar-right\">\r\n                            <li class=\"dropdown\">\r\n                                <a *ngIf=\"storageService.getNotifications().length > 0\"\r\n                                    style=\"font-size: 40px; color: #5cb85c; font-weight: bolder;\"\r\n                                    class=\"dropdown-toggle btn-rotate\" data-toggle=\"dropdown\" aria-expanded=\"false\">\r\n                                    <i class=\"ti-bell\"></i>\r\n                                    <span class=\"notification\">{{storageService.getNotifications().length}}</span>\r\n                                </a>\r\n\r\n                                <ul class=\"dropdown-menu\">\r\n                                    <li *ngFor=\"let notification of storageService.getNotifications()\"\r\n                                        style=\"width: 450px; padding: 20px;\">\r\n                                        <div class=\"row\">\r\n                                            <div class=\"col-sm-3\">\r\n                                                <img style=\"height: 80px; width: 80px;\"\r\n                                                    src=\"{{notification.albumPicture}}\">\r\n                                            </div>\r\n\r\n                                            <div class=\"col-sm-9\" style=\"margin-top: 15px;\">\r\n                                                <p style=\"color: #5cb85c; font-weight: bold;\">Uploading song\r\n                                                    '{{notification.songName}}'...</p>\r\n\r\n                                                <div aria-valuemin=\"0\" role=\"progressbar\"\r\n                                                    class=\"progress-bar progress-bar-animated progress-bar-striped\"\r\n                                                    attr.aria-valuenow=\"{{notification.progress}}\" aria-valuemax=\"100\"\r\n                                                    [ngStyle]=\"{width:notification.progress/100 | percent:'1.0-1'}\"\r\n                                                    style=\"background-color: #5cb85c\">\r\n                                                    <strong style=\"color: white\">{{notification.progress}} %</strong>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </li>\r\n                                </ul>\r\n                            </li>\r\n                        </ul>\r\n                    </div> -->\r\n                </div>\r\n            </nav>\r\n\r\n            <div class=\"content\">\r\n                <div class=\"container-fluid\">\r\n                    <router-outlet></router-outlet>\r\n                </div>\r\n            </div>\r\n\r\n            <footer class=\"footer\">\r\n                <div class=\"container-fluid\">\r\n                    <nav class=\"pull-left\"></nav>\r\n\r\n                    <div class=\"copyright pull-right\">\r\n                        &copy; 2021 by\r\n                        <strong>FREQ Devs</strong>\r\n                    </div>\r\n                </div>\r\n            </footer>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -361,12 +361,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var _services_AuthService_auth_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/AuthService/auth.service */ "./src/app/services/AuthService/auth.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _services_utility_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./services/utility.service */ "./src/app/services/utility.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -381,132 +378,216 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var AppComponent = /** @class */ (function () {
-    function AppComponent(router, firestoreService, storageService, authService, dialog) {
+    function AppComponent(router, dialog, http, util) {
         var _this = this;
         this.router = router;
-        this.firestoreService = firestoreService;
-        this.storageService = storageService;
-        this.authService = authService;
         this.dialog = dialog;
+        this.http = http;
+        this.util = util;
         this.title = "Dashboard";
-        this.login = true;
+        this.login = false;
         this.checkAuth();
         this.initialiseGenres();
-        router.events.subscribe(function (val) {
-            var elements = document.getElementsByClassName("active");
-            Array.prototype.forEach.call(elements, function (element) {
-                element.classList.remove("active");
-            });
-            switch (val.urlAfterRedirects) {
-                case "/dashboard":
-                    var dashboardMenuItem = document.getElementById("dashboardMenuItem");
-                    dashboardMenuItem.classList.add("active");
-                    _this.title = "Dashboard";
-                    break;
-                case "/artists":
-                    var artistsMenuItem = document.getElementById("artistsMenuItem");
-                    artistsMenuItem.classList.add("active");
-                    _this.title = "Artists";
-                    break;
-                case "/albums":
-                    var albumsMenuItem = document.getElementById("albumsMenuItem");
-                    albumsMenuItem.classList.add("active");
-                    _this.title = "Albums";
-                    break;
-                case "/songs":
-                    var songsMenuItem = document.getElementById("songsMenuItem");
-                    songsMenuItem.classList.add("active");
-                    _this.title = "Songs";
-                    break;
-                case "/genres":
-                    var genresMenuItem = document.getElementById("genresMenuItem");
-                    genresMenuItem.classList.add("active");
-                    _this.title = "Genres & Moods";
-                    break;
-                case "/playlists":
-                    var playlistsMenuItem = document.getElementById("playlistsMenuItem");
-                    playlistsMenuItem.classList.add("active");
-                    _this.title = "Playlists";
-                    break;
-                case "/users":
-                    var userssMenuItem = document.getElementById("userssMenuItem");
-                    userssMenuItem.classList.add("active");
-                    _this.title = "Users";
-                    break;
-                case "/playlistGroups":
-                    var playlistGroupsMenuItem = document.getElementById("playlistGroupsMenuItem");
-                    playlistGroupsMenuItem.classList.add("active");
-                    _this.title = "Playlist Groups";
-                    break;
-                case "/privacy":
-                    var privacy = document.getElementById("privacy");
-                    privacy.classList.add("active");
-                    _this.title = "Privacy Policy";
-                    break;
-                case "/terms":
-                    var terms = document.getElementById("terms");
-                    terms.classList.add("active");
-                    _this.title = "Change Terms and Conditions";
-                    break;
+        this.router.events.subscribe(function (event) {
+            if (event instanceof _angular_router__WEBPACK_IMPORTED_MODULE_1__["NavigationEnd"]) {
+                console.log(event.url);
+                var elements = document.getElementsByClassName("active");
+                Array.prototype.forEach.call(elements, function (element) {
+                    element.classList.remove("active");
+                });
+                switch (event.url) {
+                    case "/dashboard":
+                        var dashboardMenuItem = document.getElementById("dashboardMenuItem");
+                        dashboardMenuItem.classList.add("active");
+                        _this.title = "Dashboard";
+                        break;
+                    case "/artists":
+                        var artistsMenuItem = document.getElementById("artistsMenuItem");
+                        artistsMenuItem.classList.add("active");
+                        _this.title = "Artists";
+                        break;
+                    case "/albums":
+                        var albumsMenuItem = document.getElementById("albumsMenuItem");
+                        albumsMenuItem.classList.add("active");
+                        _this.title = "Albums";
+                        break;
+                    case "/songs":
+                        var songsMenuItem = document.getElementById("songsMenuItem");
+                        songsMenuItem.classList.add("active");
+                        _this.title = "Songs";
+                        break;
+                    case "/genres":
+                        var genresMenuItem = document.getElementById("genresMenuItem");
+                        genresMenuItem.classList.add("active");
+                        _this.title = "Categories";
+                        break;
+                    case "/notes":
+                        var notesMenuItem = document.getElementById("notesMenuItem");
+                        notesMenuItem.classList.add("active");
+                        _this.title = "Notes";
+                        break;
+                    case "/playlists":
+                        var playlistsMenuItem = document.getElementById("playlistsMenuItem");
+                        playlistsMenuItem.classList.add("active");
+                        _this.title = "Playlists";
+                        break;
+                    case "/users":
+                        var userssMenuItem = document.getElementById("userssMenuItem");
+                        userssMenuItem.classList.add("active");
+                        _this.title = "Users";
+                        break;
+                    case "/playlistGroups":
+                        var playlistGroupsMenuItem = document.getElementById("playlistGroupsMenuItem");
+                        playlistGroupsMenuItem.classList.add("active");
+                        _this.title = "Playlist Groups";
+                        break;
+                    case "/privacy":
+                        var privacy = document.getElementById("privacy");
+                        privacy.classList.add("active");
+                        _this.title = "Privacy Policy";
+                        break;
+                    case "/terms":
+                        var terms = document.getElementById("terms");
+                        terms.classList.add("active");
+                        _this.title = "Change Terms and Conditions";
+                        break;
+                }
             }
         });
+        // this.router.events.subscribe((val: NavigationEnd) => {
+        //   console.log(val.urlAfterRedirects);
+        //   console.log("Wokringgg");
+        //   const elements = document.getElementsByClassName("active");
+        //   Array.prototype.forEach.call(elements, function (element) {
+        //     element.classList.remove("active");
+        //   });
+        //   switch (val.urlAfterRedirects) {
+        //     case "/dashboard":
+        //       const dashboardMenuItem =
+        //         document.getElementById("dashboardMenuItem");
+        //       dashboardMenuItem.classList.add("active");
+        //       this.title = "Dashboard";
+        //       break;
+        //     case "/artists":
+        //       const artistsMenuItem = document.getElementById("artistsMenuItem");
+        //       artistsMenuItem.classList.add("active");
+        //       this.title = "Artists";
+        //       break;
+        //     case "/albums":
+        //       const albumsMenuItem = document.getElementById("albumsMenuItem");
+        //       albumsMenuItem.classList.add("active");
+        //       this.title = "Albums";
+        //       break;
+        //     case "/songs":
+        //       const songsMenuItem = document.getElementById("songsMenuItem");
+        //       songsMenuItem.classList.add("active");
+        //       this.title = "Songs";
+        //       break;
+        //     case "/genres":
+        //       const genresMenuItem = document.getElementById("genresMenuItem");
+        //       genresMenuItem.classList.add("active");
+        //       this.title = "Categories";
+        //       break;
+        //     case "/notes":
+        //       const notesMenuItem = document.getElementById("notesMenuItem");
+        //       notesMenuItem.classList.add("active");
+        //       this.title = "Notes";
+        //       break;
+        //     case "/playlists":
+        //       const playlistsMenuItem =
+        //         document.getElementById("playlistsMenuItem");
+        //       playlistsMenuItem.classList.add("active");
+        //       this.title = "Playlists";
+        //       break;
+        //     case "/users":
+        //       const userssMenuItem = document.getElementById("userssMenuItem");
+        //       userssMenuItem.classList.add("active");
+        //       this.title = "Users";
+        //       break;
+        //     case "/playlistGroups":
+        //       const playlistGroupsMenuItem = document.getElementById(
+        //         "playlistGroupsMenuItem"
+        //       );
+        //       playlistGroupsMenuItem.classList.add("active");
+        //       this.title = "Playlist Groups";
+        //       break;
+        //     case "/privacy":
+        //       const privacy = document.getElementById("privacy");
+        //       privacy.classList.add("active");
+        //       this.title = "Privacy Policy";
+        //       break;
+        //     case "/terms":
+        //       const terms = document.getElementById("terms");
+        //       terms.classList.add("active");
+        //       this.title = "Change Terms and Conditions";
+        //       break;
+        //   }
+        // });
     }
     AppComponent.prototype.ngOnInit = function () {
         this.checkAuth();
     };
     AppComponent.prototype.checkAuth = function () {
         var _this = this;
-        this.authService.afAuth.authState.subscribe(function (user) {
-            console.log('login', _this.login);
-            if (!user) {
-                _this.router.navigateByUrl('/login');
-                _this.login = false;
-                // const dialogRef = this.dialog.open(LoginModalComponent, {});
-                // dialogRef.afterClosed().subscribe(result => {
-                // if (this.authService.afAuth.auth.currentUser === null) {
-                //   this.checkAuth();
-                // }
-                // });
+        this.http
+            .get("user/me")
+            .then(function (result) {
+            var user = result.body.data;
+            _this.router.navigateByUrl("tabs");
+            if (user.userType == "admin") {
+                _this.login = true;
+                _this.router.navigateByUrl("/genres");
             }
             else {
-                _this.login = true;
-                _this.router.navigateByUrl('/');
-                // this.dialog.closeAll();
+                _this.router.navigateByUrl("/login");
+                _this.login = false;
             }
+        })
+            .catch(function (error) {
+            _this.router.navigate(["/login"]);
         });
+        // this.authService.afAuth.authState.subscribe((user: firebase.User) => {
+        //   console.log("login", this.login);
+        //   if (!user) {
+        //     this.router.navigateByUrl("/login");
+        //     this.login = false;
+        //   } else {
+        //     this.login = true;
+        //     this.router.navigateByUrl("/");
+        //   }
+        // });
     };
     AppComponent.prototype.initialiseGenres = function () {
-        var _this = this;
-        this.firestoreService.getGenres().then(function (result) {
-            if (result.genres.length <= 0) {
-                _this.firestoreService.initialiseGenres();
-            }
-        });
+        // this.firestoreService.getGenres().then((result: any) => {
+        //   if (result.genres.length <= 0) {
+        //     this.firestoreService.initialiseGenres();
+        //   }
+        // });
     };
     AppComponent.prototype.signOut = function () {
-        var _this = this;
-        setTimeout(function () {
-            firebase__WEBPACK_IMPORTED_MODULE_2__["auth"]()
-                .signOut()
-                .then(function () {
-                _this.router.navigate(["/login"]);
-            });
-        }, 500);
+        this.util.removeCookie("authToken");
+        this.util.removeToken();
+        this.router.navigateByUrl("/login");
+        // setTimeout(() => {
+        //   firebase
+        //     .auth()
+        //     .signOut()
+        //     .then(() => {
+        //       this.router.navigate(["/login"]);
+        //     });
+        // }, 500);
     };
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-root",
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
-            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
+            styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")],
         }),
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
-            _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_3__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_6__["FirebaseStorageService"],
-            _services_AuthService_auth_service__WEBPACK_IMPORTED_MODULE_4__["AuthService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]])
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialog"],
+            _services_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"],
+            _services_utility_service__WEBPACK_IMPORTED_MODULE_4__["UtilityService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -531,49 +612,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
 /* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
-/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! angularfire2 */ "./node_modules/angularfire2/index.js");
-/* harmony import */ var angularfire2__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(angularfire2__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(angularfire2_auth__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./app.routes */ "./src/app/app.routes.ts");
-/* harmony import */ var _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/dashboard/dashboard.component */ "./src/app/components/dashboard/dashboard.component.ts");
-/* harmony import */ var _components_songs_songs_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/songs/songs.component */ "./src/app/components/songs/songs.component.ts");
-/* harmony import */ var _components_artists_artists_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/artists/artists.component */ "./src/app/components/artists/artists.component.ts");
-/* harmony import */ var _components_albums_albums_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/albums/albums.component */ "./src/app/components/albums/albums.component.ts");
-/* harmony import */ var _components_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/song-editor/song-editor.component */ "./src/app/components/song-editor/song-editor.component.ts");
-/* harmony import */ var _components_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/artist-editor/artist-editor.component */ "./src/app/components/artist-editor/artist-editor.component.ts");
-/* harmony import */ var _components_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/album-editor/album-editor.component */ "./src/app/components/album-editor/album-editor.component.ts");
-/* harmony import */ var _components_playlists_playlists_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/playlists/playlists.component */ "./src/app/components/playlists/playlists.component.ts");
-/* harmony import */ var _components_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/playlist-editor/playlist-editor.component */ "./src/app/components/playlist-editor/playlist-editor.component.ts");
-/* harmony import */ var _components_playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/playlist-songs-editor/playlist-songs-editor.component */ "./src/app/components/playlist-songs-editor/playlist-songs-editor.component.ts");
-/* harmony import */ var _components_song_player_song_player_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/song-player/song-player.component */ "./src/app/components/song-player/song-player.component.ts");
-/* harmony import */ var _components_album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/album-songs/album-songs.component */ "./src/app/components/album-songs/album-songs.component.ts");
-/* harmony import */ var _components_artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/artist-albums/artist-albums.component */ "./src/app/components/artist-albums/artist-albums.component.ts");
-/* harmony import */ var _components_playlist_group_playlist_group_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/playlist-group/playlist-group.component */ "./src/app/components/playlist-group/playlist-group.component.ts");
-/* harmony import */ var _components_genres_genres_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/genres/genres.component */ "./src/app/components/genres/genres.component.ts");
-/* harmony import */ var _components_genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/genre-songs-editor/genre-songs-editor.component */ "./src/app/components/genre-songs-editor/genre-songs-editor.component.ts");
-/* harmony import */ var _components_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/playlist-group-editor/playlist-group-editor.component */ "./src/app/components/playlist-group-editor/playlist-group-editor.component.ts");
-/* harmony import */ var _components_playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/playlist-group-playlists-editor/playlist-group-playlists-editor.component */ "./src/app/components/playlist-group-playlists-editor/playlist-group-playlists-editor.component.ts");
-/* harmony import */ var _components_login_modal_login_modal_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/login-modal/login-modal.component */ "./src/app/components/login-modal/login-modal.component.ts");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_29___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_29__);
-/* harmony import */ var _components_users_users_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/users/users.component */ "./src/app/components/users/users.component.ts");
-/* harmony import */ var _components_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./components/mood-editor/mood-editor.component */ "./src/app/components/mood-editor/mood-editor.component.ts");
-/* harmony import */ var _kolkov_angular_editor__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @kolkov/angular-editor */ "./node_modules/@kolkov/angular-editor/fesm5/kolkov-angular-editor.js");
-/* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ng2-charts/ng2-charts */ "./node_modules/ng2-charts/ng2-charts.js");
-/* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_33___default = /*#__PURE__*/__webpack_require__.n(ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_33__);
-/* harmony import */ var _components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/privacy-policy/privacy-policy.component */ "./src/app/components/privacy-policy/privacy-policy.component.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _components_terms_terms_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./components/terms/terms.component */ "./src/app/components/terms/terms.component.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.routes */ "./src/app/app.routes.ts");
+/* harmony import */ var _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/dashboard/dashboard.component */ "./src/app/components/dashboard/dashboard.component.ts");
+/* harmony import */ var _components_songs_songs_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/songs/songs.component */ "./src/app/components/songs/songs.component.ts");
+/* harmony import */ var _components_artists_artists_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/artists/artists.component */ "./src/app/components/artists/artists.component.ts");
+/* harmony import */ var _components_albums_albums_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/albums/albums.component */ "./src/app/components/albums/albums.component.ts");
+/* harmony import */ var _components_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/song-editor/song-editor.component */ "./src/app/components/song-editor/song-editor.component.ts");
+/* harmony import */ var _components_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/artist-editor/artist-editor.component */ "./src/app/components/artist-editor/artist-editor.component.ts");
+/* harmony import */ var _components_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/album-editor/album-editor.component */ "./src/app/components/album-editor/album-editor.component.ts");
+/* harmony import */ var _components_playlists_playlists_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/playlists/playlists.component */ "./src/app/components/playlists/playlists.component.ts");
+/* harmony import */ var _components_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/playlist-editor/playlist-editor.component */ "./src/app/components/playlist-editor/playlist-editor.component.ts");
+/* harmony import */ var _components_playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/playlist-songs-editor/playlist-songs-editor.component */ "./src/app/components/playlist-songs-editor/playlist-songs-editor.component.ts");
+/* harmony import */ var _components_song_player_song_player_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/song-player/song-player.component */ "./src/app/components/song-player/song-player.component.ts");
+/* harmony import */ var _components_album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./components/album-songs/album-songs.component */ "./src/app/components/album-songs/album-songs.component.ts");
+/* harmony import */ var _components_artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./components/artist-albums/artist-albums.component */ "./src/app/components/artist-albums/artist-albums.component.ts");
+/* harmony import */ var _components_playlist_group_playlist_group_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./components/playlist-group/playlist-group.component */ "./src/app/components/playlist-group/playlist-group.component.ts");
+/* harmony import */ var _components_genres_genres_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/genres/genres.component */ "./src/app/components/genres/genres.component.ts");
+/* harmony import */ var _components_notes_notes_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./components/notes/notes.component */ "./src/app/components/notes/notes.component.ts");
+/* harmony import */ var _components_genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/genre-songs-editor/genre-songs-editor.component */ "./src/app/components/genre-songs-editor/genre-songs-editor.component.ts");
+/* harmony import */ var _components_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/playlist-group-editor/playlist-group-editor.component */ "./src/app/components/playlist-group-editor/playlist-group-editor.component.ts");
+/* harmony import */ var _components_playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/playlist-group-playlists-editor/playlist-group-playlists-editor.component */ "./src/app/components/playlist-group-playlists-editor/playlist-group-playlists-editor.component.ts");
+/* harmony import */ var _components_login_modal_login_modal_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/login-modal/login-modal.component */ "./src/app/components/login-modal/login-modal.component.ts");
+/* harmony import */ var _components_users_users_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/users/users.component */ "./src/app/components/users/users.component.ts");
+/* harmony import */ var _components_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/mood-editor/mood-editor.component */ "./src/app/components/mood-editor/mood-editor.component.ts");
+/* harmony import */ var _components_note_editor_note_editor_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/note-editor/note-editor.component */ "./src/app/components/note-editor/note-editor.component.ts");
+/* harmony import */ var _kolkov_angular_editor__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! @kolkov/angular-editor */ "./node_modules/@kolkov/angular-editor/fesm5/kolkov-angular-editor.js");
+/* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ng2-charts/ng2-charts */ "./node_modules/ng2-charts/ng2-charts.js");
+/* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_32___default = /*#__PURE__*/__webpack_require__.n(ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_32__);
+/* harmony import */ var _components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/privacy-policy/privacy-policy.component */ "./src/app/components/privacy-policy/privacy-policy.component.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _components_terms_terms_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./components/terms/terms.component */ "./src/app/components/terms/terms.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -625,74 +701,74 @@ var firebaseConfig = {
     projectId: "neura-9b648",
     storageBucket: "neura-9b648.appspot.com",
     messagingSenderId: "859510816624",
-    appId: "1:859510816624:web:bb8c43ce50cce6e95e19b5"
+    appId: "1:859510816624:web:bb8c43ce50cce6e95e19b5",
 };
-firebase__WEBPACK_IMPORTED_MODULE_29__["initializeApp"](firebaseConfig);
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"],
-                _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_10__["DashboardComponent"],
-                _components_songs_songs_component__WEBPACK_IMPORTED_MODULE_11__["SongsComponent"],
-                _components_artists_artists_component__WEBPACK_IMPORTED_MODULE_12__["ArtistsComponent"],
-                _components_albums_albums_component__WEBPACK_IMPORTED_MODULE_13__["AlbumsComponent"],
-                _components_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_14__["SongEditorComponent"],
-                _components_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_15__["ArtistEditorComponent"],
-                _components_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_16__["AlbumEditorComponent"],
-                _components_playlists_playlists_component__WEBPACK_IMPORTED_MODULE_17__["PlaylistsComponent"],
-                _components_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_18__["PlaylistEditorComponent"],
-                _components_playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_19__["PlaylistSongsEditorComponent"],
-                _components_song_player_song_player_component__WEBPACK_IMPORTED_MODULE_20__["SongPlayerComponent"],
-                _components_album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_21__["AlbumSongsComponent"],
-                _components_artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_22__["ArtistAlbumsComponent"],
-                _components_playlist_group_playlist_group_component__WEBPACK_IMPORTED_MODULE_23__["PlaylistGroupsComponent"],
-                _components_genres_genres_component__WEBPACK_IMPORTED_MODULE_24__["GenresComponent"],
-                _components_genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_25__["GenreSongsEditorComponent"],
-                _components_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_31__["MoodEditorComponent"],
-                _components_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_26__["PlaylistGroupEditorComponent"],
-                _components_playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_27__["PlaylistGroupPlaylistsEditorComponent"],
-                _components_login_modal_login_modal_component__WEBPACK_IMPORTED_MODULE_28__["LoginModalComponent"],
-                _components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_34__["PrivacyPolicyComponent"],
-                _components_terms_terms_component__WEBPACK_IMPORTED_MODULE_37__["TermsComponent"],
-                _components_users_users_component__WEBPACK_IMPORTED_MODULE_30__["UsersComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
+                _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_8__["DashboardComponent"],
+                _components_songs_songs_component__WEBPACK_IMPORTED_MODULE_9__["SongsComponent"],
+                _components_artists_artists_component__WEBPACK_IMPORTED_MODULE_10__["ArtistsComponent"],
+                _components_albums_albums_component__WEBPACK_IMPORTED_MODULE_11__["AlbumsComponent"],
+                _components_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_12__["SongEditorComponent"],
+                _components_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_13__["ArtistEditorComponent"],
+                _components_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_14__["AlbumEditorComponent"],
+                _components_playlists_playlists_component__WEBPACK_IMPORTED_MODULE_15__["PlaylistsComponent"],
+                _components_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_16__["PlaylistEditorComponent"],
+                _components_playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_17__["PlaylistSongsEditorComponent"],
+                _components_song_player_song_player_component__WEBPACK_IMPORTED_MODULE_18__["SongPlayerComponent"],
+                _components_album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_19__["AlbumSongsComponent"],
+                _components_artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_20__["ArtistAlbumsComponent"],
+                _components_playlist_group_playlist_group_component__WEBPACK_IMPORTED_MODULE_21__["PlaylistGroupsComponent"],
+                _components_genres_genres_component__WEBPACK_IMPORTED_MODULE_22__["GenresComponent"],
+                _components_notes_notes_component__WEBPACK_IMPORTED_MODULE_23__["NotesComponent"],
+                _components_genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_24__["GenreSongsEditorComponent"],
+                _components_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_29__["MoodEditorComponent"],
+                _components_note_editor_note_editor_component__WEBPACK_IMPORTED_MODULE_30__["NoteEditorComponent"],
+                _components_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_25__["PlaylistGroupEditorComponent"],
+                _components_playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_26__["PlaylistGroupPlaylistsEditorComponent"],
+                _components_login_modal_login_modal_component__WEBPACK_IMPORTED_MODULE_27__["LoginModalComponent"],
+                _components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_33__["PrivacyPolicyComponent"],
+                _components_terms_terms_component__WEBPACK_IMPORTED_MODULE_36__["TermsComponent"],
+                _components_users_users_component__WEBPACK_IMPORTED_MODULE_28__["UsersComponent"],
             ],
             entryComponents: [
-                _components_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_15__["ArtistEditorComponent"],
-                _components_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_16__["AlbumEditorComponent"],
-                _components_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_14__["SongEditorComponent"],
-                _components_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_18__["PlaylistEditorComponent"],
-                _components_playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_19__["PlaylistSongsEditorComponent"],
-                _components_song_player_song_player_component__WEBPACK_IMPORTED_MODULE_20__["SongPlayerComponent"],
-                _components_artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_22__["ArtistAlbumsComponent"],
-                _components_album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_21__["AlbumSongsComponent"],
-                _components_genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_25__["GenreSongsEditorComponent"],
-                _components_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_26__["PlaylistGroupEditorComponent"],
-                _components_playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_27__["PlaylistGroupPlaylistsEditorComponent"],
-                _components_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_31__["MoodEditorComponent"],
+                _components_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_13__["ArtistEditorComponent"],
+                _components_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_14__["AlbumEditorComponent"],
+                _components_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_12__["SongEditorComponent"],
+                _components_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_16__["PlaylistEditorComponent"],
+                _components_playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_17__["PlaylistSongsEditorComponent"],
+                _components_song_player_song_player_component__WEBPACK_IMPORTED_MODULE_18__["SongPlayerComponent"],
+                _components_artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_20__["ArtistAlbumsComponent"],
+                _components_album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_19__["AlbumSongsComponent"],
+                _components_genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_24__["GenreSongsEditorComponent"],
+                _components_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_25__["PlaylistGroupEditorComponent"],
+                _components_playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_26__["PlaylistGroupPlaylistsEditorComponent"],
+                _components_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_29__["MoodEditorComponent"],
+                _components_note_editor_note_editor_component__WEBPACK_IMPORTED_MODULE_30__["NoteEditorComponent"],
                 // CsvBuilder,
-                _components_login_modal_login_modal_component__WEBPACK_IMPORTED_MODULE_28__["LoginModalComponent"]
+                _components_login_modal_login_modal_component__WEBPACK_IMPORTED_MODULE_27__["LoginModalComponent"],
             ],
             imports: [
                 _angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormsModule"],
-                _app_routes__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"],
+                _app_routes__WEBPACK_IMPORTED_MODULE_7__["AppRoutingModule"],
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 ngx_spinner__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerModule"],
-                ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_33__["ChartsModule"],
+                ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_32__["ChartsModule"],
                 _angular_material_dialog__WEBPACK_IMPORTED_MODULE_4__["MatDialogModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_36__["MatSnackBarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_35__["MatSnackBarModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["BrowserAnimationsModule"],
-                _kolkov_angular_editor__WEBPACK_IMPORTED_MODULE_32__["AngularEditorModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_35__["HttpClientModule"],
-                angularfire2__WEBPACK_IMPORTED_MODULE_6__["AngularFireModule"].initializeApp(firebaseConfig),
-                angularfire2_auth__WEBPACK_IMPORTED_MODULE_7__["AngularFireAuthModule"]
+                _kolkov_angular_editor__WEBPACK_IMPORTED_MODULE_31__["AngularEditorModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_34__["HttpClientModule"],
             ],
             providers: [
-                _angular_material__WEBPACK_IMPORTED_MODULE_36__["MatSnackBar"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_35__["MatSnackBar"],
             ],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]],
         })
     ], AppModule);
     return AppModule;
@@ -725,6 +801,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_users_users_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/users/users.component */ "./src/app/components/users/users.component.ts");
 /* harmony import */ var _components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/privacy-policy/privacy-policy.component */ "./src/app/components/privacy-policy/privacy-policy.component.ts");
 /* harmony import */ var _components_terms_terms_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/terms/terms.component */ "./src/app/components/terms/terms.component.ts");
+/* harmony import */ var _components_notes_notes_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/notes/notes.component */ "./src/app/components/notes/notes.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -744,20 +821,22 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     { path: "", pathMatch: "full", redirectTo: "/dashboard" },
-    { path: 'login', component: _components_login_modal_login_modal_component__WEBPACK_IMPORTED_MODULE_9__["LoginModalComponent"] },
+    { path: "login", component: _components_login_modal_login_modal_component__WEBPACK_IMPORTED_MODULE_9__["LoginModalComponent"] },
     { path: "dashboard", component: _components_dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_2__["DashboardComponent"] },
     { path: "artists", component: _components_artists_artists_component__WEBPACK_IMPORTED_MODULE_3__["ArtistsComponent"] },
     { path: "albums", component: _components_albums_albums_component__WEBPACK_IMPORTED_MODULE_4__["AlbumsComponent"] },
     { path: "songs", component: _components_songs_songs_component__WEBPACK_IMPORTED_MODULE_5__["SongsComponent"] },
     // { path: "moods", component: MoodEditorComponent },
     { path: "genres", component: _components_genres_genres_component__WEBPACK_IMPORTED_MODULE_6__["GenresComponent"] },
+    { path: "notes", component: _components_notes_notes_component__WEBPACK_IMPORTED_MODULE_13__["NotesComponent"] },
     { path: "playlists", component: _components_playlists_playlists_component__WEBPACK_IMPORTED_MODULE_7__["PlaylistsComponent"] },
     { path: "users", component: _components_users_users_component__WEBPACK_IMPORTED_MODULE_10__["UsersComponent"] },
     { path: "privacy", component: _components_privacy_policy_privacy_policy_component__WEBPACK_IMPORTED_MODULE_11__["PrivacyPolicyComponent"] },
     { path: "terms", component: _components_terms_terms_component__WEBPACK_IMPORTED_MODULE_12__["TermsComponent"] },
-    { path: "playlistGroups", component: _components_playlist_group_playlist_group_component__WEBPACK_IMPORTED_MODULE_8__["PlaylistGroupsComponent"] }
+    { path: "playlistGroups", component: _components_playlist_group_playlist_group_component__WEBPACK_IMPORTED_MODULE_8__["PlaylistGroupsComponent"] },
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -765,7 +844,7 @@ var AppRoutingModule = /** @class */ (function () {
     AppRoutingModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, { enableTracing: true })],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
+            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]],
         })
     ], AppRoutingModule);
     return AppRoutingModule;
@@ -808,13 +887,10 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlbumEditorComponent", function() { return AlbumEditorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _models_Albums__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/Albums */ "./src/app/models/Albums.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -831,13 +907,8 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
-
-
 var AlbumEditorComponent = /** @class */ (function () {
-    function AlbumEditorComponent(firestoreService, firebaseStorage, spinner, dialogRef, data) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function AlbumEditorComponent(spinner, dialogRef, data) {
         this.spinner = spinner;
         this.dialogRef = dialogRef;
         this.data = data;
@@ -860,16 +931,16 @@ var AlbumEditorComponent = /** @class */ (function () {
         this.getArtists();
     };
     AlbumEditorComponent.prototype.getArtists = function () {
-        var _this = this;
         this.spinner.show();
-        this.firestoreService.getArtists().then(function (result) {
-            _this.artists = result.artists;
-            _this.selectedArtist = _this.artists.find(function (x) { return x.artistId === _this.artistId; });
-            _this.spinner.hide();
-        });
+        // this.firestoreService.getArtists().then((result: any) => {
+        //   this.artists = result.artists;
+        //   this.selectedArtist = this.artists.find(
+        //     (x) => x.artistId === this.artistId
+        //   );
+        //   this.spinner.hide();
+        // });
     };
     AlbumEditorComponent.prototype.addNewAlbum = function () {
-        var _this = this;
         if (!this.albumName) {
             demo.showWarningNotification("Please provide a name for the album.");
             return;
@@ -887,52 +958,56 @@ var AlbumEditorComponent = /** @class */ (function () {
         this.showProgress = true;
         var uploadPath = "/" + this.selectedArtist.name + "/" + this.albumName + "/albumPicture";
         // Upload album picture
-        this.firebaseStorage
-            .uploadPicture(uploadPath, albumPicture)
-            .then(function (uploadResult) {
-            var newAlbum = new _models_Albums__WEBPACK_IMPORTED_MODULE_6__["Album"]();
-            newAlbum.name = _this.albumName;
-            newAlbum.picture = uploadResult.downloadURL;
-            newAlbum.artistId = _this.selectedArtist.artistId;
-            newAlbum.artistName = _this.selectedArtist.name;
-            // If upload is successful, add the album to the firestore
-            _this.firestoreService.addNewAlbum(newAlbum).then(function (result) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                newAlbum.albumId = result.newAlbumId;
-                _this.dialogRef.close({
-                    isSuccess: true,
-                    newAlbum: newAlbum
-                });
-            }, function (error) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                demo.showErrorNotification("An error occured: " + error);
-            });
-        }, function (error) {
-            _this.spinner.hide();
-            _this.showProgress = false;
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firebaseStorage.uploadPicture(uploadPath, albumPicture).then(
+        //   (uploadResult: any) => {
+        //     const newAlbum = new Album();
+        //     newAlbum.name = this.albumName;
+        //     newAlbum.picture = uploadResult.downloadURL;
+        //     newAlbum.artistId = this.selectedArtist.artistId;
+        //     newAlbum.artistName = this.selectedArtist.name;
+        //     this.firestoreService.addNewAlbum(newAlbum).then(
+        //       (result: any) => {
+        //         this.spinner.hide();
+        //         this.showProgress = false;
+        //         newAlbum.albumId = result.newAlbumId;
+        //         this.dialogRef.close({
+        //           isSuccess: true,
+        //           newAlbum: newAlbum,
+        //         });
+        //       },
+        //       (error: any) => {
+        //         this.spinner.hide();
+        //         this.showProgress = false;
+        //         demo.showErrorNotification("An error occured: " + error);
+        //       }
+        //     );
+        //   },
+        //   (error: any) => {
+        //     this.spinner.hide();
+        //     this.showProgress = false;
+        //     demo.showErrorNotification("An error occured: " + error);
+        //   }
+        // );
     };
     AlbumEditorComponent.prototype.updateAlbumName = function () {
-        var _this = this;
         if (!this.albumName) {
             demo.showWarningNotification("Please provide a name for the album.");
             return;
         }
-        this.firestoreService.editAlbumName(this.albumId, this.albumName).then(function (result) {
-            _this.dialogRef.close({
-                isSuccess: true,
-                albumNameUpdated: true,
-                newAlbumName: _this.albumName
-            });
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firestoreService.editAlbumName(this.albumId, this.albumName).then(
+        //   (result: any) => {
+        //     this.dialogRef.close({
+        //       isSuccess: true,
+        //       albumNameUpdated: true,
+        //       newAlbumName: this.albumName,
+        //     });
+        //   },
+        //   (error: any) => {
+        //     demo.showErrorNotification("An error occured: " + error);
+        //   }
+        // );
     };
     AlbumEditorComponent.prototype.updateAlbumPicture = function () {
-        var _this = this;
         var albumPicture = (document.getElementById("albumPicture")).files[0];
         if (!albumPicture) {
             demo.showWarningNotification("Please select an image file to upload.");
@@ -942,47 +1017,48 @@ var AlbumEditorComponent = /** @class */ (function () {
         this.showProgress = true;
         var uploadPath = "/" + this.selectedArtist.name + "/" + this.albumName + "/albumPicture";
         // Update album picture
-        this.firebaseStorage
-            .uploadPicture(uploadPath, albumPicture)
-            .then(function (uploadResult) {
-            // If upload is successful, edit the album picture
-            _this.firestoreService
-                .editAlbumPicture(_this.albumId, uploadResult.downloadURL)
-                .then(function (result) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                _this.dialogRef.close({
-                    isSuccess: true,
-                    albumPictureUpdated: true,
-                    newAlbumPicture: uploadResult.downloadURL
-                });
-            }, function (error) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                demo.showErrorNotification("An error occured: " + error);
-            });
-        }, function (error) {
-            _this.spinner.hide();
-            _this.showProgress = false;
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firebaseStorage.uploadPicture(uploadPath, albumPicture).then(
+        //   (uploadResult: any) => {
+        //     this.firestoreService
+        //       .editAlbumPicture(this.albumId, uploadResult.downloadURL)
+        //       .then(
+        //         (result: any) => {
+        //           this.spinner.hide();
+        //           this.showProgress = false;
+        //           this.dialogRef.close({
+        //             isSuccess: true,
+        //             albumPictureUpdated: true,
+        //             newAlbumPicture: uploadResult.downloadURL,
+        //           });
+        //         },
+        //         (error: any) => {
+        //           this.spinner.hide();
+        //           this.showProgress = false;
+        //           demo.showErrorNotification("An error occured: " + error);
+        //         }
+        //       );
+        //   },
+        //   (error: any) => {
+        //     this.spinner.hide();
+        //     this.showProgress = false;
+        //     demo.showErrorNotification("An error occured: " + error);
+        //   }
+        // );
     };
     AlbumEditorComponent.prototype.closeEditor = function () {
         this.dialogRef.close({
-            isSuccess: false
+            isSuccess: false,
         });
     };
     AlbumEditorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-album-editor",
             template: __webpack_require__(/*! ./album-editor.component.html */ "./src/app/components/album-editor/album-editor.component.html"),
-            styles: [__webpack_require__(/*! ./album-editor.component.css */ "./src/app/components/album-editor/album-editor.component.css")]
+            styles: [__webpack_require__(/*! ./album-editor.component.css */ "./src/app/components/album-editor/album-editor.component.css")],
         }),
-        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"], Object])
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
     ], AlbumEditorComponent);
     return AlbumEditorComponent;
 }());
@@ -1009,7 +1085,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\n\n<div class=\"row\">\n  <h2 style=\"margin-top: -10px;\">Album Songs</h2>\n</div>\n\n<mat-dialog-content>\n  <app-songs [album]=\"album\"></app-songs>\n</mat-dialog-content>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <h2 style=\"margin-top: -10px;\">Album Songs</h2>\r\n</div>\r\n\r\n<!-- <mat-dialog-content>\r\n  <app-songs [album]=\"album\"></app-songs>\r\n</mat-dialog-content> -->"
 
 /***/ }),
 
@@ -1095,17 +1171,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AlbumsComponent", function() { return AlbumsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../album-editor/album-editor.component */ "./src/app/components/album-editor/album-editor.component.ts");
-/* harmony import */ var _models_Artist__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../models/Artist */ "./src/app/models/Artist.ts");
-/* harmony import */ var _album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../album-songs/album-songs.component */ "./src/app/components/album-songs/album-songs.component.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../album-editor/album-editor.component */ "./src/app/components/album-editor/album-editor.component.ts");
+/* harmony import */ var _models_Artist__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../models/Artist */ "./src/app/models/Artist.ts");
+/* harmony import */ var _album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../album-songs/album-songs.component */ "./src/app/components/album-songs/album-songs.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1124,12 +1198,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var AlbumsComponent = /** @class */ (function () {
-    function AlbumsComponent(firestoreService, firebaseStorage, spinner, dialog, router) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function AlbumsComponent(spinner, dialog, router) {
         this.spinner = spinner;
         this.dialog = dialog;
         this.router = router;
@@ -1151,31 +1221,29 @@ var AlbumsComponent = /** @class */ (function () {
         }
     };
     AlbumsComponent.prototype.getArtistAlbums = function () {
-        var _this = this;
         this.artistSpecific = true;
-        this.firestoreService
-            .getArtistAlbums(this.artist.artistId)
-            .then(function (result) {
-            _this.albums = result.albums;
-            _this.originalAlbums = _this.albums;
-            _this.spinner.hide();
-        });
+        // this.firestoreService
+        //   .getArtistAlbums(this.artist.artistId)
+        //   .then((result: any) => {
+        //     this.albums = result.albums;
+        //     this.originalAlbums = this.albums;
+        //     this.spinner.hide();
+        //   });
     };
     AlbumsComponent.prototype.getAllAlbums = function () {
-        var _this = this;
-        this.firestoreService.getAlbums().then(function (result) {
-            _this.albums = result.albums;
-            _this.originalAlbums = _this.albums;
-            _this.spinner.hide();
-        });
+        // this.firestoreService.getAlbums().then((result: any) => {
+        //   this.albums = result.albums;
+        //   this.originalAlbums = this.albums;
+        //   this.spinner.hide();
+        // });
     };
     AlbumsComponent.prototype.addNewAlbum = function () {
         var _this = this;
-        var dialogRef = this.dialog.open(_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_8__["AlbumEditorComponent"], {
+        var dialogRef = this.dialog.open(_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_6__["AlbumEditorComponent"], {
             width: "500px",
             data: {
-                isEditMode: false
-            }
+                isEditMode: false,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
@@ -1186,12 +1254,12 @@ var AlbumsComponent = /** @class */ (function () {
         });
     };
     AlbumsComponent.prototype.edit = function (album) {
-        var dialogRef = this.dialog.open(_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_8__["AlbumEditorComponent"], {
+        var dialogRef = this.dialog.open(_album_editor_album_editor_component__WEBPACK_IMPORTED_MODULE_6__["AlbumEditorComponent"], {
             width: "650px",
             data: {
                 isEditMode: true,
-                album: album
-            }
+                album: album,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
@@ -1214,19 +1282,22 @@ var AlbumsComponent = /** @class */ (function () {
             text: "Are you sure you want to delete this album? All associated songs will also be deleted.",
             icon: "error",
             buttons: ["Cancel", "Ok"],
-            dangerMode: true
+            dangerMode: true,
         };
-        sweetalert__WEBPACK_IMPORTED_MODULE_7___default()(options).then(function (willDelete) {
+        sweetalert__WEBPACK_IMPORTED_MODULE_5___default()(options).then(function (willDelete) {
             if (willDelete) {
                 _this.spinner.show();
-                _this.firestoreService.deleteAlbum(album).then(function (result) {
-                    _this.removeAlbumFromList(album);
-                    demo.showSuccessNotification("Album successfully deleted!");
-                    _this.spinner.hide();
-                }, function (error) {
-                    _this.spinner.hide();
-                    demo.showErrorNotification("An error occured: " + error);
-                });
+                // this.firestoreService.deleteAlbum(album).then(
+                //   (result: any) => {
+                //     this.removeAlbumFromList(album);
+                //     demo.showSuccessNotification("Album successfully deleted!");
+                //     this.spinner.hide();
+                //   },
+                //   (error: any) => {
+                //     this.spinner.hide();
+                //     demo.showErrorNotification("An error occured: " + error);
+                //   }
+                // );
             }
         });
     };
@@ -1265,31 +1336,33 @@ var AlbumsComponent = /** @class */ (function () {
         }
     };
     AlbumsComponent.prototype.searchArtistAlbums = function (searchValue) {
-        var _this = this;
-        this.firestoreService
-            .getArtistAlbums(this.artist.artistId)
-            .then(function (result) {
-            result.albums.forEach(function (album) {
-                if (album.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1 ||
-                    album.artistName.toLowerCase().indexOf(searchValue.toLowerCase()) >
-                        -1) {
-                    _this.albums.push(album);
-                }
-            });
-            _this.spinner.hide();
-        });
+        // this.firestoreService
+        //   .getArtistAlbums(this.artist.artistId)
+        //   .then((result: any) => {
+        //     result.albums.forEach((album) => {
+        //       if (
+        //         album.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1 ||
+        //         album.artistName.toLowerCase().indexOf(searchValue.toLowerCase()) >
+        //           -1
+        //       ) {
+        //         this.albums.push(album);
+        //       }
+        //     });
+        //     this.spinner.hide();
+        //   });
     };
     AlbumsComponent.prototype.searchAllAlbums = function (searchValue) {
-        var _this = this;
-        this.firestoreService.getAlbums().then(function (result) {
-            result.albums.forEach(function (album) {
-                if (album.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1 ||
-                    album.artistName.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
-                    _this.albums.push(album);
-                }
-                _this.spinner.hide();
-            });
-        });
+        // this.firestoreService.getAlbums().then((result: any) => {
+        //   result.albums.forEach((album) => {
+        //     if (
+        //       album.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1 ||
+        //       album.artistName.toLowerCase().indexOf(searchValue.toLowerCase()) > -1
+        //     ) {
+        //       this.albums.push(album);
+        //     }
+        //     this.spinner.hide();
+        //   });
+        // });
     };
     AlbumsComponent.prototype.clearSearchInput = function () {
         this.albums = this.originalAlbums;
@@ -1298,27 +1371,25 @@ var AlbumsComponent = /** @class */ (function () {
         searchInput.value = "";
     };
     AlbumsComponent.prototype.viewSongs = function (album) {
-        var dialogRef = this.dialog.open(_album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_10__["AlbumSongsComponent"], {
+        var dialogRef = this.dialog.open(_album_songs_album_songs_component__WEBPACK_IMPORTED_MODULE_8__["AlbumSongsComponent"], {
             data: {
-                album: album
-            }
+                album: album,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) { });
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", _models_Artist__WEBPACK_IMPORTED_MODULE_9__["Artist"])
+        __metadata("design:type", _models_Artist__WEBPACK_IMPORTED_MODULE_7__["Artist"])
     ], AlbumsComponent.prototype, "artist", void 0);
     AlbumsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-albums",
             template: __webpack_require__(/*! ./albums.component.html */ "./src/app/components/albums/albums.component.html"),
-            styles: [__webpack_require__(/*! ./albums.component.css */ "./src/app/components/albums/albums.component.css")]
+            styles: [__webpack_require__(/*! ./albums.component.css */ "./src/app/components/albums/albums.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_4__["NgxSpinnerService"],
-            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], AlbumsComponent);
     return AlbumsComponent;
@@ -1346,7 +1417,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\n\n<div class=\"row\">\n  <h2 style=\"margin-top: -10px;\">Artist Albums</h2>\n</div>\n\n<mat-dialog-content>\n  <app-albums [artist]=\"artist\"></app-albums>\n</mat-dialog-content>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <h2 style=\"margin-top: -10px;\">Artist Albums</h2>\r\n</div>\r\n\r\n<mat-dialog-content>\r\n  <app-albums [artist]=\"artist\"></app-albums>\r\n</mat-dialog-content>"
 
 /***/ }),
 
@@ -1431,13 +1502,10 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArtistEditorComponent", function() { return ArtistEditorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _models_Artist__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/Artist */ "./src/app/models/Artist.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1454,13 +1522,8 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
-
-
 var ArtistEditorComponent = /** @class */ (function () {
-    function ArtistEditorComponent(firestoreService, firebaseStorage, spinner, dialogRef, data) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function ArtistEditorComponent(spinner, dialogRef, data) {
         this.spinner = spinner;
         this.dialogRef = dialogRef;
         this.data = data;
@@ -1478,7 +1541,6 @@ var ArtistEditorComponent = /** @class */ (function () {
     ArtistEditorComponent.prototype.ngOnInit = function () { };
     ArtistEditorComponent.prototype.ngAfterViewInit = function () { };
     ArtistEditorComponent.prototype.addNewArtist = function () {
-        var _this = this;
         if (!this.artistName) {
             demo.showWarningNotification("Please provide a name for the artist.");
             return;
@@ -1492,50 +1554,54 @@ var ArtistEditorComponent = /** @class */ (function () {
         this.showProgress = true;
         var uploadPath = "/" + this.artistName + "/artistPicture";
         // Upload artist picture
-        this.firebaseStorage
-            .uploadPicture(uploadPath, artistPicture)
-            .then(function (uploadResult) {
-            var newArtist = new _models_Artist__WEBPACK_IMPORTED_MODULE_6__["Artist"]();
-            newArtist.name = _this.artistName;
-            newArtist.picture = uploadResult.downloadURL;
-            // If upload is successful, add the artist to the firestore
-            _this.firestoreService.addNewArtist(newArtist).then(function (result) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                newArtist.artistId = result.newArtistId;
-                _this.dialogRef.close({
-                    isSuccess: true,
-                    newArtist: newArtist
-                });
-            }, function (error) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                demo.showErrorNotification("An error occured: " + error);
-            });
-        }, function (error) {
-            _this.spinner.hide();
-            _this.showProgress = false;
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firebaseStorage.uploadPicture(uploadPath, artistPicture).then(
+        //   (uploadResult: any) => {
+        //     const newArtist = new Artist();
+        //     newArtist.name = this.artistName;
+        //     newArtist.picture = uploadResult.downloadURL;
+        //     this.firestoreService.addNewArtist(newArtist).then(
+        //       (result: any) => {
+        //         this.spinner.hide();
+        //         this.showProgress = false;
+        //         newArtist.artistId = result.newArtistId;
+        //         this.dialogRef.close({
+        //           isSuccess: true,
+        //           newArtist: newArtist,
+        //         });
+        //       },
+        //       (error: any) => {
+        //         this.spinner.hide();
+        //         this.showProgress = false;
+        //         demo.showErrorNotification("An error occured: " + error);
+        //       }
+        //     );
+        //   },
+        //   (error: any) => {
+        //     this.spinner.hide();
+        //     this.showProgress = false;
+        //     demo.showErrorNotification("An error occured: " + error);
+        //   }
+        // );
     };
     ArtistEditorComponent.prototype.updateArtistName = function () {
-        var _this = this;
         if (!this.artistName) {
             demo.showWarningNotification("Please provide a name for the artist.");
             return;
         }
-        this.firestoreService.editArtistName(this.artistId, this.artistName).then(function (result) {
-            _this.dialogRef.close({
-                isSuccess: true,
-                artistNameUpdated: true,
-                newArtistName: _this.artistName
-            });
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firestoreService.editArtistName(this.artistId, this.artistName).then(
+        //   (result: any) => {
+        //     this.dialogRef.close({
+        //       isSuccess: true,
+        //       artistNameUpdated: true,
+        //       newArtistName: this.artistName,
+        //     });
+        //   },
+        //   (error: any) => {
+        //     demo.showErrorNotification("An error occured: " + error);
+        //   }
+        // );
     };
     ArtistEditorComponent.prototype.updateArtistPicture = function () {
-        var _this = this;
         var artistPicture = (document.getElementById("artistPicture")).files[0];
         if (!artistPicture) {
             demo.showWarningNotification("Please select an image file to upload.");
@@ -1545,47 +1611,48 @@ var ArtistEditorComponent = /** @class */ (function () {
         this.showProgress = true;
         var uploadPath = "/" + this.artistName + "/artistPicture";
         // Update artist picture
-        this.firebaseStorage
-            .uploadPicture(uploadPath, artistPicture)
-            .then(function (uploadResult) {
-            // If upload is successful, edit the artist picture
-            _this.firestoreService
-                .editArtistPicture(_this.artistId, uploadResult.downloadURL)
-                .then(function (result) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                _this.dialogRef.close({
-                    isSuccess: true,
-                    artistPictureUpdated: true,
-                    newArtistPicture: uploadResult.downloadURL
-                });
-            }, function (error) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                demo.showErrorNotification("An error occured: " + error);
-            });
-        }, function (error) {
-            _this.spinner.hide();
-            _this.showProgress = false;
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firebaseStorage.uploadPicture(uploadPath, artistPicture).then(
+        //   (uploadResult: any) => {
+        //     this.firestoreService
+        //       .editArtistPicture(this.artistId, uploadResult.downloadURL)
+        //       .then(
+        //         (result: any) => {
+        //           this.spinner.hide();
+        //           this.showProgress = false;
+        //           this.dialogRef.close({
+        //             isSuccess: true,
+        //             artistPictureUpdated: true,
+        //             newArtistPicture: uploadResult.downloadURL,
+        //           });
+        //         },
+        //         (error: any) => {
+        //           this.spinner.hide();
+        //           this.showProgress = false;
+        //           demo.showErrorNotification("An error occured: " + error);
+        //         }
+        //       );
+        //   },
+        //   (error: any) => {
+        //     this.spinner.hide();
+        //     this.showProgress = false;
+        //     demo.showErrorNotification("An error occured: " + error);
+        //   }
+        // );
     };
     ArtistEditorComponent.prototype.closeEditor = function () {
         this.dialogRef.close({
-            isSuccess: false
+            isSuccess: false,
         });
     };
     ArtistEditorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-artist-editor",
             template: __webpack_require__(/*! ./artist-editor.component.html */ "./src/app/components/artist-editor/artist-editor.component.html"),
-            styles: [__webpack_require__(/*! ./artist-editor.component.css */ "./src/app/components/artist-editor/artist-editor.component.css")]
+            styles: [__webpack_require__(/*! ./artist-editor.component.css */ "./src/app/components/artist-editor/artist-editor.component.css")],
         }),
-        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"], Object])
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
     ], ArtistEditorComponent);
     return ArtistEditorComponent;
 }());
@@ -1628,16 +1695,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArtistsComponent", function() { return ArtistsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../artist-editor/artist-editor.component */ "./src/app/components/artist-editor/artist-editor.component.ts");
-/* harmony import */ var _artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../artist-albums/artist-albums.component */ "./src/app/components/artist-albums/artist-albums.component.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../artist-editor/artist-editor.component */ "./src/app/components/artist-editor/artist-editor.component.ts");
+/* harmony import */ var _artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../artist-albums/artist-albums.component */ "./src/app/components/artist-albums/artist-albums.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1655,12 +1720,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var ArtistsComponent = /** @class */ (function () {
-    function ArtistsComponent(firestoreService, firebaseStorage, spinner, dialog, router) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function ArtistsComponent(spinner, dialog, router) {
         this.spinner = spinner;
         this.dialog = dialog;
         this.router = router;
@@ -1672,21 +1733,20 @@ var ArtistsComponent = /** @class */ (function () {
         this.listenForSearchInput(500);
     };
     ArtistsComponent.prototype.getArtists = function () {
-        var _this = this;
         this.spinner.show();
-        this.firestoreService.getArtists().then(function (result) {
-            _this.artists = result.artists;
-            _this.originalArtists = _this.artists;
-            _this.spinner.hide();
-        });
+        // this.firestoreService.getArtists().then((result: any) => {
+        //   this.artists = result.artists;
+        //   this.originalArtists = this.artists;
+        //   this.spinner.hide();
+        // });
     };
     ArtistsComponent.prototype.addNewArtist = function () {
         var _this = this;
-        var dialogRef = this.dialog.open(_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_8__["ArtistEditorComponent"], {
+        var dialogRef = this.dialog.open(_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_6__["ArtistEditorComponent"], {
             width: "500px",
             data: {
-                isEditMode: false
-            }
+                isEditMode: false,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
@@ -1697,12 +1757,12 @@ var ArtistsComponent = /** @class */ (function () {
         });
     };
     ArtistsComponent.prototype.edit = function (artist) {
-        var dialogRef = this.dialog.open(_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_8__["ArtistEditorComponent"], {
+        var dialogRef = this.dialog.open(_artist_editor_artist_editor_component__WEBPACK_IMPORTED_MODULE_6__["ArtistEditorComponent"], {
             width: "650px",
             data: {
                 isEditMode: true,
-                artist: artist
-            }
+                artist: artist,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
@@ -1725,20 +1785,23 @@ var ArtistsComponent = /** @class */ (function () {
             text: "Are you sure you want to delete this artist? All associated albums and songs will also be deleted.",
             icon: "error",
             buttons: ["Cancel", "Ok"],
-            dangerMode: true
+            dangerMode: true,
         };
-        sweetalert__WEBPACK_IMPORTED_MODULE_7___default()(options).then(function (willDelete) {
+        sweetalert__WEBPACK_IMPORTED_MODULE_5___default()(options).then(function (willDelete) {
             if (willDelete) {
                 _this.spinner.show();
                 // Delete artist
-                _this.firestoreService.deleteArtist(artist).then(function (result) {
-                    _this.removeArtistFromList(artist);
-                    demo.showSuccessNotification("Artist successfully deleted!");
-                    _this.spinner.hide();
-                }, function (error) {
-                    _this.spinner.hide();
-                    demo.showErrorNotification("An error occured: " + error);
-                });
+                // this.firestoreService.deleteArtist(artist).then(
+                //   (result: any) => {
+                //     this.removeArtistFromList(artist);
+                //     demo.showSuccessNotification("Artist successfully deleted!");
+                //     this.spinner.hide();
+                //   },
+                //   (error: any) => {
+                //     this.spinner.hide();
+                //     demo.showErrorNotification("An error occured: " + error);
+                //   }
+                // );
             }
         });
     };
@@ -1760,19 +1823,20 @@ var ArtistsComponent = /** @class */ (function () {
         };
     };
     ArtistsComponent.prototype.searchArtists = function (searchValue) {
-        var _this = this;
         this.isSearching = true;
         if (searchValue !== "" && searchValue.length >= 3) {
             this.spinner.show();
             this.artists = [];
-            this.firestoreService.getArtists().then(function (result) {
-                result.artists.forEach(function (artist) {
-                    if (artist.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
-                        _this.artists.push(artist);
-                    }
-                });
-                _this.spinner.hide();
-            });
+            // this.firestoreService.getArtists().then((result: any) => {
+            //   result.artists.forEach(artist => {
+            //     if (
+            //       artist.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1
+            //     ) {
+            //       this.artists.push(artist);
+            //     }
+            //   });
+            //   this.spinner.hide();
+            // });
         }
         else if (searchValue === "") {
             this.clearSearchInput();
@@ -1785,10 +1849,10 @@ var ArtistsComponent = /** @class */ (function () {
         searchInput.value = "";
     };
     ArtistsComponent.prototype.viewAlbums = function (artist) {
-        var dialogRef = this.dialog.open(_artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_9__["ArtistAlbumsComponent"], {
+        var dialogRef = this.dialog.open(_artist_albums_artist_albums_component__WEBPACK_IMPORTED_MODULE_7__["ArtistAlbumsComponent"], {
             data: {
-                artist: artist
-            }
+                artist: artist,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) { });
     };
@@ -1796,12 +1860,10 @@ var ArtistsComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-artists",
             template: __webpack_require__(/*! ./artists.component.html */ "./src/app/components/artists/artists.component.html"),
-            styles: [__webpack_require__(/*! ./artists.component.css */ "./src/app/components/artists/artists.component.css")]
+            styles: [__webpack_require__(/*! ./artists.component.css */ "./src/app/components/artists/artists.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_4__["NgxSpinnerService"],
-            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], ArtistsComponent);
     return ArtistsComponent;
@@ -1818,7 +1880,7 @@ var ArtistsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');\n\n.card{\n    background: #F7F9FA;\n    border-radius: 16px;\n}\n\n.played{\n    color:#EA3D2F;font-weight: 500;\nfont-size: 36px;\nline-height: 42px;\n}\n\n.mins{\n    color:#367BF5;\n    font-weight: 500;\nfont-size: 36px;\nline-height: 42px;\n}\n\n.likes{\n    color:#2FA84F;\n    font-weight: 500;\nfont-size: 36px;\nline-height: 42px;\n}\n\n.comments{\n    color:#F3AA18;\n    font-weight: 500;\nfont-size: 36px;\nline-height: 42px;\n}\n\ncanvas{\n    height: 456px !important;\n    /* width: 786px !important; */\n}\n\n.medi{\ncolor: #9FA2B4;\n\n}\n\n.hapydays{\n    color:  #252733;\n    font-family: Mulish;\nfont-style: normal;\nfont-weight: bold;\n}\n\n.padd{\n    padding: 17px;\n}\n\n.numbers{\n    text-align: center;\n}\n\n.btn, .navbar .navbar-nav > li > a.btn{\n    border-radius: 8px !important;\n    margin: 10px;\n    border: 1px solid #DFE0EB;\n}\n\n.sidebar-play{\n    position: relative;\n    top: -10px;\n}\n\n.flx{\n    padding: 20px;\n}\n\n.play{\n    text-align: center;\n    font-family: Mulish;\n    font-style: normal;\n    padding: 10px;\n    border-bottom: 1px solid #DFE0EB;\n}\n\n.play-head{\n    color: #9B51E0;\n}\n\n.h3-play-time{\n    font-weight: bold;\n    font-size: 36px;\n}\n\n.total-time{\n    color: #9FA2B4;\n}\n\n.total-time-min{\n    font-weight: bold;\nfont-size: 36px;\n}\n\n.date{\n    font-weight: 600;\nfont-size: 18px;\n}\n\n#start{\n    border: 1px solid rgba(159, 162, 180, 0.39);\n    box-sizing: border-box;\n    border-radius: 8px;\n    padding: 5px;\n}\n\ninput[type=\"date\"]::-webkit-calendar-picker-indicator {\n    color: rgba(0, 0, 0, 0);\n    opacity: 1;\n    display: block;\n    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABMSURBVHgBlczBDQAQEETRKUEJSlCSTlYnSlGSEtgIiQiTNcm/4AEApxUtgE9mY1FrWiVQtjduHSYChX16gxTcYLaAE5rBDr/Amn9ddK7FG/beZKgPAAAAAElFTkSuQmCC') no-repeat;\n    margin-top: 15px;\n    /* width: 20px;\n    height: 20px; */\n    border-width: thin;\n}\n\n.btn:hover, .btn:focus, .btn:active, .btn.active, .btn:active:focus, .btn:active:hover, .open > .btn.dropdown-toggle, .open > .btn.dropdown-toggle:focus, .open > .btn.dropdown-toggle:hover, .navbar .navbar-nav > li > a.btn:hover, .navbar .navbar-nav > li > a.btn:focus, .navbar .navbar-nav > li > a.btn:active, .navbar .navbar-nav > li > a.btn.active, .navbar .navbar-nav > li > a.btn:active:focus, .navbar .navbar-nav > li > a.btn:active:hover, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle:focus, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle:hover {\n    background-color: #9B51E0;\n}\n\n.pdd{\n    padding-left: 15px !important;\n    padding-right: 15px !important;\n}\n\n.dropdown-menu{\n    overflow: auto;\n    height: 123px;\n}"
+module.exports = "@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200&display=swap');\r\n\r\n.card{\r\n    background: #F7F9FA;\r\n    border-radius: 16px;\r\n}\r\n\r\n.played{\r\n    color:#EA3D2F;font-weight: 500;\r\nfont-size: 36px;\r\nline-height: 42px;\r\n}\r\n\r\n.mins{\r\n    color:#367BF5;\r\n    font-weight: 500;\r\nfont-size: 36px;\r\nline-height: 42px;\r\n}\r\n\r\n.likes{\r\n    color:#2FA84F;\r\n    font-weight: 500;\r\nfont-size: 36px;\r\nline-height: 42px;\r\n}\r\n\r\n.comments{\r\n    color:#F3AA18;\r\n    font-weight: 500;\r\nfont-size: 36px;\r\nline-height: 42px;\r\n}\r\n\r\ncanvas{\r\n    height: 456px !important;\r\n    /* width: 786px !important; */\r\n}\r\n\r\n.medi{\r\ncolor: #9FA2B4;\r\n\r\n}\r\n\r\n.hapydays{\r\n    color:  #252733;\r\n    font-family: Mulish;\r\nfont-style: normal;\r\nfont-weight: bold;\r\n}\r\n\r\n.padd{\r\n    padding: 17px;\r\n}\r\n\r\n.numbers{\r\n    text-align: center;\r\n}\r\n\r\n.btn, .navbar .navbar-nav > li > a.btn{\r\n    border-radius: 8px !important;\r\n    margin: 10px;\r\n    border: 1px solid #DFE0EB;\r\n}\r\n\r\n.sidebar-play{\r\n    position: relative;\r\n    top: -10px;\r\n}\r\n\r\n.flx{\r\n    padding: 20px;\r\n}\r\n\r\n.play{\r\n    text-align: center;\r\n    font-family: Mulish;\r\n    font-style: normal;\r\n    padding: 10px;\r\n    border-bottom: 1px solid #DFE0EB;\r\n}\r\n\r\n.play-head{\r\n    color: #9B51E0;\r\n}\r\n\r\n.h3-play-time{\r\n    font-weight: bold;\r\n    font-size: 36px;\r\n}\r\n\r\n.total-time{\r\n    color: #9FA2B4;\r\n}\r\n\r\n.total-time-min{\r\n    font-weight: bold;\r\nfont-size: 36px;\r\n}\r\n\r\n.date{\r\n    font-weight: 600;\r\nfont-size: 18px;\r\n}\r\n\r\n#start{\r\n    border: 1px solid rgba(159, 162, 180, 0.39);\r\n    box-sizing: border-box;\r\n    border-radius: 8px;\r\n    padding: 5px;\r\n}\r\n\r\ninput[type=\"date\"]::-webkit-calendar-picker-indicator {\r\n    color: rgba(0, 0, 0, 0);\r\n    opacity: 1;\r\n    display: block;\r\n    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAICAYAAAAiJnXPAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAABMSURBVHgBlczBDQAQEETRKUEJSlCSTlYnSlGSEtgIiQiTNcm/4AEApxUtgE9mY1FrWiVQtjduHSYChX16gxTcYLaAE5rBDr/Amn9ddK7FG/beZKgPAAAAAElFTkSuQmCC') no-repeat;\r\n    margin-top: 15px;\r\n    /* width: 20px;\r\n    height: 20px; */\r\n    border-width: thin;\r\n}\r\n\r\n.btn:hover, .btn:focus, .btn:active, .btn.active, .btn:active:focus, .btn:active:hover, .open > .btn.dropdown-toggle, .open > .btn.dropdown-toggle:focus, .open > .btn.dropdown-toggle:hover, .navbar .navbar-nav > li > a.btn:hover, .navbar .navbar-nav > li > a.btn:focus, .navbar .navbar-nav > li > a.btn:active, .navbar .navbar-nav > li > a.btn.active, .navbar .navbar-nav > li > a.btn:active:focus, .navbar .navbar-nav > li > a.btn:active:hover, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle:focus, .open > .navbar .navbar-nav > li > a.btn.dropdown-toggle:hover {\r\n    background-color: #9B51E0;\r\n}\r\n\r\n.pdd{\r\n    padding-left: 15px !important;\r\n    padding-right: 15px !important;\r\n}\r\n\r\n.dropdown-menu{\r\n    overflow: auto;\r\n    height: 123px;\r\n}"
 
 /***/ }),
 
@@ -1844,13 +1906,12 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ng2-charts */ "./node_modules/ng2-charts/index.js");
-/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ng2_charts__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var filefy__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! filefy */ "./node_modules/filefy/dist/index.js");
-/* harmony import */ var filefy__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(filefy__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ng2-charts */ "./node_modules/ng2-charts/index.js");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(ng2_charts__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var filefy__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! filefy */ "./node_modules/filefy/dist/index.js");
+/* harmony import */ var filefy__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(filefy__WEBPACK_IMPORTED_MODULE_4__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1865,10 +1926,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(firestoreService, spinner, router) {
-        this.firestoreService = firestoreService;
+    function DashboardComponent(spinner, router) {
         this.spinner = spinner;
         this.router = router;
         this.artistsCount = 0;
@@ -1877,29 +1936,31 @@ var DashboardComponent = /** @class */ (function () {
         this.playlistsCount = 0;
         this.lineChartData = [
             {
-                data: []
+                data: [],
             },
         ];
         // public lineChartLabels: any[] = [30, 36, 40, 20, 21, 39];
         this.lineChartOptions = {
             responsive: true,
             scales: {
-                xAxes: [{
-                        type: 'time',
+                xAxes: [
+                    {
+                        type: "time",
                         time: {
-                            unit: 'week'
-                        }
-                    }],
-            }
+                            unit: "week",
+                        },
+                    },
+                ],
+            },
         };
         this.lineChartColors = [
             {
-                borderColor: '#9B51E0',
-                backgroundColor: '#bf37ff14'
+                borderColor: "#9B51E0",
+                backgroundColor: "#bf37ff14",
             },
         ];
         this.lineChartLegend = false;
-        this.lineChartType = 'line';
+        this.lineChartType = "line";
         this.lineChartPlugins = [];
         this.songDetails = [];
         this.rowsForCsv = [];
@@ -1909,12 +1970,7 @@ var DashboardComponent = /** @class */ (function () {
         this.spinner.show();
         // this.getDetail();
         this.getSongs();
-        var promises = [
-            this.firestoreService.getArtistsCount(),
-            this.firestoreService.getAlbumsCount(),
-            this.firestoreService.getSongsCount(),
-            this.firestoreService.getPlaylistsCount()
-        ];
+        var promises = [];
         Promise.all(promises).then(function (values) {
             _this.artistsCount = values[0].count;
             _this.albumsCount = values[1].count;
@@ -1922,21 +1978,30 @@ var DashboardComponent = /** @class */ (function () {
             _this.playlistsCount = values[3].count;
             _this.spinner.hide();
         });
-        console.log('song details', this.songDetails);
-        this.selectedStartDate = new Date().toISOString().split('T')[0];
+        console.log("song details", this.songDetails);
+        this.selectedStartDate = new Date().toISOString().split("T")[0];
         this.selectedEndDate = this.selectedStartDate;
     };
     DashboardComponent.prototype.downloadToCsv = function () {
-        var csvBuilder = new filefy__WEBPACK_IMPORTED_MODULE_5__["CsvBuilder"]("info.csv")
-            .setColumns([" Song Name ", " Date ", " Plays ", " Time Played "]);
+        var csvBuilder = new filefy__WEBPACK_IMPORTED_MODULE_4__["CsvBuilder"]("info.csv").setColumns([
+            " Song Name ",
+            " Date ",
+            " Plays ",
+            " Time Played ",
+        ]);
         this.rowsForCsv.map(function (value) {
-            console.log('csv', value);
+            console.log("csv", value);
             var dateObj = new Date(value.date.toDate());
             var month = dateObj.getUTCMonth() + 1; //months from 1-12
             var day = dateObj.getUTCDate();
             var year = dateObj.getUTCFullYear();
             var preDateFull = year + "-" + month + "-" + day;
-            csvBuilder.addRow([value.name, preDateFull, value.numberOfPlayed, value.totalTime]);
+            csvBuilder.addRow([
+                value.name,
+                preDateFull,
+                value.numberOfPlayed,
+                value.totalTime,
+            ]);
         });
         csvBuilder.exportFile();
     };
@@ -1951,13 +2016,12 @@ var DashboardComponent = /** @class */ (function () {
         }, 1000);
     };
     DashboardComponent.prototype.getSelectedSongDetails = function (song) {
-        var _this = this;
-        this.selectedSongId = song.songId;
-        console.log('selected song id', this.selectedSongId);
-        this.lineChartData[0].data = [];
-        setTimeout(function () {
-            _this.getDetail(_this.selectedStartDate, _this.selectedEndDate);
-        }, 1000);
+        // this.selectedSongId = song.songId;
+        // console.log("selected song id", this.selectedSongId);
+        // this.lineChartData[0].data = [];
+        // setTimeout(() => {
+        //   this.getDetail(this.selectedStartDate, this.selectedEndDate);
+        // }, 1000);
     };
     DashboardComponent.prototype.changeEndDate = function () {
         var _this = this;
@@ -1969,78 +2033,83 @@ var DashboardComponent = /** @class */ (function () {
         // this.getDetail(this.selectedStartDate, this.selectedEndDate);
     };
     DashboardComponent.prototype.getSongs = function () {
-        var _this = this;
-        this.firestoreService.getSongs()
-            .then(function (songs) {
-            console.log('songs', songs);
-            _this.songs = songs.songs;
-            console.log(_this.selectedSongId);
-        });
+        // this.firestoreService.getSongs().then((songs: any) => {
+        //   console.log("songs", songs);
+        //   this.songs = songs.songs;
+        //   console.log(this.selectedSongId);
+        // });
     };
     DashboardComponent.prototype.getDetail = function (startDate, endDate) {
-        var _this = this;
         // this.selectedSongId = song.songId;
         if (!this.selectedSongId)
             return;
-        this.firestoreService.getSongDetails(startDate, endDate, this.selectedSongId)
-            .then(function (songD) {
-            _this.songDetails = songD.SongDetailSnapshotPlaylists;
-            // console.log(this.songDetails);
-            if (_this.songDetails.length !== 0) {
-                _this.noDataFound = false;
-                _this.rowsForCsv = [];
-                var filter = _this.songDetails.filter(function (song, index) { return song.songId == _this.songDetails[0].songId; });
-                // console.log(filter);
-                var totalPlay = filter.map(function (e) { return e.numberOfPlayed; }).reduce(function (total, num) { return total + num; });
-                var totalTime = filter.map(function (e) { return e.totalTime; }).reduce(function (total, num) { return total + num; });
-                // this.filterSongs = filter[0];
-                _this.totalPlay = totalPlay;
-                _this.totalTime = totalTime;
-                for (var i in filter) {
-                    _this.rowsForCsv.push(filter[i]);
-                    // console.log({ filter })
-                    var dateObj = new Date(filter[i].date.toDate());
-                    var month = dateObj.getUTCMonth() + 1; //months from 1-12
-                    var day = dateObj.getUTCDate();
-                    var year = dateObj.getUTCFullYear();
-                    // var newdate = year + "-" + month + "-" + (day - 1);
-                    // let d = newdate.toString().slice(-2);
-                    // let preDate = parseInt(d) - 1;
-                    var preDateFull = year + "-" + month + "-" + day;
-                    // console.log({ preDateFull, day });
-                    // [x: new Date(car), y: 0];
-                    _this.lineChartData[0].data.push({ x: new Date(preDateFull), y: filter[i].numberOfPlayed });
-                    // this.lineChartData[0].data.splice(0, 0, { x: new Date(preDateFull), y: 0 });
-                    // this.lineChartData[0].data.splice(0, 0, { y: 0 });
-                    // console.log(this.lineChartData);
-                    setTimeout(function () {
-                        if (_this.chart && _this.chart.chart && _this.chart.chart.config) {
-                            // this.chart.chart.config.data = this.lineChartData;
-                            _this.chart.chart.update();
-                        }
-                    });
-                }
-                // arr = arr.map(function (val) { return val + val; });
-            }
-            else {
-                console.log('not data found');
-                _this.noDataFound = true;
-            }
-        }).catch(function (e) { return console.log('e', e); });
+        // this.firestoreService
+        //   .getSongDetails(startDate, endDate, this.selectedSongId)
+        //   .then((songD: any) => {
+        //     this.songDetails = songD.SongDetailSnapshotPlaylists;
+        //     // console.log(this.songDetails);
+        //     if (this.songDetails.length !== 0) {
+        //       this.noDataFound = false;
+        //       this.rowsForCsv = [];
+        //       let filter = this.songDetails.filter(
+        //         (song, index) => song.songId == this.songDetails[0].songId
+        //       );
+        //       // console.log(filter);
+        //       var totalPlay = filter
+        //         .map((e) => e.numberOfPlayed)
+        //         .reduce((total, num) => total + num);
+        //       var totalTime = filter
+        //         .map((e) => e.totalTime)
+        //         .reduce((total, num) => total + num);
+        //       // this.filterSongs = filter[0];
+        //       this.totalPlay = totalPlay;
+        //       this.totalTime = totalTime;
+        //       for (var i in filter) {
+        //         this.rowsForCsv.push(filter[i]);
+        //         // console.log({ filter })
+        //         var dateObj = new Date(filter[i].date.toDate());
+        //         var month = dateObj.getUTCMonth() + 1; //months from 1-12
+        //         var day = dateObj.getUTCDate();
+        //         var year = dateObj.getUTCFullYear();
+        //         // var newdate = year + "-" + month + "-" + (day - 1);
+        //         // let d = newdate.toString().slice(-2);
+        //         // let preDate = parseInt(d) - 1;
+        //         let preDateFull = year + "-" + month + "-" + day;
+        //         // console.log({ preDateFull, day });
+        //         // [x: new Date(car), y: 0];
+        //         this.lineChartData[0].data.push({
+        //           x: new Date(preDateFull),
+        //           y: filter[i].numberOfPlayed,
+        //         });
+        //         // this.lineChartData[0].data.splice(0, 0, { x: new Date(preDateFull), y: 0 });
+        //         // this.lineChartData[0].data.splice(0, 0, { y: 0 });
+        //         // console.log(this.lineChartData);
+        //         setTimeout(() => {
+        //           if (this.chart && this.chart.chart && this.chart.chart.config) {
+        //             // this.chart.chart.config.data = this.lineChartData;
+        //             this.chart.chart.update();
+        //           }
+        //         });
+        //       }
+        //       // arr = arr.map(function (val) { return val + val; });
+        //     } else {
+        //       console.log("not data found");
+        //       this.noDataFound = true;
+        //     }
+        //   })
+        //   .catch((e) => console.log("e", e));
     };
     __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ng2_charts__WEBPACK_IMPORTED_MODULE_4__["BaseChartDirective"]),
-        __metadata("design:type", ng2_charts__WEBPACK_IMPORTED_MODULE_4__["BaseChartDirective"])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(ng2_charts__WEBPACK_IMPORTED_MODULE_3__["BaseChartDirective"]),
+        __metadata("design:type", ng2_charts__WEBPACK_IMPORTED_MODULE_3__["BaseChartDirective"])
     ], DashboardComponent.prototype, "chart", void 0);
     DashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-dashboard",
             template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/components/dashboard/dashboard.component.html"),
-            styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/components/dashboard/dashboard.component.css")]
+            styles: [__webpack_require__(/*! ./dashboard.component.css */ "./src/app/components/dashboard/dashboard.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -2067,7 +2136,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <h2 style=\"margin-top: -10px;\">Add/Remove Playlist Songs</h2>\r\n</div>\r\n\r\n<mat-dialog-content>\r\n  <app-songs [isGenreEditing]=\"isGenreEditing\" [genre]=\"genre\" [genreSongs]=\"genreSongs\"></app-songs>\r\n</mat-dialog-content>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <h2 style=\"margin-top: -10px;\">Add/Remove Playlist Songs</h2>\r\n</div>\r\n\r\n<!-- <mat-dialog-content>\r\n  <app-songs [isGenreEditing]=\"isGenreEditing\" [genre]=\"genre\" [genreSongs]=\"genreSongs\"></app-songs>\r\n</mat-dialog-content> -->"
 
 /***/ }),
 
@@ -2082,9 +2151,8 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GenreSongsEditorComponent", function() { return GenreSongsEditorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2100,10 +2168,8 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
 var GenreSongsEditorComponent = /** @class */ (function () {
-    function GenreSongsEditorComponent(firestoreService, data, spinner) {
-        this.firestoreService = firestoreService;
+    function GenreSongsEditorComponent(data, spinner) {
         this.data = data;
         this.spinner = spinner;
         this.isGenreEditing = false;
@@ -2114,21 +2180,20 @@ var GenreSongsEditorComponent = /** @class */ (function () {
         this.getGenreSongs();
     };
     GenreSongsEditorComponent.prototype.getGenreSongs = function () {
-        var _this = this;
         this.spinner.show();
-        this.firestoreService.getGenreSongs(this.genre).then(function (result) {
-            _this.genreSongs = result.genreSongs;
-            _this.spinner.hide();
-        });
+        // this.firestoreService.getGenreSongs(this.genre).then((result: any) => {
+        //   this.genreSongs = result.genreSongs;
+        //   this.spinner.hide();
+        // });
     };
     GenreSongsEditorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-genre-songs-editor",
             template: __webpack_require__(/*! ./genre-songs-editor.component.html */ "./src/app/components/genre-songs-editor/genre-songs-editor.component.html"),
-            styles: [__webpack_require__(/*! ./genre-songs-editor.component.css */ "./src/app/components/genre-songs-editor/genre-songs-editor.component.css")]
+            styles: [__webpack_require__(/*! ./genre-songs-editor.component.css */ "./src/app/components/genre-songs-editor/genre-songs-editor.component.css")],
         }),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"], Object, ngx_spinner__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"]])
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [Object, ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"]])
     ], GenreSongsEditorComponent);
     return GenreSongsEditorComponent;
 }());
@@ -2144,7 +2209,7 @@ var GenreSongsEditorComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".curson-pointer:hover{\r\n    cursor:pointer\r\n}"
 
 /***/ }),
 
@@ -2155,7 +2220,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n<div class=\"col-md-8\">\r\n  <button type=\"button\" (click)=\"addNewMood()\" style=\"margin-left: 30px;\" class=\"btn btn-default\">\r\n    Add New Mood\r\n  </button>\r\n</div>\r\n<div class=\"col-md-3\" *ngFor=\"let genre of genres\">\r\n  <div class=\"card card-profile\" style=\"margin-top: 50px;\">\r\n    <div class=\"card-avatar border-white\">\r\n      <a href=\"#avatar\">\r\n        <img src=\"{{genre.picture}}\" alt=\"...\">\r\n      </a>\r\n    </div>\r\n    <div class=\"card-body\">\r\n      <h4 class=\"card-title\">{{genre.name}}</h4>\r\n\r\n      <div class=\"card-footer text-center\">\r\n        <a (click)=\"edit(genre)\" class=\"btn btn-with-icon btn-outline-info btn-info\" style=\"margin: 20px 5px 10px 5px\"\r\n          data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Edit\">\r\n          <i class=\"ti-pencil\" aria-hidden=\"true\"></i>\r\n        </a>\r\n        <a (click)=\"openGenreSongs(genre)\" class=\"btn btn-with-icon btn-outline-success btn-success\"\r\n          style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Songs\">\r\n          <i class=\"ti-music-alt\" aria-hidden=\"true\"></i>\r\n        </a>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n<div class=\"container\">\r\n  <button type=\"button\" (click)=\"addNewCatyegory()\" style=\"margin-left: 30px\" class=\"btn btn-default\">\r\n    Add New Mood\r\n  </button>\r\n  <!-- <br>\r\n  <img src=\"http://localhost:5000/getFile/danish2_1633597196687.jpg\" alt=\"\"> -->\r\n</div>\r\n<br>\r\n<br>\r\n<div class=\"row\" style=\"max-height: 70vh;overflow:auto;\">\r\n  <div class=\"col-md-3 mt-5\" *ngFor=\"let genre of genres | keyvalue\">\r\n    <div class=\"card card-profile\" style=\"margin-top: 50px;\">\r\n      <div class=\"card-avatar border-white\">\r\n        <a class=\"cursor-pointer\">\r\n          <img class=\"cursor-pointer\" src=\"{{getFileUrl}}{{genre.value.bgImage}}\" alt=\"Category picture\">\r\n        </a>\r\n      </div>\r\n      <div class=\"card-body\">\r\n        <h4 class=\"card-title\">{{genre.value.name}}</h4>\r\n\r\n        <div class=\"card-footer text-center\">\r\n          <a (click)=\"edit(genre.key,genre.value)\" class=\"btn btn-with-icon btn-outline-info btn-info\"\r\n            style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Edit\">\r\n            <i class=\"ti-pencil\" aria-hidden=\"true\"></i>\r\n          </a>\r\n          <a (click)=\"delete(genre.key,genre.value._id,genre.value.bgImage)\"\r\n            class=\"btn btn-with-icon btn-outline-danger btn-danger\" style=\"margin: 20px 5px 10px 5px\"\r\n            data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Delete\">\r\n            <i class=\"ti-trash\" aria-hidden=\"true\"></i>\r\n          </a>\r\n          <!-- <a (click)=\"openGenreSongs(genre)\" class=\"btn btn-with-icon btn-outline-success btn-success\"\r\n          style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Songs\">\r\n          <i class=\"ti-music-alt\" aria-hidden=\"true\"></i>\r\n        </a> -->\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -2171,11 +2236,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GenresComponent", function() { return GenresComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../genre-songs-editor/genre-songs-editor.component */ "./src/app/components/genre-songs-editor/genre-songs-editor.component.ts");
-/* harmony import */ var _mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../mood-editor/mood-editor.component */ "./src/app/components/mood-editor/mood-editor.component.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../genre-songs-editor/genre-songs-editor.component */ "./src/app/components/genre-songs-editor/genre-songs-editor.component.ts");
+/* harmony import */ var _mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../mood-editor/mood-editor.component */ "./src/app/components/mood-editor/mood-editor.component.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _services_utility_service__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../services/utility.service */ "./src/app/services/utility.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2192,13 +2261,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
 var GenresComponent = /** @class */ (function () {
-    function GenresComponent(firestoreService, spinner, dialog, router) {
-        this.firestoreService = firestoreService;
+    function GenresComponent(spinner, dialog, router, http, util) {
         this.spinner = spinner;
         this.dialog = dialog;
         this.router = router;
+        this.http = http;
+        this.util = util;
         this.genres = [];
+        this.genreEditKey = null;
+        this.getFileUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].getFileUrl;
     }
     GenresComponent.prototype.ngOnInit = function () {
         this.getGenres();
@@ -2206,68 +2281,93 @@ var GenresComponent = /** @class */ (function () {
     GenresComponent.prototype.getGenres = function () {
         var _this = this;
         this.spinner.show();
-        this.firestoreService.getGenres().then(function (result) {
-            _this.genres = result.genres;
-            console.log({ result: result });
-            // this.genres.forEach(genre => {
-            //   const existingGenre = GenreHelper.genres.find(
-            //     x => x.name === genre.name
-            //   );
-            //   if (existingGenre) {
-            //     genre.picture = existingGenre.picture;
-            //   }
-            // });
+        this.http
+            .get("category/fetchAll")
+            .then(function (success) {
+            console.log(success);
             _this.spinner.hide();
+            _this.genres = success.body.data;
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
         });
+        // this.firestoreService.getGenres().then((result: any) => {
+        //   this.genres = result.genres;
+        //   this.spinner.hide();
+        // });
     };
     GenresComponent.prototype.openGenreSongs = function (genre) {
         var _this = this;
-        var dialogRef = this.dialog.open(_genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_5__["GenreSongsEditorComponent"], {
+        var dialogRef = this.dialog.open(_genre_songs_editor_genre_songs_editor_component__WEBPACK_IMPORTED_MODULE_6__["GenreSongsEditorComponent"], {
             width: "1000px",
             minHeight: "500px",
-            data: { genre: genre }
+            data: { genre: genre },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             console.log({ result: result });
             _this.getGenres();
         });
     };
-    GenresComponent.prototype.addNewMood = function () {
+    GenresComponent.prototype.addNewCatyegory = function () {
         var _this = this;
-        var dialogRef = this.dialog.open(_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_6__["MoodEditorComponent"], {
+        var dialogRef = this.dialog.open(_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_7__["MoodEditorComponent"], {
             width: "500px",
             data: {
-                isEditMode: false
-            }
+                isEditMode: false,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
-                // Add new artist
-                _this.genres.unshift(result.newMood);
-                // demo.showSuccessNotification("Artist successfully added!");
+                _this.genres.push(result.newMood);
+                demo.showSuccessNotification("Category successfully added!");
             }
         });
     };
-    GenresComponent.prototype.edit = function (genre) {
-        var dialogRef = this.dialog.open(_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_6__["MoodEditorComponent"], {
+    GenresComponent.prototype.edit = function (genreKey, genre) {
+        var _this = this;
+        this.genreEditKey = genreKey;
+        var dialogRef = this.dialog.open(_mood_editor_mood_editor_component__WEBPACK_IMPORTED_MODULE_7__["MoodEditorComponent"], {
             width: "650px",
             data: {
                 isEditMode: true,
-                genre: genre
-            }
+                genre: genre,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             console.log({ result: result });
             if (result.isSuccess) {
-                // Edit name
-                if (result.MoodNameUpdated) {
-                    genre.name = result.newMoodName;
-                    // genre.showSuccessNotification("Artist name successfully updated!");
-                }
-                else if (result.MoodPictureUpdated) {
-                    genre.picture = result.newMoodPicture;
-                    // demo.showSuccessNotification("Artist picture successfully updated!");
-                }
+                _this.genres[_this.genreEditKey] = result.updateMood;
+                demo.showSuccessNotification("Category successfully updated!");
+            }
+        });
+    };
+    GenresComponent.prototype.delete = function (deleteKey, toDeleteCatId, currPicUrl) {
+        var _this = this;
+        var options = {
+            title: "Delete Category",
+            text: "Are you sure you want to delete this category?",
+            icon: "error",
+            buttons: ["Cancel", "Ok"],
+            dangerMode: true,
+        };
+        sweetalert__WEBPACK_IMPORTED_MODULE_5___default()(options).then(function (willDelete) {
+            if (willDelete) {
+                _this.spinner.show();
+                _this.http
+                    .post("category/delete", {
+                    categoryId: toDeleteCatId,
+                    bgImage: currPicUrl,
+                })
+                    .then(function (success) {
+                    demo.showSuccessNotification("Category successfully deleted!");
+                    _this.spinner.hide();
+                    _this.genres.splice(deleteKey, 1);
+                })
+                    .catch(function (err) {
+                    _this.spinner.hide();
+                    demo.showErrorNotification(err["error"].message);
+                });
             }
         });
     };
@@ -2275,12 +2375,13 @@ var GenresComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-genres",
             template: __webpack_require__(/*! ./genres.component.html */ "./src/app/components/genres/genres.component.html"),
-            styles: [__webpack_require__(/*! ./genres.component.css */ "./src/app/components/genres/genres.component.css")]
+            styles: [__webpack_require__(/*! ./genres.component.css */ "./src/app/components/genres/genres.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__["FirestoreService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialog"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_http_service__WEBPACK_IMPORTED_MODULE_8__["HttpService"],
+            _services_utility_service__WEBPACK_IMPORTED_MODULE_9__["UtilityService"]])
     ], GenresComponent);
     return GenresComponent;
 }());
@@ -2307,7 +2408,7 @@ module.exports = "/*////////////////////////////////////////////////////////////
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"limiter\">\n  <div class=\"container-login100\">\n    <div class=\"wrap-login100\">\n      <form class=\"login100-form validate-form\">\n        <img class=\"login100-form-logo\" src=\"assets/img/logo_black.png\">\n\n        <span class=\"login100-form-title p-b-49\">\n          Login\n        </span>\n\n        <div class=\"wrap-input100 validate-input m-b-23\" data-validate=\"Username is required\">\n          <span class=\"label-input100\">Username</span>\n          <input [(ngModel)]=\"loginData.email\" class=\"input100\" type=\"text\" name=\"username\"\n            placeholder=\"Type your username\">\n        </div>\n\n        <div class=\"wrap-input100 validate-input\" data-validate=\"Password is required\">\n          <span class=\"label-input100\">Password</span>\n          <input [(ngModel)]=\"loginData.password\" class=\"input100\" type=\"password\" name=\"pass\"\n            placeholder=\"Type your password\">\n        </div>\n\n        <div class=\"text-right p-t-8 p-b-31\">\n        </div>\n\n        <div class=\"container-login100-form-btn\">\n          <button (click)=\"signIn()\" class=\"login100-form-btn\">\n            Log In\n          </button>\n\n          <!-- <button (click)=\"signUp()\" class=\"login100-form-btn\">\n            Sign Up\n          </button> -->\n        </div>\n\n        <div *ngIf=\"isLoading\" class=\"login100-form-title\">\n          <img src=\"assets/img/Spinner-0.6s-200px.gif\">\n        </div>\n        <!-- \n        <div class=\"txt1 text-center p-t-54 p-b-20\">\n          <span>\n            Or Sign Up Using\n          </span>\n        </div>\n\n        <div class=\"flex-c-m\">\n          <a (click)=\"signInWithFacebook()\" class=\"login100-social-item bg1\">\n            <i class=\"fa fa-facebook\"></i>\n          </a>\n\n          <a (click)=\"signInWithTwitter()\" class=\"login100-social-item bg2\">\n            <i class=\"fa fa-twitter\"></i>\n          </a>\n\n          <a (click)=\"signInWithGoogle()\" class=\"login100-social-item bg3\">\n            <i class=\"fa fa-google\"></i>\n          </a>\n        </div> -->\n      </form>\n    </div>\n  </div>\n</div>"
+module.exports = "<div class=\"limiter\">\r\n  <div class=\"container-login100\">\r\n    <div class=\"wrap-login100\">\r\n      <form class=\"login100-form validate-form\">\r\n        <br>\r\n        <img class=\"login100-form-logo\" src=\"assets/img/Freq-Logo-Black.png\" width=\"400\">\r\n        <br>\r\n        <span class=\"login100-form-title p-b-49\">\r\n          Login\r\n        </span>\r\n\r\n        <div class=\"wrap-input100 validate-input m-b-23\" data-validate=\"Email is required\">\r\n          <span class=\"label-input100\">Email</span>\r\n          <input [(ngModel)]=\"loginData.email\" class=\"input100\" type=\"text\" name=\"username\"\r\n            placeholder=\"Type your email..\">\r\n        </div>\r\n\r\n        <div class=\"wrap-input100 validate-input\" data-validate=\"Password is required\">\r\n          <span class=\"label-input100\">Password</span>\r\n          <input [(ngModel)]=\"loginData.password\" class=\"input100\" type=\"password\" name=\"pass\"\r\n            placeholder=\"Type your password\">\r\n        </div>\r\n\r\n        <div class=\"text-right p-t-8 p-b-31\">\r\n        </div>\r\n\r\n        <div class=\"container-login100-form-btn\">\r\n          <button (click)=\"signIn()\" class=\"login100-form-btn\">\r\n            Log In\r\n          </button>\r\n\r\n          <!-- <button (click)=\"signUp()\" class=\"login100-form-btn\">\r\n            Sign Up\r\n          </button> -->\r\n        </div>\r\n\r\n        <div *ngIf=\"isLoading\" class=\"login100-form-title\">\r\n          <img src=\"assets/img/Spinner-0.6s-200px.gif\">\r\n        </div>\r\n        <!-- \r\n        <div class=\"txt1 text-center p-t-54 p-b-20\">\r\n          <span>\r\n            Or Sign Up Using\r\n          </span>\r\n        </div>\r\n\r\n        <div class=\"flex-c-m\">\r\n          <a (click)=\"signInWithFacebook()\" class=\"login100-social-item bg1\">\r\n            <i class=\"fa fa-facebook\"></i>\r\n          </a>\r\n\r\n          <a (click)=\"signInWithTwitter()\" class=\"login100-social-item bg2\">\r\n            <i class=\"fa fa-twitter\"></i>\r\n          </a>\r\n\r\n          <a (click)=\"signInWithGoogle()\" class=\"login100-social-item bg3\">\r\n            <i class=\"fa fa-google\"></i>\r\n          </a>\r\n        </div> -->\r\n      </form>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -2323,7 +2424,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginModalComponent", function() { return LoginModalComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_AuthService_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/AuthService/auth.service */ "./src/app/services/AuthService/auth.service.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _services_utility_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/utility.service */ "./src/app/services/utility.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2336,115 +2438,141 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var LoginModalComponent = /** @class */ (function () {
-    function LoginModalComponent(authService, router) {
-        this.authService = authService;
+    function LoginModalComponent(router, http, util) {
         this.router = router;
+        this.http = http;
+        this.util = util;
         this.isLoading = false;
         this.loginData = { email: "", password: "" };
     }
-    LoginModalComponent.prototype.ngOnInit = function () { };
+    LoginModalComponent.prototype.ngOnInit = function () {
+        this.http
+            .get("notes/fetchAll")
+            .then(function (success) {
+            console.log("bcc");
+            console.log(success);
+        })
+            .catch(function (err) {
+            console.log(err["error"]);
+        });
+    };
     LoginModalComponent.prototype.signIn = function () {
         var _this = this;
         this.isLoading = true;
-        this.authService
-            .signIn(this.loginData.email, this.loginData.password)
-            .then(function (x) {
+        this.http
+            .post("user/login", this.loginData)
+            .then(function (success) {
             _this.isLoading = false;
-            window.location.reload();
+            var result = success.body.data;
+            _this.loginData.email = "";
+            _this.loginData.password = "";
+            _this.util.setCookie("authToken", result.accessToken, {
+                expireDays: 30,
+            });
+            // window.location.reload();
             demo.showSuccessNotification("Log in successful");
-            // setTimeout(() => {
-            // }, 40);
+            location.reload();
+            // this.router.navigate(["/genres"]);
         })
-            .catch(function (error) {
+            .catch(function (err) {
             _this.isLoading = false;
-            console.error(error);
-            demo.showErrorNotification("Log in failed:\n" + error);
+            console.log(err);
+            demo.showErrorNotification(err["error"].message);
         });
+        // this.authService
+        //   .signIn(this.loginData.email, this.loginData.password)
+        //   .then(x => {
+        //     this.isLoading = false;
+        //     window.location.reload();
+        //     demo.showSuccessNotification("Log in successful");
+        //   })
+        //   .catch(error => {
+        //     this.isLoading = false;
+        //     console.error(error);
+        //     demo.showErrorNotification("Log in failed:\n" + error);
+        //   });
     };
     LoginModalComponent.prototype.signUp = function () {
-        var _this = this;
         this.isLoading = true;
-        this.authService
-            .registerUser(this.loginData.email, this.loginData.password)
-            .then(function (x) {
-            _this.isLoading = false;
-            demo.showSuccessNotification("Sign up successful");
-        })
-            .catch(function (error) {
-            _this.isLoading = false;
-            console.error(error);
-            demo.showErrorNotification("Sign up failed:\n" + error);
-        });
+        // this.authService
+        //   .registerUser(this.loginData.email, this.loginData.password)
+        //   .then((x) => {
+        //     this.isLoading = false;
+        //     demo.showSuccessNotification("Sign up successful");
+        //   })
+        //   .catch((error) => {
+        //     this.isLoading = false;
+        //     console.error(error);
+        //     demo.showErrorNotification("Sign up failed:\n" + error);
+        //   });
     };
     LoginModalComponent.prototype.signInWithFacebook = function () {
-        var _this = this;
         this.isLoading = true;
-        this.authService
-            .signInWithFacebook()
-            .then(function () {
-            _this.isLoading = false;
-            demo.showSuccessNotification("Log in successful");
-        })
-            .catch(function (error) {
-            _this.isLoading = false;
-            console.error(error);
-            demo.showErrorNotification("Log in failed:\n" + error);
-        });
+        // this.authService
+        //   .signInWithFacebook()
+        //   .then(() => {
+        //     this.isLoading = false;
+        //     demo.showSuccessNotification("Log in successful");
+        //   })
+        //   .catch((error) => {
+        //     this.isLoading = false;
+        //     console.error(error);
+        //     demo.showErrorNotification("Log in failed:\n" + error);
+        //   });
     };
     LoginModalComponent.prototype.signInWithGoogle = function () {
-        var _this = this;
         this.isLoading = true;
-        this.authService
-            .signInWithGoogle()
-            .then(function () {
-            _this.isLoading = false;
-            demo.showSuccessNotification("Log in successful");
-        })
-            .catch(function (error) {
-            _this.isLoading = false;
-            console.error(error);
-            demo.showErrorNotification("Log in failed:\n" + error);
-        });
+        // this.authService
+        //   .signInWithGoogle()
+        //   .then(() => {
+        //     this.isLoading = false;
+        //     demo.showSuccessNotification("Log in successful");
+        //   })
+        //   .catch((error) => {
+        //     this.isLoading = false;
+        //     console.error(error);
+        //     demo.showErrorNotification("Log in failed:\n" + error);
+        //   });
     };
     LoginModalComponent.prototype.signInWithTwitter = function () {
-        var _this = this;
         this.isLoading = true;
-        this.authService
-            .signInWithTwitter()
-            .then(function () {
-            _this.isLoading = false;
-            demo.showSuccessNotification("Log in successful");
-        })
-            .catch(function (error) {
-            _this.isLoading = false;
-            console.error(error);
-            demo.showErrorNotification("Log in failed:\n" + error);
-        });
+        // this.authService
+        //   .signInWithTwitter()
+        //   .then(() => {
+        //     this.isLoading = false;
+        //     demo.showSuccessNotification("Log in successful");
+        //   })
+        //   .catch((error) => {
+        //     this.isLoading = false;
+        //     console.error(error);
+        //     demo.showErrorNotification("Log in failed:\n" + error);
+        //   });
     };
     LoginModalComponent.prototype.signInWithGithub = function () {
-        var _this = this;
         this.isLoading = true;
-        this.authService
-            .signInWithGithub()
-            .then(function () {
-            _this.isLoading = false;
-            demo.showSuccessNotification("Log in successful");
-        })
-            .catch(function (error) {
-            _this.isLoading = false;
-            console.error(error);
-            demo.showErrorNotification("Log in failed:\n" + error);
-        });
+        // this.authService
+        //   .signInWithGithub()
+        //   .then(() => {
+        //     this.isLoading = false;
+        //     demo.showSuccessNotification("Log in successful");
+        //   })
+        //   .catch((error) => {
+        //     this.isLoading = false;
+        //     console.error(error);
+        //     demo.showErrorNotification("Log in failed:\n" + error);
+        //   });
     };
     LoginModalComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-login-modal",
             template: __webpack_require__(/*! ./login-modal.component.html */ "./src/app/components/login-modal/login-modal.component.html"),
-            styles: [__webpack_require__(/*! ./login-modal.component.css */ "./src/app/components/login-modal/login-modal.component.css")]
+            styles: [__webpack_require__(/*! ./login-modal.component.css */ "./src/app/components/login-modal/login-modal.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_AuthService_auth_service__WEBPACK_IMPORTED_MODULE_2__["AuthService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"],
+            _services_utility_service__WEBPACK_IMPORTED_MODULE_3__["UtilityService"]])
     ], LoginModalComponent);
     return LoginModalComponent;
 }());
@@ -2471,7 +2599,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <button type=\"button\" style=\"float: right;\" (click)=\"closeEditor()\" class=\"btn btn-default btn-icon\">\r\n    <i class=\"ti-close\"></i>\r\n  </button>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <h2 *ngIf=\"!isEditMode\" style=\"margin-top: -20px;\">Create New Mood</h2>\r\n  <h2 *ngIf=\"isEditMode\" style=\"margin-top: -20px;\">Edit Existing Mood</h2>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"moodName\">Mood Name</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"moodName\" [(ngModel)]=\"moodName\" placeholder=\"Mood name\">\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-sm-2\">\r\n    <button *ngIf=\"isEditMode\" style=\"margin-top: 25px;\" (click)=\"updateMoodName()\"\r\n      class=\"btn btn-primary\">Update</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"MoodPicture\">Mood Picture</label>\r\n      <input type=\"file\" class=\"form-control\" id=\"MoodPicture\">\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-sm-2\">\r\n    <button *ngIf=\"isEditMode\" style=\"margin-top: 25px;\" (click)=\"updateMoodPicture()\"\r\n      class=\"btn btn-primary\">Update</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div *ngIf=\"showProgress\" aria-valuemin=\"0\" role=\"progressbar\"\r\n      class=\"progress-bar progress-bar-animated progress-bar-striped\" attr.aria-valuenow=\"{{progress}}\"\r\n      aria-valuemax=\"100\" [ngStyle]=\"{width:progress/100 | percent:'1.0-1'}\" style=\" background-color: #5cb85c\">\r\n      <strong>{{progress}}%</strong>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <button type=\"submit\" style=\"float: right;\" *ngIf=\"!isEditMode\" (click)=\"addNewMood()\" class=\"btn btn-primary\">Add\r\n    Mood</button>\r\n</div>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <button type=\"button\" style=\"float: right;\" (click)=\"closeEditor()\" class=\"btn btn-default btn-icon\">\r\n    <i class=\"ti-close\"></i>\r\n  </button>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <h2 *ngIf=\"!isEditMode\" style=\"margin-top: -20px;margin-left: 10px;\">Create New Mood</h2>\r\n  <h2 *ngIf=\"isEditMode\" style=\"margin-top: -20px;margin-left: 10px\">Edit Existing Mood</h2>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"moodName\">Mood Name</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"moodName\" [(ngModel)]=\"moodName\" placeholder=\"Category name\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"iconName\">Icon Name</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"iconName\" [(ngModel)]=\"iconName\" placeholder=\"Icon name\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"MoodPicture\">Category Picture</label>\r\n      <input type=\"file\" class=\"form-control\" id=\"MoodPicture\" accept=\"image/*\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <button type=\"submit\" style=\"float: right;\" *ngIf=\"!isEditMode\" (click)=\"addNewMood()\" class=\"btn btn-primary\">Add\r\n    Mood</button>\r\n  <button type=\"submit\" style=\"float: right;\" *ngIf=\"isEditMode\" (click)=\"updateMood()\"\r\n    class=\"btn btn-primary\">Update</button>\r\n</div>"
 
 /***/ }),
 
@@ -2486,13 +2614,12 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MoodEditorComponent", function() { return MoodEditorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _services_utility_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/utility.service */ "./src/app/services/utility.service.ts");
 /* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
 /* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _models_Mood__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/Mood */ "./src/app/models/Mood.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2511,24 +2638,24 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
 var MoodEditorComponent = /** @class */ (function () {
-    function MoodEditorComponent(firestoreService, firebaseStorage, spinner, dialogRef, data) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function MoodEditorComponent(spinner, dialogRef, http, util, data) {
         this.spinner = spinner;
         this.dialogRef = dialogRef;
+        this.http = http;
+        this.util = util;
         this.data = data;
         this.moodName = "";
+        this.iconName = "";
         this.moodId = "";
+        this.currentPicKey = "";
         this.isEditMode = false;
-        this.showProgress = false;
-        this.progress = 0;
         this.isEditMode = data.isEditMode;
         if (this.isEditMode) {
-            console.log('data', data);
             this.moodName = data.genre.name;
-            this.moodId = data.genre.genreId;
+            this.iconName = data.genre.iconName;
+            this.currentPicKey = data.genre.bgImage;
+            this.moodId = data.genre._id;
         }
     }
     MoodEditorComponent.prototype.ngOnInit = function () { };
@@ -2545,105 +2672,400 @@ var MoodEditorComponent = /** @class */ (function () {
             return;
         }
         this.spinner.show();
-        this.showProgress = true;
-        var uploadPath = "/" + this.moodName + "/MoodPicture";
-        // Upload Mood picture
-        this.firebaseStorage
-            .uploadPicture(uploadPath, MoodPicture)
-            .then(function (uploadResult) {
-            var newMood = new _models_Mood__WEBPACK_IMPORTED_MODULE_6__["Mood"]();
-            newMood.name = _this.moodName;
-            newMood.picture = uploadResult.downloadURL;
-            // If upload is successful, add the Mood to the firestore
-            _this.firestoreService.addNewMood(newMood).then(function (result) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                newMood.moodId = result.newMoodId;
-                _this.dialogRef.close({
-                    isSuccess: true,
-                    newMood: newMood
-                });
-            }, function (error) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                demo.showErrorNotification("An error occured: " + error);
-            });
-        }, function (error) {
+        var formData = new FormData();
+        formData.append("categoryPicture", MoodPicture);
+        formData.append("name", this.moodName);
+        formData.append("iconName", this.iconName);
+        this.http
+            .post("category/add", formData, { isMultiPartFormData: true })
+            .then(function (success) {
+            console.log(success.body.data);
             _this.spinner.hide();
-            _this.showProgress = false;
-            demo.showErrorNotification("An error occured: " + error);
-        });
-    };
-    MoodEditorComponent.prototype.updateMoodName = function () {
-        var _this = this;
-        if (!this.moodName) {
-            demo.showWarningNotification("Please provide a name for the Mood.");
-            return;
-        }
-        this.firestoreService.editMoodName(this.moodId, this.moodName).then(function (result) {
             _this.dialogRef.close({
                 isSuccess: true,
-                MoodNameUpdated: true,
-                newMoodName: _this.moodName
+                newMood: success.body.data,
             });
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
         });
     };
-    MoodEditorComponent.prototype.updateMoodPicture = function () {
+    MoodEditorComponent.prototype.updateMood = function () {
         var _this = this;
         var MoodPicture = (document.getElementById("MoodPicture")).files[0];
-        if (!MoodPicture) {
-            demo.showWarningNotification("Please select an image file to upload.");
+        if (this.moodName == this.data.genre.name &&
+            this.iconName == this.data.genre.iconName &&
+            !MoodPicture) {
+            demo.showWarningNotification("No changes made");
             return;
         }
         this.spinner.show();
-        this.showProgress = true;
-        var uploadPath = "/" + this.moodName + "/MoodPicture";
-        // Update Mood picture
-        this.firebaseStorage
-            .uploadPicture(uploadPath, MoodPicture)
-            .then(function (uploadResult) {
-            // If upload is successful, edit the Mood picture
-            _this.firestoreService
-                .editMoodPicture(_this.moodId, uploadResult.downloadURL)
-                .then(function (result) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                _this.dialogRef.close({
-                    isSuccess: true,
-                    MoodPictureUpdated: true,
-                    newMoodPicture: uploadResult.downloadURL
-                });
-            }, function (error) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                demo.showErrorNotification("An error occured: " + error);
-            });
-        }, function (error) {
+        var formData = new FormData();
+        if (MoodPicture)
+            formData.append("categoryPicture", MoodPicture);
+        formData.append("name", this.moodName);
+        formData.append("iconName", this.iconName);
+        formData.append("categoryId", this.moodId);
+        if (MoodPicture)
+            formData.append("oldPicKey", this.currentPicKey);
+        this.http
+            .post("category/edit", formData, { isMultiPartFormData: true })
+            .then(function (success) {
             _this.spinner.hide();
-            _this.showProgress = false;
-            demo.showErrorNotification("An error occured: " + error);
+            _this.dialogRef.close({
+                isSuccess: true,
+                updateMood: success.body.data,
+            });
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
         });
     };
     MoodEditorComponent.prototype.closeEditor = function () {
         this.dialogRef.close({
-            isSuccess: false
+            isSuccess: false,
         });
     };
     MoodEditorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-Mood-editor",
             template: __webpack_require__(/*! ./Mood-editor.component.html */ "./src/app/components/mood-editor/Mood-editor.component.html"),
-            styles: [__webpack_require__(/*! ./Mood-editor.component.css */ "./src/app/components/mood-editor/Mood-editor.component.css")]
+            styles: [__webpack_require__(/*! ./Mood-editor.component.css */ "./src/app/components/mood-editor/Mood-editor.component.css")],
         }),
-        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"], Object])
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            _services_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"],
+            _services_utility_service__WEBPACK_IMPORTED_MODULE_4__["UtilityService"], Object])
     ], MoodEditorComponent);
     return MoodEditorComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/note-editor/note-editor.component.css":
+/*!******************************************************************!*\
+  !*** ./src/app/components/note-editor/note-editor.component.css ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/note-editor/note-editor.component.html":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/note-editor/note-editor.component.html ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <button type=\"button\" style=\"float: right;\" (click)=\"closeEditor()\" class=\"btn btn-default btn-icon\">\r\n    <i class=\"ti-close\"></i>\r\n  </button>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <h2 *ngIf=\"!isEditNote\" style=\"margin-top: -20px;margin-left: 10px;\">Create New Note</h2>\r\n  <h2 *ngIf=\"isEditNote\" style=\"margin-top: -20px;margin-left: 10px\">Edit Existing Note</h2>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"noteTitle\">Note Title</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"noteTitle\" [(ngModel)]=\"noteTitle\" placeholder=\"Note title\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"noteDescription\">Note Description</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"noteDescription\" [(ngModel)]=\"noteDescription\"\r\n        placeholder=\"Note description\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n\r\n<div class=\"row\">\r\n  <button type=\"submit\" style=\"float: right;\" *ngIf=\"!isEditNote\" (click)=\"addNewNote()\" class=\"btn btn-primary\">Add\r\n    Note</button>\r\n  <button type=\"submit\" style=\"float: right;\" *ngIf=\"isEditNote\" (click)=\"updateNote()\"\r\n    class=\"btn btn-primary\">Update</button>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/note-editor/note-editor.component.ts":
+/*!*****************************************************************!*\
+  !*** ./src/app/components/note-editor/note-editor.component.ts ***!
+  \*****************************************************************/
+/*! exports provided: NoteEditorComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NoteEditorComponent", function() { return NoteEditorComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _services_utility_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/utility.service */ "./src/app/services/utility.service.ts");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+
+
+var NoteEditorComponent = /** @class */ (function () {
+    function NoteEditorComponent(spinner, dialogRef, http, util, data) {
+        this.spinner = spinner;
+        this.dialogRef = dialogRef;
+        this.http = http;
+        this.util = util;
+        this.data = data;
+        this.noteTitle = "";
+        this.noteDescription = "";
+        this.noteId = "";
+        this.isEditNote = false;
+        this.isEditNote = data.isEditMode;
+        if (this.isEditNote) {
+            this.noteTitle = data.note.title;
+            this.noteDescription = data.note.description;
+            this.noteId = data.note._id;
+        }
+    }
+    NoteEditorComponent.prototype.ngOnInit = function () { };
+    NoteEditorComponent.prototype.ngAfterViewInit = function () { };
+    NoteEditorComponent.prototype.addNewNote = function () {
+        var _this = this;
+        if (!this.noteTitle || !this.noteDescription) {
+            demo.showWarningNotification("One of the form fields is empty");
+            return;
+        }
+        this.spinner.show();
+        var payload = {
+            title: this.noteTitle,
+            description: this.noteDescription,
+        };
+        // let formData = new FormData();
+        // formData.append("title", this.noteTitle);
+        // formData.append("description", this.noteDescription);
+        this.http
+            .post("notes/add", payload)
+            .then(function (success) {
+            _this.spinner.hide();
+            _this.dialogRef.close({
+                isSuccess: true,
+                newNote: success.body.data,
+            });
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
+        });
+    };
+    NoteEditorComponent.prototype.updateNote = function () {
+        var _this = this;
+        if (this.noteTitle == this.data.note.title &&
+            this.noteDescription == this.data.note.description) {
+            demo.showWarningNotification("No changes made");
+            return;
+        }
+        this.spinner.show();
+        var payload = {
+            title: this.noteTitle,
+            description: this.noteDescription,
+            noteId: this.noteId,
+        };
+        this.http
+            .post("notes/edit", payload)
+            .then(function (success) {
+            _this.spinner.hide();
+            _this.dialogRef.close({
+                isSuccess: true,
+                updatedNote: success.body.data,
+            });
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
+        });
+    };
+    NoteEditorComponent.prototype.closeEditor = function () {
+        this.dialogRef.close({
+            isSuccess: false,
+        });
+    };
+    NoteEditorComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-Note-editor",
+            template: __webpack_require__(/*! ./note-editor.component.html */ "./src/app/components/note-editor/note-editor.component.html"),
+            styles: [__webpack_require__(/*! ./note-editor.component.css */ "./src/app/components/note-editor/note-editor.component.css")],
+        }),
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"],
+            _services_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"],
+            _services_utility_service__WEBPACK_IMPORTED_MODULE_4__["UtilityService"], Object])
+    ], NoteEditorComponent);
+    return NoteEditorComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/notes/notes.component.css":
+/*!******************************************************!*\
+  !*** ./src/app/components/notes/notes.component.css ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".curson-pointer:hover{\r\n    cursor:pointer\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/components/notes/notes.component.html":
+/*!*******************************************************!*\
+  !*** ./src/app/components/notes/notes.component.html ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n<div class=\"container\">\r\n  <button type=\"button\" (click)=\"addNewNote()\" style=\"margin-left: 30px\" class=\"btn btn-default\">\r\n    Add New Note\r\n  </button>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-md-6 mt-5\" *ngFor=\"let note of notes | keyvalue\">\r\n    <div class=\"card card-profile\" style=\"margin-top: 50px;\">\r\n      <div class=\"card-body\">\r\n        <h4 class=\"card-title\">{{note.value.title}}</h4>\r\n        <br>\r\n        <p>{{note.value.description | slice:0:220}}</p>\r\n\r\n        <div class=\"card-footer text-center\">\r\n          <a (click)=\"edit(note.key,note.value)\" class=\"btn btn-with-icon btn-outline-info btn-info\"\r\n            style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Edit\">\r\n            <i class=\"ti-pencil\" aria-hidden=\"true\"></i>\r\n          </a>\r\n          <a (click)=\"delete(note.key,note.value._id)\" class=\"btn btn-with-icon btn-outline-danger btn-danger\"\r\n            style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Delete\">\r\n            <i class=\"ti-trash\" aria-hidden=\"true\"></i>\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "./src/app/components/notes/notes.component.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/components/notes/notes.component.ts ***!
+  \*****************************************************/
+/*! exports provided: NotesComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NotesComponent", function() { return NotesComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _note_editor_note_editor_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../note-editor/note-editor.component */ "./src/app/components/note-editor/note-editor.component.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _services_utility_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../services/utility.service */ "./src/app/services/utility.service.ts");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_8__);
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+
+var NotesComponent = /** @class */ (function () {
+    function NotesComponent(spinner, dialog, router, http, util) {
+        this.spinner = spinner;
+        this.dialog = dialog;
+        this.router = router;
+        this.http = http;
+        this.util = util;
+        this.notes = [];
+        this.noteEditKey = null;
+        this.noteDltKey = null;
+        this.getFileUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_4__["environment"].getFileUrl;
+    }
+    NotesComponent.prototype.ngOnInit = function () {
+        this.getNotes();
+    };
+    NotesComponent.prototype.getNotes = function () {
+        var _this = this;
+        this.spinner.show();
+        this.http
+            .get("notes/fetchAll")
+            .then(function (success) {
+            console.log(success);
+            _this.spinner.hide();
+            _this.notes = success.body.data;
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
+        });
+    };
+    NotesComponent.prototype.addNewNote = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(_note_editor_note_editor_component__WEBPACK_IMPORTED_MODULE_5__["NoteEditorComponent"], {
+            width: "500px",
+            data: {
+                isEditMode: false,
+            },
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result.isSuccess) {
+                _this.notes.unshift(result.newNote);
+                demo.showSuccessNotification("Note successfully added!");
+            }
+        });
+    };
+    NotesComponent.prototype.edit = function (noteKey, note) {
+        var _this = this;
+        this.noteEditKey = noteKey;
+        var dialogRef2 = this.dialog.open(_note_editor_note_editor_component__WEBPACK_IMPORTED_MODULE_5__["NoteEditorComponent"], {
+            width: "500px",
+            data: {
+                isEditMode: true,
+                note: note,
+            },
+        });
+        dialogRef2.afterClosed().subscribe(function (result) {
+            console.log({ result: result });
+            if (result.isSuccess) {
+                _this.notes[_this.noteEditKey] = result.updatedNote;
+                demo.showSuccessNotification("Note successfully updated!");
+            }
+        });
+    };
+    NotesComponent.prototype.delete = function (deleteKey, toDeleteNoteId) {
+        var _this = this;
+        this.noteDltKey = deleteKey;
+        var options = {
+            title: "Delete Note?",
+            text: "Are you sure you want to delete this Note?",
+            icon: "error",
+            buttons: ["Cancel", "Ok"],
+            dangerMode: true,
+        };
+        sweetalert__WEBPACK_IMPORTED_MODULE_8___default()(options).then(function (willDelete) {
+            if (willDelete) {
+                _this.spinner.show();
+                _this.http
+                    .post("notes/delete", { noteId: toDeleteNoteId })
+                    .then(function (success) {
+                    demo.showSuccessNotification("Note successfully deleted!");
+                    _this.spinner.hide();
+                    _this.notes.splice(_this.noteDltKey, 1);
+                })
+                    .catch(function (err) {
+                    _this.spinner.hide();
+                    demo.showErrorNotification(err["error"].message);
+                });
+            }
+        });
+    };
+    NotesComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: "app-notes",
+            template: __webpack_require__(/*! ./notes.component.html */ "./src/app/components/notes/notes.component.html"),
+            styles: [__webpack_require__(/*! ./notes.component.css */ "./src/app/components/notes/notes.component.css")],
+        }),
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_http_service__WEBPACK_IMPORTED_MODULE_6__["HttpService"],
+            _services_utility_service__WEBPACK_IMPORTED_MODULE_7__["UtilityService"]])
+    ], NotesComponent);
+    return NotesComponent;
 }());
 
 
@@ -2683,13 +3105,10 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaylistEditorComponent", function() { return PlaylistEditorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _models_Playlist__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/Playlist */ "./src/app/models/Playlist.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2706,13 +3125,8 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
-
-
 var PlaylistEditorComponent = /** @class */ (function () {
-    function PlaylistEditorComponent(firestoreService, firebaseStorage, spinner, dialogRef, data) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function PlaylistEditorComponent(spinner, dialogRef, data) {
         this.spinner = spinner;
         this.dialogRef = dialogRef;
         this.data = data;
@@ -2730,7 +3144,6 @@ var PlaylistEditorComponent = /** @class */ (function () {
     PlaylistEditorComponent.prototype.ngOnInit = function () { };
     PlaylistEditorComponent.prototype.ngAfterViewInit = function () { };
     PlaylistEditorComponent.prototype.addNewPlaylist = function () {
-        var _this = this;
         if (!this.playlistName) {
             demo.showWarningNotification("Please provide a name for the playlist.");
             return;
@@ -2744,50 +3157,58 @@ var PlaylistEditorComponent = /** @class */ (function () {
         this.showProgress = true;
         var uploadPath = "/" + this.playlistName + "/playlistPicture";
         // Upload playlist picture
-        this.firebaseStorage
-            .uploadPicture(uploadPath, playlistPicture)
-            .then(function (uploadResult) {
-            var newPlaylist = new _models_Playlist__WEBPACK_IMPORTED_MODULE_6__["Playlist"]();
-            newPlaylist.name = _this.playlistName;
-            newPlaylist.picture = uploadResult.downloadURL;
-            // If upload is successful, add the playlist to the firestore
-            _this.firestoreService.addNewPlaylist(newPlaylist).then(function (result) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                newPlaylist.playlistId = result.newPlaylistId;
-                _this.dialogRef.close({
-                    isSuccess: true,
-                    newPlaylist: newPlaylist
-                });
-            }, function (error) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                demo.showErrorNotification("An error occured: " + error);
-            });
-        }, function (error) {
-            _this.spinner.hide();
-            _this.showProgress = false;
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firebaseStorage
+        //   .uploadPicture(uploadPath, playlistPicture)
+        //   .then(
+        //     (uploadResult: any) => {
+        //       const newPlaylist = new Playlist();
+        //       newPlaylist.name = this.playlistName;
+        //       newPlaylist.picture = uploadResult.downloadURL;
+        //       this.firestoreService.addNewPlaylist(newPlaylist).then(
+        //         (result: any) => {
+        //           this.spinner.hide();
+        //           this.showProgress = false;
+        //           newPlaylist.playlistId = result.newPlaylistId;
+        //           this.dialogRef.close({
+        //             isSuccess: true,
+        //             newPlaylist: newPlaylist
+        //           });
+        //         },
+        //         (error: any) => {
+        //           this.spinner.hide();
+        //           this.showProgress = false;
+        //           demo.showErrorNotification("An error occured: " + error);
+        //         }
+        //       );
+        //     },
+        //     (error: any) => {
+        //       this.spinner.hide();
+        //       this.showProgress = false;
+        //       demo.showErrorNotification("An error occured: " + error);
+        //     }
+        //   );
     };
     PlaylistEditorComponent.prototype.updatePlaylistName = function () {
-        var _this = this;
         if (!this.playlistName) {
             demo.showWarningNotification("Please provide a name for the playlist.");
             return;
         }
-        this.firestoreService.editPlaylistName(this.playlistId, this.playlistName).then(function (result) {
-            _this.dialogRef.close({
-                isSuccess: true,
-                playlistNameUpdated: true,
-                newPlaylistName: _this.playlistName
-            });
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firestoreService
+        //   .editPlaylistName(this.playlistId, this.playlistName)
+        //   .then(
+        //     (result: any) => {
+        //       this.dialogRef.close({
+        //         isSuccess: true,
+        //         playlistNameUpdated: true,
+        //         newPlaylistName: this.playlistName,
+        //       });
+        //     },
+        //     (error: any) => {
+        //       demo.showErrorNotification("An error occured: " + error);
+        //     }
+        //   );
     };
     PlaylistEditorComponent.prototype.updatePlaylistPicture = function () {
-        var _this = this;
         var playlistPicture = (document.getElementById("playlistPicture")).files[0];
         if (!playlistPicture) {
             demo.showWarningNotification("Please select an image file to upload.");
@@ -2797,47 +3218,48 @@ var PlaylistEditorComponent = /** @class */ (function () {
         this.showProgress = true;
         var uploadPath = "/" + this.playlistName + "/playlistPicture";
         // Update playlist picture
-        this.firebaseStorage
-            .uploadPicture(uploadPath, playlistPicture)
-            .then(function (uploadResult) {
-            // If upload is successful, edit the playlist picture
-            _this.firestoreService
-                .editPlaylistPicture(_this.playlistId, uploadResult.downloadURL)
-                .then(function (result) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                _this.dialogRef.close({
-                    isSuccess: true,
-                    playlistPictureUpdated: true,
-                    newPlaylistPicture: uploadResult.downloadURL
-                });
-            }, function (error) {
-                _this.spinner.hide();
-                _this.showProgress = false;
-                demo.showErrorNotification("An error occured: " + error);
-            });
-        }, function (error) {
-            _this.spinner.hide();
-            _this.showProgress = false;
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firebaseStorage.uploadPicture(uploadPath, playlistPicture).then(
+        //   (uploadResult: any) => {
+        //     this.firestoreService
+        //       .editPlaylistPicture(this.playlistId, uploadResult.downloadURL)
+        //       .then(
+        //         (result: any) => {
+        //           this.spinner.hide();
+        //           this.showProgress = false;
+        //           this.dialogRef.close({
+        //             isSuccess: true,
+        //             playlistPictureUpdated: true,
+        //             newPlaylistPicture: uploadResult.downloadURL,
+        //           });
+        //         },
+        //         (error: any) => {
+        //           this.spinner.hide();
+        //           this.showProgress = false;
+        //           demo.showErrorNotification("An error occured: " + error);
+        //         }
+        //       );
+        //   },
+        //   (error: any) => {
+        //     this.spinner.hide();
+        //     this.showProgress = false;
+        //     demo.showErrorNotification("An error occured: " + error);
+        //   }
+        // );
     };
     PlaylistEditorComponent.prototype.closeEditor = function () {
         this.dialogRef.close({
-            isSuccess: false
+            isSuccess: false,
         });
     };
     PlaylistEditorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-playlist-editor",
             template: __webpack_require__(/*! ./playlist-editor.component.html */ "./src/app/components/playlist-editor/playlist-editor.component.html"),
-            styles: [__webpack_require__(/*! ./playlist-editor.component.css */ "./src/app/components/playlist-editor/playlist-editor.component.css")]
+            styles: [__webpack_require__(/*! ./playlist-editor.component.css */ "./src/app/components/playlist-editor/playlist-editor.component.css")],
         }),
-        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"], Object])
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
     ], PlaylistEditorComponent);
     return PlaylistEditorComponent;
 }());
@@ -2879,13 +3301,11 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaylistGroupEditorComponent", function() { return PlaylistGroupEditorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/PlaylistGroup */ "./src/app/models/PlaylistGroup.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../models/PlaylistGroup */ "./src/app/models/PlaylistGroup.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2903,12 +3323,8 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
-
 var PlaylistGroupEditorComponent = /** @class */ (function () {
-    function PlaylistGroupEditorComponent(firestoreService, firebaseStorage, spinner, dialogRef, data) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function PlaylistGroupEditorComponent(spinner, dialogRef, data) {
         this.spinner = spinner;
         this.dialogRef = dialogRef;
         this.data = data;
@@ -2923,60 +3339,62 @@ var PlaylistGroupEditorComponent = /** @class */ (function () {
     }
     PlaylistGroupEditorComponent.prototype.ngOnInit = function () { };
     PlaylistGroupEditorComponent.prototype.addNewPlaylistGroup = function () {
-        var _this = this;
         if (!this.playlistGroupName) {
             demo.showWarningNotification("Please provide a name for the playlist group.");
             return;
         }
         this.spinner.show();
-        var newPlaylistGroup = new _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_6__["PlaylistGroup"]();
+        var newPlaylistGroup = new _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_4__["PlaylistGroup"]();
         newPlaylistGroup.name = this.playlistGroupName;
-        this.firestoreService.addNewPlaylistGroup(newPlaylistGroup).then(function (result) {
-            _this.spinner.hide();
-            newPlaylistGroup.playlistGroupId = result.newPlaylistGroupId;
-            _this.dialogRef.close({
-                isSuccess: true,
-                newPlaylistGroup: newPlaylistGroup
-            });
-        }, function (error) {
-            _this.spinner.hide();
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firestoreService.addNewPlaylistGroup(newPlaylistGroup).then(
+        //   (result: any) => {
+        //     this.spinner.hide();
+        //     newPlaylistGroup.playlistGroupId = result.newPlaylistGroupId;
+        //     this.dialogRef.close({
+        //       isSuccess: true,
+        //       newPlaylistGroup: newPlaylistGroup,
+        //     });
+        //   },
+        //   (error: any) => {
+        //     this.spinner.hide();
+        //     demo.showErrorNotification("An error occured: " + error);
+        //   }
+        // );
     };
     PlaylistGroupEditorComponent.prototype.updatePlaylistGroupName = function () {
-        var _this = this;
         if (!this.playlistGroupName) {
             demo.showWarningNotification("Please provide a name for the playlist group.");
             return;
         }
-        this.firestoreService
-            .editPlaylistGroupName(this.playlistGroupId, this.playlistGroupName)
-            .then(function (result) {
-            _this.dialogRef.close({
-                isSuccess: true,
-                playlistGroupNameUpdated: true,
-                newPlaylistGroupName: _this.playlistGroupName
-            });
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firestoreService
+        //   .editPlaylistGroupName(this.playlistGroupId, this.playlistGroupName)
+        //   .then(
+        //     (result: any) => {
+        //       this.dialogRef.close({
+        //         isSuccess: true,
+        //         playlistGroupNameUpdated: true,
+        //         newPlaylistGroupName: this.playlistGroupName,
+        //       });
+        //     },
+        //     (error: any) => {
+        //       demo.showErrorNotification("An error occured: " + error);
+        //     }
+        //   );
     };
     PlaylistGroupEditorComponent.prototype.closeEditor = function () {
         this.dialogRef.close({
-            isSuccess: false
+            isSuccess: false,
         });
     };
     PlaylistGroupEditorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-playlist-group-editor",
             template: __webpack_require__(/*! ./playlist-group-editor.component.html */ "./src/app/components/playlist-group-editor/playlist-group-editor.component.html"),
-            styles: [__webpack_require__(/*! ./playlist-group-editor.component.css */ "./src/app/components/playlist-group-editor/playlist-group-editor.component.css")]
+            styles: [__webpack_require__(/*! ./playlist-group-editor.component.css */ "./src/app/components/playlist-group-editor/playlist-group-editor.component.css")],
         }),
-        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"], Object])
+        __param(2, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
     ], PlaylistGroupEditorComponent);
     return PlaylistGroupEditorComponent;
 }());
@@ -3018,9 +3436,8 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaylistGroupPlaylistsEditorComponent", function() { return PlaylistGroupPlaylistsEditorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3036,10 +3453,8 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
 var PlaylistGroupPlaylistsEditorComponent = /** @class */ (function () {
-    function PlaylistGroupPlaylistsEditorComponent(firestoreService, data, spinner) {
-        this.firestoreService = firestoreService;
+    function PlaylistGroupPlaylistsEditorComponent(data, spinner) {
         this.data = data;
         this.spinner = spinner;
         this.isPlaylistGroupEditing = false;
@@ -3050,23 +3465,22 @@ var PlaylistGroupPlaylistsEditorComponent = /** @class */ (function () {
         this.getPlaylistGroupPlaylists();
     };
     PlaylistGroupPlaylistsEditorComponent.prototype.getPlaylistGroupPlaylists = function () {
-        var _this = this;
         this.spinner.show();
-        this.firestoreService
-            .getPlaylistGroupPlaylists(this.playlistGroup)
-            .then(function (result) {
-            _this.playlistGroupPlaylists = result.playlistGroupPlaylists;
-            _this.spinner.hide();
-        });
+        // this.firestoreService
+        //   .getPlaylistGroupPlaylists(this.playlistGroup)
+        //   .then((result: any) => {
+        //     this.playlistGroupPlaylists = result.playlistGroupPlaylists;
+        //     this.spinner.hide();
+        //   });
     };
     PlaylistGroupPlaylistsEditorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-playlist-group-playlists-editor",
             template: __webpack_require__(/*! ./playlist-group-playlists-editor.component.html */ "./src/app/components/playlist-group-playlists-editor/playlist-group-playlists-editor.component.html"),
-            styles: [__webpack_require__(/*! ./playlist-group-playlists-editor.component.css */ "./src/app/components/playlist-group-playlists-editor/playlist-group-playlists-editor.component.css")]
+            styles: [__webpack_require__(/*! ./playlist-group-playlists-editor.component.css */ "./src/app/components/playlist-group-playlists-editor/playlist-group-playlists-editor.component.css")],
         }),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"], Object, ngx_spinner__WEBPACK_IMPORTED_MODULE_3__["NgxSpinnerService"]])
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [Object, ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"]])
     ], PlaylistGroupPlaylistsEditorComponent);
     return PlaylistGroupPlaylistsEditorComponent;
 }());
@@ -3109,16 +3523,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaylistGroupsComponent", function() { return PlaylistGroupsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../playlist-group-editor/playlist-group-editor.component */ "./src/app/components/playlist-group-editor/playlist-group-editor.component.ts");
-/* harmony import */ var _playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../playlist-group-playlists-editor/playlist-group-playlists-editor.component */ "./src/app/components/playlist-group-playlists-editor/playlist-group-playlists-editor.component.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../playlist-group-editor/playlist-group-editor.component */ "./src/app/components/playlist-group-editor/playlist-group-editor.component.ts");
+/* harmony import */ var _playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../playlist-group-playlists-editor/playlist-group-playlists-editor.component */ "./src/app/components/playlist-group-playlists-editor/playlist-group-playlists-editor.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3136,12 +3548,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var PlaylistGroupsComponent = /** @class */ (function () {
-    function PlaylistGroupsComponent(firestoreService, firebaseStorage, spinner, dialog, router) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function PlaylistGroupsComponent(spinner, dialog, router) {
         this.spinner = spinner;
         this.dialog = dialog;
         this.router = router;
@@ -3151,20 +3559,19 @@ var PlaylistGroupsComponent = /** @class */ (function () {
         this.getPlaylistGroups();
     };
     PlaylistGroupsComponent.prototype.getPlaylistGroups = function () {
-        var _this = this;
         this.spinner.show();
-        this.firestoreService.getPlaylistGroups().then(function (result) {
-            _this.playlistGroups = result.playlistGroups;
-            _this.spinner.hide();
-        });
+        // this.firestoreService.getPlaylistGroups().then((result: any) => {
+        //   this.playlistGroups = result.playlistGroups;
+        //   this.spinner.hide();
+        // });
     };
     PlaylistGroupsComponent.prototype.addNewPlaylistGroup = function () {
         var _this = this;
-        var dialogRef = this.dialog.open(_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_8__["PlaylistGroupEditorComponent"], {
+        var dialogRef = this.dialog.open(_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_6__["PlaylistGroupEditorComponent"], {
             width: "500px",
             data: {
-                isEditMode: false
-            }
+                isEditMode: false,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
@@ -3175,12 +3582,12 @@ var PlaylistGroupsComponent = /** @class */ (function () {
         });
     };
     PlaylistGroupsComponent.prototype.edit = function (playlistGroup) {
-        var dialogRef = this.dialog.open(_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_8__["PlaylistGroupEditorComponent"], {
+        var dialogRef = this.dialog.open(_playlist_group_editor_playlist_group_editor_component__WEBPACK_IMPORTED_MODULE_6__["PlaylistGroupEditorComponent"], {
             width: "650px",
             data: {
                 isEditMode: true,
-                playlistGroup: playlistGroup
-            }
+                playlistGroup: playlistGroup,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
@@ -3199,20 +3606,25 @@ var PlaylistGroupsComponent = /** @class */ (function () {
             text: "Are you sure you want to delete this playlist group?",
             icon: "error",
             buttons: ["Cancel", "Ok"],
-            dangerMode: true
+            dangerMode: true,
         };
-        sweetalert__WEBPACK_IMPORTED_MODULE_7___default()(options).then(function (willDelete) {
+        sweetalert__WEBPACK_IMPORTED_MODULE_5___default()(options).then(function (willDelete) {
             if (willDelete) {
                 _this.spinner.show();
                 // Delete playlist
-                _this.firestoreService.deletePlaylistGroup(playlistGroup).then(function (result) {
-                    _this.removePlaylistGroupFromList(playlistGroup);
-                    demo.showSuccessNotification("Playlist Group successfully deleted!");
-                    _this.spinner.hide();
-                }, function (error) {
-                    _this.spinner.hide();
-                    demo.showErrorNotification("An error occured: " + error);
-                });
+                // this.firestoreService.deletePlaylistGroup(playlistGroup).then(
+                //   (result: any) => {
+                //     this.removePlaylistGroupFromList(playlistGroup);
+                //     demo.showSuccessNotification(
+                //       "Playlist Group successfully deleted!"
+                //     );
+                //     this.spinner.hide();
+                //   },
+                //   (error: any) => {
+                //     this.spinner.hide();
+                //     demo.showErrorNotification("An error occured: " + error);
+                //   }
+                // );
             }
         });
     };
@@ -3223,10 +3635,10 @@ var PlaylistGroupsComponent = /** @class */ (function () {
         }
     };
     PlaylistGroupsComponent.prototype.openPlaylists = function (playlistGroup) {
-        var dialogRef = this.dialog.open(_playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_9__["PlaylistGroupPlaylistsEditorComponent"], {
+        var dialogRef = this.dialog.open(_playlist_group_playlists_editor_playlist_group_playlists_editor_component__WEBPACK_IMPORTED_MODULE_7__["PlaylistGroupPlaylistsEditorComponent"], {
             width: "1000px",
             minHeight: "500px",
-            data: { playlistGroup: playlistGroup }
+            data: { playlistGroup: playlistGroup },
         });
         dialogRef.afterClosed().subscribe(function (result) { });
     };
@@ -3234,12 +3646,10 @@ var PlaylistGroupsComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-playlist-group",
             template: __webpack_require__(/*! ./playlist-group.component.html */ "./src/app/components/playlist-group/playlist-group.component.html"),
-            styles: [__webpack_require__(/*! ./playlist-group.component.css */ "./src/app/components/playlist-group/playlist-group.component.css")]
+            styles: [__webpack_require__(/*! ./playlist-group.component.css */ "./src/app/components/playlist-group/playlist-group.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_4__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_3__["MatDialog"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], PlaylistGroupsComponent);
     return PlaylistGroupsComponent;
@@ -3267,7 +3677,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <h2 style=\"margin-top: -10px;\">Add/Remove Playlist Songs</h2>\r\n</div>\r\n\r\n<mat-dialog-content>\r\n  <app-songs [isPlaylistEditing]=\"isPlaylistEditing\" [playlist]=\"playlist\" [playlistSongs]=\"playlistSongs\"></app-songs>\r\n</mat-dialog-content>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <h2 style=\"margin-top: -10px;\">Add/Remove Playlist Songs</h2>\r\n</div>\r\n\r\n<!-- <mat-dialog-content>\r\n  <app-songs [isPlaylistEditing]=\"isPlaylistEditing\" [playlist]=\"playlist\" [playlistSongs]=\"playlistSongs\"></app-songs>\r\n</mat-dialog-content> -->"
 
 /***/ }),
 
@@ -3284,7 +3694,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 /* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3300,10 +3709,8 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
 var PlaylistSongsEditorComponent = /** @class */ (function () {
-    function PlaylistSongsEditorComponent(firestoreService, data, spinner) {
-        this.firestoreService = firestoreService;
+    function PlaylistSongsEditorComponent(data, spinner) {
         this.data = data;
         this.spinner = spinner;
         this.isPlaylistEditing = false;
@@ -3314,23 +3721,22 @@ var PlaylistSongsEditorComponent = /** @class */ (function () {
         this.getPlaylistSongs();
     };
     PlaylistSongsEditorComponent.prototype.getPlaylistSongs = function () {
-        var _this = this;
         this.spinner.show();
-        this.firestoreService
-            .getPlaylistSongs(this.playlist)
-            .then(function (result) {
-            _this.playlistSongs = result.playlistSongs;
-            _this.spinner.hide();
-        });
+        // this.firestoreService
+        //   .getPlaylistSongs(this.playlist)
+        //   .then((result: any) => {
+        //     this.playlistSongs = result.playlistSongs;
+        //     this.spinner.hide();
+        //   });
     };
     PlaylistSongsEditorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-playlist-songs-editor",
             template: __webpack_require__(/*! ./playlist-songs-editor.component.html */ "./src/app/components/playlist-songs-editor/playlist-songs-editor.component.html"),
-            styles: [__webpack_require__(/*! ./playlist-songs-editor.component.css */ "./src/app/components/playlist-songs-editor/playlist-songs-editor.component.css")]
+            styles: [__webpack_require__(/*! ./playlist-songs-editor.component.css */ "./src/app/components/playlist-songs-editor/playlist-songs-editor.component.css")],
         }),
-        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_3__["FirestoreService"], Object, ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"]])
+        __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [Object, ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"]])
     ], PlaylistSongsEditorComponent);
     return PlaylistSongsEditorComponent;
 }());
@@ -3373,17 +3779,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PlaylistsComponent", function() { return PlaylistsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../playlist-editor/playlist-editor.component */ "./src/app/components/playlist-editor/playlist-editor.component.ts");
-/* harmony import */ var _playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../playlist-songs-editor/playlist-songs-editor.component */ "./src/app/components/playlist-songs-editor/playlist-songs-editor.component.ts");
-/* harmony import */ var _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../models/PlaylistGroup */ "./src/app/models/PlaylistGroup.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../playlist-editor/playlist-editor.component */ "./src/app/components/playlist-editor/playlist-editor.component.ts");
+/* harmony import */ var _playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../playlist-songs-editor/playlist-songs-editor.component */ "./src/app/components/playlist-songs-editor/playlist-songs-editor.component.ts");
+/* harmony import */ var _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../models/PlaylistGroup */ "./src/app/models/PlaylistGroup.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3402,12 +3806,8 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var PlaylistsComponent = /** @class */ (function () {
-    function PlaylistsComponent(firestoreService, firebaseStorage, spinner, dialog, router) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function PlaylistsComponent(spinner, dialog, router) {
         this.spinner = spinner;
         this.dialog = dialog;
         this.router = router;
@@ -3418,35 +3818,35 @@ var PlaylistsComponent = /** @class */ (function () {
         this.getPlaylists();
     };
     PlaylistsComponent.prototype.getPlaylists = function () {
-        var _this = this;
         this.spinner.show();
-        this.firestoreService.getPlaylists().then(function (result) {
-            _this.playlists = result.playlists;
-            console.log(_this.playlists);
-            if (_this.isPlaylistGroupEditing) {
-                _this.playlists.forEach(function (playlist) {
-                    _this.checkIfPlaylistGroupPlaylist(playlist);
-                });
-            }
-            _this.spinner.hide();
-        });
+        // this.firestoreService.getPlaylists().then((result: any) => {
+        //   this.playlists = result.playlists;
+        //   console.log(this.playlists);
+        //   if (this.isPlaylistGroupEditing) {
+        //     this.playlists.forEach(playlist => {
+        //       this.checkIfPlaylistGroupPlaylist(playlist);
+        //     });
+        //   }
+        //   this.spinner.hide();
+        // });
     };
     PlaylistsComponent.prototype.checkIfPlaylistGroupPlaylist = function (playlist) {
         if (this.playlistGroupPlaylists) {
             var playlistGroupPlaylist = this.playlistGroupPlaylists.find(function (x) { return x.playlistId === playlist.playlistId; });
             if (playlistGroupPlaylist) {
                 playlist.isPartOfPlaylistGroup = true;
-                playlist.playlistGroupPlaylistId = playlistGroupPlaylist.playlistGroupPlaylistId;
+                playlist.playlistGroupPlaylistId =
+                    playlistGroupPlaylist.playlistGroupPlaylistId;
             }
         }
     };
     PlaylistsComponent.prototype.addNewPlaylist = function () {
         var _this = this;
-        var dialogRef = this.dialog.open(_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_8__["PlaylistEditorComponent"], {
+        var dialogRef = this.dialog.open(_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_6__["PlaylistEditorComponent"], {
             width: "500px",
             data: {
-                isEditMode: false
-            }
+                isEditMode: false,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
@@ -3457,12 +3857,12 @@ var PlaylistsComponent = /** @class */ (function () {
         });
     };
     PlaylistsComponent.prototype.edit = function (playlist) {
-        var dialogRef = this.dialog.open(_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_8__["PlaylistEditorComponent"], {
+        var dialogRef = this.dialog.open(_playlist_editor_playlist_editor_component__WEBPACK_IMPORTED_MODULE_6__["PlaylistEditorComponent"], {
             width: "650px",
             data: {
                 isEditMode: true,
-                playlist: playlist
-            }
+                playlist: playlist,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
@@ -3485,20 +3885,23 @@ var PlaylistsComponent = /** @class */ (function () {
             text: "Are you sure you want to delete this playlist?",
             icon: "error",
             buttons: ["Cancel", "Ok"],
-            dangerMode: true
+            dangerMode: true,
         };
-        sweetalert__WEBPACK_IMPORTED_MODULE_7___default()(options).then(function (willDelete) {
+        sweetalert__WEBPACK_IMPORTED_MODULE_5___default()(options).then(function (willDelete) {
             if (willDelete) {
                 _this.spinner.show();
                 // Delete playlist
-                _this.firestoreService.deletePlaylist(playlist).then(function (result) {
-                    _this.removePlaylistFromList(playlist);
-                    demo.showSuccessNotification("Playlist successfully deleted!");
-                    _this.spinner.hide();
-                }, function (error) {
-                    _this.spinner.hide();
-                    demo.showErrorNotification("An error occured: " + error);
-                });
+                // this.firestoreService.deletePlaylist(playlist).then(
+                //   (result: any) => {
+                //     this.removePlaylistFromList(playlist);
+                //     demo.showSuccessNotification("Playlist successfully deleted!");
+                //     this.spinner.hide();
+                //   },
+                //   (error: any) => {
+                //     this.spinner.hide();
+                //     demo.showErrorNotification("An error occured: " + error);
+                //   }
+                // );
             }
         });
     };
@@ -3509,30 +3912,40 @@ var PlaylistsComponent = /** @class */ (function () {
         }
     };
     PlaylistsComponent.prototype.openPlaylistSongs = function (playlist) {
-        var dialogRef = this.dialog.open(_playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_9__["PlaylistSongsEditorComponent"], {
+        var dialogRef = this.dialog.open(_playlist_songs_editor_playlist_songs_editor_component__WEBPACK_IMPORTED_MODULE_7__["PlaylistSongsEditorComponent"], {
             width: "1000px",
             minHeight: "500px",
-            data: { playlist: playlist }
+            data: { playlist: playlist },
         });
         dialogRef.afterClosed().subscribe(function (result) { });
     };
     PlaylistsComponent.prototype.addPlaylistToPlaylistGroup = function (playlist) {
-        console.log('playlist', playlist);
-        this.firestoreService.addPlaylistToPlaylistGroup(playlist, this.playlistGroup).then(function (result) {
-            playlist.playlistGroupPlaylistId = result.newPlaylistGroupPlaylistId;
-            playlist.isPartOfPlaylistGroup = true;
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        console.log("playlist", playlist);
+        // this.firestoreService
+        //   .addPlaylistToPlaylistGroup(playlist, this.playlistGroup)
+        //   .then(
+        //     (result: any) => {
+        //       playlist.playlistGroupPlaylistId = result.newPlaylistGroupPlaylistId;
+        //       playlist.isPartOfPlaylistGroup = true;
+        //     },
+        //     (error: any) => {
+        //       demo.showErrorNotification("An error occured: " + error);
+        //     }
+        //   );
     };
     PlaylistsComponent.prototype.removePlaylistFromPlaylistGroup = function (playlist) {
         console.log(playlist);
         console.log(this.playlistGroup);
-        this.firestoreService.removePlaylistFromPlaylistGroup(playlist, this.playlistGroup).then(function (result) {
-            playlist.isPartOfPlaylistGroup = false;
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
+        // this.firestoreService
+        //   .removePlaylistFromPlaylistGroup(playlist, this.playlistGroup)
+        //   .then(
+        //     (result: any) => {
+        //       playlist.isPartOfPlaylistGroup = false;
+        //     },
+        //     (error: any) => {
+        //       demo.showErrorNotification("An error occured: " + error);
+        //     }
+        //   );
     };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -3540,7 +3953,7 @@ var PlaylistsComponent = /** @class */ (function () {
     ], PlaylistsComponent.prototype, "isPlaylistGroupEditing", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_10__["PlaylistGroup"])
+        __metadata("design:type", _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_8__["PlaylistGroup"])
     ], PlaylistsComponent.prototype, "playlistGroup", void 0);
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
@@ -3550,12 +3963,10 @@ var PlaylistsComponent = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-playlists",
             template: __webpack_require__(/*! ./playlists.component.html */ "./src/app/components/playlists/playlists.component.html"),
-            styles: [__webpack_require__(/*! ./playlists.component.css */ "./src/app/components/playlists/playlists.component.css")]
+            styles: [__webpack_require__(/*! ./playlists.component.css */ "./src/app/components/playlists/playlists.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_4__["NgxSpinnerService"],
-            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"],
             _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
     ], PlaylistsComponent);
     return PlaylistsComponent;
@@ -3583,7 +3994,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\n\n<angular-editor [placeholder]=\"'Enter text here...'\" [config]=\"config\" [(ngModel)]=\"htmlContent\"></angular-editor>\n\n<!-- <div class=\"preview\">\n    <pre [innerHTML]=\"htmlContent\"></pre>\n</div> -->\n\n<button type=\"button\" (click)=\"updatePrivacy()\" style=\"margin-left: 30px;\" class=\"btn btn-default btn-with-icon\">\n    Update\n</button>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<angular-editor [placeholder]=\"'Enter text here...'\" [config]=\"config\" [(ngModel)]=\"htmlContent\"></angular-editor>\r\n\r\n<!-- <div class=\"preview\">\r\n    <pre [innerHTML]=\"htmlContent\"></pre>\r\n</div> -->\r\n\r\n<button type=\"button\" (click)=\"updatePrivacy()\" style=\"margin-left: 30px;\" class=\"btn btn-default btn-with-icon\">\r\n    Update\r\n</button>"
 
 /***/ }),
 
@@ -3598,10 +4009,8 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrivacyPolicyComponent", function() { return PrivacyPolicyComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3614,26 +4023,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var PrivacyPolicyComponent = /** @class */ (function () {
-    function PrivacyPolicyComponent(firestoreService, firebaseStorage, spinner, snackBar
-    // @Inject(MAT_DIALOG_DATA) public data: any
+    function PrivacyPolicyComponent(spinner, snackBar // @Inject(MAT_DIALOG_DATA) public data: any
     ) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
         this.spinner = spinner;
-        this.snackBar = snackBar;
-        this.htmlContent = '';
+        this.snackBar = snackBar; // @Inject(MAT_DIALOG_DATA) public data: any
+        this.htmlContent = "";
         this.config = {
             editable: true,
             spellcheck: true,
-            height: '25em',
-            minHeight: '5rem',
-            placeholder: 'Enter text here...',
-            translate: 'no',
-            defaultParagraphSeparator: 'p',
-            defaultFontName: 'Arial',
+            height: "25em",
+            minHeight: "5rem",
+            placeholder: "Enter text here...",
+            translate: "no",
+            defaultParagraphSeparator: "p",
+            defaultFontName: "Arial",
             toolbarPosition: "top",
             // toolbarHiddenButtons: [
             //   ['bold']
@@ -3644,15 +4048,15 @@ var PrivacyPolicyComponent = /** @class */ (function () {
                     class: "quote",
                 },
                 {
-                    name: 'redText',
-                    class: 'redText'
+                    name: "redText",
+                    class: "redText",
                 },
                 {
                     name: "titleText",
                     class: "titleText",
                     tag: "h1",
                 },
-            ]
+            ],
         };
     }
     PrivacyPolicyComponent.prototype.ngOnInit = function () { };
@@ -3665,31 +4069,26 @@ var PrivacyPolicyComponent = /** @class */ (function () {
         });
     };
     PrivacyPolicyComponent.prototype.getPrivacy = function () {
-        var _this = this;
-        this.firestoreService.getPrivacy().subscribe(function (x) {
-            console.log(x.htmlContent);
-            _this.htmlContent = x.htmlContent;
-        });
+        // this.firestoreService.getPrivacy().subscribe((x: any) => {
+        //   console.log(x.htmlContent);
+        //   this.htmlContent = x.htmlContent;
+        // })
     };
     PrivacyPolicyComponent.prototype.updatePrivacy = function () {
-        var _this = this;
-        console.log('privacy updated');
-        this.firestoreService.updatePrivacy(this.htmlContent).subscribe(function () {
-            console.log('privacy updated...');
-            _this.openSnackBar("Privacy Updated..", "OK");
-        });
+        console.log("privacy updated");
+        // this.firestoreService.updatePrivacy(this.htmlContent).subscribe(() => {
+        //   console.log("privacy updated...");
+        //   this.openSnackBar("Privacy Updated..", "OK");
+        // });
     };
     PrivacyPolicyComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-privacy-policy",
             template: __webpack_require__(/*! ./privacy-policy.component.html */ "./src/app/components/privacy-policy/privacy-policy.component.html"),
-            styles: [__webpack_require__(/*! ./privacy-policy.component.css */ "./src/app/components/privacy-policy/privacy-policy.component.css")]
+            styles: [__webpack_require__(/*! ./privacy-policy.component.css */ "./src/app/components/privacy-policy/privacy-policy.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"]
-            // @Inject(MAT_DIALOG_DATA) public data: any
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"] // @Inject(MAT_DIALOG_DATA) public data: any
         ])
     ], PrivacyPolicyComponent);
     return PrivacyPolicyComponent;
@@ -3706,7 +4105,7 @@ var PrivacyPolicyComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".categoryName{\r\n    font-size: 1.2em;\r\n}\r\n.categoryName:hover{\r\n    cursor: pointer;\r\n}"
 
 /***/ }),
 
@@ -3717,7 +4116,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <button type=\"button\" style=\"float: right;\" (click)=\"closeEditor()\" class=\"btn btn-default btn-icon\">\r\n    <i class=\"ti-close\"></i>\r\n  </button>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <h2 *ngIf=\"!isEditMode\" style=\"margin-top: -20px;\">Create New Song</h2>\r\n  <h2 *ngIf=\"isEditMode\" style=\"margin-top: -20px;\">Edit Existing Song</h2>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"songName\">Song Name</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"songName\" [(ngModel)]=\"songName\" placeholder=\"Song name\">\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-sm-2\">\r\n    <button *ngIf=\"isEditMode\" style=\"margin-top: 25px;\" (click)=\"updateSongName()\" class=\"btn btn-primary\">Update</button>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"artistName\">Artist Name</label>\r\n      <select class=\"form-control\" [(ngModel)]=\"selectedArtist\" (ngModelChange)=\"artistSelected($event)\">\r\n        <option *ngFor=\"let artist of artists\" id=\"artistName\" [ngValue]=\"artist\">{{artist.name}}</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"albumName\">Album Name</label>\r\n      <select class=\"form-control\" [(ngModel)]=\"selectedAlbum\">\r\n        <option *ngFor=\"let album of albums\" id=\"albumName\" [ngValue]=\"album\">{{album.name}}</option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"song\">Song to upload:</label>\r\n      <input type=\"file\" class=\"form-control\" id=\"song\">\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-sm-2\">\r\n    <button *ngIf=\"isEditMode\" style=\"margin-top: 25px;\" (click)=\"updateSongFile()\" class=\"btn btn-primary\">Update</button>\r\n  </div>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <button type=\"submit\" style=\"float: right;\" *ngIf=\"!isEditMode\" (click)=\"addNewSong()\" class=\"btn btn-primary\">Add Song</button>\r\n</div>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <button type=\"button\" style=\"float: right;\" (click)=\"closeEditor()\" class=\"btn btn-default btn-icon\">\r\n    <i class=\"ti-close\"></i>\r\n  </button>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <h2 *ngIf=\"!isEditMode\" style=\"margin-top: -20px;\">Create New Program</h2>\r\n  <h2 *ngIf=\"isEditMode\" style=\"margin-top: -20px;\">Edit Existing Program</h2>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"name\">Program Name</label>\r\n      <input type=\"text\" class=\"form-control\" id=\"name\" [(ngModel)]=\"name\" placeholder=\"Program name\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<!-- <div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"categoryName\">Category Name</label>\r\n      <select class=\"form-control\" [(ngModel)]=\"selectedCategory\">\r\n        <option *ngFor=\"let category of categoriesArray | keyvalue\" class=\"categoryName\" [ngValue]=\"category._id\">\r\n          {{category.value.name}}\r\n        </option>\r\n      </select>\r\n    </div>\r\n  </div>\r\n</div> -->\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"song\">Music to upload:</label>\r\n      <input type=\"file\" class=\"form-control\" name=\"programSong\" id=\"programSong\" accept=\"audio/*\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-sm-10\">\r\n    <div class=\"form-group\">\r\n      <label for=\"programPicture\">Program Picture</label>\r\n      <input type=\"file\" class=\"form-control\" name=\"programPicture\" id=\"programPicture\" accept=\"image/*\">\r\n    </div>\r\n  </div>\r\n</div>\r\n\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <button style=\"float: right;\" *ngIf=\"!isEditMode\" (click)=\"addNewProgram()\" class=\"btn btn-primary\">Add\r\n  </button>\r\n  <button style=\"float: right;\" *ngIf=\"isEditMode\" (click)=\"updateProgram()\" class=\"btn btn-primary\">Update</button>\r\n</div>"
 
 /***/ }),
 
@@ -3732,13 +4131,12 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SongEditorComponent", function() { return SongEditorComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _services_utility_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/utility.service */ "./src/app/services/utility.service.ts");
 /* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
 /* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _models_Song__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/Song */ "./src/app/models/Song.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -3757,193 +4155,142 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
-
 var SongEditorComponent = /** @class */ (function () {
-    function SongEditorComponent(firestoreService, firebaseStorage, spinner, dialogRef, data) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function SongEditorComponent(spinner, http, util, dialogRef, data) {
         this.spinner = spinner;
+        this.http = http;
+        this.util = util;
         this.dialogRef = dialogRef;
         this.data = data;
-        this.artists = [];
-        this.selectedArtist = null;
-        this.albums = [];
-        this.selectedAlbum = null;
-        this.songName = "";
-        this.songId = "";
-        this.artistId = "";
-        this.albumId = "";
+        this.categoriesArray = [];
+        this.name = "";
+        this.programId = "";
+        this.currentSong = "";
+        this.currentPicture = "";
+        // categories = ["616a8870810a4844b82eae2c"];
+        // categories = ["616a89ba810a4844b82eae42"];
+        this.categories = ["616a8bae810a4844b82eae60"];
         this.isEditMode = false;
+        this.spinner.show();
         this.isEditMode = data.isEditMode;
         if (this.isEditMode) {
-            this.songName = data.song.name;
-            this.songId = data.song.songId;
-            this.artistId = data.song.artistId;
-            this.albumId = data.song.albumId;
+            this.name = data.program.name;
+            this.programId = data.program._id;
+            this.categories = data.program.categories;
+            this.currentSong = data.program.song;
+            this.currentPicture = data.program.picture;
         }
     }
     SongEditorComponent.prototype.ngAfterViewInit = function () {
-        this.getArtists();
+        this.getCategories();
     };
-    SongEditorComponent.prototype.getArtists = function () {
+    SongEditorComponent.prototype.getCategories = function () {
         var _this = this;
-        this.spinner.show();
-        this.firestoreService.getArtists().then(function (result) {
-            _this.artists = result.artists;
-            _this.selectedArtist = _this.artists.find(function (x) { return x.artistId === _this.artistId; });
-            _this.getArtistAlbums();
+        this.http
+            .get("category/forSelect")
+            .then(function (success) {
+            console.log(success);
             _this.spinner.hide();
+            _this.categoriesArray = success.body.data;
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
         });
     };
-    SongEditorComponent.prototype.getArtistAlbums = function () {
+    SongEditorComponent.prototype.addNewProgram = function () {
         var _this = this;
-        if (!this.selectedArtist) {
+        var programSong = (document.getElementById("programSong")).files[0];
+        var programPicture = (document.getElementById("programPicture")).files[0];
+        if (!this.name ||
+            // !this.categories.length
+            !programSong ||
+            !programPicture) {
+            demo.showWarningNotification("All fields required");
             return;
         }
-        this.albums = [];
         this.spinner.show();
-        this.firestoreService
-            .getArtistAlbums(this.selectedArtist.artistId)
-            .then(function (result) {
-            _this.albums = result.albums;
-            if (_this.albums.length > 0) {
-                _this.selectedAlbum = _this.albums.find(function (x) { return x.albumId === _this.albumId; });
-            }
+        var formData = new FormData();
+        formData.append("program", programPicture);
+        formData.append("program", programSong);
+        formData.append("name", this.name);
+        for (var i = 0; i < this.categories.length; i++) {
+            formData.append("categories[]", this.categories[i]);
+        }
+        this.http
+            .post("programs/add", formData, { isMultiPartFormData: true })
+            .then(function (success) {
             _this.spinner.hide();
-        });
-    };
-    SongEditorComponent.prototype.artistSelected = function (event) {
-        this.getArtistAlbums();
-    };
-    SongEditorComponent.prototype.addNewSong = function () {
-        var _this = this;
-        if (!this.songName) {
-            demo.showWarningNotification("Please provide a name for the song.");
-            return;
-        }
-        if (!this.selectedArtist) {
-            demo.showWarningNotification("Please select an artist.");
-            return;
-        }
-        if (!this.selectedAlbum) {
-            demo.showWarningNotification("Please select an album.");
-            return;
-        }
-        var song = document.getElementById("song").files[0];
-        if (!song) {
-            demo.showWarningNotification("Please select an audio file to upload.");
-            return;
-        }
-        this.spinner.show();
-        var uploadPath = "/" + this.selectedArtist.name + "/" + this.selectedAlbum.name + "/" + this.songName;
-        // Upload song track
-        this.firebaseStorage
-            .uploadSong(uploadPath, this.songName, this.selectedAlbum.picture, song)
-            .then(function (uploadResult) {
-            uploadResult.uploadTask.then(function (snapshot) {
-                if (snapshot.state !== "success") {
-                    demo.showErrorNotification("An error occured.");
-                    return;
-                }
-                snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                    var newSong = new _models_Song__WEBPACK_IMPORTED_MODULE_6__["Song"]();
-                    newSong.name = _this.songName;
-                    newSong.artistId = _this.selectedArtist.artistId;
-                    newSong.artistName = _this.selectedArtist.name;
-                    newSong.albumId = _this.selectedAlbum.albumId;
-                    newSong.albumName = _this.selectedAlbum.name;
-                    newSong.albumPicture = _this.selectedAlbum.picture;
-                    newSong.songUrl = downloadURL;
-                    // If upload is successful, add the song to the firestore
-                    _this.firestoreService.addNewSong(newSong).then(function (result) {
-                        newSong.songId = result.newSongId;
-                        _this.firebaseStorage.songUploaded.emit({
-                            isSuccess: true,
-                            newSong: newSong
-                        });
-                    }, function (error) {
-                        demo.showErrorNotification("An error occured: " + error);
-                    });
-                });
+            console.log("Added song ", success.body.data);
+            _this.dialogRef.close({
+                isSuccess: true,
+                newProgram: success.body.data,
             });
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
         });
         this.spinner.hide();
         this.dialogRef.close();
     };
-    SongEditorComponent.prototype.updateSongName = function () {
+    SongEditorComponent.prototype.updateProgram = function () {
         var _this = this;
-        if (!this.songName) {
-            demo.showWarningNotification("Please provide a name for the song.");
-            return;
-        }
-        this.firestoreService.editSongName(this.songId, this.songName).then(function (result) {
-            _this.dialogRef.close({
-                isSuccess: true,
-                songNameUpdated: true,
-                newSongName: _this.songName
-            });
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
-    };
-    SongEditorComponent.prototype.updateSongFile = function () {
-        var _this = this;
-        var song = document.getElementById("song").files[0];
-        if (!song) {
-            demo.showWarningNotification("Please select an audio file to upload.");
+        var newSong = document.getElementById("programSong")
+            .files[0];
+        var newProgramPicture = (document.getElementById("programPicture")).files[0];
+        if (this.name == this.data.program.name &&
+            this.categories == this.data.program.categories &&
+            !newSong &&
+            !newProgramPicture) {
+            demo.showWarningNotification("No changes made");
             return;
         }
         this.spinner.show();
-        var uploadPath = "/" + this.selectedArtist.name + "/" + this.selectedAlbum.name + "/" + this.songName;
-        // Update song
-        this.firebaseStorage
-            .uploadSong(uploadPath, this.songName, this.selectedAlbum.picture, song)
-            .then(function (uploadResult) {
-            uploadResult.uploadTask.then(function (snapshot) {
-                if (snapshot.state !== "success") {
-                    demo.showErrorNotification("An error occured.");
-                    return;
-                }
-                snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                    var newSong = new _models_Song__WEBPACK_IMPORTED_MODULE_6__["Song"]();
-                    newSong.name = _this.songName;
-                    newSong.artistId = _this.selectedArtist.artistId;
-                    newSong.artistName = _this.selectedArtist.name;
-                    newSong.albumId = _this.selectedAlbum.albumId;
-                    newSong.albumName = _this.selectedAlbum.name;
-                    newSong.albumPicture = _this.selectedAlbum.picture;
-                    newSong.songUrl = downloadURL;
-                    // If upload is successful, add the song to the firestore
-                    _this.firestoreService.addNewSong(newSong).then(function (result) {
-                        newSong.songId = result.newSongId;
-                        _this.firebaseStorage.songUpdated.emit({
-                            isSuccess: true,
-                            songUpdated: true,
-                            newSong: uploadResult.downloadURL
-                        });
-                    }, function (error) {
-                        demo.showErrorNotification("An error occured: " + error);
-                    });
-                });
+        var formData = new FormData();
+        if (newProgramPicture) {
+            formData.append("program", newProgramPicture);
+            formData.append("currentSong", this.currentSong);
+        }
+        if (newSong) {
+            formData.append("program", newSong);
+            formData.append("currentPicture", this.currentPicture);
+        }
+        formData.append("name", this.name);
+        for (var i = 0; i < this.categories.length; i++) {
+            formData.append("categories[]", this.categories[i]);
+        }
+        formData.append("programId", this.programId);
+        this.http
+            .post("programs/edit", formData, { isMultiPartFormData: true })
+            .then(function (success) {
+            _this.spinner.hide();
+            _this.dialogRef.close({
+                isSuccess: true,
+                updateProgram: success.body.data,
             });
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
         });
     };
     SongEditorComponent.prototype.closeEditor = function () {
         this.dialogRef.close({
-            isSuccess: false
+            isSuccess: false,
         });
     };
     SongEditorComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-song-editor",
             template: __webpack_require__(/*! ./song-editor.component.html */ "./src/app/components/song-editor/song-editor.component.html"),
-            styles: [__webpack_require__(/*! ./song-editor.component.css */ "./src/app/components/song-editor/song-editor.component.css")]
+            styles: [__webpack_require__(/*! ./song-editor.component.css */ "./src/app/components/song-editor/song-editor.component.css")],
         }),
-        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_4__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatDialogRef"], Object])
+        __param(4, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"],
+            _services_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"],
+            _services_utility_service__WEBPACK_IMPORTED_MODULE_4__["UtilityService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatDialogRef"], Object])
     ], SongEditorComponent);
     return SongEditorComponent;
 }());
@@ -3970,7 +4317,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\n  <h4>{{song.name}}</h4>\n</div>\n\n<div class=\"row\">\n  <h5>{{song.albumName}}</h5>\n</div>\n\n<div class=\"row\">\n  <h6>{{song.artistName}}</h6>\n</div>\n\n<br>\n\n<audio controls autoplay>\n  <source src=\"{{song.songUrl}}\" type=\"audio/mpeg\">\n</audio>\n"
+module.exports = "<div class=\"row justify-content-md-center text-center\">\r\n  <h4>{{program.name}}</h4>\r\n</div>\r\n\r\n\r\n<br>\r\n\r\n<audio controls autoplay>\r\n  <source src=\"{{getFileUrl}}{{program.song}}\" type=\"audio/mpeg\">\r\n</audio>"
 
 /***/ }),
 
@@ -3986,6 +4333,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SongPlayerComponent", function() { return SongPlayerComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4000,17 +4348,19 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 };
 
 
+
 var SongPlayerComponent = /** @class */ (function () {
     function SongPlayerComponent(data) {
         this.data = data;
-        this.song = data.song;
+        this.getFileUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_2__["environment"].getFileUrl;
+        this.program = data.program;
     }
     SongPlayerComponent.prototype.ngOnInit = function () { };
     SongPlayerComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-song-player",
             template: __webpack_require__(/*! ./song-player.component.html */ "./src/app/components/song-player/song-player.component.html"),
-            styles: [__webpack_require__(/*! ./song-player.component.css */ "./src/app/components/song-player/song-player.component.css")]
+            styles: [__webpack_require__(/*! ./song-player.component.css */ "./src/app/components/song-player/song-player.component.css")],
         }),
         __param(0, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
         __metadata("design:paramtypes", [Object])
@@ -4040,7 +4390,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-md-8\">\r\n    <button type=\"button\" *ngIf=\"!isPlaylistEditing\" (click)=\"addNewSong()\" style=\"margin-left: 30px;\" class=\"btn btn-default\">\r\n      Add New Song\r\n    </button>\r\n  </div>\r\n\r\n  <div class=\"col-md-3\">\r\n    <div class=\"input-group\">\r\n      <span class=\"input-group-addon\">\r\n        <i class=\"fa fa-search\"></i>\r\n      </span>\r\n\r\n      <input id=\"searchInput\" type=\"text\" value=\"\" class=\"form-control\" placeholder=\"Search songs by name, by album or by artist...\">\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-md-1\">\r\n    <button type=\"button\" (click)=\"clearSearchInput()\" class=\"btn btn-xs\" style=\"margin-top: 5px;\" [disabled]=\"!isSearching\">\r\n      Clear\r\n    </button>\r\n  </div>\r\n</div>\r\n\r\n<br>\r\n<br>\r\n<br>\r\n\r\n<div class=\"col-md-3\" *ngFor=\"let song of songs\">\r\n  <div class=\"card card-profile\" style=\"margin-top: 50px;\">\r\n    <div class=\"card-avatar border-white\">\r\n      <a href=\"#avatar\">\r\n        <img src=\"{{song.albumPicture}}\" alt=\"...\">\r\n      </a>\r\n    </div>\r\n    <div class=\"card-body\">\r\n      <h4 class=\"card-title\">{{song.name}}</h4>\r\n      <h6 class=\"card-category\">{{song.albumName}}</h6>\r\n      <p class=\"card-description\">{{song.artistName}}</p>\r\n\r\n      <div *ngIf=\"!isPlaylistEditing && !isGenreEditing\" class=\"card-footer text-center\">\r\n        <a (click)=\"edit(song)\" class=\"btn btn-with-icon btn-outline-info btn-info\" style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\"\r\n          data-placement=\"bottom\" title=\"Edit\">\r\n          <i class=\"ti-pencil\" aria-hidden=\"true\"></i>\r\n        </a>\r\n\r\n        <a (click)=\"delete(song)\" class=\"btn btn-with-icon btn-outline-danger btn-danger\" style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\"\r\n          data-placement=\"bottom\" title=\"Delete\">\r\n          <i class=\"ti-trash\" aria-hidden=\"true\"></i>\r\n        </a>\r\n\r\n        <a (click)=\"play(song)\" class=\"btn btn-with-icon btn-outline-success btn-success\" style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\"\r\n        data-placement=\"bottom\" title=\"Play\">\r\n        <i class=\"ti-control-play\" aria-hidden=\"true\"></i>\r\n      </a>\r\n      </div>\r\n\r\n      <div *ngIf=\"isPlaylistEditing\" class=\"card-footer text-center\">\r\n        <button (click)=\"addSongToPlaylist(song)\" *ngIf=\"!song.isPartOfPlaylist\" type=\"button\" class=\"btn btn-default\">\r\n          Add\r\n        </button>\r\n\r\n        <button (click)=\"removeSongFromPlaylist(song)\" *ngIf=\"song.isPartOfPlaylist\" type=\"button\" class=\"btn btn-fill btn-success\">\r\n          Added\r\n        </button>\r\n      </div>\r\n\r\n      <div *ngIf=\"isGenreEditing\" class=\"card-footer text-center\">\r\n        <button (click)=\"addSongToGenre(song)\" *ngIf=\"!song.isPartOfGenre\" type=\"button\" class=\"btn btn-default\">\r\n          Add\r\n        </button>\r\n\r\n        <button (click)=\"removeSongFromGenre(song)\" *ngIf=\"song.isPartOfGenre\" type=\"button\" class=\"btn btn-fill btn-success\">\r\n          Added\r\n        </button>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-md-8\">\r\n    <button type=\"button\" (click)=\"addNewProgram()\" style=\"margin-left: 30px;\" class=\"btn btn-default\">\r\n      Add New Program\r\n    </button>\r\n  </div>\r\n\r\n  <div class=\"col-md-3\">\r\n    <div class=\"input-group\">\r\n      <span class=\"input-group-addon\">\r\n        <i class=\"fa fa-search\"></i>\r\n      </span>\r\n\r\n      <input id=\"searchInput\" type=\"text\" value=\"\" class=\"form-control\"\r\n        placeholder=\"Search songs by name or by category\">\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"col-md-1\">\r\n    <button type=\"button\" (click)=\"clearSearchInput()\" class=\"btn btn-xs\" style=\"margin-top: 5px;\"\r\n      [disabled]=\"!isSearching\">\r\n      Clear\r\n    </button>\r\n  </div>\r\n</div>\r\n\r\n<br>\r\n<br>\r\n<br>\r\n\r\n<div class=\"row\">\r\n  <div class=\"col-md-3\" *ngFor=\"let program of songs | keyvalue\">\r\n    <div class=\"card card-profile\" style=\"margin-top: 50px;\">\r\n      <div class=\"card-avatar border-white\">\r\n        <a href=\"\">\r\n          <img style=\"width: 120px !important;height:120px !important;border-radius: 50%;\"\r\n            src=\"{{getFileUrl}}{{program.value.picture}}\" alt=\"...\">\r\n        </a>\r\n      </div>\r\n      <div class=\"card-body\">\r\n        <h4 class=\"card-title\">{{program.value.name}}</h4>\r\n\r\n        <div class=\"card-footer text-center\">\r\n          <a (click)=\"edit(program.key,program.value)\" class=\"btn btn-with-icon btn-outline-info btn-info\"\r\n            style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Edit\">\r\n            <i class=\"ti-pencil\" aria-hidden=\"true\"></i>\r\n          </a>\r\n\r\n          <a (click)=\"delete(program.key,program.value._id,program.value.picture,program.value.song)\"\r\n            class=\"btn btn-with-icon btn-outline-danger btn-danger\" style=\"margin: 20px 5px 10px 5px\"\r\n            data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Delete\">\r\n            <i class=\"ti-trash\" aria-hidden=\"true\"></i>\r\n          </a>\r\n\r\n          <a (click)=\"play(program.value)\" class=\"btn btn-with-icon btn-outline-success btn-success\"\r\n            style=\"margin: 20px 5px 10px 5px\" data-toggle=\"tooltip\" data-placement=\"bottom\" title=\"Play\">\r\n            <i class=\"ti-control-play\" aria-hidden=\"true\"></i>\r\n          </a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>"
 
 /***/ }),
 
@@ -4056,19 +4406,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SongsComponent", function() { return SongsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
-/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
-/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../song-editor/song-editor.component */ "./src/app/components/song-editor/song-editor.component.ts");
-/* harmony import */ var _song_player_song_player_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../song-player/song-player.component */ "./src/app/components/song-player/song-player.component.ts");
-/* harmony import */ var _models_Albums__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../models/Albums */ "./src/app/models/Albums.ts");
-/* harmony import */ var _models_Playlist__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../models/Playlist */ "./src/app/models/Playlist.ts");
-/* harmony import */ var _models_Genre__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../models/Genre */ "./src/app/models/Genre.ts");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/esm5/dialog.es5.js");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _services_utility_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../services/utility.service */ "./src/app/services/utility.service.ts");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../../assets/js/demo.js */ "./src/assets/js/demo.js");
+/* harmony import */ var _assets_js_demo_js__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_js_demo_js__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! sweetalert */ "./node_modules/sweetalert/dist/sweetalert.min.js");
+/* harmony import */ var sweetalert__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(sweetalert__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../song-editor/song-editor.component */ "./src/app/components/song-editor/song-editor.component.ts");
+/* harmony import */ var _song_player_song_player_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../song-player/song-player.component */ "./src/app/components/song-player/song-player.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4089,255 +4437,175 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var SongsComponent = /** @class */ (function () {
-    function SongsComponent(firestoreService, firebaseStorage, spinner, dialog, router) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
+    function SongsComponent(spinner, dialog, router, http, util) {
         this.spinner = spinner;
         this.dialog = dialog;
         this.router = router;
-        this.isPlaylistEditing = false;
-        this.isGenreEditing = false;
+        this.http = http;
+        this.util = util;
+        this.getFileUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_6__["environment"].getFileUrl;
         this.songs = [];
+        this.programEditKey = null;
         this.isSearching = false;
     }
     SongsComponent.prototype.ngOnInit = function () {
+        this.spinner.show();
+        this.getPrograms();
+        // this.listenForSearchInput(500);
+        // this.firebaseStorage.songUploaded.subscribe(result => {
+        //   if (result.isSuccess) {
+        //     this.firebaseStorage.removeNotification(result.newSong.name);
+        //     this.songs.unshift(result.newSong);
+        //     demo.showSuccessNotification("Song successfully added!");
+        //   }
+        // });
+        // this.firebaseStorage.songUpdated.subscribe(result => {
+        //   if (result.isSuccess) {
+        //     if (result.songUpdated) {
+        //       demo.showSuccessNotification("Song successfully updated!");
+        //     }
+        //   }
+        // });
+    };
+    SongsComponent.prototype.getPrograms = function () {
         var _this = this;
-        this.getSongs();
-        this.listenForSearchInput(500);
-        this.firebaseStorage.songUploaded.subscribe(function (result) {
+        this.http
+            .get("programs/fetchAll")
+            .then(function (success) {
+            console.log(success);
+            _this.spinner.hide();
+            _this.songs = success.body.data;
+        })
+            .catch(function (err) {
+            _this.spinner.hide();
+            demo.showErrorNotification(err["error"].message);
+        });
+    };
+    SongsComponent.prototype.addNewProgram = function () {
+        var _this = this;
+        var dialogRef = this.dialog.open(_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_9__["SongEditorComponent"], {
+            width: "500px",
+            data: {
+                isEditMode: false,
+            },
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
             if (result.isSuccess) {
-                _this.firebaseStorage.removeNotification(result.newSong.name);
-                _this.songs.unshift(result.newSong);
+                _this.songs.unshift(result.newProgram);
                 demo.showSuccessNotification("Song successfully added!");
             }
         });
-        this.firebaseStorage.songUpdated.subscribe(function (result) {
-            if (result.isSuccess) {
-                if (result.songUpdated) {
-                    // Nothing to update
-                    demo.showSuccessNotification("Song successfully updated!");
-                }
-            }
-        });
     };
-    SongsComponent.prototype.getSongs = function () {
-        this.spinner.show();
-        if (this.album) {
-            this.getAlbumSongs();
-        }
-        else {
-            this.getAllSongs();
-        }
-    };
-    SongsComponent.prototype.getAlbumSongs = function () {
+    SongsComponent.prototype.edit = function (programKey, program) {
         var _this = this;
-        this.firestoreService
-            .getAlbumSongs(this.album.albumId)
-            .then(function (result) {
-            _this.songs = result.songs;
-            _this.originalSongs = _this.songs;
-            _this.spinner.hide();
-        });
-    };
-    SongsComponent.prototype.getAllSongs = function () {
-        var _this = this;
-        this.firestoreService.getSongs().then(function (result) {
-            _this.songs = result.songs;
-            _this.originalSongs = _this.songs;
-            _this.songs.forEach(function (song) {
-                if (_this.isPlaylistEditing) {
-                    _this.checkIfPlaylistSong(song);
-                }
-                else if (_this.isGenreEditing) {
-                    _this.checkIfGenreSong(song);
-                }
-            });
-            _this.spinner.hide();
-        });
-    };
-    SongsComponent.prototype.checkIfPlaylistSong = function (song) {
-        if (this.playlistSongs) {
-            var playlistSong = this.playlistSongs.find(function (x) { return x.songId === song.songId; });
-            if (playlistSong) {
-                song.isPartOfPlaylist = true;
-                song.playlistSongId = playlistSong.playlistSongId;
-            }
-        }
-    };
-    SongsComponent.prototype.checkIfGenreSong = function (song) {
-        if (this.genreSongs) {
-            var genreSong = this.genreSongs.find(function (x) { return x.songId === song.songId; });
-            if (genreSong) {
-                song.isPartOfGenre = true;
-                song.genreSongId = genreSong.genreSongId;
-            }
-        }
-    };
-    SongsComponent.prototype.addNewSong = function () {
-        var dialogRef = this.dialog.open(_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_8__["SongEditorComponent"], {
+        this.programEditKey = programKey;
+        var dialogRef = this.dialog.open(_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_9__["SongEditorComponent"], {
             width: "500px",
             data: {
-                isEditMode: false
-            }
-        });
-    };
-    SongsComponent.prototype.edit = function (song) {
-        var dialogRef = this.dialog.open(_song_editor_song_editor_component__WEBPACK_IMPORTED_MODULE_8__["SongEditorComponent"], {
-            width: "650px",
-            data: {
                 isEditMode: true,
-                song: song
+                program: program,
+            },
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            if (result.isSuccess) {
+                _this.songs[_this.programEditKey] = result.updateProgram;
+                demo.showSuccessNotification("Song updated successfully!");
             }
         });
     };
-    SongsComponent.prototype.delete = function (song) {
+    SongsComponent.prototype.delete = function (deleteKey, toDeleteSongId, picKey, songKey) {
         var _this = this;
         var options = {
             title: "Delete Song?",
             text: "Are you sure you want to delete this song?",
             icon: "error",
             buttons: ["Cancel", "Ok"],
-            dangerMode: true
+            dangerMode: true,
         };
-        sweetalert__WEBPACK_IMPORTED_MODULE_7___default()(options).then(function (willDelete) {
+        sweetalert__WEBPACK_IMPORTED_MODULE_8___default()(options).then(function (willDelete) {
             if (willDelete) {
                 _this.spinner.show();
-                _this.firestoreService.deleteSong(song).then(function (result) {
-                    _this.removeSongFromList(song);
+                _this.http
+                    .post("programs/delete", {
+                    programId: toDeleteSongId,
+                    picture: picKey,
+                    song: songKey,
+                })
+                    .then(function (success) {
                     demo.showSuccessNotification("Song successfully deleted!");
                     _this.spinner.hide();
-                }, function (error) {
+                    _this.songs.splice(deleteKey, 1);
+                })
+                    .catch(function (err) {
                     _this.spinner.hide();
-                    demo.showErrorNotification("An error occured: " + error);
+                    demo.showErrorNotification(err["error"].message);
                 });
             }
         });
     };
-    SongsComponent.prototype.removeSongFromList = function (song) {
-        var index = this.songs.indexOf(song);
-        if (index > -1) {
-            this.songs.splice(index, 1);
-        }
-    };
     SongsComponent.prototype.listenForSearchInput = function (timeoutTime) {
-        var _this = this;
-        var searchInput = (document.getElementById("searchInput"));
-        var timeout = null;
-        searchInput.onkeyup = function (e) {
-            clearTimeout(timeout);
-            timeout = setTimeout(function () {
-                _this.searchSongs(searchInput.value);
-            }, timeoutTime);
-        };
+        // const searchInput = <HTMLInputElement>(
+        //   document.getElementById("searchInput")
+        // );
+        // let timeout = null;
+        // searchInput.onkeyup = (e) => {
+        //   clearTimeout(timeout);
+        //   timeout = setTimeout(() => {
+        //     this.searchSongs(searchInput.value);
+        //   }, timeoutTime);
+        // };
     };
     SongsComponent.prototype.searchSongs = function (searchValue) {
-        var _this = this;
         this.isSearching = true;
         if (searchValue !== "" && searchValue.length >= 3) {
             this.spinner.show();
             this.songs = [];
-            this.firestoreService.getSongs().then(function (result) {
-                result.songs.forEach(function (song) {
-                    if (song.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1 ||
-                        song.artistName.toLowerCase().indexOf(searchValue.toLowerCase()) >
-                            -1 ||
-                        song.albumName.toLowerCase().indexOf(searchValue.toLowerCase()) > -1) {
-                        _this.songs.push(song);
-                    }
-                });
-                _this.spinner.hide();
-            });
+            // this.firestoreService.getSongs().then((result: any) => {
+            //   result.songs.forEach((song) => {
+            //     if (
+            //       song.name.toLowerCase().indexOf(searchValue.toLowerCase()) > -1 ||
+            //       song.artistName.toLowerCase().indexOf(searchValue.toLowerCase()) >
+            //         -1 ||
+            //       song.albumName.toLowerCase().indexOf(searchValue.toLowerCase()) > -1
+            //     ) {
+            //       this.songs.push(song);
+            //     }
+            //   });
+            //   this.spinner.hide();
+            // });
         }
         else if (searchValue === "") {
             this.clearSearchInput();
         }
     };
     SongsComponent.prototype.clearSearchInput = function () {
-        this.songs = this.originalSongs;
-        this.isSearching = false;
-        var searchInput = (document.getElementById("searchInput"));
-        searchInput.value = "";
+        // this.songs = this.originalSongs;
+        // this.isSearching = false;
+        // const searchInput = <HTMLInputElement>(
+        //   document.getElementById("searchInput")
+        // );
+        // searchInput.value = "";
     };
-    SongsComponent.prototype.addSongToPlaylist = function (song) {
-        this.firestoreService.addSongToPlaylist(song, this.playlist).then(function (result) {
-            song.playlistSongId = result.newPlaylistSongId;
-            song.isPartOfPlaylist = true;
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
-    };
-    SongsComponent.prototype.removeSongFromPlaylist = function (song) {
-        this.firestoreService.removeSongFromPlaylist(song, this.playlist).then(function (result) {
-            song.isPartOfPlaylist = false;
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
-    };
-    SongsComponent.prototype.addSongToGenre = function (song) {
-        this.firestoreService.addSongToGenre(song, this.genre).then(function (result) {
-            song.genreSongId = result.newGenreSongId;
-            song.isPartOfGenre = true;
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
-    };
-    SongsComponent.prototype.removeSongFromGenre = function (song) {
-        this.firestoreService.removeSongFromGenre(song, this.genre).then(function (result) {
-            song.isPartOfGenre = false;
-        }, function (error) {
-            demo.showErrorNotification("An error occured: " + error);
-        });
-    };
-    SongsComponent.prototype.play = function (song) {
-        var dialogRef = this.dialog.open(_song_player_song_player_component__WEBPACK_IMPORTED_MODULE_9__["SongPlayerComponent"], {
+    SongsComponent.prototype.play = function (programNode) {
+        var dialogRef = this.dialog.open(_song_player_song_player_component__WEBPACK_IMPORTED_MODULE_10__["SongPlayerComponent"], {
             data: {
-                song: song
-            }
+                program: programNode,
+            },
         });
         dialogRef.afterClosed().subscribe(function (result) { });
     };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], SongsComponent.prototype, "isPlaylistEditing", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", _models_Playlist__WEBPACK_IMPORTED_MODULE_11__["Playlist"])
-    ], SongsComponent.prototype, "playlist", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Array)
-    ], SongsComponent.prototype, "playlistSongs", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Object)
-    ], SongsComponent.prototype, "isGenreEditing", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", _models_Genre__WEBPACK_IMPORTED_MODULE_12__["Genre"])
-    ], SongsComponent.prototype, "genre", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", Array)
-    ], SongsComponent.prototype, "genreSongs", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
-        __metadata("design:type", _models_Albums__WEBPACK_IMPORTED_MODULE_10__["Album"])
-    ], SongsComponent.prototype, "album", void 0);
     SongsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-songs",
             template: __webpack_require__(/*! ./songs.component.html */ "./src/app/components/songs/songs.component.html"),
-            styles: [__webpack_require__(/*! ./songs.component.css */ "./src/app/components/songs/songs.component.css")]
+            styles: [__webpack_require__(/*! ./songs.component.css */ "./src/app/components/songs/songs.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_4__["NgxSpinnerService"],
-            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_5__["MatDialog"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
+            _angular_material_dialog__WEBPACK_IMPORTED_MODULE_3__["MatDialog"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _services_http_service__WEBPACK_IMPORTED_MODULE_4__["HttpService"],
+            _services_utility_service__WEBPACK_IMPORTED_MODULE_5__["UtilityService"]])
     ], SongsComponent);
     return SongsComponent;
 }());
@@ -4364,7 +4632,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\n\n<angular-editor [placeholder]=\"'Enter text here...'\" [config]=\"config\" [(ngModel)]=\"htmlContent\"></angular-editor>\n\n<!-- <div class=\"preview\">\n    <pre [innerHTML]=\"htmlContent\"></pre>\n</div> -->\n\n<button type=\"button\" (click)=\"updateTerms()\" style=\"margin-left: 30px;\" class=\"btn btn-default btn-with-icon\">\n    Update\n</button>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n<angular-editor [placeholder]=\"'Enter text here...'\" [config]=\"config\" [(ngModel)]=\"htmlContent\"></angular-editor>\r\n\r\n<!-- <div class=\"preview\">\r\n    <pre [innerHTML]=\"htmlContent\"></pre>\r\n</div> -->\r\n\r\n<button type=\"button\" (click)=\"updateTerms()\" style=\"margin-left: 30px;\" class=\"btn btn-default btn-with-icon\">\r\n    Update\r\n</button>"
 
 /***/ }),
 
@@ -4379,10 +4647,8 @@ module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" co
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TermsComponent", function() { return TermsComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
-/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4395,26 +4661,21 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-
 var TermsComponent = /** @class */ (function () {
-    function TermsComponent(firestoreService, firebaseStorage, spinner, snackBar
-    // @Inject(MAT_DIALOG_DATA) public data: any
+    function TermsComponent(spinner, snackBar // @Inject(MAT_DIALOG_DATA) public data: any
     ) {
-        this.firestoreService = firestoreService;
-        this.firebaseStorage = firebaseStorage;
         this.spinner = spinner;
-        this.snackBar = snackBar;
-        this.htmlContent = '';
+        this.snackBar = snackBar; // @Inject(MAT_DIALOG_DATA) public data: any
+        this.htmlContent = "";
         this.config = {
             editable: true,
             spellcheck: true,
-            height: '25em',
-            minHeight: '5rem',
-            placeholder: 'Enter text here...',
-            translate: 'no',
-            defaultParagraphSeparator: 'p',
-            defaultFontName: 'Arial',
+            height: "25em",
+            minHeight: "5rem",
+            placeholder: "Enter text here...",
+            translate: "no",
+            defaultParagraphSeparator: "p",
+            defaultFontName: "Arial",
             toolbarPosition: "top",
             // toolbarHiddenButtons: [
             //   ['bold']
@@ -4425,15 +4686,15 @@ var TermsComponent = /** @class */ (function () {
                     class: "quote",
                 },
                 {
-                    name: 'redText',
-                    class: 'redText'
+                    name: "redText",
+                    class: "redText",
                 },
                 {
                     name: "titleText",
                     class: "titleText",
                     tag: "h1",
                 },
-            ]
+            ],
         };
     }
     TermsComponent.prototype.ngOnInit = function () { };
@@ -4446,31 +4707,26 @@ var TermsComponent = /** @class */ (function () {
         });
     };
     TermsComponent.prototype.getTerms = function () {
-        var _this = this;
-        this.firestoreService.getTerms().subscribe(function (x) {
-            console.log(x.htmlContent);
-            _this.htmlContent = x.htmlContent;
-        });
+        // this.firestoreService.getTerms().subscribe((x: any) => {
+        //   console.log(x.htmlContent);
+        //   this.htmlContent = x.htmlContent;
+        // })
     };
     TermsComponent.prototype.updateTerms = function () {
-        var _this = this;
-        console.log('getTerms updated');
-        this.firestoreService.updateTerms(this.htmlContent).subscribe(function () {
-            console.log('getTerms updated...');
-            _this.openSnackBar("Terms Updated..", "OK");
-        });
+        console.log("getTerms updated");
+        // this.firestoreService.updateTerms(this.htmlContent).subscribe(() => {
+        //   console.log('getTerms updated...');
+        //   this.openSnackBar("Terms Updated..", "OK");
+        // });
     };
     TermsComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "app-terms",
             template: __webpack_require__(/*! ./terms.component.html */ "./src/app/components/terms/terms.component.html"),
-            styles: [__webpack_require__(/*! ./terms.component.css */ "./src/app/components/terms/terms.component.css")]
+            styles: [__webpack_require__(/*! ./terms.component.css */ "./src/app/components/terms/terms.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_1__["FirestoreService"],
-            _services_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_3__["FirebaseStorageService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_2__["NgxSpinnerService"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_4__["MatSnackBar"]
-            // @Inject(MAT_DIALOG_DATA) public data: any
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"],
+            _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSnackBar"] // @Inject(MAT_DIALOG_DATA) public data: any
         ])
     ], TermsComponent);
     return TermsComponent;
@@ -4498,7 +4754,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\n\n\n<div class=\"container\">\n  <table class=\"table table-bordered\">\n    <thead>\n      <tr>\n        <th>#</th>\n        <th>ID</th>\n        <th>Name</th>\n        <th>Email</th>\n      </tr>\n    </thead>\n    <tbody>\n      <tr *ngFor=\"let user of users; let i = index;\">\n        <td>{{i+1}}</td>\n        <td>{{user.id}}</td>\n        <td>{{user.name}}</td>\n        <td>{{user.email}}</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+module.exports = "<ngx-spinner bdColor=\"rgba(0, 0, 0, 0.0)\" size=\"medium\" color=\"#5cb85c\" type=\"timer\"></ngx-spinner>\r\n\r\n\r\n<div class=\"container\">\r\n  <table class=\"table table-bordered\">\r\n    <thead>\r\n      <tr>\r\n        <th>#</th>\r\n        <th>ID</th>\r\n        <th>Name</th>\r\n        <th>Email</th>\r\n      </tr>\r\n    </thead>\r\n    <tbody>\r\n      <tr *ngFor=\"let user of users; let i = index;\">\r\n        <td>{{i+1}}</td>\r\n        <td>{{user.id}}</td>\r\n        <td>{{user.name}}</td>\r\n        <td>{{user.email}}</td>\r\n      </tr>\r\n    </tbody>\r\n  </table>\r\n</div>"
 
 /***/ }),
 
@@ -4514,7 +4770,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsersComponent", function() { return UsersComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var ngx_spinner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ngx-spinner */ "./node_modules/ngx-spinner/fesm5/ngx-spinner.js");
-/* harmony import */ var _services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/Firestore/firestore.service */ "./src/app/services/Firestore/firestore.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4526,52 +4781,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 };
 
 
-
 var UsersComponent = /** @class */ (function () {
-    function UsersComponent(firestoreService, spinner) {
-        this.firestoreService = firestoreService;
+    function UsersComponent(spinner) {
         this.spinner = spinner;
     }
     UsersComponent.prototype.ngOnInit = function () {
-        var _this = this;
         this.spinner.show();
-        this.firestoreService.getUsers()
-            .then(function (res) {
-            _this.spinner.hide();
-            _this.users = res.users;
-            console.log('res', res);
-        });
+        // this.firestoreService.getUsers()
+        //   .then((res: any) => {
+        //     this.spinner.hide();
+        //     this.users = res.users;
+        //     console.log('res', res);
+        //   })
     };
     UsersComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-users',
+            selector: "app-users",
             template: __webpack_require__(/*! ./users.component.html */ "./src/app/components/users/users.component.html"),
-            styles: [__webpack_require__(/*! ./users.component.css */ "./src/app/components/users/users.component.css")]
+            styles: [__webpack_require__(/*! ./users.component.css */ "./src/app/components/users/users.component.css")],
         }),
-        __metadata("design:paramtypes", [_services_Firestore_firestore_service__WEBPACK_IMPORTED_MODULE_2__["FirestoreService"],
-            ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"]])
+        __metadata("design:paramtypes", [ngx_spinner__WEBPACK_IMPORTED_MODULE_1__["NgxSpinnerService"]])
     ], UsersComponent);
     return UsersComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/models/Albums.ts":
-/*!**********************************!*\
-  !*** ./src/app/models/Albums.ts ***!
-  \**********************************/
-/*! exports provided: Album */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Album", function() { return Album; });
-var Album = /** @class */ (function () {
-    function Album() {
-    }
-    return Album;
 }());
 
 
@@ -4598,213 +4829,6 @@ var Artist = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/models/Dictionary.ts":
-/*!**************************************!*\
-  !*** ./src/app/models/Dictionary.ts ***!
-  \**************************************/
-/*! exports provided: Dictionary */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Dictionary", function() { return Dictionary; });
-var Dictionary = /** @class */ (function () {
-    function Dictionary() {
-        this.items = {};
-        this.count = 0;
-    }
-    Dictionary.prototype.ContainsKey = function (key) {
-        return this.items.hasOwnProperty(key);
-    };
-    Dictionary.prototype.Count = function () {
-        return this.count;
-    };
-    Dictionary.prototype.Add = function (key, value) {
-        if (!this.items.hasOwnProperty(key)) {
-            this.count++;
-        }
-        this.items[key] = value;
-    };
-    Dictionary.prototype.Remove = function (key) {
-        var val = this.items[key];
-        delete this.items[key];
-        this.count--;
-        return val;
-    };
-    Dictionary.prototype.Item = function (key) {
-        return this.items[key];
-    };
-    Dictionary.prototype.Keys = function () {
-        var keySet = [];
-        for (var prop in this.items) {
-            if (this.items.hasOwnProperty(prop)) {
-                keySet.push(prop);
-            }
-        }
-        return keySet;
-    };
-    Dictionary.prototype.Values = function () {
-        var values = [];
-        for (var prop in this.items) {
-            if (this.items.hasOwnProperty(prop)) {
-                values.push(this.items[prop]);
-            }
-        }
-        return values;
-    };
-    return Dictionary;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/models/Genre.ts":
-/*!*********************************!*\
-  !*** ./src/app/models/Genre.ts ***!
-  \*********************************/
-/*! exports provided: Genre */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Genre", function() { return Genre; });
-var Genre = /** @class */ (function () {
-    function Genre(name, picture) {
-        this.name = name;
-        this.picture = picture;
-    }
-    return Genre;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/models/GenreHelper.ts":
-/*!***************************************!*\
-  !*** ./src/app/models/GenreHelper.ts ***!
-  \***************************************/
-/*! exports provided: GenreHelper */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GenreHelper", function() { return GenreHelper; });
-/* harmony import */ var _Genre__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Genre */ "./src/app/models/Genre.ts");
-
-var GenreHelper = /** @class */ (function () {
-    function GenreHelper() {
-    }
-    GenreHelper.genres = [
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Summer", "../../assets/img/moods & genres/summer.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Pop", "../../assets/img/moods & genres/pop.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Mood", "../../assets/img/moods & genres/mood.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Party", "../../assets/img/moods & genres/party.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Hip-Hop", "../../assets/img/moods & genres/hip-hop.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Chill", "../../assets/img/moods & genres/chill.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Decades", "../../assets/img/moods & genres/decades.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Electronic Dance", "../../assets/img/moods & genres/electronic-dance.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("R'n'B", "../../assets/img/moods & genres/rnb.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Indie", "../../assets/img/moods & genres/indie.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Workout", "../../assets/img/moods & genres/workout.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Rock", "../../assets/img/moods & genres/rock.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Pride", "../../assets/img/moods & genres/pride.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Focus", "../../assets/img/moods & genres/focus.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Sleep", "../../assets/img/moods & genres/sleep.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Country", "../../assets/img/moods & genres/country.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Folk Americana", "../../assets/img/moods & genres/folk-americana.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Romance", "../../assets/img/moods & genres/romance.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Trending", "../../assets/img/moods & genres/trending.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Gaming", "../../assets/img/moods & genres/gaming.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Jazz", "../../assets/img/moods & genres/jazz.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Comedy", "../../assets/img/moods & genres/comedy.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Soul", "../../assets/img/moods & genres/soul.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Classical", "../../assets/img/moods & genres/classical.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Kids", "../../assets/img/moods & genres/kids.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Travel", "../../assets/img/moods & genres/travel.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("K-Pop", "../../assets/img/moods & genres/k-pop.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Reggae", "../../assets/img/moods & genres/reggae.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Metal", "../../assets/img/moods & genres/metal.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Punk", "../../assets/img/moods & genres/punk.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Blues", "../../assets/img/moods & genres/blues.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Fresh Finds", "../../assets/img/moods & genres/fresh-finds.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Running", "../../assets/img/moods & genres/running.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Word", "../../assets/img/moods & genres/word.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Dinner", "../../assets/img/moods & genres/dinner.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Latin", "../../assets/img/moods & genres/latin.png"),
-        new _Genre__WEBPACK_IMPORTED_MODULE_0__["Genre"]("Funk", "../../assets/img/moods & genres/funk.png")
-    ];
-    return GenreHelper;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/models/Mood.ts":
-/*!********************************!*\
-  !*** ./src/app/models/Mood.ts ***!
-  \********************************/
-/*! exports provided: Mood */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Mood", function() { return Mood; });
-var Mood = /** @class */ (function () {
-    function Mood() {
-    }
-    return Mood;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/models/Notification.ts":
-/*!****************************************!*\
-  !*** ./src/app/models/Notification.ts ***!
-  \****************************************/
-/*! exports provided: Notification */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Notification", function() { return Notification; });
-var Notification = /** @class */ (function () {
-    function Notification(songName, albumPicture, progress) {
-        this.songName = songName;
-        this.albumPicture = albumPicture;
-        this.progress = progress;
-    }
-    return Notification;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/models/Playlist.ts":
-/*!************************************!*\
-  !*** ./src/app/models/Playlist.ts ***!
-  \************************************/
-/*! exports provided: Playlist */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Playlist", function() { return Playlist; });
-var Playlist = /** @class */ (function () {
-    function Playlist() {
-    }
-    return Playlist;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/models/PlaylistGroup.ts":
 /*!*****************************************!*\
   !*** ./src/app/models/PlaylistGroup.ts ***!
@@ -4825,84 +4849,21 @@ var PlaylistGroup = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/models/Song.ts":
-/*!********************************!*\
-  !*** ./src/app/models/Song.ts ***!
-  \********************************/
-/*! exports provided: Song */
+/***/ "./src/app/services/http.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/http.service.ts ***!
+  \******************************************/
+/*! exports provided: HttpService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Song", function() { return Song; });
-var Song = /** @class */ (function () {
-    function Song() {
-    }
-    return Song;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/models/songDetails.ts":
-/*!***************************************!*\
-  !*** ./src/app/models/songDetails.ts ***!
-  \***************************************/
-/*! exports provided: SongDetails */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SongDetails", function() { return SongDetails; });
-var SongDetails = /** @class */ (function () {
-    function SongDetails() {
-    }
-    return SongDetails;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/models/users.ts":
-/*!*********************************!*\
-  !*** ./src/app/models/users.ts ***!
-  \*********************************/
-/*! exports provided: Users */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Users", function() { return Users; });
-var Users = /** @class */ (function () {
-    function Users(userId, name, email) {
-        this.name = name;
-        this.email = email;
-        this.id = userId;
-    }
-    return Users;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/AuthService/auth.service.ts":
-/*!******************************************************!*\
-  !*** ./src/app/services/AuthService/auth.service.ts ***!
-  \******************************************************/
-/*! exports provided: AuthService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthService", function() { return AuthService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpService", function() { return HttpService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angularfire2/auth */ "./node_modules/angularfire2/auth/index.js");
-/* harmony import */ var angularfire2_auth__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _utility_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utility.service */ "./src/app/services/utility.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -4912,89 +4873,227 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-
-
-
-var AuthService = /** @class */ (function () {
-    function AuthService(afAuth) {
-        this.afAuth = afAuth;
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = y[op[0] & 2 ? "return" : op[0] ? "throw" : "next"]) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [0, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
-    AuthService.prototype.registerUser = function (email, password) {
-        return this.afAuth.auth
-            .createUserWithEmailAndPassword(email, password)
-            .then(function (res) { })
-            .catch(function (error) {
-            throw error;
+};
+
+
+
+
+
+var HttpService = /** @class */ (function () {
+    function HttpService(http, utility, route) {
+        this.http = http;
+        this.utility = utility;
+        this.route = route;
+    }
+    HttpService.prototype.getHeaders = function (isMultiPartFormData) {
+        var authorizationToken = this.utility.getCookie("authToken");
+        var options = {};
+        if (authorizationToken) {
+            options["authorization"] = "Bearer " + authorizationToken;
+        }
+        var headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"](options);
+        return headers;
+    };
+    HttpService.prototype.get = function (url) {
+        return __awaiter(this, void 0, void 0, function () {
+            var headers, result, error_1;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        headers = this.getHeaders();
+                        return [4 /*yield*/, this.http
+                                .get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + url, {
+                                observe: "response",
+                                headers: headers,
+                            })
+                                .toPromise()];
+                    case 1:
+                        result = _a.sent();
+                        return [2 /*return*/, {
+                                body: result.body,
+                                status: result.status,
+                                statusText: result.statusText,
+                            }];
+                    case 2:
+                        error_1 = _a.sent();
+                        return [2 /*return*/, Promise.reject(this.handleError(error_1))];
+                    case 3: return [2 /*return*/];
+                }
+            });
         });
     };
-    AuthService.prototype.signIn = function (email, password) {
-        return this.afAuth.auth
-            .signInWithEmailAndPassword(email, password)
-            .then(function (res) { })
-            .catch(function (error) {
-            throw error;
+    HttpService.prototype.post = function (url, data, options) {
+        return __awaiter(this, void 0, void 0, function () {
+            var headers, result, error_2;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        headers = void 0;
+                        if (options && options.isMultiPartFormData) {
+                            headers = this.getHeaders(true);
+                        }
+                        else {
+                            headers = this.getHeaders();
+                        }
+                        return [4 /*yield*/, this.http
+                                .post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + url, data, {
+                                observe: "response",
+                                headers: headers,
+                            })
+                                .toPromise()];
+                    case 1:
+                        result = _a.sent();
+                        return [2 /*return*/, {
+                                body: result.body,
+                                status: result.status,
+                                statusText: result.statusText,
+                            }];
+                    case 2:
+                        error_2 = _a.sent();
+                        return [2 /*return*/, Promise.reject(this.handleError(error_2))];
+                    case 3: return [2 /*return*/];
+                }
+            });
         });
     };
-    AuthService.prototype.signInWithFacebook = function () {
-        return this.afAuth.auth
-            .signInWithPopup(new firebase__WEBPACK_IMPORTED_MODULE_2__["auth"].FacebookAuthProvider())
-            .then(function (res) { }, function (err) {
-            console.error("Error: ", err);
-            throw err;
+    HttpService.prototype.put = function (url, data, options) {
+        return __awaiter(this, void 0, void 0, function () {
+            var headers, result, error_3;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        headers = void 0;
+                        if (options && options.isMultiPartFormData) {
+                            headers = this.getHeaders(true);
+                        }
+                        else {
+                            headers = this.getHeaders();
+                        }
+                        return [4 /*yield*/, this.http
+                                .put(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + url, data, {
+                                observe: "response",
+                                headers: headers,
+                            })
+                                .toPromise()];
+                    case 1:
+                        result = _a.sent();
+                        return [2 /*return*/, {
+                                body: result.body,
+                                status: result.status,
+                                statusText: result.statusText,
+                            }];
+                    case 2:
+                        error_3 = _a.sent();
+                        return [2 /*return*/, Promise.reject(this.handleError(error_3))];
+                    case 3: return [2 /*return*/];
+                }
+            });
         });
     };
-    AuthService.prototype.signInWithGoogle = function () {
-        return this.afAuth.auth
-            .signInWithPopup(new firebase__WEBPACK_IMPORTED_MODULE_2__["auth"].GoogleAuthProvider())
-            .then(function (res) { }, function (err) {
-            console.error("Error: ", err);
-            throw err;
+    HttpService.prototype.delete = function (url) {
+        return __awaiter(this, void 0, void 0, function () {
+            var headers, result, error_4;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        _a.trys.push([0, 2, , 3]);
+                        headers = this.getHeaders();
+                        return [4 /*yield*/, this.http
+                                .delete(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].baseUrl + url, {
+                                observe: "response",
+                                headers: headers,
+                            })
+                                .toPromise()];
+                    case 1:
+                        result = _a.sent();
+                        return [2 /*return*/, {
+                                body: result.body,
+                                status: result.status,
+                                statusText: result.statusText,
+                            }];
+                    case 2:
+                        error_4 = _a.sent();
+                        return [2 /*return*/, Promise.reject(this.handleError(error_4))];
+                    case 3: return [2 /*return*/];
+                }
+            });
         });
     };
-    AuthService.prototype.signInWithTwitter = function () {
-        return this.afAuth.auth
-            .signInWithPopup(new firebase__WEBPACK_IMPORTED_MODULE_2__["auth"].TwitterAuthProvider())
-            .then(function (res) { }, function (err) {
-            console.error("Error: ", err);
-            throw err;
-        });
+    HttpService.prototype.handleError = function (error) {
+        if (error.error instanceof ErrorEvent) {
+            console.error("An error occurred:", error.error.message);
+        }
+        else {
+        }
+        return {
+            error: error.error,
+            status: error.status,
+            statusText: error.statusText,
+        };
     };
-    AuthService.prototype.signInWithGithub = function () {
-        return this.afAuth.auth
-            .signInWithPopup(new firebase__WEBPACK_IMPORTED_MODULE_2__["auth"].GithubAuthProvider())
-            .then(function (res) { }, function (err) {
-            console.error("Error: ", err);
-            throw err;
-        });
-    };
-    AuthService = __decorate([
+    HttpService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-            providedIn: "root"
+            providedIn: "root",
         }),
-        __metadata("design:paramtypes", [angularfire2_auth__WEBPACK_IMPORTED_MODULE_1__["AngularFireAuth"]])
-    ], AuthService);
-    return AuthService;
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"],
+            _utility_service__WEBPACK_IMPORTED_MODULE_4__["UtilityService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], HttpService);
+    return HttpService;
 }());
 
 
 
 /***/ }),
 
-/***/ "./src/app/services/FirebaseStorage/firebase-storage.service.ts":
-/*!**********************************************************************!*\
-  !*** ./src/app/services/FirebaseStorage/firebase-storage.service.ts ***!
-  \**********************************************************************/
-/*! exports provided: FirebaseStorageService */
+/***/ "./src/app/services/utility.service.ts":
+/*!*********************************************!*\
+  !*** ./src/app/services/utility.service.ts ***!
+  \*********************************************/
+/*! exports provided: UtilityService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FirebaseStorageService", function() { return FirebaseStorageService; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UtilityService", function() { return UtilityService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _models_Dictionary__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/Dictionary */ "./src/app/models/Dictionary.ts");
-/* harmony import */ var _models_Notification__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../models/Notification */ "./src/app/models/Notification.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -5005,1173 +5104,181 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
-
-
-var FirebaseStorageService = /** @class */ (function () {
-    function FirebaseStorageService() {
-        this.songUploaded = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.songUpdated = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["EventEmitter"]();
-        this.notificationsBySongNameDictionary = new _models_Dictionary__WEBPACK_IMPORTED_MODULE_2__["Dictionary"]();
+var UtilityService = /** @class */ (function () {
+    function UtilityService() {
+        this.imagesTypes = ['image/x-png', 'image/png', 'image/gif', 'image/jpeg'];
+        this.imageSize = 5;
+        this.defaultUserImg = "./assets/static/images/default-user.png";
     }
-    FirebaseStorageService.prototype.getNotifications = function () {
-        var _this = this;
-        var notifications = [];
-        this.notificationsBySongNameDictionary.Keys().forEach(function (key) {
-            var notification = _this.notificationsBySongNameDictionary.Item(key);
-            notifications.push(notification);
+    UtilityService.prototype.setToken = function (data) {
+        localStorage.setItem('Authorization', data);
+    };
+    UtilityService.prototype.getToken = function () {
+        return localStorage.getItem('Authorization');
+    };
+    UtilityService.prototype.removeToken = function () {
+        localStorage.removeItem('Authorization');
+    };
+    ;
+    UtilityService.prototype.findUpdatedProperty = function (updatedData, oldData) {
+        var isUpdated = false;
+        var finalUpdatedObj = {};
+        Object.keys(updatedData).forEach(function (key) {
+            if (oldData[key] != updatedData[key]) {
+                isUpdated = true;
+                finalUpdatedObj[key] = updatedData[key];
+            }
         });
-        return notifications;
+        return {
+            isUpdated: isUpdated,
+            data: finalUpdatedObj
+        };
     };
-    FirebaseStorageService.prototype.removeNotification = function (songName) {
-        this.notificationsBySongNameDictionary.Remove(songName);
+    ;
+    UtilityService.prototype.countDaysBetweenTwoDates = function (startDate, endDate) {
+        var start = new Date(startDate);
+        var end = new Date(endDate);
+        var timeDiff = end.getTime() - start.getTime();
+        var dayDiff = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        return dayDiff;
     };
-    FirebaseStorageService.prototype.uploadSong = function (uploadPath, songName, albumPicture, file) {
-        var _this = this;
-        var promise = new Promise(function (resolve, reject) {
-            var storageRef = firebase__WEBPACK_IMPORTED_MODULE_1__["storage"]().ref();
-            var uploadTask = storageRef.child(uploadPath).put(file);
-            uploadTask.on("state_changed", function (snapshot) {
-                // Observe state change events such as progress, pause, and resume
-                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                if (_this.notificationsBySongNameDictionary.ContainsKey(songName)) {
-                    _this.notificationsBySongNameDictionary.Remove(songName);
-                }
-                var notification = new _models_Notification__WEBPACK_IMPORTED_MODULE_3__["Notification"](songName, albumPicture, Math.round(progress));
-                _this.notificationsBySongNameDictionary.Add(songName, notification);
-            }, function (error) {
-                // Handle unsuccessful uploads
-                console.error(error);
-            }, function () {
-                // Handle successful uploads on complete
-                this.uploadMessage = "Uploaded successfully!";
-            });
-            resolve({ uploadTask: uploadTask });
-        });
-        return promise;
+    ;
+    //TODO :: Need to remove if not use
+    // public converDateToDashDate(date): string {
+    //   if (!date) {
+    //     return "";
+    //   }
+    //     var a = date.split(' ');
+    //     a = a.join('-');
+    //     return a;
+    // };
+    UtilityService.prototype.groupBy = function (array, key) {
+        return array.reduce(function (rv, x) {
+            (rv[x[key]] = rv[x[key]] || []).push(x);
+            return rv;
+        }, {});
     };
-    FirebaseStorageService.prototype.uploadPicture = function (uploadPath, file) {
-        var promise = new Promise(function (resolve, reject) {
-            var storageRef = firebase__WEBPACK_IMPORTED_MODULE_1__["storage"]().ref();
-            var uploadTask = storageRef.child(uploadPath).put(file);
-            uploadTask.on("state_changed", function (snapshot) {
-                // Observe state change events such as progress, pause, and resume
-                // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
-                var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-                console.log("Upload is " + progress + "% done");
-                switch (snapshot.state) {
-                    case firebase__WEBPACK_IMPORTED_MODULE_1__["storage"].TaskState.PAUSED:// or 'paused'
-                        console.log("Upload is paused");
-                        break;
-                    case firebase__WEBPACK_IMPORTED_MODULE_1__["storage"].TaskState.RUNNING:// or 'running'
-                        console.log("Upload is running");
-                        // tslint:disable-next-line:radix
-                        // this.uploadMessage = 'Uploading: ' + parseInt(progress.toString()) + '% done';
-                        break;
-                }
-            }, function (error) {
-                // Handle unsuccessful uploads
-                console.error(error);
-            }, function () {
-                // Handle successful uploads on complete
-                this.uploadMessage = "Uploaded successfully!";
-            });
-            uploadTask.then(function (snapshot) {
-                // console.log('upload task', snapshot);
-                if (snapshot.state !== "success") {
-                    reject();
-                }
-                // console.log("snapshot.ref", snapshot.ref);
-                snapshot.ref.getDownloadURL().then(function (downloadURL) {
-                    // console.log('download url', downloadURL)
-                    resolve({ downloadURL: downloadURL });
-                });
-            });
-        });
-        return promise;
+    ;
+    UtilityService.prototype.findIndex = function (array, value, key) {
+        if (!key) {
+            return array.findIndex(function (item) { return item == value; });
+        }
+        else {
+            return array.findIndex(function (item) { return item[key] == value; });
+        }
     };
-    FirebaseStorageService.prototype.deleteFile = function (deletePath) {
-        var promise = new Promise(function (resolve, reject) {
-            var storageRef = firebase__WEBPACK_IMPORTED_MODULE_1__["storage"]().ref();
-            var uploadTask = storageRef
-                .child(deletePath)
-                .delete()
-                .then(function () {
-                // File deleted successfully
-            })
-                .catch(function (error) {
-                // Uh-oh, an error occurred!
-            });
-        });
-        return promise;
+    ;
+    UtilityService.prototype.findItem = function (array, value, key) {
+        return array.find(function (item) { return item[key] == value; });
     };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], FirebaseStorageService.prototype, "songUploaded", void 0);
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Output"])(),
-        __metadata("design:type", Object)
-    ], FirebaseStorageService.prototype, "songUpdated", void 0);
-    FirebaseStorageService = __decorate([
+    ;
+    UtilityService.prototype.removeItem = function (array, removeItem, key) {
+        if (!key) {
+            return array.filter(function (item) { return removeItem.indexOf(item) < 0; });
+        }
+        else {
+            return array.filter(function (item) { return removeItem.indexOf(item[key]) < 0; });
+        }
+    };
+    ;
+    UtilityService.prototype.getDistinctItems = function (array, key) {
+        if (!key) {
+            return Array.from(new Set(array));
+        }
+        else {
+            return Array.from(new Set(array.map(function (x) { return x[key]; })));
+        }
+    };
+    ;
+    UtilityService.prototype.getMathcedValues = function (array1, array2, key) {
+        if (!key) {
+            return array1.filter(function (e) { return array2.indexOf(e) !== -1; });
+        }
+        else {
+            return array1.filter(function (e) { return array2.findIndex(function (x) { return x[key] == e[key]; }) !== -1; });
+        }
+    };
+    ;
+    UtilityService.prototype.validateUserId = function (control) {
+        if (!control.value) {
+            return null;
+        }
+        var regex_noSpace = /^\S+$/g;
+        if (regex_noSpace.test(control.value)) {
+            return null;
+        }
+        return { invalidUserId: true };
+    };
+    ;
+    UtilityService.prototype.setCookie = function (name, value, options) {
+        var finalCookie = name + "=" + value;
+        if (options.expireDays) {
+            var d = new Date();
+            d.setTime(d.getTime() + options.expireDays * 24 * 60 * 60 * 1000);
+            var expires = "; expires=" + d.toUTCString();
+            finalCookie = finalCookie + expires;
+        }
+        var cpath = options.path ? "; path=" + options.path : '; path=/';
+        finalCookie = finalCookie + cpath + ";";
+        document.cookie = finalCookie;
+    };
+    ;
+    UtilityService.prototype.getCookie = function (name) {
+        name = name + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var allCookies = decodedCookie.split(';');
+        var i = 0;
+        for (i; i < allCookies.length; i++) {
+            var cookie = allCookies[i];
+            while (cookie.charAt(0) == ' ') {
+                cookie = cookie.substring(1);
+            }
+            if (cookie.indexOf(name) == 0) {
+                return cookie.substring(name.length, cookie.length);
+            }
+        }
+        return "";
+    };
+    ;
+    UtilityService.prototype.removeCookie = function (name) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    };
+    ;
+    UtilityService.prototype.validateImageFile = function (fileType) {
+        var exist = this.imagesTypes.indexOf(fileType);
+        if (exist == -1)
+            return false;
+        return true;
+    };
+    UtilityService.prototype.validateFileSize = function (fileSize) {
+        var allowedSize = this.imageSize * 1048576;
+        if (fileSize > allowedSize)
+            return false;
+        return true;
+    };
+    UtilityService.prototype.convertToDbDate = function (date) {
+        var item = date.split('/');
+        var dbDate = item[2] + '-' + item[1] + '-' + item[0];
+        return dbDate;
+    };
+    UtilityService.prototype.convertObjToDbDate = function (obj) {
+        return obj.year + '-' + obj.month + '-' + obj.day;
+    };
+    UtilityService.prototype.currentDateObj = function () {
+        var date = new Date();
+        return {
+            year: date.getFullYear(),
+            month: date.getMonth() + 1,
+            day: date.getDate()
+        };
+    };
+    UtilityService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-            providedIn: "root"
+            providedIn: 'root'
         }),
         __metadata("design:paramtypes", [])
-    ], FirebaseStorageService);
-    return FirebaseStorageService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/Firestore/firestore.service.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/services/Firestore/firestore.service.ts ***!
-  \*********************************************************/
-/*! exports provided: FirestoreService */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FirestoreService", function() { return FirestoreService; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase */ "./node_modules/firebase/dist/index.cjs.js");
-/* harmony import */ var firebase__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(firebase__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _models_Song__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../models/Song */ "./src/app/models/Song.ts");
-/* harmony import */ var _models_Artist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../models/Artist */ "./src/app/models/Artist.ts");
-/* harmony import */ var _models_Albums__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../models/Albums */ "./src/app/models/Albums.ts");
-/* harmony import */ var _FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../FirebaseStorage/firebase-storage.service */ "./src/app/services/FirebaseStorage/firebase-storage.service.ts");
-/* harmony import */ var _models_Playlist__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../models/Playlist */ "./src/app/models/Playlist.ts");
-/* harmony import */ var _models_Genre__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../models/Genre */ "./src/app/models/Genre.ts");
-/* harmony import */ var _models_GenreHelper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../models/GenreHelper */ "./src/app/models/GenreHelper.ts");
-/* harmony import */ var _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../models/PlaylistGroup */ "./src/app/models/PlaylistGroup.ts");
-/* harmony import */ var src_app_models_users__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! src/app/models/users */ "./src/app/models/users.ts");
-/* harmony import */ var _models_songDetails__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../models/songDetails */ "./src/app/models/songDetails.ts");
-/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-var FirestoreService = /** @class */ (function () {
-    function FirestoreService(firebaseStorage) {
-        this.firebaseStorage = firebaseStorage;
-    }
-    FirestoreService.prototype.initialiseGenres = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            _models_GenreHelper__WEBPACK_IMPORTED_MODULE_8__["GenreHelper"].genres.forEach(function (genre) {
-                db.collection("genres")
-                    .add({
-                    name: genre.name
-                })
-                    .then(function (ref) {
-                    resolve(ref);
-                })
-                    .catch(function (error) {
-                    reject(error);
-                });
-                // resolve();
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getUsers = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("users")
-                .get()
-                .then(function (usersSnapshot) {
-                var users = [];
-                usersSnapshot.forEach(function (doc) {
-                    // console.log('doc', doc.data(), doc.id);
-                    var user = new src_app_models_users__WEBPACK_IMPORTED_MODULE_10__["Users"](doc.id, doc.data().name, doc.data().email);
-                    // user.userId = doc.id;
-                    // user.emailId = doc.data().email;
-                    users.push(user);
-                });
-                resolve({ users: users });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getGenres = function () {
-        var promise = new Promise(function (resolve) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("genres")
-                .get()
-                .then(function (genresSnapshot) {
-                var genres = [];
-                genresSnapshot.forEach(function (doc) {
-                    var genre = new _models_Genre__WEBPACK_IMPORTED_MODULE_7__["Genre"](doc.data().name, doc.data().picture);
-                    genre.genreId = doc.id;
-                    genres.push(genre);
-                });
-                resolve({ genres: genres });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getSongs = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("songs")
-                .get()
-                .then(function (songsSnapshot) {
-                var songs = [];
-                songsSnapshot.forEach(function (doc) {
-                    var song = new _models_Song__WEBPACK_IMPORTED_MODULE_2__["Song"]();
-                    song.songId = doc.id;
-                    song.name = doc.data().name;
-                    song.artistId = doc.data().artistId;
-                    song.artistName = doc.data().artistName;
-                    song.albumId = doc.data().albumId;
-                    song.albumName = doc.data().albumName;
-                    song.albumPicture = doc.data().albumPicture;
-                    song.songUrl = doc.data().songUrl;
-                    songs.push(song);
-                });
-                resolve({ songs: songs });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getAlbumSongs = function (albumId) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("songs")
-                .where("albumId", "==", albumId)
-                .get()
-                .then(function (songsSnapshot) {
-                var songs = [];
-                songsSnapshot.forEach(function (doc) {
-                    var song = new _models_Song__WEBPACK_IMPORTED_MODULE_2__["Song"]();
-                    song.songId = doc.id;
-                    song.name = doc.data().name;
-                    song.artistId = doc.data().artistId;
-                    song.artistName = doc.data().artistName;
-                    song.albumId = doc.data().albumId;
-                    song.albumName = doc.data().albumName;
-                    song.albumPicture = doc.data().albumPicture;
-                    song.songUrl = doc.data().songUrl;
-                    songs.push(song);
-                });
-                resolve({ songs: songs });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getArtists = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("artists")
-                .get()
-                .then(function (artistsSnapshot) {
-                var artists = [];
-                artistsSnapshot.forEach(function (doc) {
-                    var artist = new _models_Artist__WEBPACK_IMPORTED_MODULE_3__["Artist"]();
-                    artist.artistId = doc.id;
-                    artist.name = doc.data().name;
-                    artist.picture = doc.data().picture;
-                    artists.push(artist);
-                });
-                resolve({ artists: artists });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getAlbums = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("albums")
-                .get()
-                .then(function (albumsSnapshot) {
-                var albums = [];
-                albumsSnapshot.forEach(function (doc) {
-                    var album = new _models_Albums__WEBPACK_IMPORTED_MODULE_4__["Album"]();
-                    album.albumId = doc.id;
-                    album.name = doc.data().name;
-                    album.picture = doc.data().picture;
-                    album.artistId = doc.data().artistId;
-                    album.artistName = doc.data().artistName;
-                    albums.push(album);
-                });
-                resolve({ albums: albums });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getArtistAlbums = function (artistId) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("albums")
-                .where("artistId", "==", artistId)
-                .get()
-                .then(function (albumsSnapshot) {
-                var albums = [];
-                albumsSnapshot.forEach(function (doc) {
-                    var album = new _models_Albums__WEBPACK_IMPORTED_MODULE_4__["Album"]();
-                    album.albumId = doc.id;
-                    album.name = doc.data().name;
-                    album.picture = doc.data().picture;
-                    album.artistId = doc.data().artistId;
-                    album.artistName = doc.data().artistName;
-                    albums.push(album);
-                });
-                resolve({ albums: albums });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.addNewMood = function (newMood) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("genres")
-                .add({
-                name: newMood.name,
-                picture: newMood.picture
-            })
-                .then(function (ref) {
-                resolve({ newMoodId: ref.id });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editMoodName = function (moodId, moodName) {
-        console.log({ moodId: moodId, moodName: moodName });
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("genres")
-                .doc(moodId)
-                .set({
-                name: moodName
-            }, { merge: true })
-                .then(function (s) {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editMoodPicture = function (moodId, moodPicture) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("genres")
-                .doc(moodId)
-                .set({
-                picture: moodPicture
-            }, { merge: true })
-                .then(function (s) {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.addNewArtist = function (newArtist) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("artists")
-                .add({
-                name: newArtist.name,
-                picture: newArtist.picture
-            })
-                .then(function (ref) {
-                resolve({ newArtistId: ref.id });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.deleteArtist = function (artist) {
-        var _this = this;
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("artists")
-                .doc(artist.artistId)
-                .delete()
-                .then(function () {
-                // Delete artist picture
-                var deletePath = "/" + artist.name + "/artistPicture";
-                _this.firebaseStorage.deleteFile(deletePath);
-                // Delete all artist's albums
-                _this.getArtistAlbums(artist.artistId).then(function (result) {
-                    result.albums.forEach(function (album) {
-                        _this.deleteAlbum(album);
-                    });
-                    resolve(true);
-                });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editArtistName = function (artistId, artistName) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("artists")
-                .doc(artistId)
-                .set({
-                name: artistName
-            }, { merge: true })
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editArtistPicture = function (artistId, artistPicture) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("artists")
-                .doc(artistId)
-                .set({
-                picture: artistPicture
-            }, { merge: true })
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.addNewAlbum = function (newAlbum) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("albums")
-                .add({
-                name: newAlbum.name,
-                picture: newAlbum.picture,
-                artistId: newAlbum.artistId,
-                artistName: newAlbum.artistName
-            })
-                .then(function (ref) {
-                resolve({ newAlbumId: ref.id });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.deleteAlbum = function (album) {
-        var _this = this;
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("albums")
-                .doc(album.albumId)
-                .delete()
-                .then(function () {
-                // Delete album picture
-                var deletePath = "/" + album.artistName + "/" + album.name + "/albumPicture";
-                _this.firebaseStorage.deleteFile(deletePath);
-                // Delete all artist's albums
-                _this.getAlbumSongs(album.albumId).then(function (result) {
-                    result.songs.forEach(function (song) {
-                        _this.deleteSong(song);
-                    });
-                    resolve(true);
-                });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editAlbumName = function (albumId, albumName) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("albums")
-                .doc(albumId)
-                .set({
-                name: albumName
-            }, { merge: true })
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editAlbumPicture = function (albumId, albumPicture) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("albums")
-                .doc(albumId)
-                .set({
-                picture: albumPicture
-            }, { merge: true })
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.addNewSong = function (newSong) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("songs")
-                .add({
-                name: newSong.name,
-                artistId: newSong.artistId,
-                artistName: newSong.artistName,
-                albumId: newSong.albumId,
-                albumName: newSong.albumName,
-                albumPicture: newSong.albumPicture,
-                songUrl: newSong.songUrl,
-                moodId: "",
-                moodName: ""
-            })
-                .then(function (ref) {
-                resolve({ newSongId: ref.id });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editSongName = function (songId, songName) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("songs")
-                .doc(songId)
-                .set({
-                name: songName
-            }, { merge: true })
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editSong = function (songId, songUrl) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("songs")
-                .doc(songId)
-                .set({
-                songUrl: songUrl
-            }, { merge: true })
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.deleteSong = function (song) {
-        var _this = this;
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("songs")
-                .doc(song.songId)
-                .delete()
-                .then(function () {
-                var deletePath = "/" + song.artistName + "/" + song.albumName + "/" + song.name;
-                _this.firebaseStorage.deleteFile(deletePath);
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getPlaylists = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlists")
-                .orderBy("addedAt", "desc")
-                .get()
-                .then(function (playlistsSnapshot) {
-                var playlists = [];
-                playlistsSnapshot.forEach(function (doc) {
-                    var playlist = new _models_Playlist__WEBPACK_IMPORTED_MODULE_6__["Playlist"]();
-                    playlist.playlistId = doc.id;
-                    playlist.name = doc.data().name;
-                    playlist.picture = doc.data().picture;
-                    playlists.push(playlist);
-                });
-                resolve({ playlists: playlists });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.addNewPlaylist = function (newPlaylist) {
-        console.log('playlist', newPlaylist);
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlists")
-                .add({
-                name: newPlaylist.name,
-                picture: newPlaylist.picture,
-                addedAt: firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"].FieldValue.serverTimestamp()
-            })
-                .then(function (ref) {
-                console.log('ref', ref);
-                resolve({ newPlaylistId: ref.id });
-            })
-                .catch(function (error) {
-                console.log('err', error);
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editPlaylistName = function (playlistId, playlistName) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlists")
-                .doc(playlistId)
-                .set({
-                name: playlistName
-            }, { merge: true })
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editPlaylistPicture = function (playlistId, playlistPicture) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlists")
-                .doc(playlistId)
-                .set({
-                picture: playlistPicture
-            }, { merge: true })
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.deletePlaylist = function (playlist) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlists")
-                .doc(playlist.playlistId)
-                .delete()
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getPlaylistSongs = function (playlist) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlists")
-                .doc(playlist.playlistId)
-                .collection("songs")
-                .get()
-                .then(function (playlistSongsSnapshot) {
-                var playlistSongs = [];
-                playlistSongsSnapshot.forEach(function (doc) {
-                    var song = new _models_Song__WEBPACK_IMPORTED_MODULE_2__["Song"]();
-                    song.playlistSongId = doc.id;
-                    song.songId = doc.data().songId;
-                    song.name = doc.data().name;
-                    song.artistId = doc.data().artistId;
-                    song.artistName = doc.data().artistName;
-                    song.albumId = doc.data().albumId;
-                    song.albumName = doc.data().albumName;
-                    song.albumPicture = doc.data().albumPicture;
-                    song.songUrl = doc.data().songUrl;
-                    playlistSongs.push(song);
-                });
-                resolve({ playlistSongs: playlistSongs });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.addSongToPlaylist = function (song, playlist) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlists")
-                .doc(playlist.playlistId)
-                .collection("songs")
-                .add({
-                songId: song.songId,
-                name: song.name,
-                artistId: song.artistId,
-                artistName: song.artistName,
-                albumId: song.albumId,
-                albumName: song.albumName,
-                albumPicture: song.albumPicture,
-                songUrl: song.songUrl
-            })
-                .then(function (ref) {
-                resolve({ newPlaylistSongId: ref.id });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.removeSongFromPlaylist = function (song, playlist) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlists")
-                .doc(playlist.playlistId)
-                .collection("songs")
-                .doc(song.playlistSongId)
-                .delete()
-                .then(function (ref) {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getArtistsCount = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("artists")
-                .get()
-                .then(function (artistsSnapshot) {
-                resolve({ count: artistsSnapshot.size });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getAlbumsCount = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("albums")
-                .get()
-                .then(function (albumsSnapshot) {
-                resolve({ count: albumsSnapshot.size });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getSongsCount = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("songs")
-                .get()
-                .then(function (songsSnapshot) {
-                resolve({ count: songsSnapshot.size });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getPlaylistsCount = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlists")
-                .get()
-                .then(function (playlistsSnapshot) {
-                resolve({ count: playlistsSnapshot.size });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.updateSongMood = function (song, genre) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("songs")
-                .doc(song.songId)
-                .set({
-                moodName: genre.name,
-                moodId: genre.genreId
-            }, {
-                merge: true
-            })
-                .then(function (ref) {
-                console.log('update song mood', ref);
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.addSongToGenre = function (song, genre) {
-        var _this = this;
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("genres")
-                .doc(genre.genreId)
-                .collection("songs")
-                .add({
-                songId: song.songId,
-                name: song.name,
-                artistId: song.artistId,
-                artistName: song.artistName,
-                albumId: song.albumId,
-                albumName: song.albumName,
-                albumPicture: song.albumPicture,
-                songUrl: song.songUrl
-            })
-                .then(function (ref) {
-                console.log('ref', ref.id);
-                _this.updateSongMood(song, genre);
-                resolve({ newGenreSongId: ref.id });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.removeSongFromGenre = function (song, genre) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("genres")
-                .doc(genre.genreId)
-                .collection("songs")
-                .doc(song.genreSongId)
-                .delete()
-                .then(function (ref) {
-                var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-                db.collection("songs")
-                    .doc(song.songId)
-                    .set({
-                    moodName: "",
-                    moodId: ""
-                }, {
-                    merge: true
-                })
-                    .then(function (ref) {
-                    console.log('remove song mood', ref);
-                    resolve(true);
-                })
-                    .catch(function (error) {
-                    reject(error);
-                });
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getGenreSongs = function (genre) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("genres")
-                .doc(genre.genreId)
-                .collection("songs")
-                .get()
-                .then(function (genreSongsSnapshot) {
-                var genreSongs = [];
-                genreSongsSnapshot.forEach(function (doc) {
-                    var song = new _models_Song__WEBPACK_IMPORTED_MODULE_2__["Song"]();
-                    song.genreSongId = doc.id;
-                    song.songId = doc.data().songId;
-                    song.name = doc.data().name;
-                    song.artistId = doc.data().artistId;
-                    song.artistName = doc.data().artistName;
-                    song.albumId = doc.data().albumId;
-                    song.albumName = doc.data().albumName;
-                    song.albumPicture = doc.data().albumPicture;
-                    song.songUrl = doc.data().songUrl;
-                    genreSongs.push(song);
-                });
-                resolve({ genreSongs: genreSongs });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getPlaylistGroups = function () {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlistGroups")
-                .orderBy("addedAt", "desc")
-                .get()
-                .then(function (playlistGroupsSnapshot) {
-                var playlistGroups = [];
-                playlistGroupsSnapshot.forEach(function (doc) {
-                    var playlistGroup = new _models_PlaylistGroup__WEBPACK_IMPORTED_MODULE_9__["PlaylistGroup"]();
-                    playlistGroup.playlistGroupId = doc.id;
-                    playlistGroup.name = doc.data().name;
-                    playlistGroups.push(playlistGroup);
-                });
-                resolve({ playlistGroups: playlistGroups });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.addNewPlaylistGroup = function (newPlaylistGroup) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlistGroups")
-                .add({
-                name: newPlaylistGroup.name,
-                addedAt: firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"].FieldValue.serverTimestamp()
-            })
-                .then(function (ref) {
-                resolve({ newPlaylistGroupId: ref.id });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.editPlaylistGroupName = function (playlistGroupId, playlistGroupName) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlistGroups")
-                .doc(playlistGroupId)
-                .set({
-                name: playlistGroupName
-            }, { merge: true })
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.deletePlaylistGroup = function (playlistGroup) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlistGroups")
-                .doc(playlistGroup.playlistGroupId)
-                .delete()
-                .then(function () {
-                resolve(true);
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getPlaylistGroupPlaylists = function (playlistGroup) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlistGroups")
-                .doc(playlistGroup.playlistGroupId)
-                .collection("playlists")
-                .orderBy("addedAt", "asc")
-                .get()
-                .then(function (playlistGroupPlaylistsSnapshot) {
-                var playlistGroupPlaylists = [];
-                playlistGroupPlaylistsSnapshot.forEach(function (doc) {
-                    var playlist = new _models_Playlist__WEBPACK_IMPORTED_MODULE_6__["Playlist"]();
-                    playlist.playlistGroupPlaylistId = doc.id;
-                    playlist.playlistId = doc.data().playlistId;
-                    playlist.name = doc.data().name;
-                    playlist.picture = doc.data().picture;
-                    playlistGroupPlaylists.push(playlist);
-                });
-                resolve({ playlistGroupPlaylists: playlistGroupPlaylists });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getSongDetails = function (startDate, endDate, songId) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            var Startdate = (startDate) ? new Date(startDate) : new Date();
-            var endBefore = (endDate) ? new Date(endDate) : new Date();
-            db.collection("songDetail")
-                .where("songId", "==", songId)
-                .orderBy("date").startAfter(Startdate).endBefore(endBefore)
-                .get()
-                .then(function (SongDetailSnapshot) {
-                var SongDetailSnapshotPlaylists = [];
-                console.clear();
-                console.log({ Startdate: Startdate, endBefore: endBefore });
-                SongDetailSnapshot.forEach(function (doc) {
-                    var songDetails = new _models_songDetails__WEBPACK_IMPORTED_MODULE_11__["SongDetails"]();
-                    songDetails.songId = doc.data().songId;
-                    songDetails.name = doc.data().name;
-                    songDetails.moodId = doc.data().moodId;
-                    songDetails.moodName = doc.data().moodName;
-                    songDetails.date = doc.data().date;
-                    songDetails.numberOfPlayed = doc.data().numberOfPlayed;
-                    songDetails.totalTime = doc.data().totalTime;
-                    songDetails.userId = doc.data().userId;
-                    // console.log(doc.data())
-                    SongDetailSnapshotPlaylists.push(doc.data());
-                    // }
-                });
-                resolve({ SongDetailSnapshotPlaylists: SongDetailSnapshotPlaylists });
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.addPlaylistToPlaylistGroup = function (playlist, playlistGroup) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlistGroups")
-                .doc(playlistGroup.playlistGroupId)
-                .collection("playlists")
-                .add({
-                playlistId: playlist.playlistId,
-                name: playlist.name,
-                picture: playlist.picture,
-                addedAt: firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"].FieldValue.serverTimestamp()
-            })
-                .then(function (ref) {
-                resolve({ newPlaylistGroupPlaylistId: ref.id });
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.removePlaylistFromPlaylistGroup = function (playlist, playlistGroup) {
-        var promise = new Promise(function (resolve, reject) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection("playlistGroups")
-                .doc(playlistGroup.playlistGroupId)
-                .collection("playlists")
-                .doc(playlist.playlistGroupPlaylistId)
-                .delete()
-                .then(function (ref) {
-                // resolve();
-            })
-                .catch(function (error) {
-                reject(error);
-            });
-        });
-        return promise;
-    };
-    FirestoreService.prototype.getPrivacy = function () {
-        var observable = new rxjs__WEBPACK_IMPORTED_MODULE_12__["Observable"](function (observer) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection('privacy')
-                .doc("QlLQFVvF3ZKK1nF3K7B4")
-                .get()
-                .then(function (ref) {
-                console.log('data', ref.data());
-                observer.next(ref.data());
-            }).catch(function (e) {
-                console.log({ e: e });
-                observer.next(e);
-            });
-        });
-        return observable;
-    };
-    FirestoreService.prototype.updatePrivacy = function (privacyContent) {
-        var observable = new rxjs__WEBPACK_IMPORTED_MODULE_12__["Observable"](function (observer) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection('privacy')
-                .doc("QlLQFVvF3ZKK1nF3K7B4")
-                .update({
-                htmlContent: privacyContent
-            })
-                .then(function (ref) {
-                console.log('data', ref);
-                observer.next(true);
-            }).catch(function (e) {
-                console.log({ e: e });
-                observer.next(false);
-            });
-        });
-        return observable;
-    };
-    FirestoreService.prototype.getTerms = function () {
-        var observable = new rxjs__WEBPACK_IMPORTED_MODULE_12__["Observable"](function (observer) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection('terms')
-                .doc("bznza2rriADzzoHLRp1O")
-                .get()
-                .then(function (ref) {
-                console.log('data', ref.data());
-                observer.next(ref.data());
-            }).catch(function (e) {
-                console.log({ e: e });
-                observer.next(e);
-            });
-        });
-        return observable;
-    };
-    FirestoreService.prototype.updateTerms = function (terms) {
-        var observable = new rxjs__WEBPACK_IMPORTED_MODULE_12__["Observable"](function (observer) {
-            var db = firebase__WEBPACK_IMPORTED_MODULE_1__["firestore"]();
-            db.collection('terms')
-                .doc("bznza2rriADzzoHLRp1O")
-                .update({
-                htmlContent: terms
-            })
-                .then(function (ref) {
-                observer.next(true);
-            }).catch(function (e) {
-                console.log({ e: e });
-                observer.next(false);
-            });
-        });
-        return observable;
-    };
-    FirestoreService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
-            providedIn: "root"
-        }),
-        __metadata("design:paramtypes", [_FirebaseStorage_firebase_storage_service__WEBPACK_IMPORTED_MODULE_5__["FirebaseStorageService"]])
-    ], FirestoreService);
-    return FirestoreService;
+    ], UtilityService);
+    return UtilityService;
 }());
 
 
@@ -7444,7 +6551,13 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build ---prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: false,
+    // baseUrl: "http://localhost:5000/api/",
+    // rootUrl: "http://localhost:5000/",
+    // getFileUrl: "http://localhost:5000/getFile/",
+    baseUrl: "https://cors-everywhere-me.herokuapp.com/http://3.129.44.19/api/",
+    rootUrl: "http://3.129.44.19/",
+    getFileUrl: "https://cors-everywhere-me.herokuapp.com/http://3.129.44.19/getFile/",
 };
 /*
  * In development mode, to ignore zone related error stack frames such as
@@ -7490,7 +6603,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/ghayas/Documents/projects/hawk/neura-web/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! D:\Freelancing\HAWK-mobile\freq_admin_panel\src\main.ts */"./src/main.ts");
 
 
 /***/ })

@@ -15,11 +15,6 @@ import { UtilityService } from "../../services/utility.service";
 import "../../../assets/js/demo.js";
 declare var demo: any;
 
-import { Album } from "../../models/Albums";
-import { Program } from "../../models/Program";
-import { Artist } from "../../models/Artist";
-import { Genre } from "../../models/Genre";
-
 @Component({
   selector: "app-song-editor",
   templateUrl: "./song-editor.component.html",
@@ -32,7 +27,9 @@ export class SongEditorComponent implements AfterViewInit {
   programId = "";
   currentSong = "";
   currentPicture = "";
-  categories = [];
+  // categories = ["616a8870810a4844b82eae2c"];
+  // categories = ["616a89ba810a4844b82eae42"];
+  categories = ["616a8bae810a4844b82eae60"];
 
   isEditMode = false;
 
@@ -48,9 +45,9 @@ export class SongEditorComponent implements AfterViewInit {
 
     if (this.isEditMode) {
       this.name = data.program.name;
-      this.programId = data.program.songId;
-      this.categories = data.program.artistId;
-      this.currentSong = data.program.url;
+      this.programId = data.program._id;
+      this.categories = data.program.categories;
+      this.currentSong = data.program.song;
       this.currentPicture = data.program.picture;
     }
   }
@@ -71,18 +68,6 @@ export class SongEditorComponent implements AfterViewInit {
         this.spinner.hide();
         demo.showErrorNotification(err["error"].message);
       });
-
-    // this.firestoreService.getArtists().then((result: any) => {
-    //   this.artists = result.artists;
-
-    //   this.selectedArtist = this.artists.find(
-    //     x => x.artistId === this.artistId
-    //   );
-
-    //   this.getArtistAlbums();
-
-    //   this.spinner.hide();
-    // });
   }
 
   addNewProgram() {
@@ -92,13 +77,11 @@ export class SongEditorComponent implements AfterViewInit {
     const programPicture = (<HTMLInputElement>(
       document.getElementById("programPicture")
     )).files[0];
-    console.log(programSong);
-    console.log(programPicture);
     if (
       !this.name ||
-      !this.categories.length
-      // !programSong ||
-      // !programPicture
+      // !this.categories.length
+      !programSong ||
+      !programPicture
     ) {
       demo.showWarningNotification("All fields required");
       return;
@@ -106,8 +89,8 @@ export class SongEditorComponent implements AfterViewInit {
 
     this.spinner.show();
     let formData = new FormData();
-    // formData.append("program", programPicture);
-    // formData.append("program", programSong);
+    formData.append("program", programPicture);
+    formData.append("program", programSong);
     formData.append("name", this.name);
     for (var i = 0; i < this.categories.length; i++) {
       formData.append("categories[]", this.categories[i]);
@@ -117,6 +100,7 @@ export class SongEditorComponent implements AfterViewInit {
       .post("programs/add", formData, { isMultiPartFormData: true })
       .then((success) => {
         this.spinner.hide();
+        console.log("Added song ", success.body.data);
         this.dialogRef.close({
           isSuccess: true,
           newProgram: success.body.data,
@@ -140,7 +124,8 @@ export class SongEditorComponent implements AfterViewInit {
     if (
       this.name == this.data.program.name &&
       this.categories == this.data.program.categories &&
-      !newSong
+      !newSong &&
+      !newProgramPicture
     ) {
       demo.showWarningNotification("No changes made");
       return;
@@ -148,16 +133,19 @@ export class SongEditorComponent implements AfterViewInit {
     this.spinner.show();
 
     let formData = new FormData();
-    if (newSong) formData.append("categoryPicture", newSong);
+    if (newProgramPicture) {
+      formData.append("program", newProgramPicture);
+      formData.append("currentSong", this.currentSong);
+    }
+    if (newSong) {
+      formData.append("program", newSong);
+      formData.append("currentPicture", this.currentPicture);
+    }
     formData.append("name", this.name);
     for (var i = 0; i < this.categories.length; i++) {
       formData.append("categories[]", this.categories[i]);
     }
     formData.append("programId", this.programId);
-
-    if (newSong) formData.append("currentSong", this.currentSong);
-    if (newProgramPicture)
-      formData.append("currentPicture", this.currentPicture);
 
     this.http
       .post("programs/edit", formData, { isMultiPartFormData: true })

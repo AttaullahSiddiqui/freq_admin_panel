@@ -22,7 +22,7 @@
   </div>
 </div>
 
-<div class="row">
+<!-- <div class="row">
   <div class="col-sm-10">
     <div class="form-group">
       <label for="categoryName">Category Name</label>
@@ -33,7 +33,7 @@
       </select>
     </div>
   </div>
-</div>
+</div> -->
 
 <div class="row">
   <div class="col-sm-10">
@@ -56,8 +56,7 @@
 <br>
 
 <div class="row">
-  <button type="submit" style="float: right;" *ngIf="!isEditMode" (click)="addNewProgram()" class="btn btn-primary">Add
+  <button style="float: right;" *ngIf="!isEditMode" (click)="addNewProgram()" class="btn btn-primary">Add
   </button>
-  <button type="submit" style="float: right;" *ngIf="isEditMode" (click)="updateProgram()"
-    class="btn btn-primary">Update</button>
+  <button style="float: right;" *ngIf="isEditMode" (click)="updateProgram()" class="btn btn-primary">Update</button>
 </div>

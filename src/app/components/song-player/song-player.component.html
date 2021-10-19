@@ -1,17 +1,10 @@
-<div class="row">
-  <h4>{{song.name}}</h4>
+<div class="row justify-content-md-center text-center">
+  <h4>{{program.name}}</h4>
 </div>
 
-<div class="row">
-  <h5>{{song.albumName}}</h5>
-</div>
-
-<div class="row">
-  <h6>{{song.artistName}}</h6>
-</div>
 
 <br>
 
 <audio controls autoplay>
-  <source src="{{song.songUrl}}" type="audio/mpeg">
+  <source src="{{getFileUrl}}{{program.song}}" type="audio/mpeg">
 </audio>

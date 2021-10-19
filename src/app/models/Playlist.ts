@@ -1,4 +1,4 @@
-import { Song } from "./Program";
+import { Program } from "./Program";
 
 export class Playlist {
   constructor() {}
@@ -6,7 +6,7 @@ export class Playlist {
   playlistId: string;
   name: string;
   picture: string;
-  songs: Song[];
+  songs: Program[];
   playlistGroupPlaylistId: string;
   isPartOfPlaylistGroup: boolean;
 }
