@@ -8,8 +8,8 @@ import {
   Inject,
 } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
-import { MatSnackBar } from "@angular/material";
+// import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { MatSnackBar } from "@angular/material/snack-bar";
 
 // import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AngularEditorConfig } from "@kolkov/angular-editor";
@@ -55,9 +55,9 @@ export class PrivacyPolicyComponent implements OnInit, AfterViewInit {
   constructor(
     private spinner: NgxSpinnerService,
     public snackBar: MatSnackBar // @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   ngAfterViewInit() {
     this.getPrivacy();

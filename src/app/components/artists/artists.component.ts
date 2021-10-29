@@ -17,8 +17,8 @@ import { Artist } from "../../models/Artist";
   styleUrls: ["./artists.component.css"],
 })
 export class ArtistsComponent implements OnInit {
-  artists: Artist[] = [];
-  originalArtists: Artist[];
+  artists: any[] = [];
+  originalArtists: any;
 
   public isSearching = false;
 
@@ -26,7 +26,7 @@ export class ArtistsComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private dialog: MatDialog,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getArtists();
@@ -128,7 +128,7 @@ export class ArtistsComponent implements OnInit {
     const searchInput = <HTMLInputElement>(
       document.getElementById("searchInput")
     );
-    let timeout = null;
+    let timeout: any = null;
 
     searchInput.onkeyup = (e) => {
       clearTimeout(timeout);
@@ -180,6 +180,6 @@ export class ArtistsComponent implements OnInit {
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {});
+    dialogRef.afterClosed().subscribe((result) => { });
   }
 }

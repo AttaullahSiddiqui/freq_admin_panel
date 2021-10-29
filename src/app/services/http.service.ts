@@ -20,11 +20,11 @@ export class HttpService {
     private http: HttpClient,
     public utility: UtilityService,
     private route: Router
-  ) {}
+  ) { }
 
   getHeaders(isMultiPartFormData?: boolean): HttpHeaders {
     const authorizationToken = this.utility.getCookie("authToken");
-    let options = {
+    let options: any = {
       // 'Content-Type': 'application/json',
     };
     if (authorizationToken) {
@@ -48,7 +48,7 @@ export class HttpService {
         status: result.status,
         statusText: result.statusText,
       };
-    } catch (error) {
+    } catch (error: any) {
       return Promise.reject(this.handleError(error));
     }
   }
@@ -72,7 +72,7 @@ export class HttpService {
         status: result.status,
         statusText: result.statusText,
       };
-    } catch (error) {
+    } catch (error: any) {
       return Promise.reject(this.handleError(error));
     }
   }
@@ -96,7 +96,7 @@ export class HttpService {
         status: result.status,
         statusText: result.statusText,
       };
-    } catch (error) {
+    } catch (error: any) {
       return Promise.reject(this.handleError(error));
     }
   }
@@ -115,7 +115,7 @@ export class HttpService {
         status: result.status,
         statusText: result.statusText,
       };
-    } catch (error) {
+    } catch (error: any) {
       return Promise.reject(this.handleError(error));
     }
   }

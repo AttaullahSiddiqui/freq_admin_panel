@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialog } from "@angular/material";
+import { MatDialog } from '@angular/material/dialog';
 import { environment } from "../../../environments/environment";
 
 import { NoteEditorComponent } from "../note-editor/note-editor.component";
@@ -17,10 +17,10 @@ declare var demo: any;
   styleUrls: ["./notes.component.css"],
 })
 export class NotesComponent implements OnInit {
-  notes = [];
-  noteEditKey = null;
-  noteDltKey = null;
-  getFileUrl = environment.getFileUrl;
+  notes: any = [];
+  noteEditKey: any = null;
+  noteDltKey: any = null;
+  getFileUrl: any = environment.getFileUrl;
 
   constructor(
     private spinner: NgxSpinnerService,
@@ -28,7 +28,7 @@ export class NotesComponent implements OnInit {
     private router: Router,
     private http: HttpService,
     private util: UtilityService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getNotes();
@@ -56,14 +56,14 @@ export class NotesComponent implements OnInit {
         isEditMode: false,
       },
     });
-    dialogRef.afterClosed().subscribe((result) => {
+    dialogRef.afterClosed().subscribe((result: any) => {
       if (result.isSuccess) {
         this.notes.unshift(result.newNote);
         demo.showSuccessNotification("Note successfully added!");
       }
     });
   }
-  edit(noteKey, note) {
+  edit(noteKey: any, note: any) {
     this.noteEditKey = noteKey;
     const dialogRef2 = this.dialog.open(NoteEditorComponent, {
       width: "500px",
@@ -72,7 +72,7 @@ export class NotesComponent implements OnInit {
         note: note,
       },
     });
-    dialogRef2.afterClosed().subscribe((result) => {
+    dialogRef2.afterClosed().subscribe((result: any) => {
       console.log({ result });
       if (result.isSuccess) {
         this.notes[this.noteEditKey] = result.updatedNote;
@@ -81,7 +81,7 @@ export class NotesComponent implements OnInit {
     });
   }
 
-  delete(deleteKey, toDeleteNoteId) {
+  delete(deleteKey: any, toDeleteNoteId: any) {
     this.noteDltKey = deleteKey;
     const options = {
       title: "Delete Note?",

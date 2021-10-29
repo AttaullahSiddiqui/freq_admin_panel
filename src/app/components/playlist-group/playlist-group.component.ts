@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialog } from "@angular/material";
+import { MatDialog } from "@angular/material/dialog";
 import "../../../assets/js/demo.js";
 import swal from "sweetalert";
 declare var demo: any;
@@ -23,7 +23,7 @@ export class PlaylistGroupsComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private dialog: MatDialog,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getPlaylistGroups();
@@ -123,6 +123,6 @@ export class PlaylistGroupsComponent implements OnInit {
       data: { playlistGroup: playlistGroup },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {});
+    dialogRef.afterClosed().subscribe((result) => { });
   }
 }

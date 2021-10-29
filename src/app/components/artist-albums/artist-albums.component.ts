@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from "@angular/core";
 
 import { Artist } from "../../models/Artist";
-import { MAT_DIALOG_DATA } from "@angular/material";
+import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 @Component({
   selector: "app-artist-albums",
@@ -15,5 +15,5 @@ export class ArtistAlbumsComponent implements OnInit {
     this.artist = data.artist;
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 }

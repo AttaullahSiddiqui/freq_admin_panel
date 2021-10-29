@@ -1,5 +1,5 @@
 export interface IKeyedCollection<T> {
-  Add(key: string, value: T);
+  // Add(key: string, value: any);
   ContainsKey(key: string): boolean;
   Count(): number;
   Item(key: string): T;

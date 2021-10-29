@@ -8,7 +8,7 @@ import {
   Inject,
 } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 import "../../../assets/js/demo.js";
 declare var demo: any;
@@ -23,7 +23,7 @@ import { Artist } from "../../models/Artist";
 })
 export class AlbumEditorComponent implements OnInit, AfterViewInit {
   artists: Artist[] = [];
-  selectedArtist: Artist;
+  selectedArtist: any;
 
   albumName = "";
   albumId = "";
@@ -48,7 +48,7 @@ export class AlbumEditorComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   ngAfterViewInit() {
     this.getArtists();
@@ -74,7 +74,7 @@ export class AlbumEditorComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    const albumPicture = (<HTMLInputElement>(
+    const albumPicture = (<any>(
       document.getElementById("albumPicture")
     )).files[0];
 
@@ -152,7 +152,7 @@ export class AlbumEditorComponent implements OnInit, AfterViewInit {
   }
 
   updateAlbumPicture() {
-    const albumPicture = (<HTMLInputElement>(
+    const albumPicture = (<any>(
       document.getElementById("albumPicture")
     )).files[0];
 

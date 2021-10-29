@@ -8,7 +8,7 @@ import {
   Inject,
 } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { HttpService, Response } from "../../services/http.service";
 import { UtilityService } from "../../services/utility.service";
 
@@ -43,9 +43,9 @@ export class NoteEditorComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() { }
 
   addNewNote() {
     if (!this.noteTitle || !this.noteDescription) {

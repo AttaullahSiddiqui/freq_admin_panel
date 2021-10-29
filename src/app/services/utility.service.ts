@@ -15,7 +15,7 @@ export class UtilityService {
     localStorage.setItem('Authorization', data);
   }
 
-  public getToken(): string {
+  public getToken(): any {
     return localStorage.getItem('Authorization');
   }
 
@@ -23,9 +23,9 @@ export class UtilityService {
     localStorage.removeItem('Authorization');
   };
 
-  public findUpdatedProperty(updatedData, oldData) {
+  public findUpdatedProperty(updatedData: any, oldData: any) {
     let isUpdated = false;
-    let finalUpdatedObj = {};
+    let finalUpdatedObj: any = {};
     Object.keys(updatedData).forEach(key => {
       if (oldData[key] != updatedData[key]) {
         isUpdated = true;
@@ -38,7 +38,7 @@ export class UtilityService {
     };
   };
 
-  public countDaysBetweenTwoDates(startDate, endDate) {
+  public countDaysBetweenTwoDates(startDate: any, endDate: any) {
     let start = new Date(startDate);
     let end = new Date(endDate);
     let timeDiff = end.getTime() - start.getTime();
@@ -56,14 +56,14 @@ export class UtilityService {
   //     return a;
   // };
 
-  public groupBy(array, key) {
-    return array.reduce((rv, x) => {
+  public groupBy(array: any, key: any) {
+    return array.reduce((rv: any, x: any) => {
       (rv[x[key]] = rv[x[key]] || []).push(x);
       return rv;
     }, {});
   };
 
-  public findIndex(array: any[], value, key?): number {
+  public findIndex(array: any[], value: any, key?: any): number {
     if (!key) {
       return array.findIndex((item) => item == value);
     } else {
@@ -71,11 +71,11 @@ export class UtilityService {
     }
   };
 
-  public findItem(array: any[], value, key): any {
+  public findItem(array: any[], value: any, key: any): any {
     return array.find((item) => item[key] == value)
   };
 
-  public removeItem(array: any[], removeItem: any[], key?) {
+  public removeItem(array: any[], removeItem: any[], key?: any) {
     if (!key) {
       return array.filter((item) => removeItem.indexOf(item) < 0)
     } else {
@@ -83,7 +83,7 @@ export class UtilityService {
     }
   };
 
-  public getDistinctItems(array: any[], key?) {
+  public getDistinctItems(array: any[], key?: any) {
     if (!key) {
       return Array.from(new Set(array));
     } else {
@@ -91,7 +91,7 @@ export class UtilityService {
     }
   };
 
-  public getMathcedValues(array1: any[], array2: any[], key?) {
+  public getMathcedValues(array1: any[], array2: any[], key?: any) {
     if (!key) {
       return array1.filter(e => array2.indexOf(e) !== -1);
     } else {
@@ -144,7 +144,7 @@ export class UtilityService {
     document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`
   };
 
-  public validateImageFile(fileType) {
+  public validateImageFile(fileType: any) {
     let exist = this.imagesTypes.indexOf(fileType);
     if (exist == -1)
       return false
@@ -160,21 +160,21 @@ export class UtilityService {
     return true;
   }
 
-  public convertToDbDate(date) : string{
+  public convertToDbDate(date: string): string {
     let item = date.split('/');
     let dbDate = item[2] + '-' + item[1] + '-' + item[0];
     return dbDate;
   }
 
-  public convertObjToDbDate(obj : DateObj) : string{
-    return obj.year+'-'+obj.month+'-'+obj.day;
+  public convertObjToDbDate(obj: DateObj): string {
+    return obj.year + '-' + obj.month + '-' + obj.day;
   }
 
-  public currentDateObj() : DateObj{
+  public currentDateObj(): DateObj {
     let date = new Date();
-    return { 
+    return {
       year: date.getFullYear(),
-      month: date.getMonth()+1,
+      month: date.getMonth() + 1,
       day: date.getDate()
     }
   }

@@ -2,7 +2,7 @@ import { Component, OnInit, Inject } from "@angular/core";
 
 import { Genre } from "../../models/Genre";
 import { Program } from "../../models/Program";
-import { MAT_DIALOG_DATA } from "@angular/material";
+import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
@@ -13,7 +13,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class GenreSongsEditorComponent implements OnInit {
   isGenreEditing = false;
   genre: Genre;
-  genreSongs: Program[];
+  genreSongs: any;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,

@@ -21,10 +21,10 @@ import { Genre } from "../../models/Genre";
   styleUrls: ["./songs.component.css"],
 })
 export class SongsComponent implements OnInit {
-  getFileUrl = environment.getFileUrl;
-  songs: Program[] = [];
-  originalSongs: Program[];
-  programEditKey = null;
+  getFileUrl: any = environment.getFileUrl;
+  songs: any[] = [];
+  originalSongs: Program[] = [];
+  programEditKey: any = null;
 
   public isSearching = false;
 
@@ -34,7 +34,7 @@ export class SongsComponent implements OnInit {
     private router: Router,
     private http: HttpService,
     private util: UtilityService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.spinner.show();
@@ -84,7 +84,7 @@ export class SongsComponent implements OnInit {
     });
   }
 
-  edit(programKey, program: Program) {
+  edit(programKey: any, program: Program) {
     this.programEditKey = programKey;
     const dialogRef = this.dialog.open(SongEditorComponent, {
       width: "500px",
@@ -101,7 +101,7 @@ export class SongsComponent implements OnInit {
     });
   }
 
-  delete(deleteKey, toDeleteSongId, picKey, songKey) {
+  delete(deleteKey: any, toDeleteSongId: any, picKey: any, songKey: any) {
     const options = {
       title: "Delete Song?",
       text: "Are you sure you want to delete this song?",
@@ -188,6 +188,6 @@ export class SongsComponent implements OnInit {
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {});
+    dialogRef.afterClosed().subscribe((result) => { });
   }
 }

@@ -1,12 +1,12 @@
 import { Program } from "./Program";
 
 export class Playlist {
-  constructor() {}
+  constructor() { }
 
-  playlistId: string;
-  name: string;
-  picture: string;
-  songs: Program[];
-  playlistGroupPlaylistId: string;
-  isPartOfPlaylistGroup: boolean;
+  playlistId: string = "";
+  name: string = "";
+  picture: string = "";
+  songs: Program[] = []
+  playlistGroupPlaylistId: string = "";
+  isPartOfPlaylistGroup: boolean = false
 }

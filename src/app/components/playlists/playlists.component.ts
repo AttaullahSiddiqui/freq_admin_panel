@@ -19,8 +19,8 @@ import { PlaylistGroup } from "../../models/PlaylistGroup";
 })
 export class PlaylistsComponent implements OnInit {
   @Input() isPlaylistGroupEditing = false;
-  @Input() playlistGroup: PlaylistGroup;
-  @Input() playlistGroupPlaylists: Playlist[];
+  @Input() playlistGroup: any;
+  @Input() playlistGroupPlaylists: any[] = [];
 
   playlists: Playlist[] = [];
 
@@ -28,7 +28,7 @@ export class PlaylistsComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private dialog: MatDialog,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getPlaylists();
@@ -154,7 +154,7 @@ export class PlaylistsComponent implements OnInit {
       data: { playlist: playlist },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {});
+    dialogRef.afterClosed().subscribe((result) => { });
   }
 
   addPlaylistToPlaylistGroup(playlist: Playlist) {

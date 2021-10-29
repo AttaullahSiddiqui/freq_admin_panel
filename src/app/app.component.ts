@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { Router, NavigationEnd, Event } from "@angular/router";
-import { MatDialog } from "@angular/material";
+import { MatDialog } from "@angular/material/dialog";
 import { LoginModalComponent } from "./components/login-modal/login-modal.component";
 import { HttpService, Response } from "./services/http.service";
 import { UtilityService } from "./services/utility.service";
@@ -33,57 +33,57 @@ export class AppComponent implements OnInit {
         });
         switch (event.url) {
           case "/dashboard":
-            const dashboardMenuItem =
+            const dashboardMenuItem: any =
               document.getElementById("dashboardMenuItem");
             dashboardMenuItem.classList.add("active");
             this.title = "Dashboard";
             break;
 
           case "/artists":
-            const artistsMenuItem = document.getElementById("artistsMenuItem");
+            const artistsMenuItem: any = document.getElementById("artistsMenuItem");
             artistsMenuItem.classList.add("active");
             this.title = "Artists";
             break;
 
           case "/albums":
-            const albumsMenuItem = document.getElementById("albumsMenuItem");
+            const albumsMenuItem: any = document.getElementById("albumsMenuItem");
             albumsMenuItem.classList.add("active");
             this.title = "Albums";
             break;
 
           case "/songs":
-            const songsMenuItem = document.getElementById("songsMenuItem");
+            const songsMenuItem: any = document.getElementById("songsMenuItem");
             songsMenuItem.classList.add("active");
             this.title = "Songs";
             break;
 
           case "/genres":
-            const genresMenuItem = document.getElementById("genresMenuItem");
+            const genresMenuItem: any = document.getElementById("genresMenuItem");
             genresMenuItem.classList.add("active");
             this.title = "Categories";
             break;
 
           case "/notes":
-            const notesMenuItem = document.getElementById("notesMenuItem");
+            const notesMenuItem: any = document.getElementById("notesMenuItem");
             notesMenuItem.classList.add("active");
             this.title = "Notes";
             break;
 
           case "/playlists":
-            const playlistsMenuItem =
+            const playlistsMenuItem: any =
               document.getElementById("playlistsMenuItem");
             playlistsMenuItem.classList.add("active");
             this.title = "Playlists";
             break;
 
           case "/users":
-            const userssMenuItem = document.getElementById("userssMenuItem");
+            const userssMenuItem: any = document.getElementById("userssMenuItem");
             userssMenuItem.classList.add("active");
             this.title = "Users";
             break;
 
           case "/playlistGroups":
-            const playlistGroupsMenuItem = document.getElementById(
+            const playlistGroupsMenuItem: any = document.getElementById(
               "playlistGroupsMenuItem"
             );
             playlistGroupsMenuItem.classList.add("active");
@@ -91,12 +91,12 @@ export class AppComponent implements OnInit {
             break;
 
           case "/privacy":
-            const privacy = document.getElementById("privacy");
+            const privacy: any = document.getElementById("privacy");
             privacy.classList.add("active");
             this.title = "Privacy Policy";
             break;
           case "/terms":
-            const terms = document.getElementById("terms");
+            const terms: any = document.getElementById("terms");
             terms.classList.add("active");
             this.title = "Change Terms and Conditions";
             break;

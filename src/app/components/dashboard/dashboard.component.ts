@@ -22,9 +22,9 @@ export class DashboardComponent implements OnInit {
   filterSongs: any;
   totalPlay: any;
   totalTime: any;
-  noDataFound: boolean;
+  noDataFound: boolean = false;
 
-  @ViewChild(BaseChartDirective) chart: BaseChartDirective;
+  // @ViewChild(BaseChartDirective) "chart": BaseChartDirective;
 
   public lineChartData: ChartDataSets[] = [
     {
@@ -32,7 +32,7 @@ export class DashboardComponent implements OnInit {
     },
   ];
   // public lineChartLabels: any[] = [30, 36, 40, 20, 21, 39];
-  public lineChartOptions: ChartOptions & { annotation: any } = {
+  public lineChartOptions: ChartOptions = {
     responsive: true,
     scales: {
       xAxes: [
@@ -57,13 +57,13 @@ export class DashboardComponent implements OnInit {
   public songDetails = [];
   public rowsForCsv = [];
   songs: any;
-  constructor(private spinner: NgxSpinnerService, private router: Router) {}
+  constructor(private spinner: NgxSpinnerService, private router: Router) { }
 
   ngOnInit() {
     this.spinner.show();
     // this.getDetail();
     this.getSongs();
-    const promises = [
+    const promises: any = [
       // this.firestoreService.getArtistsCount(),
       // this.firestoreService.getAlbumsCount(),
       // this.firestoreService.getSongsCount(),
@@ -89,7 +89,7 @@ export class DashboardComponent implements OnInit {
       " Plays ",
       " Time Played ",
     ]);
-    this.rowsForCsv.map((value) => {
+    this.rowsForCsv.map((value: any) => {
       console.log("csv", value);
       var dateObj = new Date(value.date.toDate());
       var month = dateObj.getUTCMonth() + 1; //months from 1-12

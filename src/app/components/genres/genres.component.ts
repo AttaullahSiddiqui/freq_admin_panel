@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialog } from "@angular/material";
+import { MatDialog } from "@angular/material/dialog";
 import { environment } from "../../../environments/environment";
 import swal from "sweetalert";
 import { GenreSongsEditorComponent } from "../genre-songs-editor/genre-songs-editor.component";
@@ -23,8 +23,8 @@ declare var demo: any;
 })
 export class GenresComponent implements OnInit {
   genres: Genre[] = [];
-  genreEditKey = null;
-  getFileUrl = environment.getFileUrl;
+  genreEditKey: any = null;
+  getFileUrl: any = environment.getFileUrl;
 
   constructor(
     private spinner: NgxSpinnerService,
@@ -32,7 +32,7 @@ export class GenresComponent implements OnInit {
     private router: Router,
     private http: HttpService,
     private util: UtilityService
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getGenres();
@@ -84,7 +84,7 @@ export class GenresComponent implements OnInit {
     });
   }
 
-  edit(genreKey, genre: Genre) {
+  edit(genreKey: any, genre: Genre) {
     this.genreEditKey = genreKey;
     const dialogRef = this.dialog.open(MoodEditorComponent, {
       width: "650px",
@@ -102,7 +102,7 @@ export class GenresComponent implements OnInit {
     });
   }
 
-  delete(deleteKey, toDeleteCatId, currPicUrl) {
+  delete(deleteKey: any, toDeleteCatId: any, currPicUrl: any) {
     const options = {
       title: "Delete Category",
       text: "Are you sure you want to delete this category?",

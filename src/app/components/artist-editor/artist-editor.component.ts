@@ -8,7 +8,7 @@ import {
   Inject,
 } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 import "../../../assets/js/demo.js";
 declare var demo: any;
@@ -41,9 +41,9 @@ export class ArtistEditorComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() { }
 
   addNewArtist() {
     if (!this.artistName) {
@@ -51,7 +51,7 @@ export class ArtistEditorComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    const artistPicture = (<HTMLInputElement>(
+    const artistPicture = (<any>(
       document.getElementById("artistPicture")
     )).files[0];
     if (!artistPicture) {
@@ -121,7 +121,7 @@ export class ArtistEditorComponent implements OnInit, AfterViewInit {
   }
 
   updateArtistPicture() {
-    const artistPicture = (<HTMLInputElement>(
+    const artistPicture = (<any>(
       document.getElementById("artistPicture")
     )).files[0];
     if (!artistPicture) {

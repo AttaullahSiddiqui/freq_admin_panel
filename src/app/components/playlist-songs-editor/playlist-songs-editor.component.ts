@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 import { Playlist } from "../../models/Playlist";
 import { Program } from "../../models/Program";
@@ -13,7 +13,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class PlaylistSongsEditorComponent implements OnInit {
   isPlaylistEditing = false;
   playlist: Playlist;
-  playlistSongs: Program[];
+  playlistSongs: any[] = [];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,

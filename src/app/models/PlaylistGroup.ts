@@ -1,9 +1,9 @@
 import { Playlist } from "./Playlist";
 
 export class PlaylistGroup {
-  constructor() {}
+  constructor() { }
 
-  playlistGroupId: string;
-  name: string;
-  playlists: Playlist[];
+  playlistGroupId: string = "";
+  name: string = "";
+  playlists: Playlist[] = [];
 }

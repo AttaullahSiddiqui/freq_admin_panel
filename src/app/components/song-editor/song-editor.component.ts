@@ -8,7 +8,7 @@ import {
   Inject,
 } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { HttpService, Response } from "../../services/http.service";
 import { UtilityService } from "../../services/utility.service";
 
@@ -71,10 +71,10 @@ export class SongEditorComponent implements AfterViewInit {
   }
 
   addNewProgram() {
-    const programSong = (<HTMLInputElement>(
+    const programSong = (<any>(
       document.getElementById("programSong")
     )).files[0];
-    const programPicture = (<HTMLInputElement>(
+    const programPicture = (<any>(
       document.getElementById("programPicture")
     )).files[0];
     if (
@@ -116,9 +116,9 @@ export class SongEditorComponent implements AfterViewInit {
   }
 
   updateProgram() {
-    const newSong = (<HTMLInputElement>document.getElementById("programSong"))
+    const newSong = (<any>document.getElementById("programSong"))
       .files[0];
-    const newProgramPicture = (<HTMLInputElement>(
+    const newProgramPicture = (<any>(
       document.getElementById("programPicture")
     )).files[0];
     if (

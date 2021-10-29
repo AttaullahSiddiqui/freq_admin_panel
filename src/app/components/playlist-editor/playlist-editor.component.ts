@@ -8,7 +8,7 @@ import {
   Inject,
 } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 import "../../../assets/js/demo.js";
 import { Playlist } from "../../models/Playlist";
@@ -40,9 +40,9 @@ export class PlaylistEditorComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
-  ngAfterViewInit() {}
+  ngAfterViewInit() { }
 
   addNewPlaylist() {
     if (!this.playlistName) {
@@ -50,7 +50,7 @@ export class PlaylistEditorComponent implements OnInit, AfterViewInit {
       return;
     }
 
-    const playlistPicture = (<HTMLInputElement>(
+    const playlistPicture = (<any>(
       document.getElementById("playlistPicture")
     )).files[0];
     if (!playlistPicture) {
@@ -124,7 +124,7 @@ export class PlaylistEditorComponent implements OnInit, AfterViewInit {
   }
 
   updatePlaylistPicture() {
-    const playlistPicture = (<HTMLInputElement>(
+    const playlistPicture = (<any>(
       document.getElementById("playlistPicture")
     )).files[0];
     if (!playlistPicture) {

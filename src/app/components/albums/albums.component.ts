@@ -18,10 +18,10 @@ import { AlbumSongsComponent } from "../album-songs/album-songs.component";
   styleUrls: ["./albums.component.css"],
 })
 export class AlbumsComponent implements OnInit {
-  @Input() artist: Artist;
+  @Input() artist: any;
 
   albums: Album[] = [];
-  originalAlbums: Album[];
+  originalAlbums: any = [];
 
   public isSearching = false;
   artistSpecific = false;
@@ -30,7 +30,7 @@ export class AlbumsComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private dialog: MatDialog,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit() {
     this.getAlbums();
@@ -154,7 +154,7 @@ export class AlbumsComponent implements OnInit {
     const searchInput = <HTMLInputElement>(
       document.getElementById("searchInput")
     );
-    let timeout = null;
+    let timeout: any = null;
 
     searchInput.onkeyup = (e) => {
       clearTimeout(timeout);
@@ -231,6 +231,6 @@ export class AlbumsComponent implements OnInit {
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {});
+    dialogRef.afterClosed().subscribe((result) => { });
   }
 }

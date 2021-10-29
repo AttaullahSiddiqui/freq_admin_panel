@@ -1,9 +1,9 @@
 export class Program {
-  constructor() {}
+  constructor() { }
 
-  programId: string;
-  name: string;
-  categories: Array<string>;
-  picture: string;
-  url: string;
+  programId: string = "";
+  name: string = "";
+  categories: Array<string> = [];
+  picture: string = "";
+  url: string = "";
 }

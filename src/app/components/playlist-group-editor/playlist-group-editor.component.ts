@@ -8,7 +8,7 @@ import {
   Inject,
 } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material";
+import { MatDialogRef, MAT_DIALOG_DATA } from "@angular/material/dialog";
 
 import "../../../assets/js/demo.js";
 declare var demo: any;
@@ -38,7 +38,7 @@ export class PlaylistGroupEditorComponent implements OnInit {
     }
   }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   addNewPlaylistGroup() {
     if (!this.playlistGroupName) {

@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from "@angular/core";
 import { PlaylistGroup } from "../../models/PlaylistGroup";
 import { Playlist } from "../../models/Playlist";
-import { MAT_DIALOG_DATA } from "@angular/material";
+import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
@@ -12,7 +12,7 @@ import { NgxSpinnerService } from "ngx-spinner";
 export class PlaylistGroupPlaylistsEditorComponent implements OnInit {
   isPlaylistGroupEditing = false;
   playlistGroup: PlaylistGroup;
-  playlistGroupPlaylists: Playlist[];
+  playlistGroupPlaylists: any;
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
