@@ -1,22 +1,24 @@
 <ngx-spinner bdColor="rgba(0, 0, 0, 0.0)" size="medium" color="#5cb85c" type="timer"></ngx-spinner>
 
 
-<div class="container">
+<div class="row">
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>#</th>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Email</th>
+        <th class="text-center">#</th>
+        <th class="text-center">ID</th>
+        <th class="text-center">Name</th>
+        <th class="text-center">Email</th>
+        <th class="text-center">Role</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users; let i = index;">
-        <td>{{i+1}}</td>
-        <td>{{user.id}}</td>
-        <td>{{user.name}}</td>
-        <td>{{user.email}}</td>
+      <tr *ngFor="let user of users | keyvalue; index as i">
+        <td class="text-center">{{i+1}}</td>
+        <td class="text-center">{{user.value._id}}</td>
+        <td class="text-center">{{user.value.firstName}}</td>
+        <td class="text-center">{{user.value.email}}</td>
+        <td class="text-center">{{user.value.userType}}</td>
       </tr>
     </tbody>
   </table>

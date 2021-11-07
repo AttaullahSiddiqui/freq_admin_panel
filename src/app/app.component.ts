@@ -40,13 +40,15 @@ export class AppComponent implements OnInit {
             break;
 
           case "/artists":
-            const artistsMenuItem: any = document.getElementById("artistsMenuItem");
+            const artistsMenuItem: any =
+              document.getElementById("artistsMenuItem");
             artistsMenuItem.classList.add("active");
             this.title = "Artists";
             break;
 
           case "/albums":
-            const albumsMenuItem: any = document.getElementById("albumsMenuItem");
+            const albumsMenuItem: any =
+              document.getElementById("albumsMenuItem");
             albumsMenuItem.classList.add("active");
             this.title = "Albums";
             break;
@@ -58,7 +60,8 @@ export class AppComponent implements OnInit {
             break;
 
           case "/genres":
-            const genresMenuItem: any = document.getElementById("genresMenuItem");
+            const genresMenuItem: any =
+              document.getElementById("genresMenuItem");
             genresMenuItem.classList.add("active");
             this.title = "Categories";
             break;
@@ -77,7 +80,8 @@ export class AppComponent implements OnInit {
             break;
 
           case "/users":
-            const userssMenuItem: any = document.getElementById("userssMenuItem");
+            const userssMenuItem: any =
+              document.getElementById("userssMenuItem");
             userssMenuItem.classList.add("active");
             this.title = "Users";
             break;
@@ -230,7 +234,8 @@ export class AppComponent implements OnInit {
   signOut() {
     this.util.removeCookie("authToken");
     this.util.removeToken();
-    this.router.navigateByUrl("/login");
+    // this.router.navigateByUrl("/login");
+    location.reload();
     // setTimeout(() => {
     //   firebase
     //     .auth()

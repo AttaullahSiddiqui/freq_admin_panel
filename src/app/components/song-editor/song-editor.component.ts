@@ -21,7 +21,7 @@ declare var demo: any;
   styleUrls: ["./song-editor.component.css"],
 })
 export class SongEditorComponent implements AfterViewInit {
-  categoriesArray = [];
+  categoriesArray = null;
 
   name = "";
   programId = "";
@@ -29,7 +29,11 @@ export class SongEditorComponent implements AfterViewInit {
   currentPicture = "";
   // categories = ["616a8870810a4844b82eae2c"];
   // categories = ["616a89ba810a4844b82eae42"];
-  categories = ["616a8bae810a4844b82eae60"];
+
+  // categories = ["616a8bae810a4844b82eae60"];
+  categories: any = [];
+
+  dummyArray = ["Atta", "Kashi", , "Ali"];
 
   isEditMode = false;
 
@@ -60,7 +64,6 @@ export class SongEditorComponent implements AfterViewInit {
     this.http
       .get("category/forSelect")
       .then((success) => {
-        console.log(success);
         this.spinner.hide();
         this.categoriesArray = success.body.data;
       })
@@ -71,19 +74,16 @@ export class SongEditorComponent implements AfterViewInit {
   }
 
   addNewProgram() {
-    const programSong = (<any>(
-      document.getElementById("programSong")
-    )).files[0];
-    const programPicture = (<any>(
-      document.getElementById("programPicture")
-    )).files[0];
+    const programSong = (<any>document.getElementById("programSong")).files[0];
+    const programPicture = (<any>document.getElementById("programPicture"))
+      .files[0];
     if (
       !this.name ||
-      // !this.categories.length
+      !this.categories.length ||
       !programSong ||
       !programPicture
     ) {
-      demo.showWarningNotification("All fields required");
+      demo.showErrorNotification("All fields required");
       return;
     }
 
@@ -110,24 +110,23 @@ export class SongEditorComponent implements AfterViewInit {
         this.spinner.hide();
         demo.showErrorNotification(err["error"].message);
       });
-
-    this.spinner.hide();
-    this.dialogRef.close();
   }
 
   updateProgram() {
-    const newSong = (<any>document.getElementById("programSong"))
+    const newSong = (<any>document.getElementById("programSong")).files[0];
+    const newProgramPicture = (<any>document.getElementById("programPicture"))
       .files[0];
-    const newProgramPicture = (<any>(
-      document.getElementById("programPicture")
-    )).files[0];
     if (
       this.name == this.data.program.name &&
       this.categories == this.data.program.categories &&
       !newSong &&
       !newProgramPicture
     ) {
-      demo.showWarningNotification("No changes made");
+      demo.showErrorNotification("No changes made");
+      return;
+    }
+    if (!this.categories.length || !this.name) {
+      demo.showErrorNotification("Fields can't be empty");
       return;
     }
     this.spinner.show();

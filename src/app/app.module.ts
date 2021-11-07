@@ -1,6 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from "@angular/core";
+import { NgSelectModule } from "@ng-select/ng-select";
 
 import { RouterModule, Routes } from "@angular/router";
 import { NgxSpinnerModule } from "ngx-spinner";
@@ -37,14 +38,14 @@ import { MoodEditorComponent } from "./components/mood-editor/mood-editor.compon
 import { NoteEditorComponent } from "./components/note-editor/note-editor.component";
 import { AngularEditorModule } from "@kolkov/angular-editor";
 
-import { ChartsModule } from 'ng2-charts';
+import { ChartsModule } from "ng2-charts";
 
 import { CsvBuilder } from "filefy";
 import { PrivacyPolicyComponent } from "./components/privacy-policy/privacy-policy.component";
 import { HttpClientModule } from "@angular/common/http";
 import { MatSnackBar, MatSnackBarModule } from "@angular/material/snack-bar";
 import { TermsComponent } from "./components/terms/terms.component";
-import { MaterialModule } from './material.module';
+import { MaterialModule } from "./material.module";
 
 // Initialize Firebase
 const firebaseConfig = {
@@ -116,6 +117,7 @@ const firebaseConfig = {
     NgxSpinnerModule,
     ChartsModule,
     MatDialogModule,
+    NgSelectModule,
     MatSnackBarModule,
     BrowserAnimationsModule,
     AngularEditorModule,
@@ -135,4 +137,4 @@ const firebaseConfig = {
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -3,8 +3,12 @@
   "compilerOptions": {
     "outDir": "../out-tsc/app",
     "module": "es2015",
+    "target": "es5",
     "types": [],
     "skipLibCheck": true,
+  },
+  "angularCompilerOptions": {
+    "enableIvy": false
   },
   "exclude": [
     "src/test.ts",

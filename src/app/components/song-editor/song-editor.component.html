@@ -52,11 +52,29 @@
     </div>
   </div>
 </div>
+<div class="row" *ngIf="categoriesArray">
+  <div class="col-sm-10">
+    <div class="form-group">
+      <label for="categories">Assign Categories</label>
+      <!-- <ng-select [items]="categoriesArray" [(ngModel)]="categories">
+        <ng-option *ngFor="let cat of categoriesArray" [value]="cat._id">{{cat.name}}></ng-option>
+      </ng-select> -->
+      <!-- <select multiple="multiple" id="months" [(ngModel)]="categories">
+        <option *ngFor="let cat of categoriesArray" value="cat._id">{{cat.name}}</option>
+      </select> -->
+      <ng-select [items]="categoriesArray" name="categories" [multiple]="true" [closeOnSelect]="true"
+        [searchable]="true" bindLabel="name" bindValue="_id" [hideSelected]="true" placeholder="Select Category"
+        [(ngModel)]="categories">
+      </ng-select>
+    </div>
+  </div>
+</div>
 
 <br>
 
 <div class="row">
-  <button style="float: right;" *ngIf="!isEditMode" (click)="addNewProgram()" class="btn btn-primary">Add
+  <button type="submit" style="float: right;" *ngIf="!isEditMode" (click)="addNewProgram()" class="btn btn-primary">Add
   </button>
-  <button style="float: right;" *ngIf="isEditMode" (click)="updateProgram()" class="btn btn-primary">Update</button>
+  <button type="submit" style="float: right;" *ngIf="isEditMode" (click)="updateProgram()"
+    class="btn btn-primary">Update</button>
 </div>

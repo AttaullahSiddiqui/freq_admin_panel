@@ -13,13 +13,17 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 
 // import { AngularEditorModule } from '@kolkov/angular-editor';
 import { AngularEditorConfig } from "@kolkov/angular-editor";
+import { HttpService, Response } from "../../services/http.service";
+import { UtilityService } from "../../services/utility.service";
+import swal from "sweetalert";
+declare var demo: any;
 
 @Component({
   selector: "app-terms",
   templateUrl: "./terms.component.html",
   styleUrls: ["./terms.component.css"],
 })
-export class TermsComponent implements OnInit, AfterViewInit {
+export class TermsComponent implements OnInit {
   htmlContent = "";
 
   config: AngularEditorConfig = {
@@ -54,31 +58,51 @@ export class TermsComponent implements OnInit, AfterViewInit {
 
   constructor(
     private spinner: NgxSpinnerService,
+    private http: HttpService,
+    private util: UtilityService,
     public snackBar: MatSnackBar // @Inject(MAT_DIALOG_DATA) public data: any
-  ) { }
+  ) {}
 
-  ngOnInit() { }
-
-  ngAfterViewInit() {
+  ngOnInit() {
     this.getTerms();
   }
+
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
       duration: 2000,
     });
   }
   getTerms() {
-    // this.firestoreService.getTerms().subscribe((x: any) => {
-    //   console.log(x.htmlContent);
-    //   this.htmlContent = x.htmlContent;
-    // })
+    this.http
+      .get("termsprivacy/fetchTerms")
+      .then((success) => {
+        this.spinner.hide();
+        this.htmlContent = success.body.data.terms;
+      })
+      .catch((err: Response) => {
+        this.spinner.hide();
+        demo.showErrorNotification(err["error"].message);
+      });
   }
 
   updateTerms() {
-    console.log("getTerms updated");
-    // this.firestoreService.updateTerms(this.htmlContent).subscribe(() => {
-    //   console.log('getTerms updated...');
-    //   this.openSnackBar("Terms Updated..", "OK");
-    // });
+    if (!this.htmlContent) {
+      demo.showWarningNotification("Please add data in editor");
+      return;
+    }
+    this.spinner.show();
+    let payload = {
+      terms: this.htmlContent,
+    };
+    this.http
+      .post("termsprivacy/updateTerms", payload)
+      .then((success) => {
+        this.spinner.hide();
+        demo.showSuccessNotification("Terms data updated successfully");
+      })
+      .catch((err: Response) => {
+        this.spinner.hide();
+        demo.showErrorNotification("Error in updating Terms data");
+      });
   }
 }

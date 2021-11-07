@@ -47,21 +47,19 @@ export class MoodEditorComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
-  ngAfterViewInit() { }
+  ngAfterViewInit() {}
 
   addNewMood() {
     if (!this.moodName) {
-      demo.showWarningNotification("Please provide a name for the Mood.");
+      demo.showErrorNotification("Please provide a name for the Mood.");
       return;
     }
 
-    const MoodPicture = (<any>(
-      document.getElementById("MoodPicture")
-    )).files[0];
+    const MoodPicture = (<any>document.getElementById("MoodPicture")).files[0];
     if (!MoodPicture) {
-      demo.showWarningNotification("Please select an image file to upload.");
+      demo.showErrorNotification("Please select an image file to upload.");
       return;
     }
 
@@ -88,15 +86,17 @@ export class MoodEditorComponent implements OnInit, AfterViewInit {
       });
   }
   updateMood() {
-    const MoodPicture = (<any>(
-      document.getElementById("MoodPicture")
-    )).files[0];
+    const MoodPicture = (<any>document.getElementById("MoodPicture")).files[0];
     if (
       this.moodName == this.data.genre.name &&
       this.iconName == this.data.genre.iconName &&
       !MoodPicture
     ) {
-      demo.showWarningNotification("No changes made");
+      demo.showErrorNotification("No changes made");
+      return;
+    }
+    if (!this.moodName || !this.iconName) {
+      demo.showErrorNotification("Fields can't be empty");
       return;
     }
     this.spinner.show();
