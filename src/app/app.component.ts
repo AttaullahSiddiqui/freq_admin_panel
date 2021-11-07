@@ -23,90 +23,89 @@ export class AppComponent implements OnInit {
     this.checkAuth();
     this.initialiseGenres();
 
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        console.log(event.url);
-        const elements = document.getElementsByClassName("active");
+    // this.router.events.subscribe((event: Event) => {
+    //   console.log("FFFUUUUUCCCCKKKKKKKKKKK");
+    //   console.log(event);
+    //   if (event instanceof NavigationEnd) {
+    //     const elements = document.getElementsByClassName("active");
 
-        Array.prototype.forEach.call(elements, function (element) {
-          element.classList.remove("active");
-        });
-        switch (event.url) {
-          case "/dashboard":
-            const dashboardMenuItem: any =
-              document.getElementById("dashboardMenuItem");
-            dashboardMenuItem.classList.add("active");
-            this.title = "Dashboard";
-            break;
+    //     Array.prototype.forEach.call(elements, function (element) {
+    //       element.classList.remove("active");
+    //     });
+    //     switch (event.url) {
+    //       case "/dashboard":
+    //         const dashboardMenuItem: any =
+    //           document.getElementById("dashboardMenuItem");
+    //         dashboardMenuItem.classList.add("active");
+    //         this.title = "Dashboard";
+    //         break;
 
-          case "/artists":
-            const artistsMenuItem: any =
-              document.getElementById("artistsMenuItem");
-            artistsMenuItem.classList.add("active");
-            this.title = "Artists";
-            break;
+    //       case "/artists":
+    //         const artistsMenuItem: any =
+    //           document.getElementById("artistsMenuItem");
+    //         artistsMenuItem.classList.add("active");
+    //         this.title = "Artists";
+    //         break;
 
-          case "/albums":
-            const albumsMenuItem: any =
-              document.getElementById("albumsMenuItem");
-            albumsMenuItem.classList.add("active");
-            this.title = "Albums";
-            break;
+    //       case "/albums":
+    //         const albumsMenuItem: any =
+    //           document.getElementById("albumsMenuItem");
+    //         albumsMenuItem.classList.add("active");
+    //         this.title = "Albums";
+    //         break;
 
-          case "/songs":
-            const songsMenuItem: any = document.getElementById("songsMenuItem");
-            songsMenuItem.classList.add("active");
-            this.title = "Songs";
-            break;
+    //       case "/songs":
+    //         const songsMenuItem: any = document.getElementById("songs");
+    //         songsMenuItem.classList.add("active");
+    //         this.title = "Songs";
+    //         break;
 
-          case "/genres":
-            const genresMenuItem: any =
-              document.getElementById("genresMenuItem");
-            genresMenuItem.classList.add("active");
-            this.title = "Categories";
-            break;
+    //       case "/genres":
+    //         const genresMenuItem: any = document.getElementById("genres");
+    //         genresMenuItem.classList.add("active");
+    //         this.title = "Categories";
+    //         break;
 
-          case "/notes":
-            const notesMenuItem: any = document.getElementById("notesMenuItem");
-            notesMenuItem.classList.add("active");
-            this.title = "Notes";
-            break;
+    //       case "/notes":
+    //         const notesMenuItem: any = document.getElementById("notesMenuItem");
+    //         notesMenuItem.classList.add("active");
+    //         this.title = "Notes";
+    //         break;
 
-          case "/playlists":
-            const playlistsMenuItem: any =
-              document.getElementById("playlistsMenuItem");
-            playlistsMenuItem.classList.add("active");
-            this.title = "Playlists";
-            break;
+    //       case "/playlists":
+    //         const playlistsMenuItem: any =
+    //           document.getElementById("playlistsMenuItem");
+    //         playlistsMenuItem.classList.add("active");
+    //         this.title = "Playlists";
+    //         break;
 
-          case "/users":
-            const userssMenuItem: any =
-              document.getElementById("userssMenuItem");
-            userssMenuItem.classList.add("active");
-            this.title = "Users";
-            break;
+    //       case "/users":
+    //         const userssMenuItem: any = document.getElementById("users");
+    //         userssMenuItem.classList.add("active");
+    //         this.title = "Users";
+    //         break;
 
-          case "/playlistGroups":
-            const playlistGroupsMenuItem: any = document.getElementById(
-              "playlistGroupsMenuItem"
-            );
-            playlistGroupsMenuItem.classList.add("active");
-            this.title = "Playlist Groups";
-            break;
+    //       case "/playlistGroups":
+    //         const playlistGroupsMenuItem: any = document.getElementById(
+    //           "playlistGroupsMenuItem"
+    //         );
+    //         playlistGroupsMenuItem.classList.add("active");
+    //         this.title = "Playlist Groups";
+    //         break;
 
-          case "/privacy":
-            const privacy: any = document.getElementById("privacy");
-            privacy.classList.add("active");
-            this.title = "Privacy Policy";
-            break;
-          case "/terms":
-            const terms: any = document.getElementById("terms");
-            terms.classList.add("active");
-            this.title = "Change Terms and Conditions";
-            break;
-        }
-      }
-    });
+    //       case "/privacy":
+    //         const privacy: any = document.getElementById("privacy");
+    //         privacy.classList.add("active");
+    //         this.title = "Privacy Policy";
+    //         break;
+    //       case "/terms":
+    //         const terms: any = document.getElementById("terms");
+    //         terms.classList.add("active");
+    //         this.title = "Change Terms and Conditions";
+    //         break;
+    //     }
+    //   }
+    // });
 
     // this.router.events.subscribe((val: NavigationEnd) => {
     //   console.log(val.urlAfterRedirects);
@@ -194,6 +193,31 @@ export class AppComponent implements OnInit {
     this.checkAuth();
   }
 
+  isActive(instruction): boolean {
+    switch (instruction) {
+      case "/songs":
+        this.title = "Songs";
+        break;
+
+      case "/genres":
+        this.title = "Categories";
+        break;
+
+      case "/users":
+        this.title = "Users";
+        break;
+
+      case "/privacy":
+        this.title = "Privacy Policy";
+        break;
+
+      case "/terms":
+        this.title = "Terms and Conditions";
+        break;
+    }
+    return this.router.isActive(instruction, true);
+  }
+
   checkAuth() {
     this.http
       .get("user/me")
@@ -211,16 +235,6 @@ export class AppComponent implements OnInit {
       .catch((error: Response) => {
         this.router.navigate(["/login"]);
       });
-    // this.authService.afAuth.authState.subscribe((user: firebase.User) => {
-    //   console.log("login", this.login);
-    //   if (!user) {
-    //     this.router.navigateByUrl("/login");
-    //     this.login = false;
-    //   } else {
-    //     this.login = true;
-    //     this.router.navigateByUrl("/");
-    //   }
-    // });
   }
 
   initialiseGenres() {

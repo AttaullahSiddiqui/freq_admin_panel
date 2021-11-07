@@ -27,22 +27,22 @@
                         </a>
                     </li> -->
 
-                    <li id="userssMenuItem">
-                        <a routerLink="/users">
+                    <li id="users" routerLink="/users" [class.active]="isActive('/users')">
+                        <a>
                             <i class="ti-user"></i>
                             <p>Users</p>
                         </a>
                     </li>
 
-                    <li id="genresMenuItem" class="active">
-                        <a routerLink="/genres">
+                    <li id="genres" routerLink="/genres" [class.active]="isActive('/genres')">
+                        <a>
                             <i class="ti-shine"></i>
                             <p>Categories</p>
                         </a>
                     </li>
 
-                    <li id="songsMenuItem">
-                        <a routerLink="/songs">
+                    <li id="songs" routerLink="/songs" [class.active]="isActive('/songs')">
+                        <a>
                             <i class="ti-music"></i>
                             <p>Songs</p>
                         </a>
@@ -82,14 +82,14 @@
                             <p>Playlist Groups</p>
                         </a>
                     </li> -->
-                    <li id="privacy">
-                        <a routerLink="/privacy">
+                    <li id="privacy" routerLink="/privacy" [class.active]="isActive('/privacy')">
+                        <a>
                             <i class="ti-file"></i>
                             <p>Add Privacy Policy</p>
                         </a>
                     </li>
-                    <li id="terms">
-                        <a routerLink="/terms">
+                    <li id="terms" routerLink="/terms" [class.active]="isActive('/terms')">
+                        <a>
                             <i class="ti-file"></i>
                             <p>Change Terms</p>
                         </a>
