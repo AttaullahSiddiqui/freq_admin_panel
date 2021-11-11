@@ -69,7 +69,7 @@ export class SongEditorComponent implements AfterViewInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
 
@@ -108,7 +108,7 @@ export class SongEditorComponent implements AfterViewInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
 
@@ -157,7 +157,7 @@ export class SongEditorComponent implements AfterViewInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
   closeEditor() {

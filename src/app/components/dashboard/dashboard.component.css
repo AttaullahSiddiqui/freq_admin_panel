@@ -29,9 +29,10 @@ font-size: 36px;
 line-height: 42px;
 }
 canvas{
-    height: 456px !important;
+    /* height: 456px !important; */
     /* width: 786px !important; */
 }
+canvas:hover{cursor: pointer;}
 .medi{
 color: #9FA2B4;
 

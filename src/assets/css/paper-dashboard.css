@@ -5255,7 +5255,7 @@ strong {
 .sidebar .sidebar-wrapper,
 .off-canvas-sidebar .sidebar-wrapper {
   position: relative;
-  height: calc(100% - 75px);
+  height: auto;
   z-index: 4;
   box-shadow: inset -1px 0px 0px 0px #cfcfca;
   width: 260px;

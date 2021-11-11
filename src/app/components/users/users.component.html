@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of users | keyvalue; index as i">
+      <tr *ngFor="let user of users | keyvalue; index as i" (click)="showProfile(user.value._id)">
         <td class="text-center">{{i+1}}</td>
         <td class="text-center">{{user.value._id}}</td>
         <td class="text-center">{{user.value.firstName}}</td>

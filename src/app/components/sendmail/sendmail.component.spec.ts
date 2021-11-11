@@ -1,19 +1,19 @@
 import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { PlaylistGroupsComponent } from "./playlist-group.component";
+import { SendMailComponent } from "./sendmail.component";
 
-describe("PlaylistGroupsComponent", () => {
-  let component: PlaylistGroupsComponent;
-  let fixture: ComponentFixture<PlaylistGroupsComponent>;
+describe("SendMailComponent", () => {
+  let component: SendMailComponent;
+  let fixture: ComponentFixture<SendMailComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [PlaylistGroupsComponent]
+      declarations: [SendMailComponent],
     }).compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PlaylistGroupsComponent);
+    fixture = TestBed.createComponent(SendMailComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

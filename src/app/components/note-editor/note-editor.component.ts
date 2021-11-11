@@ -43,9 +43,9 @@ export class NoteEditorComponent implements OnInit, AfterViewInit {
     }
   }
 
-  ngOnInit() { }
+  ngOnInit() {}
 
-  ngAfterViewInit() { }
+  ngAfterViewInit() {}
 
   addNewNote() {
     if (!this.noteTitle || !this.noteDescription) {
@@ -72,7 +72,7 @@ export class NoteEditorComponent implements OnInit, AfterViewInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
   updateNote() {
@@ -100,7 +100,7 @@ export class NoteEditorComponent implements OnInit, AfterViewInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
   closeEditor() {

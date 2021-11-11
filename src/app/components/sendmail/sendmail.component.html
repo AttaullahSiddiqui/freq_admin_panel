@@ -1,0 +1,31 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.0)" size="medium" color="#5cb85c" type="timer"></ngx-spinner>
+
+<div class="row">
+  <h2 style="margin-top: 0;margin-left: 25px;">Send Mail</h2>
+  <br>
+</div>
+
+<div class="col-md-12">
+  <form>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)]="emailData.email" name="email"
+        placeholder="Type recipient's email">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Subject</label>
+      <input class="form-control" id="exampleInputPassword1" [(ngModel)]="emailData.subject" type="text" name="subject"
+        placeholder="Type Subject..">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputBody">Body</label>
+      <textarea id="exampleInputBody" class="form-control" [(ngModel)]="emailData.emailBody" name="emailBody" rows="6"
+        placeholder="Type here.."></textarea>
+    </div>
+    <div class="container-login100-form-btn">
+      <button (click)="sendMail()" class="login100-form-btn">
+        Send
+      </button>
+    </div>
+  </form>
+</div>

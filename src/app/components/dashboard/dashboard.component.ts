@@ -24,6 +24,39 @@ export class DashboardComponent implements OnInit {
   totalTime: any;
   noDataFound: boolean = false;
 
+  public barChartOptions: any = {
+    scaleShowVerticalLines: false,
+    responsive: true,
+  };
+  public barChartLabels: string[] = [
+    "Nov 3",
+    "Nov 4",
+    "Nov 5",
+    "Nov 6",
+    "Nov 7",
+    "Nov 8",
+    "Nov 9",
+  ];
+  public barChartType = "bar";
+  public barChartLegend = true;
+
+  public barChartData: any[] = [
+    { data: [2, 1, 4, 6, 2, 1, 5], label: "Paid Users" },
+    { data: [4, 7, 3, 1, 5, 7, 4], label: "Trial Users" },
+  ];
+
+  public doughnutChartLabels: string[] = [
+    "Paid Users",
+    "Trial Users",
+    "Admins",
+  ];
+  public doughnutChartData: number[] = [39, 120, 4];
+  public doughnutChartType = "doughnut";
+
+  public pieChartLabels: string[] = ["Categories", "Programs", "Notes"];
+  public pieChartData: number[] = [32, 127, 219];
+  public pieChartType = "pie";
+
   // @ViewChild(BaseChartDirective) "chart": BaseChartDirective;
 
   public lineChartData: ChartDataSets[] = [
@@ -57,12 +90,12 @@ export class DashboardComponent implements OnInit {
   public songDetails = [];
   public rowsForCsv = [];
   songs: any;
-  constructor(private spinner: NgxSpinnerService, private router: Router) { }
+  constructor(private spinner: NgxSpinnerService, private router: Router) {}
 
   ngOnInit() {
-    this.spinner.show();
+    // this.spinner.show();
     // this.getDetail();
-    this.getSongs();
+    // this.getSongs();
     const promises: any = [
       // this.firestoreService.getArtistsCount(),
       // this.firestoreService.getAlbumsCount(),
@@ -70,51 +103,50 @@ export class DashboardComponent implements OnInit {
       // this.firestoreService.getPlaylistsCount()
     ];
 
-    Promise.all(promises).then((values: any) => {
-      this.artistsCount = values[0].count;
-      this.albumsCount = values[1].count;
-      this.songsCount = values[2].count;
-      this.playlistsCount = values[3].count;
-      this.spinner.hide();
-    });
-    console.log("song details", this.songDetails);
-    this.selectedStartDate = new Date().toISOString().split("T")[0];
-    this.selectedEndDate = this.selectedStartDate;
+    // Promise.all(promises).then((values: any) => {
+    //   this.artistsCount = values[0].count;
+    //   this.albumsCount = values[1].count;
+    //   this.songsCount = values[2].count;
+    //   this.playlistsCount = values[3].count;
+    //   this.spinner.hide();
+    // });
+    // console.log("song details", this.songDetails);
+    // this.selectedStartDate = new Date().toISOString().split("T")[0];
+    // this.selectedEndDate = this.selectedStartDate;
   }
 
   downloadToCsv() {
-    var csvBuilder = new CsvBuilder("info.csv").setColumns([
-      " Song Name ",
-      " Date ",
-      " Plays ",
-      " Time Played ",
-    ]);
-    this.rowsForCsv.map((value: any) => {
-      console.log("csv", value);
-      var dateObj = new Date(value.date.toDate());
-      var month = dateObj.getUTCMonth() + 1; //months from 1-12
-      var day = dateObj.getUTCDate();
-      var year = dateObj.getUTCFullYear();
-      let preDateFull = year + "-" + month + "-" + day;
-      csvBuilder.addRow([
-        value.name,
-        preDateFull,
-        value.numberOfPlayed,
-        value.totalTime,
-      ]);
-    });
-    csvBuilder.exportFile();
+    // var csvBuilder = new CsvBuilder("info.csv").setColumns([
+    //   " Song Name ",
+    //   " Date ",
+    //   " Plays ",
+    //   " Time Played ",
+    // ]);
+    // this.rowsForCsv.map((value: any) => {
+    //   console.log("csv", value);
+    //   var dateObj = new Date(value.date.toDate());
+    //   var month = dateObj.getUTCMonth() + 1; //months from 1-12
+    //   var day = dateObj.getUTCDate();
+    //   var year = dateObj.getUTCFullYear();
+    //   let preDateFull = year + "-" + month + "-" + day;
+    //   csvBuilder.addRow([
+    //     value.name,
+    //     preDateFull,
+    //     value.numberOfPlayed,
+    //     value.totalTime,
+    //   ]);
+    // });
+    // csvBuilder.exportFile();
   }
 
   changeStartDate() {
-    console.log(this.selectedStartDate);
-    let d = this.selectedStartDate.toString().slice(-2);
-    this.lineChartData[0].data = [];
-
-    console.log({ d });
-    setTimeout(() => {
-      this.getDetail(this.selectedStartDate, this.selectedEndDate);
-    }, 1000);
+    // console.log(this.selectedStartDate);
+    // let d = this.selectedStartDate.toString().slice(-2);
+    // this.lineChartData[0].data = [];
+    // console.log({ d });
+    // setTimeout(() => {
+    //   this.getDetail(this.selectedStartDate, this.selectedEndDate);
+    // }, 1000);
   }
 
   getSelectedSongDetails(song: Program) {
@@ -127,12 +159,11 @@ export class DashboardComponent implements OnInit {
   }
 
   changeEndDate() {
-    console.log(this.selectedEndDate);
-    this.lineChartData[0].data = [];
-
-    setTimeout(() => {
-      this.getDetail(this.selectedStartDate, this.selectedEndDate);
-    }, 1000);
+    // console.log(this.selectedEndDate);
+    // this.lineChartData[0].data = [];
+    // setTimeout(() => {
+    //   this.getDetail(this.selectedStartDate, this.selectedEndDate);
+    // }, 1000);
     // this.getDetail(this.selectedStartDate, this.selectedEndDate);
   }
 
@@ -146,7 +177,7 @@ export class DashboardComponent implements OnInit {
 
   getDetail(startDate?: any, endDate?: any) {
     // this.selectedSongId = song.songId;
-    if (!this.selectedSongId) return;
+    // if (!this.selectedSongId) return;
     // this.firestoreService
     //   .getSongDetails(startDate, endDate, this.selectedSongId)
     //   .then((songD: any) => {
@@ -180,9 +211,7 @@ export class DashboardComponent implements OnInit {
     //         // let preDate = parseInt(d) - 1;
     //         let preDateFull = year + "-" + month + "-" + day;
     //         // console.log({ preDateFull, day });
-
     //         // [x: new Date(car), y: 0];
-
     //         this.lineChartData[0].data.push({
     //           x: new Date(preDateFull),
     //           y: filter[i].numberOfPlayed,
@@ -197,7 +226,6 @@ export class DashboardComponent implements OnInit {
     //           }
     //         });
     //       }
-
     //       // arr = arr.map(function (val) { return val + val; });
     //     } else {
     //       console.log("not data found");
@@ -205,5 +233,13 @@ export class DashboardComponent implements OnInit {
     //     }
     //   })
     //   .catch((e) => console.log("e", e));
+  }
+
+  public chartClicked(e: any): void {
+    // console.log(e);
+  }
+
+  public chartHovered(e: any): void {
+    // console.log(e);
   }
 }

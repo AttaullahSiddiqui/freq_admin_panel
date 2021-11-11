@@ -81,7 +81,7 @@ export class PrivacyPolicyComponent implements OnInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
 

@@ -1,0 +1,21 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.0)" size="medium" color="#5cb85c" type="timer"></ngx-spinner>
+
+<div class="row">
+  <button type="button" style="float: right;" (click)="closeEditor()" class="btn btn-default btn-icon">
+    <i class="ti-close"></i>
+  </button>
+</div>
+
+<div class="row" *ngIf="userData">
+  <div class="col-md-12 text-center">
+    <img src="../../../assets/img/profile-dummy.png" alt="Avatar" style="width: 130px;height:130px;border-radius:50%">
+    <br>
+    <h2>{{userData.firstName}}</h2>
+    <h5><span class="badge badge-pill badge-info">User</span>&nbsp;&nbsp;<span
+        class="badge badge-pill badge-success">Trial</span></h5>
+    <br>
+    <div class="alert alert-primary" role="alert" style="color: black;background-color: lightblue;margin: 0;">
+      <a href="" class="alert-link">{{userData.firstName}}</a> currently have Trial account
+    </div>
+  </div>
+</div>

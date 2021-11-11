@@ -32,7 +32,7 @@ export class GenresComponent implements OnInit {
     private router: Router,
     private http: HttpService,
     private util: UtilityService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getGenres();
@@ -49,7 +49,7 @@ export class GenresComponent implements OnInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
     // this.firestoreService.getGenres().then((result: any) => {
     //   this.genres = result.genres;
@@ -126,7 +126,7 @@ export class GenresComponent implements OnInit {
           })
           .catch((err: Response) => {
             this.spinner.hide();
-            demo.showErrorNotification(err["error"].message);
+            if (err["error"]) demo.showErrorNotification(err["error"].message);
           });
       }
     });

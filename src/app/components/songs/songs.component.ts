@@ -34,7 +34,7 @@ export class SongsComponent implements OnInit {
     private router: Router,
     private http: HttpService,
     private util: UtilityService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.spinner.show();
@@ -66,7 +66,7 @@ export class SongsComponent implements OnInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
   addNewProgram(): void {
@@ -126,7 +126,7 @@ export class SongsComponent implements OnInit {
           })
           .catch((err: Response) => {
             this.spinner.hide();
-            demo.showErrorNotification(err["error"].message);
+            if (err["error"]) demo.showErrorNotification(err["error"].message);
           });
       }
     });
@@ -188,6 +188,6 @@ export class SongsComponent implements OnInit {
       },
     });
 
-    dialogRef.afterClosed().subscribe((result) => { });
+    dialogRef.afterClosed().subscribe((result) => {});
   }
 }

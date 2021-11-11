@@ -82,7 +82,7 @@ export class MoodEditorComponent implements OnInit, AfterViewInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
   updateMood() {
@@ -120,7 +120,7 @@ export class MoodEditorComponent implements OnInit, AfterViewInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
   closeEditor() {

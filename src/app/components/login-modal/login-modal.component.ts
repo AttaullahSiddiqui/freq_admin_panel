@@ -54,7 +54,7 @@ export class LoginModalComponent implements OnInit {
       .catch((err: Response) => {
         this.isLoading = false;
         console.log(err);
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
 
     // this.authService

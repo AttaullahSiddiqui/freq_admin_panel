@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { Router } from "@angular/router";
 import { NgxSpinnerService } from "ngx-spinner";
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog } from "@angular/material/dialog";
 import { environment } from "../../../environments/environment";
 
 import { NoteEditorComponent } from "../note-editor/note-editor.component";
@@ -28,7 +28,7 @@ export class NotesComponent implements OnInit {
     private router: Router,
     private http: HttpService,
     private util: UtilityService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getNotes();
@@ -45,7 +45,7 @@ export class NotesComponent implements OnInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
   }
 
@@ -102,7 +102,7 @@ export class NotesComponent implements OnInit {
           })
           .catch((err: Response) => {
             this.spinner.hide();
-            demo.showErrorNotification(err["error"].message);
+            if (err["error"]) demo.showErrorNotification(err["error"].message);
           });
       }
     });

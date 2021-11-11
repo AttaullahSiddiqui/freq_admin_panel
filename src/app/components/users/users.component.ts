@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { NgxSpinnerService } from "ngx-spinner";
-import { Users } from "src/app/models/users";
+import { MatDialog } from "@angular/material/dialog";
+import { UserProfileComponent } from "../user-profile/user-profile.component";
 
 import { HttpService, Response } from "../../services/http.service";
 import { UtilityService } from "../../services/utility.service";
@@ -17,7 +18,8 @@ export class UsersComponent implements OnInit {
   constructor(
     private spinner: NgxSpinnerService,
     private http: HttpService,
-    private util: UtilityService
+    private util: UtilityService,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit() {
@@ -35,7 +37,19 @@ export class UsersComponent implements OnInit {
       })
       .catch((err: Response) => {
         this.spinner.hide();
-        demo.showErrorNotification(err["error"].message);
+        if (err["error"]) demo.showErrorNotification(err["error"].message);
       });
+  }
+
+  showProfile(userID) {
+    const dialogRef = this.dialog.open(UserProfileComponent, {
+      width: "650px",
+      data: {
+        userId: userID,
+      },
+    });
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log("Profile closed");
+    });
   }
 }

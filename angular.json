@@ -33,7 +33,9 @@
               "src/styles.css",
               "src/assets/css/demo.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/paper-dashboard.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -83,7 +85,9 @@
               "src/styles.css",
               "src/assets/css/demo.css"
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/paper-dashboard.js"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"

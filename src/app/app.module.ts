@@ -24,7 +24,7 @@ import { PlaylistSongsEditorComponent } from "./components/playlist-songs-editor
 import { SongPlayerComponent } from "./components/song-player/song-player.component";
 import { AlbumSongsComponent } from "./components/album-songs/album-songs.component";
 import { ArtistAlbumsComponent } from "./components/artist-albums/artist-albums.component";
-import { PlaylistGroupsComponent } from "./components/playlist-group/playlist-group.component";
+import { SendMailComponent } from "./components/sendmail/sendmail.component";
 import { GenresComponent } from "./components/genres/genres.component";
 import { NotesComponent } from "./components/notes/notes.component";
 import { GenreSongsEditorComponent } from "./components/genre-songs-editor/genre-songs-editor.component";
@@ -36,6 +36,7 @@ import { LoginModalComponent } from "./components/login-modal/login-modal.compon
 import { UsersComponent } from "./components/users/users.component";
 import { MoodEditorComponent } from "./components/mood-editor/mood-editor.component";
 import { NoteEditorComponent } from "./components/note-editor/note-editor.component";
+import { UserProfileComponent } from "./components/user-profile/user-profile.component";
 import { AngularEditorModule } from "@kolkov/angular-editor";
 
 import { ChartsModule } from "ng2-charts";
@@ -79,12 +80,13 @@ const firebaseConfig = {
     SongPlayerComponent,
     AlbumSongsComponent,
     ArtistAlbumsComponent,
-    PlaylistGroupsComponent,
+    SendMailComponent,
     GenresComponent,
     NotesComponent,
     GenreSongsEditorComponent,
     MoodEditorComponent,
     NoteEditorComponent,
+    UserProfileComponent,
     PlaylistGroupEditorComponent,
     PlaylistGroupPlaylistsEditorComponent,
     LoginModalComponent,
@@ -106,8 +108,9 @@ const firebaseConfig = {
     PlaylistGroupPlaylistsEditorComponent,
     MoodEditorComponent,
     NoteEditorComponent,
+    UserProfileComponent,
     // CsvBuilder,
-
+    SendMailComponent,
     LoginModalComponent,
   ],
   imports: [

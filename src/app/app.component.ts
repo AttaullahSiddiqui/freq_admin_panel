@@ -4,6 +4,7 @@ import { MatDialog } from "@angular/material/dialog";
 import { LoginModalComponent } from "./components/login-modal/login-modal.component";
 import { HttpService, Response } from "./services/http.service";
 import { UtilityService } from "./services/utility.service";
+declare var $: any;
 
 @Component({
   selector: "app-root",
@@ -20,15 +21,11 @@ export class AppComponent implements OnInit {
     private http: HttpService,
     private util: UtilityService
   ) {
-    this.checkAuth();
-    this.initialiseGenres();
-
     // this.router.events.subscribe((event: Event) => {
     //   console.log("FFFUUUUUCCCCKKKKKKKKKKK");
     //   console.log(event);
     //   if (event instanceof NavigationEnd) {
     //     const elements = document.getElementsByClassName("active");
-
     //     Array.prototype.forEach.call(elements, function (element) {
     //       element.classList.remove("active");
     //     });
@@ -39,52 +36,44 @@ export class AppComponent implements OnInit {
     //         dashboardMenuItem.classList.add("active");
     //         this.title = "Dashboard";
     //         break;
-
     //       case "/artists":
     //         const artistsMenuItem: any =
     //           document.getElementById("artistsMenuItem");
     //         artistsMenuItem.classList.add("active");
     //         this.title = "Artists";
     //         break;
-
     //       case "/albums":
     //         const albumsMenuItem: any =
     //           document.getElementById("albumsMenuItem");
     //         albumsMenuItem.classList.add("active");
     //         this.title = "Albums";
     //         break;
-
     //       case "/songs":
     //         const songsMenuItem: any = document.getElementById("songs");
     //         songsMenuItem.classList.add("active");
     //         this.title = "Songs";
     //         break;
-
     //       case "/genres":
     //         const genresMenuItem: any = document.getElementById("genres");
     //         genresMenuItem.classList.add("active");
     //         this.title = "Categories";
     //         break;
-
     //       case "/notes":
     //         const notesMenuItem: any = document.getElementById("notesMenuItem");
     //         notesMenuItem.classList.add("active");
     //         this.title = "Notes";
     //         break;
-
     //       case "/playlists":
     //         const playlistsMenuItem: any =
     //           document.getElementById("playlistsMenuItem");
     //         playlistsMenuItem.classList.add("active");
     //         this.title = "Playlists";
     //         break;
-
     //       case "/users":
     //         const userssMenuItem: any = document.getElementById("users");
     //         userssMenuItem.classList.add("active");
     //         this.title = "Users";
     //         break;
-
     //       case "/playlistGroups":
     //         const playlistGroupsMenuItem: any = document.getElementById(
     //           "playlistGroupsMenuItem"
@@ -92,7 +81,6 @@ export class AppComponent implements OnInit {
     //         playlistGroupsMenuItem.classList.add("active");
     //         this.title = "Playlist Groups";
     //         break;
-
     //       case "/privacy":
     //         const privacy: any = document.getElementById("privacy");
     //         privacy.classList.add("active");
@@ -106,16 +94,13 @@ export class AppComponent implements OnInit {
     //     }
     //   }
     // });
-
     // this.router.events.subscribe((val: NavigationEnd) => {
     //   console.log(val.urlAfterRedirects);
     //   console.log("Wokringgg");
     //   const elements = document.getElementsByClassName("active");
-
     //   Array.prototype.forEach.call(elements, function (element) {
     //     element.classList.remove("active");
     //   });
-
     //   switch (val.urlAfterRedirects) {
     //     case "/dashboard":
     //       const dashboardMenuItem =
@@ -123,50 +108,42 @@ export class AppComponent implements OnInit {
     //       dashboardMenuItem.classList.add("active");
     //       this.title = "Dashboard";
     //       break;
-
     //     case "/artists":
     //       const artistsMenuItem = document.getElementById("artistsMenuItem");
     //       artistsMenuItem.classList.add("active");
     //       this.title = "Artists";
     //       break;
-
     //     case "/albums":
     //       const albumsMenuItem = document.getElementById("albumsMenuItem");
     //       albumsMenuItem.classList.add("active");
     //       this.title = "Albums";
     //       break;
-
     //     case "/songs":
     //       const songsMenuItem = document.getElementById("songsMenuItem");
     //       songsMenuItem.classList.add("active");
     //       this.title = "Songs";
     //       break;
-
     //     case "/genres":
     //       const genresMenuItem = document.getElementById("genresMenuItem");
     //       genresMenuItem.classList.add("active");
     //       this.title = "Categories";
     //       break;
-
     //     case "/notes":
     //       const notesMenuItem = document.getElementById("notesMenuItem");
     //       notesMenuItem.classList.add("active");
     //       this.title = "Notes";
     //       break;
-
     //     case "/playlists":
     //       const playlistsMenuItem =
     //         document.getElementById("playlistsMenuItem");
     //       playlistsMenuItem.classList.add("active");
     //       this.title = "Playlists";
     //       break;
-
     //     case "/users":
     //       const userssMenuItem = document.getElementById("userssMenuItem");
     //       userssMenuItem.classList.add("active");
     //       this.title = "Users";
     //       break;
-
     //     case "/playlistGroups":
     //       const playlistGroupsMenuItem = document.getElementById(
     //         "playlistGroupsMenuItem"
@@ -174,7 +151,6 @@ export class AppComponent implements OnInit {
     //       playlistGroupsMenuItem.classList.add("active");
     //       this.title = "Playlist Groups";
     //       break;
-
     //     case "/privacy":
     //       const privacy = document.getElementById("privacy");
     //       privacy.classList.add("active");
@@ -193,10 +169,23 @@ export class AppComponent implements OnInit {
     this.checkAuth();
   }
 
+  // closeSideBar() {}
+
   isActive(instruction): boolean {
+    return this.router.isActive(instruction, true);
+  }
+  changeTitle(instruction) {
     switch (instruction) {
       case "/songs":
         this.title = "Songs";
+        break;
+
+      case "/dashboard":
+        this.title = "Dashboard";
+        break;
+
+      case "/sendmail":
+        this.title = "Emails";
         break;
 
       case "/genres":
@@ -211,11 +200,14 @@ export class AppComponent implements OnInit {
         this.title = "Privacy Policy";
         break;
 
+      case "/notifications":
+        this.title = "Notifications";
+        break;
+
       case "/terms":
         this.title = "Terms and Conditions";
         break;
     }
-    return this.router.isActive(instruction, true);
   }
 
   checkAuth() {
@@ -226,7 +218,7 @@ export class AppComponent implements OnInit {
         this.router.navigateByUrl("tabs");
         if (user.userType == "admin") {
           this.login = true;
-          this.router.navigateByUrl("/genres");
+          this.router.navigateByUrl("/dashboard");
         } else {
           this.router.navigateByUrl("/login");
           this.login = false;

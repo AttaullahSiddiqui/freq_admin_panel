@@ -20,28 +20,32 @@
                 </div>
 
                 <ul class="nav">
-                    <!-- <li id="dashboardMenuItem">
-                        <a routerLink="/">
+                    <li (click)="changeTitle('/dashboard')" routerLink="/dashboard"
+                        [class.active]="isActive('/dashboard')">
+                        <a>
                             <i class="ti-panel"></i>
                             <p>Dashboard</p>
                         </a>
-                    </li> -->
+                    </li>
 
-                    <li id="users" routerLink="/users" [class.active]="isActive('/users')">
+                    <li id="users" (click)="changeTitle('/users')" routerLink="/users"
+                        [class.active]="isActive('/users')">
                         <a>
                             <i class="ti-user"></i>
                             <p>Users</p>
                         </a>
                     </li>
 
-                    <li id="genres" routerLink="/genres" [class.active]="isActive('/genres')">
+                    <li id="genres" (click)="changeTitle('/genres')" routerLink="/genres"
+                        [class.active]="isActive('/genres')">
                         <a>
                             <i class="ti-shine"></i>
                             <p>Categories</p>
                         </a>
                     </li>
 
-                    <li id="songs" routerLink="/songs" [class.active]="isActive('/songs')">
+                    <li id="songs" (click)="changeTitle('/songs')" routerLink="/songs"
+                        [class.active]="isActive('/songs')">
                         <a>
                             <i class="ti-music"></i>
                             <p>Songs</p>
@@ -49,53 +53,63 @@
                     </li>
 
                     <!-- <li id="artistsMenuItem">
-                        <a routerLink="/artists">
+                        <a (click)="changeTitle('/')" routerLink="/artists">
                             <i class="ti-user"></i>
                             <p>Artists</p>
                         </a>
                     </li>
 
                     <li id="albumsMenuItem">
-                        <a routerLink="/albums">
+                        <a (click)="changeTitle('/')" routerLink="/albums">
                             <i class="ti-music-alt"></i>
                             <p>Albums</p>
                         </a>
                     </li> -->
 
                     <!-- <li id="notesMenuItem">
-                        <a routerLink="/notes">
+                        <a (click)="changeTitle('/')" routerLink="/notes">
                             <i class="ti-shine"></i>
                             <p>Notes</p>
                         </a>
                     </li> -->
 
                     <!-- <li id="playlistsMenuItem">
-                        <a routerLink="/playlists">
+                        <a (click)="changeTitle('/')" routerLink="/playlists">
                             <i class="ti-view-list-alt"></i>
                             <p>Playlists</p>
                         </a>
                     </li>
-
-                    <li id="playlistGroupsMenuItem">
-                        <a routerLink="/playlistGroups">
+-->
+                    <li (click)="changeTitle('/sendmail')" routerLink="/sendmail"
+                        [class.active]="isActive('/sendmail')">
+                        <a>
                             <i class="ti-layers-alt"></i>
-                            <p>Playlist Groups</p>
+                            <p>Emails</p>
                         </a>
-                    </li> -->
-                    <li id="privacy" routerLink="/privacy" [class.active]="isActive('/privacy')">
+                    </li>
+                    <li (click)="changeTitle('/notifications')" routerLink="/notifications"
+                        [class.active]="isActive('/notifications')">
+                        <a>
+                            <i class="ti-shine"></i>
+                            <p>Notifications</p>
+                        </a>
+                    </li>
+                    <li id="privacy" (click)="changeTitle('/privacy')" routerLink="/privacy"
+                        [class.active]="isActive('/privacy')">
                         <a>
                             <i class="ti-file"></i>
                             <p>Add Privacy Policy</p>
                         </a>
                     </li>
-                    <li id="terms" routerLink="/terms" [class.active]="isActive('/terms')">
+                    <li id="terms" (click)="changeTitle('/terms')" routerLink="/terms"
+                        [class.active]="isActive('/terms')">
                         <a>
-                            <i class="ti-file"></i>
+                            <i class="ti-view-list-alt"></i>
                             <p>Change Terms</p>
                         </a>
                     </li>
                     <li class="">
-                        <a (click)="signOut()" routerLink="/login">
+                        <a (click)="signOut()">
                             <i class="ti-direction"></i>
                             <p>LOG OUT</p>
                         </a>
@@ -104,7 +118,7 @@
             </div>
         </div>
 
-        <div class="main-panel">
+        <div class="main-panel" style="overflow-y: scroll;">
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-minimize">
